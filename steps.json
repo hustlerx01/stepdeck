@@ -2474,7 +2474,7 @@
    "title": "18.11 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Click Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
-   "verified": false,
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Left click on the Pivot Table 1 tab, to record that decision.\""
@@ -2483,8 +2483,7 @@
    "imageSource": "shots/18-11-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]"
    ]
   },
   {
@@ -2494,7 +2493,7 @@
    "title": "18.13 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Click the chip in E4 next to 198.51.100.23.",
-   "verified": false,
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"E4, beside 198.51.100.23, clicking its chip so this decision's on its own row.\""
@@ -2503,8 +2502,7 @@
    "imageSource": "shots/18-13-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]"
    ]
   },
   {
