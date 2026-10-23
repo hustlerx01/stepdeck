@@ -520,7 +520,7 @@
    "title": "Decision totals",
    "window": "Firefox, Sheets tab, pivot tab",
    "do": "Click D10 [1s]. Type the three labels, Return after each. Click E10 [1s]. Type the three formulas, Return after each. Point at E10 to E12.",
-   "type": "the lines below, Return after each",
+   "type": "D10 to D12: Block, Watch, Ignore (Return after each).  E10 to E12: =COUNTIF(E3:E8,\"Block\")  =COUNTIF(E3:E8,\"Watch\")  =COUNTIF(E3:E8,\"Ignore\") (Return after each)",
    "say": [
     "\"Okay, a small totals block. I'm\" [click now] \"clicking D10, under the pivot, and typing Block, Return, Watch, Return, Ignore, Return.\"",
     "\"Then\" [click now] \"E10, and I'm typing a COUNTIF over E3 to E8 for Block, to total the decisions, and Return.\"",
@@ -631,7 +631,7 @@
    "title": "Watch line",
    "window": "Firefox, Docs tab",
    "do": "Type the line, press Return. Keep the pointer moving.",
-   "type": "the line below (one line, shown wrapped is fine)",
+   "type": "Watch: 192.0.2.77 (resetting svc_backup today) and 198.51.100.140 (confirming with jsmith).   then Return",
    "say": [
     "\"Next the Watch line. I'm typing Watch, 192.0.2.77, resetting svc_backup today, and 198.51.100.140, confirming with jsmith.\"",
     "\"If I block a shared office IP I might lock out real people, so I'm fixing the accounts instead.\""
