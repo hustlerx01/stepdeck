@@ -412,11 +412,11 @@
    "time": "4:10",
    "title": "5.2 · Step 5 Leave Terminal for the sheet",
    "window": "",
-   "do": "Point at the Firefox icon in the Dock on the left.",
+   "do": "Click minimised sheets window (Dock, left side).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Now I'm moving my cursor back down to the Dock on the left, and going along the icons looking for Firefox.\""
+    "\"okay, moving my cursor down the dock on the left, to the minimised sheets window, and clicking it to bring the sheet back up.\""
    ],
    "image": null,
    "imageSource": null,
@@ -427,29 +427,8 @@
   },
   {
    "n": 23,
-   "beat": "5.3",
-   "time": "4:19",
-   "title": "5.3 · Step 5 Leave Terminal for the sheet",
-   "window": "",
-   "do": "Click the Firefox icon in the Dock on the left.",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"My cursor's on the Firefox icon, and the Firefox label shows over the Dock. The blank sheet's waiting in there, so I'll click it.\""
-   ],
-   "image": "images/023.png",
-   "imageSource": "shots/08.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/08.png (reuse, old step 8, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 24,
    "beat": "5.4",
-   "time": "4:30",
+   "time": "4:19",
    "title": "5.4 · Step 5 Leave Terminal for the sheet",
    "window": "",
    "do": "Look at blank sheet \"jump01 overnight triage\" (Firefox, Google Sheets).",
@@ -466,9 +445,9 @@
    ]
   },
   {
-   "n": 25,
+   "n": 24,
    "beat": "6.1",
-   "time": "4:44",
+   "time": "4:32",
    "title": "6.1 · Step 6 Import the log export",
    "window": "",
    "do": "Move the mouse to File menu (Sheets menu bar).",
@@ -485,9 +464,9 @@
    ]
   },
   {
-   "n": 26,
+   "n": 25,
    "beat": "6.2",
-   "time": "4:52",
+   "time": "4:40",
    "title": "6.2 · Step 6 Import the log export",
    "window": "",
    "do": "Click the File menu (Sheets menu bar).",
@@ -495,6 +474,26 @@
    "type": "nothing",
    "say": [
     "\"My cursor's on File now, and I'm pressing left click to drop the menu down, because File is where the Import option lives.\""
+   ],
+   "image": "images/025.png",
+   "imageSource": "shots/09-annotated.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+   ]
+  },
+  {
+   "n": 26,
+   "beat": "6.3",
+   "time": "4:53",
+   "title": "6.3 · Step 6 Import the log export",
+   "window": "",
+   "do": "Choose Import (File menu).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"The File menu is open. Now I'm moving my cursor down the list to Import, and selecting it, because I want the data brought into this sheet rather than opening a second file.\""
    ],
    "image": "images/026.png",
    "imageSource": "shots/09-annotated.png",
@@ -506,15 +505,15 @@
   },
   {
    "n": 27,
-   "beat": "6.3",
-   "time": "5:04",
-   "title": "6.3 · Step 6 Import the log export",
+   "beat": "6.4",
+   "time": "5:09",
+   "title": "6.4 · Step 6 Import the log export",
    "window": "",
-   "do": "Choose Import (File menu).",
+   "do": "Click the Upload tab (Import files dialog, top tabs).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"The File menu is open. Now I'm moving my cursor down the list to Import, and selecting it, because I want the data brought into this sheet rather than opening a second file.\""
+    "\"Okay, an Import files box opens with tabs along the top. The file's sitting locally on my Mac, not in Drive, so I'm moving my cursor across and clicking the Upload tab.\""
    ],
    "image": "images/027.png",
    "imageSource": "shots/09-annotated.png",
@@ -526,15 +525,15 @@
   },
   {
    "n": 28,
-   "beat": "6.4",
-   "time": "5:20",
-   "title": "6.4 · Step 6 Import the log export",
+   "beat": "6.5",
+   "time": "5:22",
+   "title": "6.5 · Step 6 Import the log export",
    "window": "",
-   "do": "Click the Upload tab (Import files dialog, top tabs).",
+   "do": "Click Browse (Upload tab, centre).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Okay, an Import files box opens with tabs along the top. The file's sitting locally on my Mac, not in Drive, so I'm moving my cursor across and clicking the Upload tab.\""
+    "\"In the middle of the Upload tab there's the Browse button. I'm moving my cursor down onto Browse. Pressing it so I can pick the file myself.\""
    ],
    "image": "images/028.png",
    "imageSource": "shots/09-annotated.png",
@@ -546,28 +545,8 @@
   },
   {
    "n": 29,
-   "beat": "6.5",
-   "time": "5:34",
-   "title": "6.5 · Step 6 Import the log export",
-   "window": "",
-   "do": "Click Browse (Upload tab, centre).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"In the middle of the Upload tab there's the Browse button. I'm moving my cursor down onto Browse. Pressing it so I can pick the file myself.\""
-   ],
-   "image": "images/029.png",
-   "imageSource": "shots/09-annotated.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
-   ]
-  },
-  {
-   "n": 30,
    "beat": "6.6",
-   "time": "5:47",
+   "time": "5:35",
    "title": "6.6 · Step 6 Import the log export",
    "window": "",
    "do": "Click Documents (macOS file picker, sidebar).",
@@ -575,6 +554,27 @@
    "type": "nothing",
    "say": [
     "\"Now the Mac file picker opens. I'm moving my cursor over to the left sidebar, to Documents, and giving it a click there, because the inputs sit under Documents.\""
+   ],
+   "image": "images/029.png",
+   "imageSource": "shots/10.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/10.png (reuse, old step 10, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 30,
+   "beat": "6.7",
+   "time": "5:48",
+   "title": "6.7 · Step 6 Import the log export",
+   "window": "",
+   "do": "Double-click Project (file picker list).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Okay, Project shows up in the list on the right. I'm moving my cursor across onto Project, and since both inputs live there, I'm double-clicking it.\""
    ],
    "image": "images/030.png",
    "imageSource": "shots/10.png",
@@ -587,15 +587,15 @@
   },
   {
    "n": 31,
-   "beat": "6.7",
-   "time": "5:59",
-   "title": "6.7 · Step 6 Import the log export",
+   "beat": "6.8",
+   "time": "6:00",
+   "title": "6.8 · Step 6 Import the log export",
    "window": "",
-   "do": "Double-click Project (file picker list).",
+   "do": "Click auth-jump01-excerpt.csv (file picker list).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Okay, Project shows up in the list on the right. I'm moving my cursor across onto Project, and since both inputs live there, I'm double-clicking it.\""
+    "\"Inside Project, the excerpt file sits below. That's the spreadsheet copy of the same 59 log lines. I'm moving my cursor down onto it, and one click selects it.\""
    ],
    "image": "images/031.png",
    "imageSource": "shots/10.png",
@@ -608,15 +608,15 @@
   },
   {
    "n": 32,
-   "beat": "6.8",
+   "beat": "6.9",
    "time": "6:11",
-   "title": "6.8 · Step 6 Import the log export",
+   "title": "6.9 · Step 6 Import the log export",
    "window": "",
-   "do": "Click auth-jump01-excerpt.csv (file picker list).",
+   "do": "Click Open (bottom right of the file picker).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Inside Project, the excerpt file sits below. That's the spreadsheet copy of the same 59 log lines. I'm moving my cursor down onto it, and one click selects it.\""
+    "\"Okay, so now I'm moving my cursor down to the bottom right of the picker, and there's the Open button. Clicking it because I want to start the upload of the excerpt.\""
    ],
    "image": "images/032.png",
    "imageSource": "shots/10.png",
@@ -629,29 +629,8 @@
   },
   {
    "n": 33,
-   "beat": "6.9",
-   "time": "6:23",
-   "title": "6.9 · Step 6 Import the log export",
-   "window": "",
-   "do": "Click Open (bottom right of the file picker).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Okay, so now I'm moving my cursor down to the bottom right of the picker, and there's the Open button. Clicking it because I want to start the upload of the excerpt.\""
-   ],
-   "image": "images/033.png",
-   "imageSource": "shots/10.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/10.png (reuse, old step 10, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 34,
    "beat": "6.10",
-   "time": "6:38",
+   "time": "6:27",
    "title": "6.10 · Step 6 Import the log export",
    "window": "",
    "do": "Choose Replace current sheet (Import file dialog, Import location).",
@@ -659,6 +638,26 @@
    "type": "nothing",
    "say": [
     "\"Now an Import file box comes up. Under Import location, I'm moving my cursor down the options and picking Replace current sheet. This blank one's already named for the job, so the data can go straight into it.\""
+   ],
+   "image": "images/033.png",
+   "imageSource": "shots/11-annotated.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+   ]
+  },
+  {
+   "n": 34,
+   "beat": "6.11",
+   "time": "6:42",
+   "title": "6.11 · Step 6 Import the log export",
+   "window": "",
+   "do": "Click Import data (bottom of the Import file dialog).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Then I'm moving my cursor down to the bottom of the box, to the Import data button. I'll press that to bring the rows into the sheet.\""
    ],
    "image": "images/034.png",
    "imageSource": "shots/11-annotated.png",
@@ -670,28 +669,8 @@
   },
   {
    "n": 35,
-   "beat": "6.11",
-   "time": "6:54",
-   "title": "6.11 · Step 6 Import the log export",
-   "window": "",
-   "do": "Click Import data (bottom of the Import file dialog).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Then I'm moving my cursor down to the bottom of the box, to the Import data button. I'll press that to bring the rows into the sheet.\""
-   ],
-   "image": "images/035.png",
-   "imageSource": "shots/11-annotated.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
-   ]
-  },
-  {
-   "n": 36,
    "beat": "6.12",
-   "time": "7:05",
+   "time": "6:54",
    "title": "6.12 · Step 6 Import the log export",
    "window": "",
    "do": "Wait until import finishes (sheet grid).",
@@ -708,9 +687,9 @@
    ]
   },
   {
-   "n": 37,
+   "n": 36,
    "beat": "6.13",
-   "time": "7:14",
+   "time": "7:03",
    "title": "6.13 · Step 6 Import the log export",
    "window": "",
    "do": "Decide live: Replace if the open sheet is blank and already named; New sheet if it holds anything",
@@ -727,9 +706,9 @@
    ]
   },
   {
-   "n": 38,
+   "n": 37,
    "beat": "7.1",
-   "time": "7:30",
+   "time": "7:18",
    "title": "7.1 · Step 7 Read the columns and count the rows",
    "window": "",
    "do": "Look at header row (row 1).",
@@ -746,9 +725,9 @@
    ]
   },
   {
-   "n": 39,
+   "n": 38,
    "beat": "7.2",
-   "time": "7:44",
+   "time": "7:32",
    "title": "7.2 · Step 7 Read the columns and count the rows",
    "window": "",
    "do": "Look at decision column (column G).",
@@ -765,9 +744,9 @@
    ]
   },
   {
-   "n": 40,
+   "n": 39,
    "beat": "7.3",
-   "time": "7:58",
+   "time": "7:46",
    "title": "7.3 · Step 7 Read the columns and count the rows",
    "window": "",
    "do": "Press Command Down.",
@@ -784,9 +763,9 @@
    ]
   },
   {
-   "n": 41,
+   "n": 40,
    "beat": "7.4",
-   "time": "8:05",
+   "time": "7:53",
    "title": "7.4 · Step 7 Read the columns and count the rows",
    "window": "",
    "do": "Look at last row number (left edge, row numbers).",
@@ -803,9 +782,9 @@
    ]
   },
   {
-   "n": 42,
+   "n": 41,
    "beat": "7.5",
-   "time": "8:15",
+   "time": "8:04",
    "title": "7.5 · Step 7 Read the columns and count the rows",
    "window": "",
    "do": "Check that 59 data rows matches 59 lines (row 60 against the Terminal wc count).",
@@ -822,9 +801,9 @@
    ]
   },
   {
-   "n": 43,
+   "n": 42,
    "beat": "7.6",
-   "time": "8:33",
+   "time": "8:21",
    "title": "7.6 · Step 7 Read the columns and count the rows",
    "window": "",
    "do": "Press Command Up.",
@@ -841,9 +820,9 @@
    ]
   },
   {
-   "n": 44,
+   "n": 43,
    "beat": "8.1",
-   "time": "8:40",
+   "time": "8:29",
    "title": "8.1 · Step 8 Freeze the header and add a filter",
    "window": "",
    "do": "Move the mouse to View menu (Sheets menu bar).",
@@ -860,9 +839,9 @@
    ]
   },
   {
-   "n": 45,
+   "n": 44,
    "beat": "8.2",
-   "time": "8:49",
+   "time": "8:37",
    "title": "8.2 · Step 8 Freeze the header and add a filter",
    "window": "",
    "do": "Click the View menu (Sheets menu bar).",
@@ -870,6 +849,26 @@
    "type": "nothing",
    "say": [
     "\"My cursor's on View, and I'm pressing left click to open the list, because the freeze options live under View.\""
+   ],
+   "image": "images/044.png",
+   "imageSource": "shots/13-annotated.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+   ]
+  },
+  {
+   "n": 45,
+   "beat": "8.3",
+   "time": "8:46",
+   "title": "8.3 · Step 8 Freeze the header and add a filter",
+   "window": "",
+   "do": "Choose Freeze (View menu).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"The View menu is open. Now I'm moving my cursor down to Freeze, and a menu slides out to the right to choose rows.\""
    ],
    "image": "images/045.png",
    "imageSource": "shots/13-annotated.png",
@@ -881,15 +880,15 @@
   },
   {
    "n": 46,
-   "beat": "8.3",
+   "beat": "8.4",
    "time": "8:58",
-   "title": "8.3 · Step 8 Freeze the header and add a filter",
+   "title": "8.4 · Step 8 Freeze the header and add a filter",
    "window": "",
-   "do": "Choose Freeze (View menu).",
+   "do": "Choose 1 row (Freeze submenu).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"The View menu is open. Now I'm moving my cursor down to Freeze, and a menu slides out to the right to choose rows.\""
+    "\"I'm moving my cursor across to the right into that submenu, onto 1 row, and clicking it, so the column names stay up top while I scroll.\""
    ],
    "image": "images/046.png",
    "imageSource": "shots/13-annotated.png",
@@ -901,15 +900,15 @@
   },
   {
    "n": 47,
-   "beat": "8.4",
-   "time": "9:09",
-   "title": "8.4 · Step 8 Freeze the header and add a filter",
+   "beat": "8.5",
+   "time": "9:10",
+   "title": "8.5 · Step 8 Freeze the header and add a filter",
    "window": "",
-   "do": "Choose 1 row (Freeze submenu).",
+   "do": "Click Create a filter icon (toolbar, right side).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"I'm moving my cursor across to the right into that submenu, onto 1 row, and clicking it, so the column names stay up top while I scroll.\""
+    "\"Now I'm moving my cursor up to the toolbar, over to the right side, to the Create a filter icon, and the Create a filter tooltip shows. A click on that, so I can filter by IP later.\""
    ],
    "image": "images/047.png",
    "imageSource": "shots/13-annotated.png",
@@ -921,28 +920,8 @@
   },
   {
    "n": 48,
-   "beat": "8.5",
-   "time": "9:22",
-   "title": "8.5 · Step 8 Freeze the header and add a filter",
-   "window": "",
-   "do": "Click Create a filter icon (toolbar, right side).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Now I'm moving my cursor up to the toolbar, over to the right side, to the Create a filter icon, and the Create a filter tooltip shows. A click on that, so I can filter by IP later.\""
-   ],
-   "image": "images/048.png",
-   "imageSource": "shots/13-annotated.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
-   ]
-  },
-  {
-   "n": 49,
    "beat": "8.6",
-   "time": "9:39",
+   "time": "9:28",
    "title": "8.6 · Step 8 Freeze the header and add a filter",
    "window": "",
    "do": "Look at filter icons (row 1).",
@@ -959,9 +938,9 @@
    ]
   },
   {
-   "n": 50,
+   "n": 49,
    "beat": "9.1",
-   "time": "9:50",
+   "time": "9:39",
    "title": "9.1 · Step 9 Insert the pivot table",
    "window": "",
    "do": "Click cell A1 (cell A1, top-left of the data).",
@@ -970,7 +949,7 @@
    "say": [
     "\"Step 9: okay, the pivot. My cursor's sitting over the filter icons in row 1, so I'm moving it down a touch onto cell A1 itself, top left of the grid, and clicking it, to start the selection there.\""
    ],
-   "image": "images/050.png",
+   "image": "images/049.png",
    "imageSource": "shots/14-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -979,9 +958,9 @@
    ]
   },
   {
-   "n": 51,
+   "n": 50,
    "beat": "9.2",
-   "time": "10:07",
+   "time": "9:55",
    "title": "9.2 · Step 9 Insert the pivot table",
    "window": "",
    "do": "Press Command A.",
@@ -998,9 +977,9 @@
    ]
   },
   {
-   "n": 52,
+   "n": 51,
    "beat": "9.3",
-   "time": "10:13",
+   "time": "10:01",
    "title": "9.3 · Step 9 Insert the pivot table",
    "window": "",
    "do": "Look at range (name box, top left).",
@@ -1017,9 +996,9 @@
    ]
   },
   {
-   "n": 53,
+   "n": 52,
    "beat": "9.4",
-   "time": "10:23",
+   "time": "10:11",
    "title": "9.4 · Step 9 Insert the pivot table",
    "window": "",
    "do": "Move the mouse to Insert menu (Sheets menu bar).",
@@ -1036,9 +1015,9 @@
    ]
   },
   {
-   "n": 54,
+   "n": 53,
    "beat": "9.5",
-   "time": "10:31",
+   "time": "10:20",
    "title": "9.5 · Step 9 Insert the pivot table",
    "window": "",
    "do": "Click the Insert menu (Sheets menu bar).",
@@ -1046,6 +1025,26 @@
    "type": "nothing",
    "say": [
     "\"My cursor's up on the menu bar now, and I'm clicking Insert to open the menu, since the pivot table option lives in it.\""
+   ],
+   "image": "images/053.png",
+   "imageSource": "shots/14-annotated.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+   ]
+  },
+  {
+   "n": 54,
+   "beat": "9.6",
+   "time": "10:32",
+   "title": "9.6 · Step 9 Insert the pivot table",
+   "window": "",
+   "do": "Choose Pivot table (Insert menu).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"The Insert menu is open. Let me move my cursor down the list to Pivot table, and I'm choosing it with a left click, to get one row per IP.\""
    ],
    "image": "images/054.png",
    "imageSource": "shots/14-annotated.png",
@@ -1057,15 +1056,15 @@
   },
   {
    "n": 55,
-   "beat": "9.6",
-   "time": "10:43",
-   "title": "9.6 · Step 9 Insert the pivot table",
+   "beat": "9.7",
+   "time": "10:46",
+   "title": "9.7 · Step 9 Insert the pivot table",
    "window": "",
-   "do": "Choose Pivot table (Insert menu).",
+   "do": "Choose New sheet (Create pivot table dialog).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"The Insert menu is open. Let me move my cursor down the list to Pivot table, and I'm choosing it with a left click, to get one row per IP.\""
+    "\"Okay, a Create pivot table box opens in the middle of the screen. I'm moving my cursor down inside it to New sheet, and left clicking on New sheet, to leave Sheet1's rows untouched.\""
    ],
    "image": "images/055.png",
    "imageSource": "shots/14-annotated.png",
@@ -1077,15 +1076,15 @@
   },
   {
    "n": 56,
-   "beat": "9.7",
-   "time": "10:58",
-   "title": "9.7 · Step 9 Insert the pivot table",
+   "beat": "9.8",
+   "time": "11:02",
+   "title": "9.8 · Step 9 Insert the pivot table",
    "window": "",
-   "do": "Choose New sheet (Create pivot table dialog).",
+   "do": "Click Create (bottom right of the dialog).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Okay, a Create pivot table box opens in the middle of the screen. I'm moving my cursor down inside it to New sheet, and left clicking on New sheet, to leave Sheet1's rows untouched.\""
+    "\"Now I'm moving my cursor down and to the right, to the Create button at the bottom right of the box. Pressing it with a left click, so the pivot gets its own tab.\""
    ],
    "image": "images/056.png",
    "imageSource": "shots/14-annotated.png",
@@ -1097,28 +1096,8 @@
   },
   {
    "n": 57,
-   "beat": "9.8",
-   "time": "11:13",
-   "title": "9.8 · Step 9 Insert the pivot table",
-   "window": "",
-   "do": "Click Create (bottom right of the dialog).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Now I'm moving my cursor down and to the right, to the Create button at the bottom right of the box. Pressing it with a left click, so the pivot gets its own tab.\""
-   ],
-   "image": "images/057.png",
-   "imageSource": "shots/14-annotated.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
-   ]
-  },
-  {
-   "n": 58,
    "beat": "9.9",
-   "time": "11:29",
+   "time": "11:17",
    "title": "9.9 · Step 9 Insert the pivot table",
    "window": "",
    "do": "Look at new tab and editor (sheet tabs and right side).",
@@ -1135,9 +1114,9 @@
    ]
   },
   {
-   "n": 59,
+   "n": 58,
    "beat": "9.10",
-   "time": "11:38",
+   "time": "11:27",
    "title": "9.10 · Step 9 Insert the pivot table",
    "window": "",
    "do": "Decide live: pivot when counts are needed for many IP and event pairs; formulas when only one or two numbers are needed",
@@ -1154,9 +1133,9 @@
    ]
   },
   {
-   "n": 60,
+   "n": 59,
    "beat": "10.1",
-   "time": "11:50",
+   "time": "11:39",
    "title": "10.1 · Step 10 Rows and columns",
    "window": "",
    "do": "Click Rows Add (pivot editor, Rows).",
@@ -1164,6 +1143,27 @@
    "type": "nothing",
    "say": [
     "\"Step 10: the rows. I'm moving my cursor over to the editor on the right, down to Rows, onto the Add button beside it. Clicking it, because IPs run down the side.\""
+   ],
+   "image": "images/059.png",
+   "imageSource": "shots/15.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/15.png (reuse, old step 15, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 60,
+   "beat": "10.2",
+   "time": "11:50",
+   "title": "10.2 · Step 10 Rows and columns",
+   "window": "",
+   "do": "Choose src_ip (Rows field list).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"A list drops down below Add. I'm moving my cursor down that list to src underscore ip and left clicking it, so every address gets its own row.\""
    ],
    "image": "images/060.png",
    "imageSource": "shots/15.png",
@@ -1176,15 +1176,15 @@
   },
   {
    "n": 61,
-   "beat": "10.2",
+   "beat": "10.3",
    "time": "12:02",
-   "title": "10.2 · Step 10 Rows and columns",
+   "title": "10.3 · Step 10 Rows and columns",
    "window": "",
-   "do": "Choose src_ip (Rows field list).",
+   "do": "Click Columns Add (pivot editor, Columns).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"A list drops down below Add. I'm moving my cursor down that list to src underscore ip and left clicking it, so every address gets its own row.\""
+    "\"Okay, now I'm moving my cursor further down the editor to Columns, onto the Add button beside it. Left click there to put event types across the top.\""
    ],
    "image": "images/061.png",
    "imageSource": "shots/15.png",
@@ -1197,15 +1197,15 @@
   },
   {
    "n": 62,
-   "beat": "10.3",
+   "beat": "10.4",
    "time": "12:14",
-   "title": "10.3 · Step 10 Rows and columns",
+   "title": "10.4 · Step 10 Rows and columns",
    "window": "",
-   "do": "Click Columns Add (pivot editor, Columns).",
+   "do": "Choose event (Columns field list).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Okay, now I'm moving my cursor further down the editor to Columns, onto the Add button beside it. Left click there to put event types across the top.\""
+    "\"Another list opens. I'm moving my cursor down to event and selecting it, since it's the type of each try.\""
    ],
    "image": "images/062.png",
    "imageSource": "shots/15.png",
@@ -1218,15 +1218,15 @@
   },
   {
    "n": 63,
-   "beat": "10.4",
-   "time": "12:26",
-   "title": "10.4 · Step 10 Rows and columns",
+   "beat": "10.5",
+   "time": "12:24",
+   "title": "10.5 · Step 10 Rows and columns",
    "window": "",
-   "do": "Choose event (Columns field list).",
+   "do": "Click Show totals checkbox (Columns card, event).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Another list opens. I'm moving my cursor down to event and selecting it, since it's the type of each try.\""
+    "\"Alright, just below event on the Columns card, my cursor goes to the Show totals checkbox, which is ticked. Unticking it with a left click, because I only need counts per event type, not a total across them.\""
    ],
    "image": "images/063.png",
    "imageSource": "shots/15.png",
@@ -1239,29 +1239,8 @@
   },
   {
    "n": 64,
-   "beat": "10.5",
-   "time": "12:35",
-   "title": "10.5 · Step 10 Rows and columns",
-   "window": "",
-   "do": "Click Show totals checkbox (Columns card, event).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Alright, just below event on the Columns card, my cursor goes to the Show totals checkbox, which is ticked. Unticking it with a left click, because I only need counts per event type, not a total across them.\""
-   ],
-   "image": "images/064.png",
-   "imageSource": "shots/15.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/15.png (reuse, old step 15, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 65,
    "beat": "10.6",
-   "time": "12:53",
+   "time": "12:41",
    "title": "10.6 · Step 10 Rows and columns",
    "window": "",
    "do": "Look at columns B to D (pivot grid).",
@@ -1278,9 +1257,9 @@
    ]
   },
   {
-   "n": 66,
+   "n": 65,
    "beat": "11.1",
-   "time": "13:03",
+   "time": "12:51",
    "title": "11.1 · Step 11 Values: count the rows",
    "window": "",
    "do": "Click Values Add (pivot editor, Values).",
@@ -1288,6 +1267,27 @@
    "type": "nothing",
    "say": [
     "\"Step 11: the counts. I'm moving my cursor down the editor to Values and onto its Add button. Clicking, so I can say what's counted.\""
+   ],
+   "image": "images/065.png",
+   "imageSource": "shots/16.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/16.png (reuse, old step 16, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 66,
+   "beat": "11.2",
+   "time": "13:01",
+   "title": "11.2 · Step 11 Values: count the rows",
+   "window": "",
+   "do": "Choose event (Values field list).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"A list opens below. Let me move my cursor down it and pick event, because every row has one.\""
    ],
    "image": "images/066.png",
    "imageSource": "shots/16.png",
@@ -1300,29 +1300,8 @@
   },
   {
    "n": 67,
-   "beat": "11.2",
-   "time": "13:12",
-   "title": "11.2 · Step 11 Values: count the rows",
-   "window": "",
-   "do": "Choose event (Values field list).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"A list opens below. Let me move my cursor down it and pick event, because every row has one.\""
-   ],
-   "image": "images/067.png",
-   "imageSource": "shots/16.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/16.png (reuse, old step 16, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 68,
    "beat": "11.3",
-   "time": "13:22",
+   "time": "13:10",
    "title": "11.3 · Step 11 Values: count the rows",
    "window": "",
    "do": "Look at the \"Summarize by\" box. If it says COUNTA, carry on; if it says SUM, change it to COUNTA.",
@@ -1340,9 +1319,9 @@
    ]
   },
   {
-   "n": 69,
+   "n": 68,
    "beat": "11.3a",
-   "time": "13:29",
+   "time": "13:17",
    "title": "11.3a · Step 11 Values: count the rows",
    "window": "",
    "do": "Look at COUNTA (Summarize by box).",
@@ -1359,9 +1338,9 @@
    ]
   },
   {
-   "n": 70,
+   "n": 69,
    "beat": "11.3b",
-   "time": "13:40",
+   "time": "13:28",
    "title": "11.3b · Step 11 Values: count the rows",
    "window": "",
    "do": "Choose COUNTA (Summarize by list).",
@@ -1370,7 +1349,7 @@
    "say": [
     "\"It's showing SUM, so I'm left clicking the Summarize by dropdown to open it, then moving down to COUNTA and clicking it, since these are words.\""
    ],
-   "image": "images/070.png",
+   "image": "images/069.png",
    "imageSource": "shots/16.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1380,9 +1359,9 @@
    ]
   },
   {
-   "n": 71,
+   "n": 70,
    "beat": "11.4",
-   "time": "13:50",
+   "time": "13:39",
    "title": "11.4 · Step 11 Values: count the rows",
    "window": "",
    "do": "Decide live: COUNTA when the value field is text; SUM only for numeric fields",
@@ -1399,9 +1378,9 @@
    ]
   },
   {
-   "n": 72,
+   "n": 71,
    "beat": "11.5",
-   "time": "14:01",
+   "time": "13:50",
    "title": "11.5 · Step 11 Values: count the rows",
    "window": "",
    "do": "Look at grand total row (pivot grid).",
@@ -1418,9 +1397,9 @@
    ]
   },
   {
-   "n": 73,
+   "n": 72,
    "beat": "12.1",
-   "time": "14:13",
+   "time": "14:01",
    "title": "12.1 · Step 12 Sort by failures",
    "window": "",
    "do": "Choose Descending (Rows card, Order).",
@@ -1428,6 +1407,27 @@
    "type": "nothing",
    "say": [
     "\"Step 12: noisiest first. I'm moving my cursor back up to the Rows card, down to Order, opening that dropdown with a left click and choosing Descending, to lead with big numbers.\""
+   ],
+   "image": "images/072.png",
+   "imageSource": "shots/17.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/17.png (reuse, old step 17, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 73,
+   "beat": "12.2",
+   "time": "14:14",
+   "title": "12.2 · Step 12 Sort by failures",
+   "window": "",
+   "do": "Choose Failed password (Rows card, Sort by).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Just below it is Sort by. I'm left clicking that dropdown, moving down the list, and picking Failed password, to put the most failures on top.\""
    ],
    "image": "images/073.png",
    "imageSource": "shots/17.png",
@@ -1440,29 +1440,8 @@
   },
   {
    "n": 74,
-   "beat": "12.2",
-   "time": "14:26",
-   "title": "12.2 · Step 12 Sort by failures",
-   "window": "",
-   "do": "Choose Failed password (Rows card, Sort by).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Just below it is Sort by. I'm left clicking that dropdown, moving down the list, and picking Failed password, to put the most failures on top.\""
-   ],
-   "image": "images/074.png",
-   "imageSource": "shots/17.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/17.png (reuse, old step 17, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 75,
    "beat": "12.3",
-   "time": "14:37",
+   "time": "14:25",
    "title": "12.3 · Step 12 Sort by failures",
    "window": "",
    "do": "Look at IP order (pivot rows 3 to 8).",
@@ -1479,9 +1458,9 @@
    ]
   },
   {
-   "n": 76,
+   "n": 75,
    "beat": "12.4",
-   "time": "14:47",
+   "time": "14:36",
    "title": "12.4 · Step 12 Sort by failures",
    "window": "",
    "do": "Decide live: descending by Failed password when risk is driven by attempt volume; by time if the question were order of events",
@@ -1498,9 +1477,9 @@
    ]
   },
   {
-   "n": 77,
+   "n": 76,
    "beat": "12.5",
-   "time": "14:58",
+   "time": "14:47",
    "title": "12.5 · Step 12 Sort by failures",
    "window": "",
    "do": "Click editor close icon (top right of the pivot editor).",
@@ -1509,7 +1488,7 @@
    "say": [
     "\"Now I'm moving my cursor up to the top right of the editor, to the close icon. Clicking it to get the full sheet back.\""
    ],
-   "image": "images/077.png",
+   "image": "images/076.png",
    "imageSource": "shots/17.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1519,9 +1498,9 @@
    ]
   },
   {
-   "n": 78,
+   "n": 77,
    "beat": "13.1",
-   "time": "15:09",
+   "time": "14:57",
    "title": "13.1 · Step 13 Check the pivot total against Terminal",
    "window": "",
    "do": "Click D9.",
@@ -1530,7 +1509,7 @@
    "say": [
     "\"Step 13: a check against Terminal. I'm moving my cursor left onto the grid, down to the bottom of column D. Clicking D9, to read the failure total.\""
    ],
-   "image": "images/078.png",
+   "image": "images/077.png",
    "imageSource": "shots/18.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1540,9 +1519,9 @@
    ]
   },
   {
-   "n": 79,
+   "n": 78,
    "beat": "13.2",
-   "time": "15:21",
+   "time": "15:09",
    "title": "13.2 · Step 13 Check the pivot total against Terminal",
    "window": "",
    "do": "Look at D9.",
@@ -1559,9 +1538,9 @@
    ]
   },
   {
-   "n": 80,
+   "n": 79,
    "beat": "13.3",
-   "time": "15:31",
+   "time": "15:19",
    "title": "13.3 · Step 13 Check the pivot total against Terminal",
    "window": "",
    "do": "Check that 53 matches 53 (D9 against the Terminal grep count).",
@@ -1578,9 +1557,9 @@
    ]
   },
   {
-   "n": 81,
+   "n": 80,
    "beat": "13.4",
-   "time": "15:44",
+   "time": "15:32",
    "title": "13.4 · Step 13 Check the pivot total against Terminal",
    "window": "",
    "do": "Look at accepted totals (row 9, B and C).",
@@ -1597,9 +1576,9 @@
    ]
   },
   {
-   "n": 82,
+   "n": 81,
    "beat": "14.1",
-   "time": "15:53",
+   "time": "15:41",
    "title": "14.1 · Step 14 Read the ranking",
    "window": "",
    "do": "Look at top two (rows 3 and 4, column D).",
@@ -1616,9 +1595,9 @@
    ]
   },
   {
-   "n": 83,
+   "n": 82,
    "beat": "14.2",
-   "time": "16:02",
+   "time": "15:51",
    "title": "14.2 · Step 14 Read the ranking",
    "window": "",
    "do": "Look at success after failures (rows 5 and 6, columns B and D).",
@@ -1635,9 +1614,9 @@
    ]
   },
   {
-   "n": 84,
+   "n": 83,
    "beat": "14.3",
-   "time": "16:11",
+   "time": "15:59",
    "title": "14.3 · Step 14 Read the ranking",
    "window": "",
    "do": "Look at small counts (rows 7 and 8).",
@@ -1654,9 +1633,9 @@
    ]
   },
   {
-   "n": 85,
+   "n": 84,
    "beat": "15.1",
-   "time": "16:21",
+   "time": "16:09",
    "title": "15.1 · Step 15 Decision column header",
    "window": "",
    "do": "Click E2 (right of the pivot).",
@@ -1665,7 +1644,7 @@
    "say": [
     "\"Step 15: a decision column. I'm moving my cursor right, past the Failed password column, to E2, and clicking there, so decisions sit beside counts.\""
    ],
-   "image": "images/085.png",
+   "image": "images/084.png",
    "imageSource": "shots/20-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1674,9 +1653,9 @@
    ]
   },
   {
-   "n": 86,
+   "n": 85,
    "beat": "15.2",
-   "time": "16:30",
+   "time": "16:18",
    "title": "15.2 · Step 15 Decision column header",
    "window": "",
    "do": "Type this in cell E2:",
@@ -1693,9 +1672,9 @@
    ]
   },
   {
-   "n": 87,
+   "n": 86,
    "beat": "15.3",
-   "time": "16:37",
+   "time": "16:25",
    "title": "15.3 · Step 15 Decision column header",
    "window": "",
    "do": "Press Return.",
@@ -1712,9 +1691,9 @@
    ]
   },
   {
-   "n": 88,
+   "n": 87,
    "beat": "16.1",
-   "time": "16:44",
+   "time": "16:32",
    "title": "16.1 · Step 16 Dropdown chips",
    "window": "",
    "do": "Click E3 (next to 203.0.113.45).",
@@ -1723,7 +1702,7 @@
    "say": [
     "\"Step 16: the choices. I'm moving my cursor down from E2 to E3, beside 203.0.113.45, and a click there, because the range starts on the first IP.\""
    ],
-   "image": "images/088.png",
+   "image": "images/087.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1732,9 +1711,9 @@
    ]
   },
   {
-   "n": 89,
+   "n": 88,
    "beat": "16.2",
-   "time": "16:54",
+   "time": "16:43",
    "title": "16.2 · Step 16 Dropdown chips",
    "window": "",
    "do": "Press Shift Down five times.",
@@ -1751,9 +1730,9 @@
    ]
   },
   {
-   "n": 90,
+   "n": 89,
    "beat": "16.3",
-   "time": "16:59",
+   "time": "16:48",
    "title": "16.3 · Step 16 Dropdown chips",
    "window": "",
    "do": "Look at range (name box).",
@@ -1770,9 +1749,9 @@
    ]
   },
   {
-   "n": 91,
+   "n": 90,
    "beat": "16.4",
-   "time": "17:05",
+   "time": "16:53",
    "title": "16.4 · Step 16 Dropdown chips",
    "window": "",
    "do": "Move the mouse to Insert menu (Sheets menu bar).",
@@ -1789,9 +1768,9 @@
    ]
   },
   {
-   "n": 92,
+   "n": 91,
    "beat": "16.5",
-   "time": "17:12",
+   "time": "17:00",
    "title": "16.5 · Step 16 Dropdown chips",
    "window": "",
    "do": "Click the Insert menu (Sheets menu bar).",
@@ -1799,6 +1778,26 @@
    "type": "nothing",
    "say": [
     "\"My cursor's on Insert, and I'm clicking, since Dropdown's in that menu.\""
+   ],
+   "image": "images/091.png",
+   "imageSource": "shots/21-annotated.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+   ]
+  },
+  {
+   "n": 92,
+   "beat": "16.6",
+   "time": "17:05",
+   "title": "16.6 · Step 16 Dropdown chips",
+   "window": "",
+   "do": "Choose Dropdown (Insert menu).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Then down the list to Dropdown, and selecting it, for fixed words.\""
    ],
    "image": "images/092.png",
    "imageSource": "shots/21-annotated.png",
@@ -1810,28 +1809,8 @@
   },
   {
    "n": 93,
-   "beat": "16.6",
-   "time": "17:17",
-   "title": "16.6 · Step 16 Dropdown chips",
-   "window": "",
-   "do": "Choose Dropdown (Insert menu).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Then down the list to Dropdown, and selecting it, for fixed words.\""
-   ],
-   "image": "images/093.png",
-   "imageSource": "shots/21-annotated.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
-   ]
-  },
-  {
-   "n": 94,
    "beat": "16.7",
-   "time": "17:23",
+   "time": "17:12",
    "title": "16.7 · Step 16 Dropdown chips",
    "window": "",
    "do": "Type this in the Data validation panel, Option 1:",
@@ -1848,9 +1827,9 @@
    ]
   },
   {
-   "n": 95,
+   "n": 94,
    "beat": "16.8",
-   "time": "17:29",
+   "time": "17:17",
    "title": "16.8 · Step 16 Dropdown chips",
    "window": "",
    "do": "Click Add another item (Data validation panel).",
@@ -1859,7 +1838,7 @@
    "say": [
     "\"I'm moving my cursor just below, to Add another item. Hitting it for a second box.\""
    ],
-   "image": "images/095.png",
+   "image": "images/094.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1868,9 +1847,9 @@
    ]
   },
   {
-   "n": 96,
+   "n": 95,
    "beat": "16.9",
-   "time": "17:37",
+   "time": "17:25",
    "title": "16.9 · Step 16 Dropdown chips",
    "window": "",
    "do": "Type this in the Data validation panel, Option 2:",
@@ -1887,9 +1866,9 @@
    ]
   },
   {
-   "n": 97,
+   "n": 96,
    "beat": "16.10",
-   "time": "17:41",
+   "time": "17:29",
    "title": "16.10 · Step 16 Dropdown chips",
    "window": "",
    "do": "Click Add another item (Data validation panel).",
@@ -1898,7 +1877,7 @@
    "say": [
     "\"Then lower down, Add another item once more, pressing it for a third box.\""
    ],
-   "image": "images/097.png",
+   "image": "images/096.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1907,9 +1886,9 @@
    ]
   },
   {
-   "n": 98,
+   "n": 97,
    "beat": "16.11",
-   "time": "17:47",
+   "time": "17:36",
    "title": "16.11 · Step 16 Dropdown chips",
    "window": "",
    "do": "Type this in the Data validation panel, Option 3:",
@@ -1926,9 +1905,9 @@
    ]
   },
   {
-   "n": 99,
+   "n": 98,
    "beat": "16.12",
-   "time": "17:49",
+   "time": "17:37",
    "title": "16.12 · Step 16 Dropdown chips",
    "window": "",
    "do": "Click Done (bottom of the Data validation panel).",
@@ -1937,7 +1916,7 @@
    "say": [
     "\"Now down to Done at the bottom of the panel. Clicking it to save the choices.\""
    ],
-   "image": "images/099.png",
+   "image": "images/098.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -1946,9 +1925,9 @@
    ]
   },
   {
-   "n": 100,
+   "n": 99,
    "beat": "16.13",
-   "time": "17:55",
+   "time": "17:43",
    "title": "16.13 · Step 16 Dropdown chips",
    "window": "",
    "do": "Decide live: dropdown when the cell must be counted later; free text only for notes",
@@ -1965,9 +1944,9 @@
    ]
   },
   {
-   "n": 101,
+   "n": 100,
    "beat": "16.14",
-   "time": "18:02",
+   "time": "17:51",
    "title": "16.14 · Step 16 Dropdown chips",
    "window": "",
    "do": "Look at chips (E3:E8).",
@@ -1984,9 +1963,9 @@
    ]
   },
   {
-   "n": 102,
+   "n": 101,
    "beat": "17.1",
-   "time": "18:08",
+   "time": "17:56",
    "title": "17.1 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Move the mouse to Sheet1 tab (down to the sheet tabs at the very bottom).",
@@ -2003,9 +1982,9 @@
    ]
   },
   {
-   "n": 103,
+   "n": 102,
    "beat": "17.2",
-   "time": "18:19",
+   "time": "18:07",
    "title": "17.2 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Click Sheet1 tab (sheet tabs, bottom left).",
@@ -2013,6 +1992,27 @@
    "type": "nothing",
    "say": [
     "\"My cursor's on Sheet1, at the bottom left, and I'm clicking that tab, because the decision needs raw rows, not just counts.\""
+   ],
+   "image": "images/102.png",
+   "imageSource": "shots/22.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/22.png (reuse, old step 22, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 103,
+   "beat": "17.3",
+   "time": "18:16",
+   "title": "17.3 · Step 17 Filter, read and mark 203.0.113.45",
+   "window": "",
+   "do": "Click filter icon (right edge of F1, row 1).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Okay, now up to row 1 and across to F1, and I'm clicking its filter icon at the right edge of the cell, since that's my filter column.\""
    ],
    "image": "images/103.png",
    "imageSource": "shots/22.png",
@@ -2025,15 +2025,15 @@
   },
   {
    "n": 104,
-   "beat": "17.3",
+   "beat": "17.4",
    "time": "18:28",
-   "title": "17.3 · Step 17 Filter, read and mark 203.0.113.45",
+   "title": "17.4 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
-   "do": "Click filter icon (right edge of F1, row 1).",
+   "do": "Choose Clear (filter panel, under Filter by values).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Okay, now up to row 1 and across to F1, and I'm clicking its filter icon at the right edge of the cell, since that's my filter column.\""
+    "\"The filter panel opens below it. I'm moving my cursor down to Filter by values, and I press Clear, so nothing's ticked.\""
    ],
    "image": "images/104.png",
    "imageSource": "shots/22.png",
@@ -2046,15 +2046,15 @@
   },
   {
    "n": 105,
-   "beat": "17.4",
-   "time": "18:40",
-   "title": "17.4 · Step 17 Filter, read and mark 203.0.113.45",
+   "beat": "17.5",
+   "time": "18:38",
+   "title": "17.5 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
-   "do": "Choose Clear (filter panel, under Filter by values).",
+   "do": "Choose 203.0.113.45 checkbox (down the value list).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"The filter panel opens below it. I'm moving my cursor down to Filter by values, and I press Clear, so nothing's ticked.\""
+    "\"Then scrolling down the value list to 203.0.113.45, and ticking it, so only its rows come back.\""
    ],
    "image": "images/105.png",
    "imageSource": "shots/22.png",
@@ -2067,15 +2067,15 @@
   },
   {
    "n": 106,
-   "beat": "17.5",
-   "time": "18:50",
-   "title": "17.5 · Step 17 Filter, read and mark 203.0.113.45",
+   "beat": "17.6",
+   "time": "18:46",
+   "title": "17.6 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
-   "do": "Choose 203.0.113.45 checkbox (down the value list).",
+   "do": "Click OK (bottom right of the filter panel).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then scrolling down the value list to 203.0.113.45, and ticking it, so only its rows come back.\""
+    "\"Now down to the OK button at the bottom right of the panel, and I'm going to left click on it to apply.\""
    ],
    "image": "images/106.png",
    "imageSource": "shots/22.png",
@@ -2088,29 +2088,8 @@
   },
   {
    "n": 107,
-   "beat": "17.6",
-   "time": "18:57",
-   "title": "17.6 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "",
-   "do": "Click OK (bottom right of the filter panel).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Now down to the OK button at the bottom right of the panel, and I'm going to left click on it to apply.\""
-   ],
-   "image": "images/107.png",
-   "imageSource": "shots/22.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/22.png (reuse, old step 22, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 108,
    "beat": "17.7",
-   "time": "19:10",
+   "time": "18:58",
    "title": "17.7 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Look at count in the bottom right (bottom right of the window).",
@@ -2127,9 +2106,9 @@
    ]
   },
   {
-   "n": 109,
+   "n": 108,
    "beat": "17.8",
-   "time": "19:19",
+   "time": "19:08",
    "title": "17.8 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Look at user, invalid_user, timestamps (columns D, E and A).",
@@ -2146,9 +2125,9 @@
    ]
   },
   {
-   "n": 110,
+   "n": 109,
    "beat": "17.9",
-   "time": "19:32",
+   "time": "19:20",
    "title": "17.9 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Decide live: outside IP, 5+ failures, real admin account names tried, and no success line; if met → Block",
@@ -2165,9 +2144,9 @@
    ]
   },
   {
-   "n": 111,
+   "n": 110,
    "beat": "17.10",
-   "time": "19:46",
+   "time": "19:35",
    "title": "17.10 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Move the mouse to Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -2185,9 +2164,9 @@
    ]
   },
   {
-   "n": 112,
+   "n": 111,
    "beat": "17.11",
-   "time": "19:53",
+   "time": "19:41",
    "title": "17.11 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Click Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -2195,6 +2174,27 @@
    "type": "nothing",
    "say": [
     "\"Clicking the Pivot Table 1 tab now with a left click, so the decision goes beside the count.\""
+   ],
+   "image": "images/111.png",
+   "imageSource": "shots/24.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/24.png (reuse, old step 24, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 112,
+   "beat": "17.12",
+   "time": "19:50",
+   "title": "17.12 · Step 17 Filter, read and mark 203.0.113.45",
+   "window": "",
+   "do": "Click the chip in E3 next to 203.0.113.45.",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Okay, I'm moving my cursor over to column E, to E3, next to 203.0.113.45, and clicking its chip, so the decision lands on the right row.\""
    ],
    "image": "images/112.png",
    "imageSource": "shots/24.png",
@@ -2207,15 +2207,15 @@
   },
   {
    "n": 113,
-   "beat": "17.12",
-   "time": "20:02",
-   "title": "17.12 · Step 17 Filter, read and mark 203.0.113.45",
+   "beat": "17.13",
+   "time": "20:01",
+   "title": "17.13 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
-   "do": "Click the chip in E3 next to 203.0.113.45.",
+   "do": "Choose the decision you just made from the list under the chip.",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Okay, I'm moving my cursor over to column E, to E3, next to 203.0.113.45, and clicking its chip, so the decision lands on the right row.\""
+    "\"The list opens under the chip, and I'm moving my cursor down to Block and picking it, to match what I said.\""
    ],
    "image": "images/113.png",
    "imageSource": "shots/24.png",
@@ -2228,29 +2228,8 @@
   },
   {
    "n": 114,
-   "beat": "17.13",
-   "time": "20:12",
-   "title": "17.13 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "",
-   "do": "Choose the decision you just made from the list under the chip.",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"The list opens under the chip, and I'm moving my cursor down to Block and picking it, to match what I said.\""
-   ],
-   "image": "images/114.png",
-   "imageSource": "shots/24.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/24.png (reuse, old step 24, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 115,
    "beat": "17.14",
-   "time": "20:22",
+   "time": "20:10",
    "title": "17.14 · Step 17 Filter, read and mark 203.0.113.45",
    "window": "",
    "do": "Look at E3.",
@@ -2267,9 +2246,9 @@
    ]
   },
   {
-   "n": 116,
+   "n": 115,
    "beat": "18.1",
-   "time": "20:28",
+   "time": "20:17",
    "title": "18.1 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Move the mouse to Sheet1 tab (down to the sheet tabs at the very bottom).",
@@ -2286,9 +2265,9 @@
    ]
   },
   {
-   "n": 117,
+   "n": 116,
    "beat": "18.2",
-   "time": "20:37",
+   "time": "20:25",
    "title": "18.2 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Click Sheet1 tab (sheet tabs, bottom left).",
@@ -2296,6 +2275,27 @@
    "type": "nothing",
    "say": [
     "\"Sheet1 is at the bottom left, and I'm going in with a left click on it, since the rows are what I judge from.\""
+   ],
+   "image": "images/116.png",
+   "imageSource": "shots/25.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/25.png (reuse, old step 25, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 117,
+   "beat": "18.3",
+   "time": "20:35",
+   "title": "18.3 · Step 18 Filter, read and mark 198.51.100.23",
+   "window": "",
+   "do": "Click filter icon (right edge of F1, row 1).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Then up to F1, to the filter icon at the cell's right edge, clicking so the value list opens.\""
    ],
    "image": "images/117.png",
    "imageSource": "shots/25.png",
@@ -2308,15 +2308,15 @@
   },
   {
    "n": 118,
-   "beat": "18.3",
-   "time": "20:47",
-   "title": "18.3 · Step 18 Filter, read and mark 198.51.100.23",
+   "beat": "18.4",
+   "time": "20:43",
+   "title": "18.4 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
-   "do": "Click filter icon (right edge of F1, row 1).",
+   "do": "Choose Clear (filter panel, under Filter by values).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then up to F1, to the filter icon at the cell's right edge, clicking so the value list opens.\""
+    "\"In the panel below, under Filter by values, I press Clear first, so the last IP's unticked too.\""
    ],
    "image": "images/118.png",
    "imageSource": "shots/25.png",
@@ -2329,15 +2329,15 @@
   },
   {
    "n": 119,
-   "beat": "18.4",
-   "time": "20:55",
-   "title": "18.4 · Step 18 Filter, read and mark 198.51.100.23",
+   "beat": "18.5",
+   "time": "20:52",
+   "title": "18.5 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
-   "do": "Choose Clear (filter panel, under Filter by values).",
+   "do": "Choose 198.51.100.23 checkbox (down the value list).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"In the panel below, under Filter by values, I press Clear first, so the last IP's unticked too.\""
+    "\"Then I'm moving down the list, ticking 198.51.100.23 and 198.51.100.140, and for 192.0.2.200 I'm ticking it too, so only these three are left.\""
    ],
    "image": "images/119.png",
    "imageSource": "shots/25.png",
@@ -2350,15 +2350,15 @@
   },
   {
    "n": 120,
-   "beat": "18.5",
-   "time": "21:04",
-   "title": "18.5 · Step 18 Filter, read and mark 198.51.100.23",
+   "beat": "18.6",
+   "time": "21:03",
+   "title": "18.6 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
-   "do": "Choose 198.51.100.23 checkbox (down the value list).",
+   "do": "Click OK (bottom right of the filter panel).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then I'm moving down the list, ticking 198.51.100.23 and 198.51.100.140, and for 192.0.2.200 I'm ticking it too, so only these three are left.\""
+    "\"OK at the bottom right of the panel, and I'm clicking to filter.\""
    ],
    "image": "images/120.png",
    "imageSource": "shots/25.png",
@@ -2371,29 +2371,8 @@
   },
   {
    "n": 121,
-   "beat": "18.6",
-   "time": "21:15",
-   "title": "18.6 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "",
-   "do": "Click OK (bottom right of the filter panel).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"OK at the bottom right of the panel, and I'm clicking to filter.\""
-   ],
-   "image": "images/121.png",
-   "imageSource": "shots/25.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/25.png (reuse, old step 25, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 122,
    "beat": "18.7",
-   "time": "21:24",
+   "time": "21:12",
    "title": "18.7 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Look at count in the bottom right (bottom right of the window).",
@@ -2410,9 +2389,9 @@
    ]
   },
   {
-   "n": 123,
+   "n": 122,
    "beat": "18.8",
-   "time": "21:34",
+   "time": "21:22",
    "title": "18.8 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Look at user, invalid_user, timestamps (columns D, E and A).",
@@ -2429,9 +2408,9 @@
    ]
   },
   {
-   "n": 124,
+   "n": 123,
    "beat": "18.9",
-   "time": "21:46",
+   "time": "21:35",
    "title": "18.9 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Decide live: outside IP, 5+ failures on accounts that do not exist on jump01, and no success line; if met → Block",
@@ -2448,9 +2427,9 @@
    ]
   },
   {
-   "n": 125,
+   "n": 124,
    "beat": "18.10",
-   "time": "22:03",
+   "time": "21:51",
    "title": "18.10 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Move the mouse to Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -2468,9 +2447,9 @@
    ]
   },
   {
-   "n": 126,
+   "n": 125,
    "beat": "18.11",
-   "time": "22:10",
+   "time": "21:58",
    "title": "18.11 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Click Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -2479,7 +2458,7 @@
    "say": [
     "\"Left click on the Pivot Table 1 tab, to record those decisions beside their counts.\""
    ],
-   "image": "images/126.png",
+   "image": "images/125.png",
    "imageSource": "shots/18-11-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -2487,9 +2466,9 @@
    ]
   },
   {
-   "n": 127,
+   "n": 126,
    "beat": "18.13",
-   "time": "22:18",
+   "time": "22:06",
    "title": "18.13 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Click the chip in E4 next to 198.51.100.23.",
@@ -2498,7 +2477,7 @@
    "say": [
     "\"Okay, I'm moving my cursor over to column E, to E4, beside 198.51.100.23, and clicking its chip so this decision's on its own row.\""
    ],
-   "image": "images/127.png",
+   "image": "images/126.png",
    "imageSource": "shots/18-13-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -2506,9 +2485,9 @@
    ]
   },
   {
-   "n": 128,
+   "n": 127,
    "beat": "18.14",
-   "time": "22:29",
+   "time": "22:17",
    "title": "18.14 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Choose Block (E4 chip beside 198.51.100.23, then its list).",
@@ -2517,7 +2496,7 @@
    "say": [
     "\"My cursor's on the E4 chip beside 198.51.100.23, so I'm clicking it, and from the list below I'll choose Block.\""
    ],
-   "image": "images/128.png",
+   "image": "images/127.png",
    "imageSource": "shots/26-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -2526,9 +2505,9 @@
    ]
   },
   {
-   "n": 129,
+   "n": 128,
    "beat": "18.15",
-   "time": "22:39",
+   "time": "22:27",
    "title": "18.15 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Choose Watch (E6 chip beside 198.51.100.140, then its list).",
@@ -2546,9 +2525,9 @@
    ]
   },
   {
-   "n": 130,
+   "n": 129,
    "beat": "18.16",
-   "time": "22:49",
+   "time": "22:38",
    "title": "18.16 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Choose Ignore (E8 chip beside 192.0.2.200, then its list).",
@@ -2566,9 +2545,9 @@
    ]
   },
   {
-   "n": 131,
+   "n": 130,
    "beat": "18.17",
-   "time": "22:59",
+   "time": "22:48",
    "title": "18.17 · Step 18 Filter, read and mark 198.51.100.23",
    "window": "",
    "do": "Look at E4.",
@@ -2585,9 +2564,9 @@
    ]
   },
   {
-   "n": 132,
+   "n": 131,
    "beat": "19.1",
-   "time": "23:09",
+   "time": "22:57",
    "title": "19.1 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Move the mouse to Sheet1 tab (down to the sheet tabs at the very bottom).",
@@ -2604,9 +2583,9 @@
    ]
   },
   {
-   "n": 133,
+   "n": 132,
    "beat": "19.2",
-   "time": "23:17",
+   "time": "23:05",
    "title": "19.2 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Click Sheet1 tab (sheet tabs, bottom left).",
@@ -2614,6 +2593,27 @@
    "type": "nothing",
    "say": [
     "\"Clicking Sheet1 at the bottom left with a left click, so I can read its raw lines.\""
+   ],
+   "image": "images/132.png",
+   "imageSource": "shots/27.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/27.png (reuse, old step 27, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 133,
+   "beat": "19.3",
+   "time": "23:14",
+   "title": "19.3 · Step 19 Filter, read and mark 192.0.2.77",
+   "window": "",
+   "do": "Click filter icon (right edge of F1, row 1).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Now up to F1, to the filter icon on its right edge, and a click on it to open the list.\""
    ],
    "image": "images/133.png",
    "imageSource": "shots/27.png",
@@ -2626,15 +2626,15 @@
   },
   {
    "n": 134,
-   "beat": "19.3",
-   "time": "23:25",
-   "title": "19.3 · Step 19 Filter, read and mark 192.0.2.77",
+   "beat": "19.4",
+   "time": "23:24",
+   "title": "19.4 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
-   "do": "Click filter icon (right edge of F1, row 1).",
+   "do": "Choose Clear (filter panel, under Filter by values).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Now up to F1, to the filter icon on its right edge, and a click on it to open the list.\""
+    "\"My cursor goes down into the panel. Pressing Clear under Filter by values, so I start from nothing ticked.\""
    ],
    "image": "images/134.png",
    "imageSource": "shots/27.png",
@@ -2647,15 +2647,15 @@
   },
   {
    "n": 135,
-   "beat": "19.4",
-   "time": "23:35",
-   "title": "19.4 · Step 19 Filter, read and mark 192.0.2.77",
+   "beat": "19.5",
+   "time": "23:33",
+   "title": "19.5 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
-   "do": "Choose Clear (filter panel, under Filter by values).",
+   "do": "Choose 192.0.2.77 checkbox (down the value list).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"My cursor goes down into the panel. Pressing Clear under Filter by values, so I start from nothing ticked.\""
+    "\"Then I'm scrolling down the value list. Ticking 192.0.2.77, so only its rows stay.\""
    ],
    "image": "images/135.png",
    "imageSource": "shots/27.png",
@@ -2668,15 +2668,15 @@
   },
   {
    "n": 136,
-   "beat": "19.5",
-   "time": "23:45",
-   "title": "19.5 · Step 19 Filter, read and mark 192.0.2.77",
+   "beat": "19.6",
+   "time": "23:41",
+   "title": "19.6 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
-   "do": "Choose 192.0.2.77 checkbox (down the value list).",
+   "do": "Click OK (bottom right of the filter panel).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then I'm scrolling down the value list. Ticking 192.0.2.77, so only its rows stay.\""
+    "\"Down to OK at the bottom right of the panel, and I'm left clicking it to apply.\""
    ],
    "image": "images/136.png",
    "imageSource": "shots/27.png",
@@ -2689,29 +2689,8 @@
   },
   {
    "n": 137,
-   "beat": "19.6",
-   "time": "23:53",
-   "title": "19.6 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "",
-   "do": "Click OK (bottom right of the filter panel).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Down to OK at the bottom right of the panel, and I'm left clicking it to apply.\""
-   ],
-   "image": "images/137.png",
-   "imageSource": "shots/27.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/27.png (reuse, old step 27, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 138,
    "beat": "19.7",
-   "time": "24:03",
+   "time": "23:51",
    "title": "19.7 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Look at count in the bottom right (bottom right of the window).",
@@ -2728,9 +2707,9 @@
    ]
   },
   {
-   "n": 139,
+   "n": 138,
    "beat": "19.8",
-   "time": "24:13",
+   "time": "24:01",
    "title": "19.8 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Look at user, invalid_user, timestamps (columns D, E and A).",
@@ -2747,9 +2726,9 @@
    ]
   },
   {
-   "n": 140,
+   "n": 139,
    "beat": "19.9",
-   "time": "24:24",
+   "time": "24:12",
    "title": "19.9 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Decide live: outside IP, failures followed by a success on the same account; if met → Watch",
@@ -2766,9 +2745,9 @@
    ]
   },
   {
-   "n": 141,
+   "n": 140,
    "beat": "19.10",
-   "time": "24:40",
+   "time": "24:28",
    "title": "19.10 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Move the mouse to Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -2786,9 +2765,9 @@
    ]
   },
   {
-   "n": 142,
+   "n": 141,
    "beat": "19.11",
-   "time": "24:47",
+   "time": "24:36",
    "title": "19.11 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Click Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -2796,6 +2775,27 @@
    "type": "nothing",
    "say": [
     "\"Click on the Pivot Table 1 tab, a single left click, so this one gets marked too.\""
+   ],
+   "image": "images/141.png",
+   "imageSource": "shots/29.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/29.png (reuse, old step 29, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 142,
+   "beat": "19.12",
+   "time": "24:44",
+   "title": "19.12 · Step 19 Filter, read and mark 192.0.2.77",
+   "window": "",
+   "do": "Click the chip in E5 next to 192.0.2.77.",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Now over to column E, down to E5, next to 192.0.2.77, and I'm clicking the chip so the choice goes on that row.\""
    ],
    "image": "images/142.png",
    "imageSource": "shots/29.png",
@@ -2808,15 +2808,15 @@
   },
   {
    "n": 143,
-   "beat": "19.12",
-   "time": "24:55",
-   "title": "19.12 · Step 19 Filter, read and mark 192.0.2.77",
+   "beat": "19.13",
+   "time": "24:54",
+   "title": "19.13 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
-   "do": "Click the chip in E5 next to 192.0.2.77.",
+   "do": "Choose the decision you just made from the list under the chip.",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Now over to column E, down to E5, next to 192.0.2.77, and I'm clicking the chip so the choice goes on that row.\""
+    "\"The list opens below, and I'm moving my cursor to Watch and picking it, because that's what the rows point to.\""
    ],
    "image": "images/143.png",
    "imageSource": "shots/29.png",
@@ -2829,29 +2829,8 @@
   },
   {
    "n": 144,
-   "beat": "19.13",
-   "time": "25:06",
-   "title": "19.13 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "",
-   "do": "Choose the decision you just made from the list under the chip.",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"The list opens below, and I'm moving my cursor to Watch and picking it, because that's what the rows point to.\""
-   ],
-   "image": "images/144.png",
-   "imageSource": "shots/29.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/29.png (reuse, old step 29, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 145,
    "beat": "19.14",
-   "time": "25:15",
+   "time": "25:04",
    "title": "19.14 · Step 19 Filter, read and mark 192.0.2.77",
    "window": "",
    "do": "Look at E5.",
@@ -2868,9 +2847,9 @@
    ]
   },
   {
-   "n": 146,
+   "n": 145,
    "beat": "21.1",
-   "time": "25:22",
+   "time": "25:11",
    "title": "21.1 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Move the mouse to Sheet1 tab (down to the sheet tabs at the very bottom).",
@@ -2887,9 +2866,9 @@
    ]
   },
   {
-   "n": 147,
+   "n": 146,
    "beat": "21.2",
-   "time": "25:29",
+   "time": "25:17",
    "title": "21.2 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Click Sheet1 tab (sheet tabs, bottom left).",
@@ -2897,6 +2876,27 @@
    "type": "nothing",
    "say": [
     "\"Sheet1 is far left, and I'm giving it a left click, so the raw rows are back.\""
+   ],
+   "image": "images/146.png",
+   "imageSource": "shots/32.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/32.png (reuse, old step 32, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 147,
+   "beat": "21.3",
+   "time": "25:26",
+   "title": "21.3 · Step 21 Filter, read and mark 10.20.4.11",
+   "window": "",
+   "do": "Click filter icon (right edge of F1, row 1).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Then up to F1's filter icon, on the right side of the header, and I'm clicking it to open the list.\""
    ],
    "image": "images/147.png",
    "imageSource": "shots/32.png",
@@ -2909,15 +2909,15 @@
   },
   {
    "n": 148,
-   "beat": "21.3",
-   "time": "25:37",
-   "title": "21.3 · Step 21 Filter, read and mark 10.20.4.11",
+   "beat": "21.4",
+   "time": "25:34",
+   "title": "21.4 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
-   "do": "Click filter icon (right edge of F1, row 1).",
+   "do": "Choose Clear (filter panel, under Filter by values).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then up to F1's filter icon, on the right side of the header, and I'm clicking it to open the list.\""
+    "\"In the panel below, under Filter by values, my cursor goes to Clear, so the old tick goes.\""
    ],
    "image": "images/148.png",
    "imageSource": "shots/32.png",
@@ -2930,15 +2930,15 @@
   },
   {
    "n": 149,
-   "beat": "21.4",
-   "time": "25:46",
-   "title": "21.4 · Step 21 Filter, read and mark 10.20.4.11",
+   "beat": "21.5",
+   "time": "25:44",
+   "title": "21.5 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
-   "do": "Choose Clear (filter panel, under Filter by values).",
+   "do": "Choose 10.20.4.11 checkbox (down the value list).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"In the panel below, under Filter by values, my cursor goes to Clear, so the old tick goes.\""
+    "\"The ten-dot address sits near the top of the list, so I'm moving up to it and ticking it, so it's on its own.\""
    ],
    "image": "images/149.png",
    "imageSource": "shots/32.png",
@@ -2951,15 +2951,15 @@
   },
   {
    "n": 150,
-   "beat": "21.5",
-   "time": "25:56",
-   "title": "21.5 · Step 21 Filter, read and mark 10.20.4.11",
+   "beat": "21.6",
+   "time": "25:55",
+   "title": "21.6 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
-   "do": "Choose 10.20.4.11 checkbox (down the value list).",
+   "do": "Click OK (bottom right of the filter panel).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"The ten-dot address sits near the top of the list, so I'm moving up to it and ticking it, so it's on its own.\""
+    "\"Now down to OK in the bottom right corner, and I click it to apply the filter.\""
    ],
    "image": "images/150.png",
    "imageSource": "shots/32.png",
@@ -2972,29 +2972,8 @@
   },
   {
    "n": 151,
-   "beat": "21.6",
-   "time": "26:06",
-   "title": "21.6 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "",
-   "do": "Click OK (bottom right of the filter panel).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Now down to OK in the bottom right corner, and I click it to apply the filter.\""
-   ],
-   "image": "images/151.png",
-   "imageSource": "shots/32.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/32.png (reuse, old step 32, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 152,
    "beat": "21.7",
-   "time": "26:15",
+   "time": "26:03",
    "title": "21.7 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Look at count in the bottom right (bottom right of the window).",
@@ -3011,9 +2990,9 @@
    ]
   },
   {
-   "n": 153,
+   "n": 152,
    "beat": "21.8",
-   "time": "26:25",
+   "time": "26:13",
    "title": "21.8 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Look at user, invalid_user, timestamps (columns D, E and A).",
@@ -3030,9 +3009,9 @@
    ]
   },
   {
-   "n": 154,
+   "n": 153,
    "beat": "21.9",
-   "time": "26:36",
+   "time": "26:24",
    "title": "21.9 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Decide live: internal 10/8 range, a known admin, success right after; if met → Ignore",
@@ -3049,9 +3028,9 @@
    ]
   },
   {
-   "n": 155,
+   "n": 154,
    "beat": "21.10",
-   "time": "26:51",
+   "time": "26:39",
    "title": "21.10 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Move the mouse to Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -3069,9 +3048,9 @@
    ]
   },
   {
-   "n": 156,
+   "n": 155,
    "beat": "21.11",
-   "time": "26:57",
+   "time": "26:46",
    "title": "21.11 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Click Pivot Table 1 tab (sheet tabs at the bottom, right of Sheet1).",
@@ -3079,6 +3058,27 @@
    "type": "nothing",
    "say": [
     "\"Clicking on the Pivot Table 1 tab with a left click, so I can mark it.\""
+   ],
+   "image": "images/155.png",
+   "imageSource": "shots/35.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/35.png (reuse, old step 35, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 156,
+   "beat": "21.12",
+   "time": "26:54",
+   "title": "21.12 · Step 21 Filter, read and mark 10.20.4.11",
+   "window": "",
+   "do": "Click the chip in E7 next to 10.20.4.11.",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Then over to column E, down to E7, beside the ten-dot address, and clicking its chip so the decision's on its row.\""
    ],
    "image": "images/156.png",
    "imageSource": "shots/35.png",
@@ -3091,15 +3091,15 @@
   },
   {
    "n": 157,
-   "beat": "21.12",
-   "time": "27:05",
-   "title": "21.12 · Step 21 Filter, read and mark 10.20.4.11",
+   "beat": "21.13",
+   "time": "27:04",
+   "title": "21.13 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
-   "do": "Click the chip in E7 next to 10.20.4.11.",
+   "do": "Choose the decision you just made from the list under the chip.",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then over to column E, down to E7, beside the ten-dot address, and clicking its chip so the decision's on its row.\""
+    "\"A list drops down, and I'll move my cursor to Ignore and pick it, because that's what fits these rows.\""
    ],
    "image": "images/157.png",
    "imageSource": "shots/35.png",
@@ -3112,29 +3112,8 @@
   },
   {
    "n": 158,
-   "beat": "21.13",
-   "time": "27:16",
-   "title": "21.13 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "",
-   "do": "Choose the decision you just made from the list under the chip.",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"A list drops down, and I'll move my cursor to Ignore and pick it, because that's what fits these rows.\""
-   ],
-   "image": "images/158.png",
-   "imageSource": "shots/35.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/35.png (reuse, old step 35, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 159,
    "beat": "21.14",
-   "time": "27:25",
+   "time": "27:13",
    "title": "21.14 · Step 21 Filter, read and mark 10.20.4.11",
    "window": "",
    "do": "Look at E7.",
@@ -3151,9 +3130,9 @@
    ]
   },
   {
-   "n": 160,
+   "n": 159,
    "beat": "23.1",
-   "time": "27:32",
+   "time": "27:21",
    "title": "23.1 · Step 23 Clear the filter",
    "window": "",
    "do": "Click Sheet1 tab (sheet tabs, bottom left).",
@@ -3161,6 +3140,27 @@
    "type": "nothing",
    "say": [
     "\"Step 23: every row back. Down at the bottom left now. Clicking the Sheet1 tab with a left click, so I can clear the filter.\""
+   ],
+   "image": "images/159.png",
+   "imageSource": "shots/34.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
+    "shot: shots/34.png (reuse, old step 34, not annotated: MISSING annotation)"
+   ]
+  },
+  {
+   "n": 160,
+   "beat": "23.2",
+   "time": "27:31",
+   "title": "23.2 · Step 23 Clear the filter",
+   "window": "",
+   "do": "Click filter icon (right edge of F1, row 1).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Then I'm moving my cursor up to F1, to the filter icon at its right edge, and clicking it to open the list.\""
    ],
    "image": "images/160.png",
    "imageSource": "shots/34.png",
@@ -3173,15 +3173,15 @@
   },
   {
    "n": 161,
-   "beat": "23.2",
-   "time": "27:43",
-   "title": "23.2 · Step 23 Clear the filter",
+   "beat": "23.3",
+   "time": "27:42",
+   "title": "23.3 · Step 23 Clear the filter",
    "window": "",
-   "do": "Click filter icon (right edge of F1, row 1).",
+   "do": "Choose Select all (filter panel).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then I'm moving my cursor up to F1, to the filter icon at its right edge, and clicking it to open the list.\""
+    "\"In the panel below, my cursor goes to Select all, and I click it, to bring all 59 rows back before any download.\""
    ],
    "image": "images/161.png",
    "imageSource": "shots/34.png",
@@ -3194,15 +3194,15 @@
   },
   {
    "n": 162,
-   "beat": "23.3",
-   "time": "27:54",
-   "title": "23.3 · Step 23 Clear the filter",
+   "beat": "23.4",
+   "time": "27:53",
+   "title": "23.4 · Step 23 Clear the filter",
    "window": "",
-   "do": "Choose Select all (filter panel).",
+   "do": "Click OK (bottom right of the filter panel).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"In the panel below, my cursor goes to Select all, and I click it, to bring all 59 rows back before any download.\""
+    "\"Now down to OK at the bottom right of the panel, clicking it to lift the filter.\""
    ],
    "image": "images/162.png",
    "imageSource": "shots/34.png",
@@ -3215,29 +3215,8 @@
   },
   {
    "n": 163,
-   "beat": "23.4",
-   "time": "28:04",
-   "title": "23.4 · Step 23 Clear the filter",
-   "window": "",
-   "do": "Click OK (bottom right of the filter panel).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Now down to OK at the bottom right of the panel, clicking it to lift the filter.\""
-   ],
-   "image": "images/163.png",
-   "imageSource": "shots/34.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/34.png (reuse, old step 34, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 164,
    "beat": "23.5",
-   "time": "28:13",
+   "time": "28:02",
    "title": "23.5 · Step 23 Clear the filter",
    "window": "",
    "do": "Look at rows 2 to 60 visible (row numbers).",
@@ -3254,9 +3233,9 @@
    ]
   },
   {
-   "n": 165,
+   "n": 164,
    "beat": "24.1",
-   "time": "28:22",
+   "time": "28:10",
    "title": "24.1 · Step 24 Decision totals",
    "window": "",
    "do": "Click Pivot Table 1 tab (sheet tabs).",
@@ -3264,6 +3243,26 @@
    "type": "nothing",
    "say": [
     "\"Step 24: decision totals. I'm moving my cursor down to the tabs at the bottom. Clicking the Pivot Table 1 tab to go back.\""
+   ],
+   "image": "images/164.png",
+   "imageSource": "shots/37-annotated.png",
+   "missing": [
+    "frame: [MISSING: Mac dry-run]",
+    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
+    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
+   ]
+  },
+  {
+   "n": 165,
+   "beat": "24.2",
+   "time": "28:21",
+   "title": "24.2 · Step 24 Decision totals",
+   "window": "",
+   "do": "Click D10 (under the pivot).",
+   "verified": false,
+   "type": "nothing",
+   "say": [
+    "\"Then up into the grid to D10, just under the pivot, and a click there, so the totals sit under the decisions.\""
    ],
    "image": "images/165.png",
    "imageSource": "shots/37-annotated.png",
@@ -3275,28 +3274,8 @@
   },
   {
    "n": 166,
-   "beat": "24.2",
-   "time": "28:32",
-   "title": "24.2 · Step 24 Decision totals",
-   "window": "",
-   "do": "Click D10 (under the pivot).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Then up into the grid to D10, just under the pivot, and a click there, so the totals sit under the decisions.\""
-   ],
-   "image": "images/166.png",
-   "imageSource": "shots/37-annotated.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
-   ]
-  },
-  {
-   "n": 167,
    "beat": "24.3",
-   "time": "28:42",
+   "time": "28:30",
    "title": "24.3 · Step 24 Decision totals",
    "window": "",
    "do": "Type this in D10 to D12:",
@@ -3313,9 +3292,9 @@
    ]
   },
   {
-   "n": 168,
+   "n": 167,
    "beat": "24.4",
-   "time": "28:52",
+   "time": "28:40",
    "title": "24.4 · Step 24 Decision totals",
    "window": "",
    "do": "Click E10.",
@@ -3324,7 +3303,7 @@
    "say": [
     "\"Then I'm moving my cursor one cell right to E10, beside Block, and clicking it for the first formula.\""
    ],
-   "image": "images/168.png",
+   "image": "images/167.png",
    "imageSource": "shots/37-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -3333,9 +3312,9 @@
    ]
   },
   {
-   "n": 169,
+   "n": 168,
    "beat": "24.5",
-   "time": "29:02",
+   "time": "28:50",
    "title": "24.5 · Step 24 Decision totals",
    "window": "",
    "do": "Type this in cell E10:",
@@ -3352,9 +3331,9 @@
    ]
   },
   {
-   "n": 170,
+   "n": 169,
    "beat": "24.6",
-   "time": "29:09",
+   "time": "28:57",
    "title": "24.6 · Step 24 Decision totals",
    "window": "",
    "do": "Press Return.",
@@ -3371,9 +3350,9 @@
    ]
   },
   {
-   "n": 171,
+   "n": 170,
    "beat": "24.7",
-   "time": "29:14",
+   "time": "29:02",
    "title": "24.7 · Step 24 Decision totals",
    "window": "",
    "do": "Type this in cell E11:",
@@ -3390,9 +3369,9 @@
    ]
   },
   {
-   "n": 172,
+   "n": 171,
    "beat": "24.8",
-   "time": "29:20",
+   "time": "29:08",
    "title": "24.8 · Step 24 Decision totals",
    "window": "",
    "do": "Press Return.",
@@ -3409,9 +3388,9 @@
    ]
   },
   {
-   "n": 173,
+   "n": 172,
    "beat": "24.9",
-   "time": "29:24",
+   "time": "29:13",
    "title": "24.9 · Step 24 Decision totals",
    "window": "",
    "do": "Type this in cell E12:",
@@ -3428,9 +3407,9 @@
    ]
   },
   {
-   "n": 174,
+   "n": 173,
    "beat": "24.10",
-   "time": "29:31",
+   "time": "29:19",
    "title": "24.10 · Step 24 Decision totals",
    "window": "",
    "do": "Press Return.",
@@ -3447,9 +3426,9 @@
    ]
   },
   {
-   "n": 175,
+   "n": 174,
    "beat": "24.11",
-   "time": "29:34",
+   "time": "29:23",
    "title": "24.11 · Step 24 Decision totals",
    "window": "",
    "do": "Decide live: COUNTIF per decision word when chips hold exact words; manual count only if formulas misbehave",
@@ -3466,9 +3445,9 @@
    ]
   },
   {
-   "n": 176,
+   "n": 175,
    "beat": "24.12",
-   "time": "29:44",
+   "time": "29:32",
    "title": "24.12 · Step 24 Decision totals",
    "window": "",
    "do": "Look at three totals (E10:E12).",
@@ -3485,9 +3464,9 @@
    ]
   },
   {
-   "n": 177,
+   "n": 176,
    "beat": "24.13",
-   "time": "29:51",
+   "time": "29:40",
    "title": "24.13 · Step 24 Decision totals",
    "window": "",
    "do": "Check totals add up to six IPs (E10 to E12 against E3 to E8).",
@@ -3504,9 +3483,9 @@
    ]
   },
   {
-   "n": 178,
+   "n": 177,
    "beat": "25.1",
-   "time": "30:00",
+   "time": "29:49",
    "title": "25.1 · Step 25 Copy the table",
    "window": "",
    "do": "Click A2.",
@@ -3515,7 +3494,7 @@
    "say": [
     "\"Step 25: copying for the note. I'm moving my cursor up to A2, top left of the pivot. Clicking A2 to start the copy at the IPs and headers.\""
    ],
-   "image": "images/178.png",
+   "image": "images/177.png",
    "imageSource": "shots/38-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -3524,9 +3503,9 @@
    ]
   },
   {
-   "n": 179,
+   "n": 178,
    "beat": "25.2",
-   "time": "30:11",
+   "time": "30:00",
    "title": "25.2 · Step 25 Copy the table",
    "window": "",
    "do": "Hold Shift and click cell E8.",
@@ -3543,9 +3522,9 @@
    ]
   },
   {
-   "n": 180,
+   "n": 179,
    "beat": "25.3",
-   "time": "30:17",
+   "time": "30:05",
    "title": "25.3 · Step 25 Copy the table",
    "window": "",
    "do": "Look at range (name box).",
@@ -3562,9 +3541,9 @@
    ]
   },
   {
-   "n": 181,
+   "n": 180,
    "beat": "25.4",
-   "time": "30:25",
+   "time": "30:14",
    "title": "25.4 · Step 25 Copy the table",
    "window": "",
    "do": "Press Command C.",
@@ -3581,9 +3560,9 @@
    ]
   },
   {
-   "n": 182,
+   "n": 181,
    "beat": "25.5",
-   "time": "30:30",
+   "time": "30:18",
    "title": "25.5 · Step 25 Copy the table",
    "window": "",
    "do": "Look at marching ants border (A2:E8).",
@@ -3600,145 +3579,29 @@
    ]
   },
   {
-   "n": 183,
+   "n": 182,
    "beat": "26.1",
-   "time": "30:38",
+   "time": "30:26",
    "title": "26.1 · Step 26 New document",
    "window": "",
-   "do": "Click the + new tab button (Firefox tab strip, right end).",
+   "do": "Click minimised output doc window (Dock, left side).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Step 26: the note goes in Google Docs. I'm moving my cursor up to the plus at the right end of the Firefox tab strip, and clicking it, so the sheet stays a tab away.\""
-   ],
-   "image": "images/183.png",
-   "imageSource": "shots/39-annotated.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)"
-   ]
-  },
-  {
-   "n": 184,
-   "beat": "26.2",
-   "time": "30:48",
-   "title": "26.2 · Step 26 New document",
-   "window": "",
-   "do": "Type this in the Firefox address bar:",
-   "verified": false,
-   "type": "docs.new",
-   "say": [
-    "\"In the address bar at the top, typing docs dot new, the quickest way to a blank Google Doc.\""
+    "\"alright, now down to the dock again, on the left, clicking the minimised output doc so it comes back up, this is where the write-up goes.\""
    ],
    "image": null,
    "imageSource": null,
    "missing": [
     "frame: [MISSING: Mac dry-run]",
-    "NO SHOT [MISSING: Mac dry-run]"
-   ]
-  },
-  {
-   "n": 185,
-   "beat": "26.3",
-   "time": "30:54",
-   "title": "26.3 · Step 26 New document",
-   "window": "",
-   "do": "Press Return.",
-   "verified": false,
-   "type": "Return",
-   "say": [
-    "\"Pressing Return to load the page.\""
-   ],
-   "image": null,
-   "imageSource": null,
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "NO SHOT [MISSING: Mac dry-run]"
-   ]
-  },
-  {
-   "n": 186,
-   "beat": "26.4",
-   "time": "30:56",
-   "title": "26.4 · Step 26 New document",
-   "window": "",
-   "do": "Wait until blank Google Doc loads (Firefox).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Okay, waiting for the blank doc to load.\""
-   ],
-   "image": null,
-   "imageSource": null,
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "NO SHOT [MISSING: Mac dry-run]"
-   ]
-  },
-  {
-   "n": 187,
-   "beat": "26.5",
-   "time": "31:01",
-   "title": "26.5 · Step 26 New document",
-   "window": "",
-   "do": "Click Untitled document (top left, title box).",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"Now I'm moving my cursor to the top left, to the Untitled document box. Clicking into it to rename the file.\""
-   ],
-   "image": "images/187.png",
-   "imageSource": "shots/40.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
     "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/40.png (reuse, old step 40, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 188,
-   "beat": "26.6",
-   "time": "31:11",
-   "title": "26.6 · Step 26 New document",
-   "window": "",
-   "do": "Type this in the title box:",
-   "verified": false,
-   "type": "final output 2",
-   "say": [
-    "\"Typing final output 2 in the title box, the name the brief asks for.\""
-   ],
-   "image": null,
-   "imageSource": null,
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
     "NO SHOT [MISSING: Mac dry-run]"
    ]
   },
   {
-   "n": 189,
-   "beat": "26.7",
-   "time": "31:17",
-   "title": "26.7 · Step 26 New document",
-   "window": "",
-   "do": "Press Return.",
-   "verified": false,
-   "type": "Return",
-   "say": [
-    "\"Pressing Return, and the title box keeps the name.\""
-   ],
-   "image": null,
-   "imageSource": null,
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "NO SHOT [MISSING: Mac dry-run]"
-   ]
-  },
-  {
-   "n": 190,
+   "n": 183,
    "beat": "27.1",
-   "time": "31:22",
+   "time": "30:35",
    "title": "27.1 · Step 27 Heading and table",
    "window": "",
    "do": "Click on the first line of the document body.",
@@ -3747,7 +3610,7 @@
    "say": [
     "\"Step 27: heading and table. I'm moving my cursor down into the body of the doc, to the first line, and clicking so the text cursor's in.\""
    ],
-   "image": "images/190.png",
+   "image": "images/183.png",
    "imageSource": "shots/41.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -3757,9 +3620,9 @@
    ]
   },
   {
-   "n": 191,
+   "n": 184,
    "beat": "27.2",
-   "time": "31:34",
+   "time": "30:47",
    "title": "27.2 · Step 27 Heading and table",
    "window": "",
    "do": "Type this in the first line:",
@@ -3776,9 +3639,9 @@
    ]
   },
   {
-   "n": 192,
+   "n": 185,
    "beat": "27.3",
-   "time": "31:41",
+   "time": "30:55",
    "title": "27.3 · Step 27 Heading and table",
    "window": "",
    "do": "Look at the first letter of the heading. If Google Docs capitalised the \"j\", press Command Z to undo it.",
@@ -3796,9 +3659,9 @@
    ]
   },
   {
-   "n": 193,
+   "n": 186,
    "beat": "27.3a",
-   "time": "31:46",
+   "time": "30:59",
    "title": "27.3a · Step 27 Heading and table",
    "window": "",
    "do": "Press Command Z.",
@@ -3815,9 +3678,9 @@
    ]
   },
   {
-   "n": 194,
+   "n": 187,
    "beat": "27.4",
-   "time": "31:48",
+   "time": "31:02",
    "title": "27.4 · Step 27 Heading and table",
    "window": "",
    "do": "Press Return.",
@@ -3834,9 +3697,9 @@
    ]
   },
   {
-   "n": 195,
+   "n": 188,
    "beat": "27.5",
-   "time": "31:53",
+   "time": "31:07",
    "title": "27.5 · Step 27 Heading and table",
    "window": "",
    "do": "Press Command V.",
@@ -3853,9 +3716,9 @@
    ]
   },
   {
-   "n": 196,
+   "n": 189,
    "beat": "27.6",
-   "time": "31:58",
+   "time": "31:11",
    "title": "27.6 · Step 27 Heading and table",
    "window": "",
    "do": "Click the paste options popup beside the pasted table.",
@@ -3873,9 +3736,9 @@
    ]
   },
   {
-   "n": 197,
+   "n": 190,
    "beat": "27.7",
-   "time": "32:03",
+   "time": "31:16",
    "title": "27.7 · Step 27 Heading and table",
    "window": "",
    "do": "Choose Paste unlinked (Paste table dialog).",
@@ -3884,7 +3747,7 @@
    "say": [
     "\"In the box I'm moving my cursor to Paste unlinked and picking it, so the note stays fixed if the sheet changes.\""
    ],
-   "image": "images/197.png",
+   "image": "images/190.png",
    "imageSource": "shots/41.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -3894,9 +3757,9 @@
    ]
   },
   {
-   "n": 198,
+   "n": 191,
    "beat": "27.8",
-   "time": "32:12",
+   "time": "31:25",
    "title": "27.8 · Step 27 Heading and table",
    "window": "",
    "do": "Click Paste (bottom right of the dialog).",
@@ -3905,7 +3768,7 @@
    "say": [
     "\"Then down to Paste at the bottom right of the box. Clicking it to drop the table in.\""
    ],
-   "image": "images/198.png",
+   "image": "images/191.png",
    "imageSource": "shots/41.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -3915,9 +3778,9 @@
    ]
   },
   {
-   "n": 199,
+   "n": 192,
    "beat": "27.9",
-   "time": "32:21",
+   "time": "31:34",
    "title": "27.9 · Step 27 Heading and table",
    "window": "",
    "do": "Look at pasted table (document body).",
@@ -3934,9 +3797,9 @@
    ]
   },
   {
-   "n": 200,
+   "n": 193,
    "beat": "27.10",
-   "time": "32:29",
+   "time": "31:42",
    "title": "27.10 · Step 27 Heading and table",
    "window": "",
    "do": "Check 203.0.113.45 18 in both (pasted table against the pivot).",
@@ -3953,9 +3816,9 @@
    ]
   },
   {
-   "n": 201,
+   "n": 194,
    "beat": "28.1",
-   "time": "32:39",
+   "time": "31:52",
    "title": "28.1 · Step 28 Write the action lines",
    "window": "",
    "do": "Click on the empty line under the table.",
@@ -3964,7 +3827,7 @@
    "say": [
     "\"Step 28: the action lines. I'm moving my cursor down to just under the table. Clicking, so the text cursor sits below it.\""
    ],
-   "image": "images/201.png",
+   "image": "images/194.png",
    "imageSource": "shots/44.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -3974,9 +3837,9 @@
    ]
   },
   {
-   "n": 202,
+   "n": 195,
    "beat": "28.2",
-   "time": "32:49",
+   "time": "32:02",
    "title": "28.2 · Step 28 Write the action lines",
    "window": "",
    "do": "Type this in the new line:",
@@ -3993,9 +3856,9 @@
    ]
   },
   {
-   "n": 203,
+   "n": 196,
    "beat": "28.2a",
-   "time": "33:00",
+   "time": "32:13",
    "title": "28.2a · Step 28 Write the action lines",
    "window": "",
    "do": "Type this in the same line, after the Block IPs:",
@@ -4012,9 +3875,9 @@
    ]
   },
   {
-   "n": 204,
+   "n": 197,
    "beat": "28.3",
-   "time": "33:04",
+   "time": "32:18",
    "title": "28.3 · Step 28 Write the action lines",
    "window": "",
    "do": "Press Return.",
@@ -4031,9 +3894,9 @@
    ]
   },
   {
-   "n": 205,
+   "n": 198,
    "beat": "28.4",
-   "time": "33:09",
+   "time": "32:23",
    "title": "28.4 · Step 28 Write the action lines",
    "window": "",
    "do": "Type this in the new line:",
@@ -4050,9 +3913,9 @@
    ]
   },
   {
-   "n": 206,
+   "n": 199,
    "beat": "28.5",
-   "time": "33:21",
+   "time": "32:34",
    "title": "28.5 · Step 28 Write the action lines",
    "window": "",
    "do": "Type this in the same line:",
@@ -4069,9 +3932,9 @@
    ]
   },
   {
-   "n": 207,
+   "n": 200,
    "beat": "28.6",
-   "time": "33:33",
+   "time": "32:46",
    "title": "28.6 · Step 28 Write the action lines",
    "window": "",
    "do": "Decide live: account action when the IP logged in with a real account; block when there was no success and the pattern is guessing",
@@ -4088,9 +3951,9 @@
    ]
   },
   {
-   "n": 208,
+   "n": 201,
    "beat": "28.7",
-   "time": "33:41",
+   "time": "32:54",
    "title": "28.7 · Step 28 Write the action lines",
    "window": "",
    "do": "Press Return.",
@@ -4107,9 +3970,9 @@
    ]
   },
   {
-   "n": 209,
+   "n": 202,
    "beat": "28.8",
-   "time": "33:44",
+   "time": "32:57",
    "title": "28.8 · Step 28 Write the action lines",
    "window": "",
    "do": "Type this in the new line:",
@@ -4126,9 +3989,9 @@
    ]
   },
   {
-   "n": 210,
+   "n": 203,
    "beat": "28.9",
-   "time": "33:54",
+   "time": "33:07",
    "title": "28.9 · Step 28 Write the action lines",
    "window": "",
    "do": "Type this in the same line:",
@@ -4145,9 +4008,9 @@
    ]
   },
   {
-   "n": 211,
+   "n": 204,
    "beat": "28.10",
-   "time": "34:05",
+   "time": "33:18",
    "title": "28.10 · Step 28 Write the action lines",
    "window": "",
    "do": "Look at three action lines (document body).",
@@ -4164,9 +4027,9 @@
    ]
   },
   {
-   "n": 212,
+   "n": 205,
    "beat": "29.1",
-   "time": "34:13",
+   "time": "33:26",
    "title": "29.1 · Step 29 Download the note",
    "window": "",
    "do": "Move the mouse to File menu (Docs menu bar).",
@@ -4183,9 +4046,9 @@
    ]
   },
   {
-   "n": 213,
+   "n": 206,
    "beat": "29.2",
-   "time": "34:21",
+   "time": "33:35",
    "title": "29.2 · Step 29 Download the note",
    "window": "",
    "do": "Click the File menu (Docs menu bar).",
@@ -4194,7 +4057,7 @@
    "say": [
     "\"My cursor's on File. Left click on File to open its list.\""
    ],
-   "image": "images/213.png",
+   "image": "images/206.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4203,9 +4066,9 @@
    ]
   },
   {
-   "n": 214,
+   "n": 207,
    "beat": "29.3",
-   "time": "34:29",
+   "time": "33:43",
    "title": "29.3 · Step 29 Download the note",
    "window": "",
    "do": "Choose Download (File menu).",
@@ -4214,7 +4077,7 @@
    "say": [
     "\"Then down the list to Download, and a side menu opens to the right with the formats.\""
    ],
-   "image": "images/214.png",
+   "image": "images/207.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4223,9 +4086,9 @@
    ]
   },
   {
-   "n": 215,
+   "n": 208,
    "beat": "29.4",
-   "time": "34:37",
+   "time": "33:50",
    "title": "29.4 · Step 29 Download the note",
    "window": "",
    "do": "Choose Microsoft Word (.docx) (Download submenu).",
@@ -4234,7 +4097,7 @@
    "say": [
     "\"I'm moving across to the right, to Microsoft Word, dot docx, and clicking it, since the brief wants .docx.\""
    ],
-   "image": "images/215.png",
+   "image": "images/208.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4243,9 +4106,9 @@
    ]
   },
   {
-   "n": 216,
+   "n": 209,
    "beat": "29.5",
-   "time": "34:44",
+   "time": "33:57",
    "title": "29.5 · Step 29 Download the note",
    "window": "",
    "do": "Click Documents (Save dialog, sidebar).",
@@ -4254,7 +4117,7 @@
    "say": [
     "\"The save box opens. My cursor goes to Documents in the left sidebar, and I'm clicking it, to keep it with the inputs.\""
    ],
-   "image": "images/216.png",
+   "image": "images/209.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4263,9 +4126,9 @@
    ]
   },
   {
-   "n": 217,
+   "n": 210,
    "beat": "29.6",
-   "time": "34:53",
+   "time": "34:06",
    "title": "29.6 · Step 29 Download the note",
    "window": "",
    "do": "Double-click Project (Save dialog list).",
@@ -4274,7 +4137,7 @@
    "say": [
     "\"Then over to Project in the list, double-clicking to save in there.\""
    ],
-   "image": "images/217.png",
+   "image": "images/210.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4283,9 +4146,9 @@
    ]
   },
   {
-   "n": 218,
+   "n": 211,
    "beat": "29.7",
-   "time": "35:00",
+   "time": "34:14",
    "title": "29.7 · Step 29 Download the note",
    "window": "",
    "do": "Look at file name (Save As box).",
@@ -4302,9 +4165,9 @@
    ]
   },
   {
-   "n": 219,
+   "n": 212,
    "beat": "29.8",
-   "time": "35:09",
+   "time": "34:22",
    "title": "29.8 · Step 29 Download the note",
    "window": "",
    "do": "Click Save (bottom right of the Save dialog).",
@@ -4313,7 +4176,7 @@
    "say": [
     "\"Now down to Save at the bottom right, pressing it to write the file.\""
    ],
-   "image": "images/219.png",
+   "image": "images/212.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4322,9 +4185,9 @@
    ]
   },
   {
-   "n": 220,
+   "n": 213,
    "beat": "29.9",
-   "time": "35:17",
+   "time": "34:31",
    "title": "29.9 · Step 29 Download the note",
    "window": "",
    "do": "Check final output 2.docx (Firefox toolbar, downloads icon).",
@@ -4341,9 +4204,9 @@
    ]
   },
   {
-   "n": 221,
+   "n": 214,
    "beat": "29.10",
-   "time": "35:23",
+   "time": "34:37",
    "title": "29.10 · Step 29 Download the note",
    "window": "",
    "do": "Click final output 2.docx row icon (downloads panel).",
@@ -4352,7 +4215,7 @@
    "say": [
     "\"I'm moving my cursor onto it. Clicking that row, so I can open the export once and check it.\""
    ],
-   "image": "images/221.png",
+   "image": "images/214.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4361,9 +4224,9 @@
    ]
   },
   {
-   "n": 222,
+   "n": 215,
    "beat": "29.11",
-   "time": "35:32",
+   "time": "34:45",
    "title": "29.11 · Step 29 Download the note",
    "window": "",
    "do": "Look at note contents (preview).",
@@ -4380,9 +4243,9 @@
    ]
   },
   {
-   "n": 223,
+   "n": 216,
    "beat": "29.12",
-   "time": "35:40",
+   "time": "34:54",
    "title": "29.12 · Step 29 Download the note",
    "window": "",
    "do": "Click the red close button, top left of the preview window.",
@@ -4391,7 +4254,7 @@
    "say": [
     "\"Then up to the close button at the top left of the preview, clicking it, since I'm done checking.\""
    ],
-   "image": "images/223.png",
+   "image": "images/216.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4400,30 +4263,29 @@
    ]
   },
   {
-   "n": 224,
+   "n": 217,
    "beat": "30.1",
-   "time": "35:49",
+   "time": "35:02",
    "title": "30.1 · Step 30 Download the sheet",
    "window": "",
-   "do": "Click jump01 overnight triage tab (Firefox tab strip).",
+   "do": "Click minimised sheets window (Dock, left side).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Step 30: now the sheet. I'm moving my cursor up to the tab strip, to the jump01 overnight triage tab, and clicking it to go back.\""
+    "\"okay, moving my cursor down the dock on the left, to the minimised sheets window, and clicking it to bring the sheet back up.\""
    ],
-   "image": "images/224.png",
-   "imageSource": "shots/48.png",
+   "image": null,
+   "imageSource": null,
    "missing": [
     "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
     "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/48.png (reuse, old step 48, not annotated: MISSING annotation)"
+    "NO SHOT [MISSING: Mac dry-run]"
    ]
   },
   {
-   "n": 225,
+   "n": 218,
    "beat": "30.2",
-   "time": "35:58",
+   "time": "35:11",
    "title": "30.2 · Step 30 Download the sheet",
    "window": "",
    "do": "Move the mouse to File menu (Sheets menu bar).",
@@ -4440,9 +4302,9 @@
    ]
   },
   {
-   "n": 226,
+   "n": 219,
    "beat": "30.3",
-   "time": "36:04",
+   "time": "35:17",
    "title": "30.3 · Step 30 Download the sheet",
    "window": "",
    "do": "Click the File menu (Sheets menu bar).",
@@ -4451,7 +4313,7 @@
    "say": [
     "\"Clicking File up there with a left click to open the menu.\""
    ],
-   "image": "images/226.png",
+   "image": "images/219.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4461,9 +4323,9 @@
    ]
   },
   {
-   "n": 227,
+   "n": 220,
    "beat": "30.4",
-   "time": "36:12",
+   "time": "35:25",
    "title": "30.4 · Step 30 Download the sheet",
    "window": "",
    "do": "Choose Download (File menu).",
@@ -4472,7 +4334,7 @@
    "say": [
     "\"Down the list to Download, and the formats slide out to its right.\""
    ],
-   "image": "images/227.png",
+   "image": "images/220.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4482,9 +4344,9 @@
    ]
   },
   {
-   "n": 228,
+   "n": 221,
    "beat": "30.5",
-   "time": "36:18",
+   "time": "35:31",
    "title": "30.5 · Step 30 Download the sheet",
    "window": "",
    "do": "Choose Microsoft Excel (.xlsx) (Download submenu).",
@@ -4493,7 +4355,7 @@
    "say": [
     "\"Across to the right, to Microsoft Excel, dot xlsx, selecting it, since the brief asks for .xlsx.\""
    ],
-   "image": "images/228.png",
+   "image": "images/221.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4503,9 +4365,9 @@
    ]
   },
   {
-   "n": 229,
+   "n": 222,
    "beat": "30.6",
-   "time": "36:25",
+   "time": "35:38",
    "title": "30.6 · Step 30 Download the sheet",
    "window": "",
    "do": "Click name box (Save As box).",
@@ -4514,7 +4376,7 @@
    "say": [
     "\"In the save box, I'm clicking the Save As field at the top, because the title isn't the brief's name.\""
    ],
-   "image": "images/229.png",
+   "image": "images/222.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4524,9 +4386,9 @@
    ]
   },
   {
-   "n": 230,
+   "n": 223,
    "beat": "30.7",
-   "time": "36:32",
+   "time": "35:45",
    "title": "30.7 · Step 30 Download the sheet",
    "window": "",
    "do": "Press Command A.",
@@ -4543,9 +4405,9 @@
    ]
   },
   {
-   "n": 231,
+   "n": 224,
    "beat": "30.8",
-   "time": "36:37",
+   "time": "35:50",
    "title": "30.8 · Step 30 Download the sheet",
    "window": "",
    "do": "Type this in the Save As box:",
@@ -4562,9 +4424,9 @@
    ]
   },
   {
-   "n": 232,
+   "n": 225,
    "beat": "30.9",
-   "time": "36:39",
+   "time": "35:52",
    "title": "30.9 · Step 30 Download the sheet",
    "window": "",
    "do": "Click Documents (Save dialog, sidebar).",
@@ -4573,7 +4435,7 @@
    "say": [
     "\"Then my cursor goes to Documents in the left sidebar, a click on it, to save beside the other files.\""
    ],
-   "image": "images/232.png",
+   "image": "images/225.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4583,9 +4445,9 @@
    ]
   },
   {
-   "n": 233,
+   "n": 226,
    "beat": "30.10",
-   "time": "36:48",
+   "time": "36:01",
    "title": "30.10 · Step 30 Download the sheet",
    "window": "",
    "do": "Double-click Project (Save dialog list).",
@@ -4594,7 +4456,7 @@
    "say": [
     "\"Over to Project in the list on the right, and a double-click to open it.\""
    ],
-   "image": "images/233.png",
+   "image": "images/226.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4604,9 +4466,9 @@
    ]
   },
   {
-   "n": 234,
+   "n": 227,
    "beat": "30.11",
-   "time": "36:56",
+   "time": "36:09",
    "title": "30.11 · Step 30 Download the sheet",
    "window": "",
    "do": "Click Save (bottom right of the Save dialog).",
@@ -4615,7 +4477,7 @@
    "say": [
     "\"Now down to Save at the bottom right, clicking it to write the Excel file.\""
    ],
-   "image": "images/234.png",
+   "image": "images/227.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4625,9 +4487,9 @@
    ]
   },
   {
-   "n": 235,
+   "n": 228,
    "beat": "30.12",
-   "time": "37:05",
+   "time": "36:18",
    "title": "30.12 · Step 30 Download the sheet",
    "window": "",
    "do": "Check final output 1.xlsx (Firefox downloads panel).",
@@ -4644,9 +4506,9 @@
    ]
   },
   {
-   "n": 236,
+   "n": 229,
    "beat": "30.13",
-   "time": "37:10",
+   "time": "36:23",
    "title": "30.13 · Step 30 Download the sheet",
    "window": "",
    "do": "Click final output 1.xlsx row (downloads panel).",
@@ -4655,7 +4517,7 @@
    "say": [
     "\"I'm moving my cursor onto it, and I'll click that row, to check both tabs made it in.\""
    ],
-   "image": "images/236.png",
+   "image": "images/229.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4665,9 +4527,9 @@
    ]
   },
   {
-   "n": 237,
+   "n": 230,
    "beat": "30.14",
-   "time": "37:19",
+   "time": "36:32",
    "title": "30.14 · Step 30 Download the sheet",
    "window": "",
    "do": "Look at tabs (preview).",
@@ -4684,9 +4546,9 @@
    ]
   },
   {
-   "n": 238,
+   "n": 231,
    "beat": "30.15",
-   "time": "37:27",
+   "time": "36:40",
    "title": "30.15 · Step 30 Download the sheet",
    "window": "",
    "do": "Click the red close button, top left of the preview window.",
@@ -4695,7 +4557,7 @@
    "say": [
     "\"Then up to the button at its top left. Closing the preview with a click.\""
    ],
-   "image": "images/238.png",
+   "image": "images/231.png",
    "imageSource": "shots/48.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4705,9 +4567,9 @@
    ]
   },
   {
-   "n": 239,
+   "n": 232,
    "beat": "31.1",
-   "time": "37:35",
+   "time": "36:48",
    "title": "31.1 · Step 31 Back to Terminal",
    "window": "",
    "do": "Click the yellow minimise button, top left of the Firefox window.",
@@ -4716,7 +4578,7 @@
    "say": [
     "\"Step 31: back to Terminal. I'm moving my cursor to the top left of Firefox, to the minimise button, and clicking it to get it out of the way.\""
    ],
-   "image": "images/239.png",
+   "image": "images/232.png",
    "imageSource": "shots/49.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4726,9 +4588,9 @@
    ]
   },
   {
-   "n": 240,
+   "n": 233,
    "beat": "31.2",
-   "time": "37:46",
+   "time": "36:59",
    "title": "31.2 · Step 31 Back to Terminal",
    "window": "",
    "do": "Point at the Terminal icon in the Dock on the left.",
@@ -4745,9 +4607,9 @@
    ]
   },
   {
-   "n": 241,
+   "n": 234,
    "beat": "31.3",
-   "time": "37:51",
+   "time": "37:04",
    "title": "31.3 · Step 31 Back to Terminal",
    "window": "",
    "do": "Click the Terminal icon in the Dock on the left.",
@@ -4756,7 +4618,7 @@
    "say": [
     "\"My cursor's on its icon and the label shows. Clicking it, because the raw log's my second source.\""
    ],
-   "image": "images/241.png",
+   "image": "images/234.png",
    "imageSource": "shots/50.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -4766,9 +4628,9 @@
    ]
   },
   {
-   "n": 242,
+   "n": 235,
    "beat": "32.1",
-   "time": "38:01",
+   "time": "37:14",
    "title": "32.1 · Step 32 Per-IP failures from the raw log",
    "window": "",
    "do": "Type this in the Terminal prompt:",
@@ -4785,9 +4647,9 @@
    ]
   },
   {
-   "n": 243,
+   "n": 236,
    "beat": "32.2",
-   "time": "38:17",
+   "time": "37:29",
    "title": "32.2 · Step 32 Per-IP failures from the raw log",
    "window": "",
    "do": "Type this in the same line:",
@@ -4804,9 +4666,9 @@
    ]
   },
   {
-   "n": 244,
+   "n": 237,
    "beat": "32.3",
-   "time": "38:24",
+   "time": "37:36",
    "title": "32.3 · Step 32 Per-IP failures from the raw log",
    "window": "",
    "do": "Press Return.",
@@ -4823,9 +4685,9 @@
    ]
   },
   {
-   "n": 245,
+   "n": 238,
    "beat": "32.4",
-   "time": "38:28",
+   "time": "37:41",
    "title": "32.4 · Step 32 Per-IP failures from the raw log",
    "window": "",
    "do": "Look at six counted IPs (Terminal output).",
@@ -4842,9 +4704,9 @@
    ]
   },
   {
-   "n": 246,
+   "n": 239,
    "beat": "32.5",
-   "time": "38:38",
+   "time": "37:51",
    "title": "32.5 · Step 32 Per-IP failures from the raw log",
    "window": "",
    "do": "Decide live: $(NF-3) when lines differ in word count (invalid user lines add words); a fixed field only when every line has the same shape",
@@ -4861,9 +4723,9 @@
    ]
   },
   {
-   "n": 247,
+   "n": 240,
    "beat": "32.6",
-   "time": "38:45",
+   "time": "37:58",
    "title": "32.6 · Step 32 Per-IP failures from the raw log",
    "window": "",
    "do": "Check six counts (Terminal counts against the pivot column D).",
@@ -4880,9 +4742,9 @@
    ]
   },
   {
-   "n": 248,
+   "n": 241,
    "beat": "33.1",
-   "time": "38:55",
+   "time": "38:08",
    "title": "33.1 · Step 33 Successful logins per IP",
    "window": "",
    "do": "Type this in the Terminal prompt:",
@@ -4899,9 +4761,9 @@
    ]
   },
   {
-   "n": 249,
+   "n": 242,
    "beat": "33.2",
-   "time": "39:14",
+   "time": "38:26",
    "title": "33.2 · Step 33 Successful logins per IP",
    "window": "",
    "do": "Press Return.",
@@ -4918,9 +4780,9 @@
    ]
   },
   {
-   "n": 250,
+   "n": 243,
    "beat": "33.3",
-   "time": "39:17",
+   "time": "38:30",
    "title": "33.3 · Step 33 Successful logins per IP",
    "window": "",
    "do": "Look at three lines (Terminal output).",
@@ -4937,9 +4799,9 @@
    ]
   },
   {
-   "n": 251,
+   "n": 244,
    "beat": "33.4",
-   "time": "39:25",
+   "time": "38:38",
    "title": "33.4 · Step 33 Successful logins per IP",
    "window": "",
    "do": "Check Accepted per IP (Terminal counts against pivot columns B and C).",
@@ -4956,9 +4818,9 @@
    ]
   },
   {
-   "n": 252,
+   "n": 245,
    "beat": "33.5",
-   "time": "39:36",
+   "time": "38:49",
    "title": "33.5 · Step 33 Successful logins per IP",
    "window": "",
    "do": "Type this in the Terminal prompt:",
@@ -4975,9 +4837,9 @@
    ]
   },
   {
-   "n": 253,
+   "n": 246,
    "beat": "33.6",
-   "time": "39:46",
+   "time": "38:59",
    "title": "33.6 · Step 33 Successful logins per IP",
    "window": "",
    "do": "Press Return.",
@@ -4994,9 +4856,9 @@
    ]
   },
   {
-   "n": 254,
+   "n": 247,
    "beat": "33.7",
-   "time": "39:49",
+   "time": "39:02",
    "title": "33.7 · Step 33 Successful logins per IP",
    "window": "",
    "do": "Look at two lines (Terminal output).",
@@ -5013,9 +4875,9 @@
    ]
   },
   {
-   "n": 255,
+   "n": 248,
    "beat": "34.1",
-   "time": "39:57",
+   "time": "39:10",
    "title": "34.1 · Step 34 Final look at the pivot",
    "window": "",
    "do": "Click the yellow minimise button, top left of the Terminal window.",
@@ -5024,7 +4886,7 @@
    "say": [
     "\"Step 34: back to the sheet. I'm moving my cursor to the top left of Terminal, to the yellow button. Minimising Terminal with a click.\""
    ],
-   "image": "images/255.png",
+   "image": "images/248.png",
    "imageSource": "shots/54.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -5034,16 +4896,16 @@
    ]
   },
   {
-   "n": 256,
+   "n": 249,
    "beat": "34.2",
-   "time": "40:08",
+   "time": "39:20",
    "title": "34.2 · Step 34 Final look at the pivot",
    "window": "",
-   "do": "Point at the Firefox icon in the Dock on the left.",
+   "do": "Click minimised sheets window (Dock, left side).",
    "verified": false,
    "type": "nothing",
    "say": [
-    "\"Then down to the Dock on the left edge, to the Firefox icon.\""
+    "\"okay, moving my cursor down the dock on the left, to the minimised sheets window, and clicking it to bring the sheet back up.\""
    ],
    "image": null,
    "imageSource": null,
@@ -5053,30 +4915,9 @@
    ]
   },
   {
-   "n": 257,
-   "beat": "34.3",
-   "time": "40:13",
-   "title": "34.3 · Step 34 Final look at the pivot",
-   "window": "",
-   "do": "Click the Firefox icon in the Dock on the left.",
-   "verified": false,
-   "type": "nothing",
-   "say": [
-    "\"My cursor's on it. Clicking Firefox in the Dock to bring it back.\""
-   ],
-   "image": "images/257.png",
-   "imageSource": "shots/54.png",
-   "missing": [
-    "frame: [MISSING: Mac dry-run]",
-    "inset: [MISSING: x, y, w, h, zoom 2x from the Mac frame]",
-    "screenshot not verified: NOT OK: needs mac frame (not box-verified before deadline)",
-    "shot: shots/54.png (reuse, old step 54, not annotated: MISSING annotation)"
-   ]
-  },
-  {
-   "n": 258,
+   "n": 250,
    "beat": "34.4",
-   "time": "40:21",
+   "time": "39:29",
    "title": "34.4 · Step 34 Final look at the pivot",
    "window": "",
    "do": "Click Pivot Table 1 tab (sheet tabs).",
@@ -5085,7 +4926,7 @@
    "say": [
     "\"Now down to the bottom, to the Pivot Table 1 tab, and clicking it to end on the finished table.\""
    ],
-   "image": "images/258.png",
+   "image": "images/250.png",
    "imageSource": "shots/54.png",
    "missing": [
     "frame: [MISSING: Mac dry-run]",
@@ -5095,9 +4936,9 @@
    ]
   },
   {
-   "n": 259,
+   "n": 251,
    "beat": "34.5",
-   "time": "40:28",
+   "time": "39:37",
    "title": "34.5 · Step 34 Final look at the pivot",
    "window": "",
    "do": "Look at final view (pivot and E column).",
@@ -5114,9 +4955,9 @@
    ]
   },
   {
-   "n": 260,
+   "n": 252,
    "beat": "35.1",
-   "time": "40:36",
+   "time": "39:45",
    "title": "35.1 · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what was done, start to finish, with the pivot on screen.",
@@ -5133,9 +4974,9 @@
    ]
   },
   {
-   "n": 261,
+   "n": 253,
    "beat": "35.1a",
-   "time": "40:44",
+   "time": "39:53",
    "title": "35.1a · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what was done, start to finish, with the pivot on screen.",
@@ -5152,9 +4993,9 @@
    ]
   },
   {
-   "n": 262,
+   "n": 254,
    "beat": "35.1b",
-   "time": "40:53",
+   "time": "40:01",
    "title": "35.1b · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what was done, start to finish, with the pivot on screen.",
@@ -5171,9 +5012,9 @@
    ]
   },
   {
-   "n": 263,
+   "n": 255,
    "beat": "35.2",
-   "time": "41:01",
+   "time": "40:10",
    "title": "35.2 · Step 35 Epilogue",
    "window": "",
    "do": "Talk about the evidence behind the Block IPs, with the pivot on screen.",
@@ -5190,9 +5031,9 @@
    ]
   },
   {
-   "n": 264,
+   "n": 256,
    "beat": "35.2a",
-   "time": "41:09",
+   "time": "40:18",
    "title": "35.2a · Step 35 Epilogue",
    "window": "",
    "do": "Talk about the evidence behind the Block IPs, with the pivot on screen.",
@@ -5209,9 +5050,9 @@
    ]
   },
   {
-   "n": 265,
+   "n": 257,
    "beat": "35.2b",
-   "time": "41:20",
+   "time": "40:29",
    "title": "35.2b · Step 35 Epilogue",
    "window": "",
    "do": "Talk about the evidence behind the Block IPs, with the pivot on screen.",
@@ -5228,9 +5069,9 @@
    ]
   },
   {
-   "n": 266,
+   "n": 258,
    "beat": "35.3",
-   "time": "41:28",
+   "time": "40:37",
    "title": "35.3 · Step 35 Epilogue",
    "window": "",
    "do": "Talk about why the Watch IPs got account actions, with the pivot on screen.",
@@ -5247,9 +5088,9 @@
    ]
   },
   {
-   "n": 267,
+   "n": 259,
    "beat": "35.3a",
-   "time": "41:37",
+   "time": "40:45",
    "title": "35.3a · Step 35 Epilogue",
    "window": "",
    "do": "Talk about why the Watch IPs got account actions, with the pivot on screen.",
@@ -5266,9 +5107,9 @@
    ]
   },
   {
-   "n": 268,
+   "n": 260,
    "beat": "35.3b",
-   "time": "41:46",
+   "time": "40:55",
    "title": "35.3b · Step 35 Epilogue",
    "window": "",
    "do": "Talk about why the Watch IPs got account actions, with the pivot on screen.",
@@ -5285,9 +5126,9 @@
    ]
   },
   {
-   "n": 269,
+   "n": 261,
    "beat": "35.4",
-   "time": "41:54",
+   "time": "41:02",
    "title": "35.4 · Step 35 Epilogue",
    "window": "",
    "do": "Talk about how the Terminal checks matched the sheet, with the pivot on screen.",
@@ -5304,9 +5145,9 @@
    ]
   },
   {
-   "n": 270,
+   "n": 262,
    "beat": "35.4a",
-   "time": "42:04",
+   "time": "41:13",
    "title": "35.4a · Step 35 Epilogue",
    "window": "",
    "do": "Talk about how the Terminal checks matched the sheet, with the pivot on screen.",
@@ -5323,9 +5164,9 @@
    ]
   },
   {
-   "n": 271,
+   "n": 263,
    "beat": "35.4b",
-   "time": "42:10",
+   "time": "41:19",
    "title": "35.4b · Step 35 Epilogue",
    "window": "",
    "do": "Talk about how the Terminal checks matched the sheet, with the pivot on screen.",
@@ -5342,9 +5183,9 @@
    ]
   },
   {
-   "n": 272,
+   "n": 264,
    "beat": "35.5",
-   "time": "42:19",
+   "time": "41:28",
    "title": "35.5 · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what the files contain and where they are, with the pivot on screen.",
@@ -5361,9 +5202,9 @@
    ]
   },
   {
-   "n": 273,
+   "n": 265,
    "beat": "35.5a",
-   "time": "42:29",
+   "time": "41:38",
    "title": "35.5a · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what the files contain and where they are, with the pivot on screen.",
@@ -5380,9 +5221,9 @@
    ]
   },
   {
-   "n": 274,
+   "n": 266,
    "beat": "35.5b",
-   "time": "42:38",
+   "time": "41:47",
    "title": "35.5b · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what the files contain and where they are, with the pivot on screen.",
@@ -5399,9 +5240,9 @@
    ]
   },
   {
-   "n": 275,
+   "n": 267,
    "beat": "35.6",
-   "time": "42:45",
+   "time": "41:54",
    "title": "35.6 · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what I would do next with more time, with the pivot on screen.",
@@ -5418,9 +5259,9 @@
    ]
   },
   {
-   "n": 276,
+   "n": 268,
    "beat": "35.6a",
-   "time": "42:54",
+   "time": "42:03",
    "title": "35.6a · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what I would do next with more time, with the pivot on screen.",
@@ -5437,9 +5278,9 @@
    ]
   },
   {
-   "n": 277,
+   "n": 269,
    "beat": "35.6b",
-   "time": "43:06",
+   "time": "42:15",
    "title": "35.6b · Step 35 Epilogue",
    "window": "",
    "do": "Talk about what I would do next with more time, with the pivot on screen.",
@@ -5456,9 +5297,9 @@
    ]
   },
   {
-   "n": 278,
+   "n": 270,
    "beat": "36.1",
-   "time": "43:17",
+   "time": "42:26",
    "title": "36.1 · Step 36 Close",
    "window": "",
    "do": "Check no error dialogs or unsaved marks (whole screen).",
@@ -5475,9 +5316,9 @@
    ]
   },
   {
-   "n": 279,
+   "n": 271,
    "beat": "36.2",
-   "time": "43:28",
+   "time": "42:37",
    "title": "36.2 · Step 36 Close",
    "window": "",
    "do": "Leave the pivot on screen in Firefox; close nothing else.",
@@ -5494,9 +5335,9 @@
    ]
   },
   {
-   "n": 280,
+   "n": 272,
    "beat": "36.3",
-   "time": "43:37",
+   "time": "42:46",
    "title": "36.3 · Step 36 Close",
    "window": "",
    "do": "Click Stop in the TaskRecorder item in the menu bar.",
