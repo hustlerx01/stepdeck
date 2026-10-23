@@ -9,7 +9,9 @@
    "window": "TaskRecorder card",
    "do": "OPENER | target: card sentence | cue: no pause after \"in mind\"; start sliding the cursor toward the Goal doc's yellow minimise button during the last words, then minimise TaskRecorder",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 1: I will be beginning my task soon. Here is the workflow I have in mind.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -25,7 +27,9 @@
    "window": "top left of the Goal doc window",
    "do": "WINDOW | target: yellow minimise ICON | cue: cursor already moving from 1.1; click on the first word, \"Minimising\"; pause 1 s after the click | why: clears the Goal doc; first click lands by 0:09.5 (internal target)",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Minimising, top left, to clear.\""
+   ],
    "image": "images/002.png",
    "imageSource": "shots/02.png",
    "missing": [
@@ -42,7 +46,9 @@
    "window": "Dock, left edge",
    "do": "MOVE | target: Terminal ICON",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 2: Terminal first. Moving down to the dock on the left.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -58,7 +64,9 @@
    "window": "Dock, left edge",
    "do": "SWITCH | target: Terminal ICON | cue: pause 1 s after \"clicking it\" | why: Terminal was opened and cd-ed into Documents/Project before Start (s19.4 item 3), so it is brought forward, not launched",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Terminal's label pops up beside the icon. It's open in the project folder, so I'm clicking it.\""
+   ],
    "image": "images/004.png",
    "imageSource": "shots/03.png",
    "missing": [
@@ -75,7 +83,9 @@
    "window": "Terminal window",
    "do": "READ | target: prompt \"$ \" in Documents/Project",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"It comes forward in Documents, Project, ready to start straight away.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -91,7 +101,9 @@
    "window": "Terminal prompt",
    "do": "TYPE | target: command line | cue: speak while typing; no pause | why: line count first, so the sheet import can be checked against it later",
    "type": "wc -l auth-jump01.log",
-   "say": [],
+   "say": [
+    "\"In the window, typing w c dash l and the log name, to get a raw line count.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -107,7 +119,9 @@
    "window": "Terminal",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return to run it, and the count prints just below the prompt.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -123,7 +137,9 @@
    "window": "Terminal output",
    "do": "READ | target: wc output",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"It prints 59 beside auth-jump01.log. That's 59 lines, and I'll hold on to it.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -139,7 +155,9 @@
    "window": "Terminal prompt",
    "do": "TYPE | target: command line | cue: speak while typing; no pause | why: one total of failed logins, used later to check the pivot grand total",
    "type": "grep -c \"Failed password\" auth-jump01.log",
-   "say": [],
+   "say": [
+    "\"Step 3: failures. Typing grep dash c for Failed password in the window, to get a total the pivot must match.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -155,7 +173,9 @@
    "window": "Terminal",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return, and the number comes back just below.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -171,7 +191,9 @@
    "window": "Terminal output",
    "do": "READ | target: count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"53 Failed password lines. That's what the pivot's total has to hit.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -187,7 +209,9 @@
    "window": "Terminal prompt",
    "do": "TYPE | target: command line | cue: speak while typing; no pause | why: counts attempts on accounts that do not exist on jump01",
    "type": "grep -c \"invalid user\" auth-jump01.log",
-   "say": [],
+   "say": [
+    "\"Below that, typing grep dash c for invalid user, to count tries on accounts that don't exist.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -203,7 +227,9 @@
    "window": "Terminal",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return, and the second count lands underneath.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -219,7 +245,9 @@
    "window": "Terminal output",
    "do": "READ | target: count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"14 invalid user lines. That's someone guessing names, not a fumbled password.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -235,7 +263,9 @@
    "window": "Terminal output",
    "do": "DECIDE | target: the two counts | why: totals before ranking: the 53 is the number the pivot has to reproduce, and invalid-user tries are guessing, not mistyped passwords",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clean totals, so they're my bar. If the pivot isn't 53, the import's wrong.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -251,7 +281,9 @@
    "window": "Terminal prompt",
    "do": "TYPE | target: command line | cue: speak while typing; no pause | why: prints every successful login, so a failure run followed by a success stands out",
    "type": "grep 'Accepted' auth-jump01.log",
-   "say": [],
+   "say": [
+    "\"Step 4: who got in. To make successes stand out, typing grep Accepted on the next line down.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -267,7 +299,9 @@
    "window": "Terminal",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return, and the logins print further down.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -283,7 +317,9 @@
    "window": "Terminal output",
    "do": "READ | target: six Accepted lines",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Six Accepted lines, three publickey, three password. It's the password ones I'm after.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -299,7 +335,9 @@
    "window": "Terminal output, line 2",
    "do": "READ | target: 03:52:34 svc_backup from 192.0.2.77",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Second line, 03:52:34, Accepted password for svc_backup from 192.0.2.77. That's interesting.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -315,7 +353,9 @@
    "window": "Terminal output",
    "do": "DECIDE | target: the password successes | why: an IP that failed and then got in needs an account check, so those IPs are compared in the sheet, not blocked from Terminal",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"An IP that failed then got in needs its account checked, so I'll compare in the sheet first.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -331,7 +371,9 @@
    "window": "top left of the Terminal window",
    "do": "WINDOW | target: yellow minimise ICON | cue: pause 1 s after \"clicking\" | why: minimise before switching apps (s19.4)",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 5: Terminal's done for now. Top left, the minimise button, clicking to tuck it away.\""
+   ],
    "image": "images/021.png",
    "imageSource": "shots/07.png",
    "missing": [
@@ -348,7 +390,9 @@
    "window": "Dock, left edge",
    "do": "MOVE | target: Firefox ICON",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Moving back down to the dock on the left, looking for Firefox.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -364,7 +408,9 @@
    "window": "Dock, left edge",
    "do": "SWITCH | target: Firefox ICON | cue: pause 1 s after \"click it\" | why: Firefox holds the blank sheet \"jump01 overnight triage\", opened before Start",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Firefox's label shows over the dock. The sheet's waiting there, so I'll click it.\""
+   ],
    "image": "images/023.png",
    "imageSource": "shots/08.png",
    "missing": [
@@ -381,7 +427,9 @@
    "window": "Firefox, Google Sheets",
    "do": "READ | target: blank sheet \"jump01 overnight triage\"",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Google Sheets is up, jump01 overnight triage, and the grid's empty.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -397,7 +445,9 @@
    "window": "Sheets menu bar",
    "do": "MOVE | target: File menu",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 6: getting the export in. Up to the menu bar, File on the far left.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -413,7 +463,9 @@
    "window": "Sheets menu bar",
    "do": "MENU-OPEN | target: File | cue: pause 1 s after \"left click\" | why: File holds the Import option",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"On File, left click to drop the menu down.\""
+   ],
    "image": "images/026.png",
    "imageSource": "shots/09-annotated.png",
    "missing": [
@@ -429,7 +481,9 @@
    "window": "File menu",
    "do": "MENU-ITEM | target: Import | cue: pause 1 s after \"selecting it\" | why: brings the log export into this sheet rather than opening a second file",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down the list to Import, selecting it to bring the data into this sheet.\""
+   ],
    "image": "images/027.png",
    "imageSource": "shots/09-annotated.png",
    "missing": [
@@ -445,7 +499,9 @@
    "window": "Import files dialog, top tabs",
    "do": "PANEL-TAB | target: Upload | cue: pause 1 s after \"clicking the Upload tab\" | why: the excerpt is a local file on the Mac, so Upload, not Drive",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"An Import box opens. The file's on my Mac, so clicking the Upload tab on top.\""
+   ],
    "image": "images/028.png",
    "imageSource": "shots/09-annotated.png",
    "missing": [
@@ -461,7 +517,9 @@
    "window": "Upload tab, centre",
    "do": "CLICK | target: Browse | cue: pause 1 s after \"Pressing it\" | why: picking the file by hand from the picker",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Middle of that tab there's Browse. Pressing it to pick the file myself.\""
+   ],
    "image": "images/029.png",
    "imageSource": "shots/09-annotated.png",
    "missing": [
@@ -477,7 +535,9 @@
    "window": "macOS file picker, sidebar",
    "do": "DIALOG | target: Documents | cue: pause 1 s after \"a click there\" | why: the inputs sit under Documents",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The Mac picker opens. Documents in the left sidebar, a click there to reach the folder.\""
+   ],
    "image": "images/030.png",
    "imageSource": "shots/10.png",
    "missing": [
@@ -494,7 +554,9 @@
    "window": "file picker list",
    "do": "DOUBLE-CLICK | target: Project | cue: pause 1 s after \"double-clicking it\" | why: Project is the folder holding both inputs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Project's in the list on the right. Both inputs live there, so double-clicking it.\""
+   ],
    "image": "images/031.png",
    "imageSource": "shots/10.png",
    "missing": [
@@ -511,7 +573,9 @@
    "window": "file picker list",
    "do": "CLICK | target: auth-jump01-excerpt.csv | cue: pause 1 s after \"selects it\" | why: the excerpt is the spreadsheet copy of the same 59 log lines",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The excerpt file sits below, the spreadsheet copy of the 59 lines. One click selects it, so it's ready.\""
+   ],
    "image": "images/032.png",
    "imageSource": "shots/10.png",
    "missing": [
@@ -528,7 +592,9 @@
    "window": "bottom right of the file picker",
    "do": "CLICK | target: Open | cue: pause 1 s after \"Clicking it\" | why: starts the upload of the chosen file",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Open, bottom right of the picker. Clicking it to start the upload.\""
+   ],
    "image": "images/033.png",
    "imageSource": "shots/10.png",
    "missing": [
@@ -545,7 +611,9 @@
    "window": "Import file dialog, Import location",
    "do": "PANEL-PICK | target: Replace current sheet | cue: pause 1 s after \"Replace current sheet\" | why: the blank sheet is already named for the job, so the data goes straight into it",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Under Import location in the box, picking Replace current sheet. This one's already named, so that's the right fit.\""
+   ],
    "image": "images/034.png",
    "imageSource": "shots/11-annotated.png",
    "missing": [
@@ -561,7 +629,9 @@
    "window": "bottom of the Import file dialog",
    "do": "CLICK | target: Import data | cue: pause 1 s after \"press that\" | why: brings the rows into the sheet",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Import data at the bottom of the box. I'll press that to bring the rows in.\""
+   ],
    "image": "images/035.png",
    "imageSource": "shots/11-annotated.png",
    "missing": [
@@ -577,7 +647,9 @@
    "window": "sheet grid",
    "do": "WAIT | target: import finishes | cue: silence up to 4 s (plan cap 10 s)",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Waiting a second while the rows fill in below.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -593,7 +665,9 @@
    "window": "Import file dialog choices",
    "do": "DECIDE | target: Replace current sheet over a new sheet | why: one sheet, one tab of raw data, so the pivot and decisions sit next to their source",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Replace beat a new sheet, since it was blank and named. Data, pivot and decisions share one file.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -609,7 +683,9 @@
    "window": "row 1",
    "do": "READ | target: header row | why: src_ip in F is the column the per-IP filter uses later",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 7: checking the import. Row 1 at the top: timestamp, host, event, user, invalid user, src ip, decision. So F's my filter column.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -625,7 +701,9 @@
    "window": "column G",
    "do": "READ | target: decision column",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Column G on the right, decision, is empty all the way down. That's mine to fill.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -641,7 +719,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Command Down | cue: speak while typing; no pause",
    "type": "Command Down",
-   "say": [],
+   "say": [
+    "\"Holding Command, then Down, to jump to the bottom of the data.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -657,7 +737,9 @@
    "window": "left edge, row numbers",
    "do": "READ | target: last row number",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down on the left, the last row number's 60, with 07:40:00 in the timestamp.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -673,7 +755,9 @@
    "window": "row 60 against the Terminal wc count",
    "do": "VERIFY | target: 59 data rows vs 59 lines",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sixty minus the header's 59, same as Terminal. Nothing's dropped.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -689,7 +773,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Command Up | cue: speak while typing; no pause",
    "type": "Command Up",
-   "say": [],
+   "say": [
+    "\"Holding Command, then Up, back to the top row.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -705,7 +791,9 @@
    "window": "Sheets menu bar",
    "do": "MOVE | target: View menu",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 8: freezing the header before I scroll. Up to the menu bar, across to View.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -721,7 +809,9 @@
    "window": "Sheets menu bar",
    "do": "MENU-OPEN | target: View | cue: pause 1 s after \"left click\" | why: the freeze options are under View",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Cursor's on View, left click to open the list. The freeze options live there.\""
+   ],
    "image": "images/045.png",
    "imageSource": "shots/13-annotated.png",
    "missing": [
@@ -737,7 +827,9 @@
    "window": "View menu",
    "do": "MENU-ITEM | target: Freeze | cue: pause 1 s after \"Freeze\" | why: Freeze opens the row choices",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down to Freeze, and a menu slides out to the right to choose rows.\""
+   ],
    "image": "images/046.png",
    "imageSource": "shots/13-annotated.png",
    "missing": [
@@ -753,7 +845,9 @@
    "window": "Freeze submenu",
    "do": "MENU-ITEM | target: 1 row | cue: pause 1 s after \"clicking it\" | why: keeps the column names on screen while scrolling",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Across to 1 row, clicking it to keep the names up top while I scroll.\""
+   ],
    "image": "images/047.png",
    "imageSource": "shots/13-annotated.png",
    "missing": [
@@ -769,7 +863,9 @@
    "window": "toolbar, right side",
    "do": "CLICK | target: Create a filter ICON | cue: pause 1 s after \"A click on that\" | why: filter buttons on every column, used per IP later",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Toolbar, right side, Create a filter. A click on that to filter by IP later.\""
+   ],
    "image": "images/048.png",
    "imageSource": "shots/13-annotated.png",
    "missing": [
@@ -785,7 +881,9 @@
    "window": "row 1",
    "do": "READ | target: filter ICONs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Row 1 now shows a filter icon in every header, A1 across to G1.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -801,7 +899,9 @@
    "window": "column header A",
    "do": "CLICK | target: column A | cue: pause 1 s after \"clicking it\" | why: starting the selection at A1",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 9: the pivot. Up to the column A header, clicking it to start the selection at A1.\""
+   ],
    "image": "images/050.png",
    "imageSource": "shots/14-annotated.png",
    "missing": [
@@ -817,7 +917,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Command A | cue: speak while typing; no pause | why: selects A1:G60, the whole import",
    "type": "Command A",
-   "say": [],
+   "say": [
+    "\"Command A, so the whole import's selected in one go, top to bottom.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -833,7 +935,9 @@
    "window": "name box, top left",
    "do": "READ | target: range",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The name box, top left, says A1 to G60. Everything's in.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -849,7 +953,9 @@
    "window": "Sheets menu bar",
    "do": "MOVE | target: Insert menu",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Back up to the menu bar, to Insert, a little right of View.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -865,7 +971,9 @@
    "window": "Sheets menu bar",
    "do": "MENU-OPEN | target: Insert | cue: pause 1 s after \"clicking Insert\" | why: the pivot table option is in Insert",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The pivot table option's in Insert, so clicking Insert up there.\""
+   ],
    "image": "images/054.png",
    "imageSource": "shots/14-annotated.png",
    "missing": [
@@ -881,7 +989,9 @@
    "window": "Insert menu",
    "do": "MENU-ITEM | target: Pivot table | cue: pause 1 s after \"choosing it\" | why: one row per IP with counts per event needs a pivot",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down the list to Pivot table, choosing it to get one row per IP.\""
+   ],
    "image": "images/055.png",
    "imageSource": "shots/14-annotated.png",
    "missing": [
@@ -897,7 +1007,9 @@
    "window": "Create pivot table dialog",
    "do": "PANEL-PICK | target: New sheet | cue: pause 1 s after \"New sheet\" | why: keeps the raw rows untouched on Sheet1",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"A Create pivot table box opens. I'm picking New sheet to leave Sheet1's rows untouched.\""
+   ],
    "image": "images/056.png",
    "imageSource": "shots/14-annotated.png",
    "missing": [
@@ -913,7 +1025,9 @@
    "window": "bottom right of the dialog",
    "do": "CLICK | target: Create | cue: pause 1 s after \"Pressing it\" | why: builds the pivot on its own tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Create, bottom right of the box. Pressing it to give the pivot its own tab.\""
+   ],
    "image": "images/057.png",
    "imageSource": "shots/14-annotated.png",
    "missing": [
@@ -929,7 +1043,9 @@
    "window": "sheet tabs and right side",
    "do": "READ | target: new tab and editor",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"A new tab appears at the bottom, Pivot Table 1, with the editor on the right.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -945,7 +1061,9 @@
    "window": "pivot editor",
    "do": "DECIDE | target: pivot over COUNTIF formulas | why: one pivot counts every IP and event type at once; formulas would need one per pair",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"COUNTIF means a formula per IP and event. A pivot counts them all at once, so I'll stick with it.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -961,7 +1079,9 @@
    "window": "pivot editor, Rows",
    "do": "CLICK | target: Rows Add | cue: pause 1 s after \"Clicking it\" | why: IPs down the side",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 10: the rows. In the editor on the right, the Add beside Rows. Clicking it, because IPs run down the side.\""
+   ],
    "image": "images/060.png",
    "imageSource": "shots/15.png",
    "missing": [
@@ -978,7 +1098,9 @@
    "window": "Rows field list",
    "do": "PANEL-PICK | target: src_ip | cue: pause 1 s after \"src underscore ip\" | why: groups the rows by source address",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"A list drops down below. Picking src underscore ip to give every address its own row.\""
+   ],
    "image": "images/061.png",
    "imageSource": "shots/15.png",
    "missing": [
@@ -995,7 +1117,9 @@
    "window": "pivot editor, Columns",
    "do": "CLICK | target: Columns Add | cue: pause 1 s after \"Left click there\" | why: event types across the top",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Further down, the Add beside Columns. Left click there to put event types across the top.\""
+   ],
    "image": "images/062.png",
    "imageSource": "shots/15.png",
    "missing": [
@@ -1012,7 +1136,9 @@
    "window": "Columns field list",
    "do": "PANEL-PICK | target: event | cue: pause 1 s after \"selecting it\" | why: each event type becomes its own column",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Event from that list, selecting it, since it's the type of each try.\""
+   ],
    "image": "images/063.png",
    "imageSource": "shots/15.png",
    "missing": [
@@ -1029,7 +1155,9 @@
    "window": "Columns card, event",
    "do": "CLICK | target: Show totals checkbox | cue: pause 1 s after \"Unticking it\" | why: untick: a row total column is not needed, the D column already holds failures",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Below event, Show totals is ticked. Unticking it, because column D already has the failures.\""
+   ],
    "image": "images/064.png",
    "imageSource": "shots/15.png",
    "missing": [
@@ -1046,7 +1174,9 @@
    "window": "pivot grid",
    "do": "READ | target: columns B to D",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Across the top, B's Accepted password, C's Accepted publickey, D's Failed password.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1062,7 +1192,9 @@
    "window": "pivot editor, Values",
    "do": "CLICK | target: Values Add | cue: pause 1 s after \"Clicking\" | why: the value card sets what gets counted",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 11: the counts. Down to Values and its Add button. Clicking, so I can say what's counted.\""
+   ],
    "image": "images/066.png",
    "imageSource": "shots/16.png",
    "missing": [
@@ -1079,7 +1211,9 @@
    "window": "Values field list",
    "do": "PANEL-PICK | target: event | cue: pause 1 s after \"pick event\" | why: every row has an event, so counting it counts the rows",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"From the list below I'll pick event, because every row has one.\""
+   ],
    "image": "images/067.png",
    "imageSource": "shots/16.png",
    "missing": [
@@ -1096,7 +1230,9 @@
    "window": "Summarize by box",
    "do": "BRANCH | target: if it shows COUNTA go to 11.3a, if SUM go to 11.3b",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Checking the Summarize by box, lower on the value card, to see what it's set to.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1113,7 +1249,9 @@
    "window": "Summarize by box",
    "do": "READ | target: COUNTA",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Summarize by already says COUNTA, so I'm leaving it as it is.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1129,7 +1267,9 @@
    "window": "Summarize by list",
    "do": "PANEL-PICK | target: COUNTA | cue: pause 1 s after \"moving down to COUNTA\" | why: COUNTA counts the text IPs, which is what an attempt count needs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"It's showing SUM, so I'm opening that dropdown and moving down to COUNTA, since these are words.\""
+   ],
    "image": "images/070.png",
    "imageSource": "shots/16.png",
    "missing": [
@@ -1146,7 +1286,9 @@
    "window": "Values card",
    "do": "DECIDE | target: COUNTA | why: each log line is one attempt, so counting rows gives attempts per IP and event",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Each line's one attempt, so COUNTA fits. It counts the text entries, which is what I need.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1162,7 +1304,9 @@
    "window": "pivot grid",
    "do": "READ | target: grand total row",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Counts fill in, with a Grand Total on row 9.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1178,7 +1322,9 @@
    "window": "Rows card, Order",
    "do": "PANEL-PICK | target: Descending | cue: pause 1 s after \"Descending\" | why: largest counts first",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 12: noisiest first. In the Rows card, under Order, choosing Descending to lead with big numbers.\""
+   ],
    "image": "images/073.png",
    "imageSource": "shots/17.png",
    "missing": [
@@ -1195,7 +1341,9 @@
    "window": "Rows card, Sort by",
    "do": "PANEL-PICK | target: Failed password | cue: pause 1 s after \"Failed password\" | why: noisiest IP on top",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sort by, just below it, I'll pick Failed password to put the most failures on top.\""
+   ],
    "image": "images/074.png",
    "imageSource": "shots/17.png",
    "missing": [
@@ -1212,7 +1360,9 @@
    "window": "pivot rows 3 to 8",
    "do": "READ | target: IP order",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Reading down: 203.0.113.45 18, 198.51.100.23 14, 192.0.2.77 9, 198.51.100.140 7, the ten-dot address 3, 192.0.2.200 2.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1228,7 +1378,9 @@
    "window": "pivot rows",
    "do": "DECIDE | target: sort by failure count | why: the walk goes from most to fewest failures, so the biggest risk is decided first",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sorted like this, I'll work down from the biggest risk.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1244,7 +1396,9 @@
    "window": "top right of the pivot editor",
    "do": "CLICK | target: editor close ICON | cue: pause 1 s after \"Clicking it\" | why: frees the screen for column E",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Top right of the editor, the close icon. Clicking it to get the full sheet back.\""
+   ],
    "image": "images/077.png",
    "imageSource": "shots/17.png",
    "missing": [
@@ -1261,7 +1415,9 @@
    "window": "cell D9",
    "do": "CLICK | target: D9 | cue: pause 1 s after \"Clicking D9\" | why: the failed-password grand total",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 13: a check against Terminal. Clicking D9, bottom of column D, to read the failure total.\""
+   ],
    "image": "images/078.png",
    "imageSource": "shots/18.png",
    "missing": [
@@ -1278,7 +1434,9 @@
    "window": "cell D9",
    "do": "READ | target: D9",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"D9 reads 53 failures.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1294,7 +1452,9 @@
    "window": "D9 against the Terminal grep count",
    "do": "VERIFY | target: 53 vs 53",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Pivot says 53, grep said 53. They match, so nothing's missing.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1310,7 +1470,9 @@
    "window": "row 9, B and C",
    "do": "READ | target: accepted totals",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Left of it, B9 and C9 are 3 each, password and publickey, same as Terminal.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1326,7 +1488,9 @@
    "window": "rows 3 and 4, column D",
    "do": "READ | target: top two | why: the two biggest failure counts are read first, they carry the most risk",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 14: the ranking. Rows 3 and 4, 203.0.113.45 with 18 and 198.51.100.23 with 14. I'm starting there because they're the biggest risk.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1342,7 +1506,9 @@
    "window": "rows 5 and 6, columns B and D",
    "do": "READ | target: success after failures",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Rows 5 and 6. 192.0.2.77 has 9 and 1, 198.51.100.140 has 7 and 1. Both got in after failing.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1358,7 +1524,9 @@
    "window": "rows 7 and 8",
    "do": "READ | target: small counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Rows 7 and 8 are small. The ten-dot address has 1, 3 and 3, and 192.0.2.200 just 2.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1374,7 +1542,9 @@
    "window": "cell E2, right of the pivot",
    "do": "CLICK | target: E2 | cue: pause 1 s after \"clicking there\" | why: header beside the event names row",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 15: a decision column. Over to E2, right of Failed password, clicking there so decisions sit beside counts.\""
+   ],
    "image": "images/085.png",
    "imageSource": "shots/20-annotated.png",
    "missing": [
@@ -1390,7 +1560,9 @@
    "window": "cell E2",
    "do": "TYPE | target: header | cue: speak while typing; no pause | why: labels the decision column",
    "type": "Decision",
-   "say": [],
+   "say": [
+    "\"Typing Decision in E2 to make clear what the column's for.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1406,7 +1578,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return to drop the cursor down to E3.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1422,7 +1596,9 @@
    "window": "E3, next to 203.0.113.45",
    "do": "CLICK | target: E3 | cue: pause 1 s after \"a click there\" | why: the range has to start on the first IP",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 16: the choices. E3, beside 203.0.113.45, a click there, because the range starts on the first IP.\""
+   ],
    "image": "images/088.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
@@ -1438,7 +1614,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Shift Down x5 | cue: speak while typing; no pause | why: E3:E8, one cell per IP",
    "type": "Shift Down five times",
-   "say": [],
+   "say": [
+    "\"Shift and Down five times, so E3 to E8's selected, one cell per IP.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1454,7 +1632,9 @@
    "window": "name box",
    "do": "READ | target: range",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Name box up top confirms E3 to E8, six cells for six addresses.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1470,7 +1650,9 @@
    "window": "Sheets menu bar",
    "do": "MOVE | target: Insert menu",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Heading back up to the menu bar, over to Insert.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1486,7 +1668,9 @@
    "window": "Sheets menu bar",
    "do": "MENU-OPEN | target: Insert | cue: pause 1 s after \"clicking\" | why: Dropdown is under Insert",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"On Insert, top of the screen, clicking, since Dropdown's one of its options.\""
+   ],
    "image": "images/092.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
@@ -1502,7 +1686,9 @@
    "window": "Insert menu",
    "do": "MENU-ITEM | target: Dropdown | cue: pause 1 s after \"selecting it\" | why: forces each decision to one of three fixed words",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down the list to Dropdown, selecting it to keep decisions to fixed words.\""
+   ],
    "image": "images/093.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
@@ -1518,7 +1704,9 @@
    "window": "Data validation, Option 1",
    "do": "TYPE | target: option | cue: speak while typing; no pause | why: first fixed word, for an address to shut out",
    "type": "Block",
-   "say": [],
+   "say": [
+    "\"A Data validation panel opens on the right. In Option 1, typing Block, so there's a word for shutting one out.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1534,7 +1722,9 @@
    "window": "Data validation panel",
    "do": "CLICK | target: Add another item | cue: pause 1 s after \"Hitting it\" | why: makes room for the second option",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Just below, Add another item. Hitting it to add a second box.\""
+   ],
    "image": "images/095.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
@@ -1550,7 +1740,9 @@
    "window": "Data validation, Option 2",
    "do": "TYPE | target: option | cue: speak while typing; no pause | why: second fixed word, the middle ground",
    "type": "Watch",
-   "say": [],
+   "say": [
+    "\"Option 2 underneath, Watch, so there's a middle ground for accounts that need checking.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1566,7 +1758,9 @@
    "window": "Data validation panel",
    "do": "CLICK | target: Add another item | cue: pause 1 s after \"pressing it\" | why: makes room for the third option",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Add another item once more, lower down, pressing it to get a third box.\""
+   ],
    "image": "images/097.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
@@ -1582,7 +1776,9 @@
    "window": "Data validation, Option 3",
    "do": "TYPE | target: option | cue: speak while typing; no pause | why: third fixed word, for harmless addresses",
    "type": "Ignore",
-   "say": [],
+   "say": [
+    "\"In the third box, Option 3, typing Ignore, so the harmless ones have a word too.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1598,7 +1794,9 @@
    "window": "bottom of the Data validation panel",
    "do": "CLICK | target: Done | cue: pause 1 s after \"Clicking it\" | why: saves the three options to E3:E8",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Done at the bottom of the panel. Clicking it to save the choices to E3 to E8.\""
+   ],
    "image": "images/099.png",
    "imageSource": "shots/21-annotated.png",
    "missing": [
@@ -1614,7 +1812,9 @@
    "window": "column E",
    "do": "DECIDE | target: dropdown over free text | why: three fixed words can be counted with COUNTIF; free text would not match exactly",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Fixed words, because COUNTIF needs exact matches. Blocked and block would count apart.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1630,7 +1830,9 @@
    "window": "E3:E8",
    "do": "READ | target: chips",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E3 to E8 each have a little chip with a down arrow now.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1646,7 +1848,9 @@
    "window": "down to the sheet tabs at the very bottom",
    "do": "MOVE | target: Sheet1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 17: before deciding on the top IP, its raw lines. Moving down to the sheet tabs.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1662,7 +1866,9 @@
    "window": "sheet tabs, bottom left",
    "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"clicking that tab\" | why: the decision needs the raw rows, not only counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sheet1, bottom left. I'm clicking that tab, because the decision needs raw rows, not just counts.\""
+   ],
    "image": "images/103.png",
    "imageSource": "shots/22.png",
    "missing": [
@@ -1679,7 +1885,9 @@
    "window": "row 1, right edge of F1",
    "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"clicking its filter icon\" | why: src_ip is the column filtered on",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Up to F1, clicking its filter icon at the right edge, since that's my filter column.\""
+   ],
    "image": "images/104.png",
    "imageSource": "shots/22.png",
    "missing": [
@@ -1696,7 +1904,9 @@
    "window": "filter panel, under Filter by values",
    "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"press Clear\" | why: clears every tick first, so exactly one IP is left",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The panel opens below. Under Filter by values I'll press Clear, so nothing's ticked.\""
+   ],
    "image": "images/105.png",
    "imageSource": "shots/22.png",
    "missing": [
@@ -1713,7 +1923,9 @@
    "window": "down the value list",
    "do": "PANEL-PICK | target: 203.0.113.45 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Scrolling down the list to 203.0.113.45 and ticking it, so only its rows come back.\""
+   ],
    "image": "images/106.png",
    "imageSource": "shots/22.png",
    "missing": [
@@ -1730,7 +1942,9 @@
    "window": "bottom right of the filter panel",
    "do": "CLICK | target: OK | cue: pause 1 s after \"left click\" | why: applies the one-IP filter",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"OK, bottom right of the panel, left click to apply.\""
+   ],
    "image": "images/107.png",
    "imageSource": "shots/22.png",
    "missing": [
@@ -1747,7 +1961,9 @@
    "window": "bottom right of the window",
    "do": "READ | target: count in the bottom right",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Just this IP now. The count, bottom right, says 18, same as the pivot.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1763,7 +1979,9 @@
    "window": "columns D, E and A",
    "do": "READ | target: user, invalid_user, timestamps",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Column D is root and admin over and over, E says no, from 01:12:00 to 01:16:05.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1779,7 +1997,9 @@
    "window": "filtered rows",
    "do": "DECIDE | target: verdict for 203.0.113.45 | why: [decided on camera from what the rows show]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Putting it together: [say the evidence from the rows]. That makes this one [say the decision].\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1795,7 +2015,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "MOVE | target: Pivot Table 1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Moving back down to the tabs, to Pivot Table 1, just right of Sheet1.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1812,7 +2034,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Clicking the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clicking the Pivot Table 1 tab, so the decision goes beside the count.\""
+   ],
    "image": "images/112.png",
    "imageSource": "shots/24.png",
    "missing": [
@@ -1829,7 +2053,9 @@
    "window": "E3, next to 203.0.113.45",
    "do": "CLICK | target: E3 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Over to E3, next to 203.0.113.45, clicking its chip so the decision lands on the right row.\""
+   ],
    "image": "images/113.png",
    "imageSource": "shots/24.png",
    "missing": [
@@ -1846,7 +2072,9 @@
    "window": "the list under the chip",
    "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"picking\" | why: [the verdict just decided, said as the screen shows]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The list opens under the chip, and I'm picking my choice, to match what I said.\""
+   ],
    "image": "images/114.png",
    "imageSource": "shots/24.png",
    "missing": [
@@ -1863,7 +2091,9 @@
    "window": "cell E3",
    "do": "READ | target: E3",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E3 now shows the word I picked.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1879,7 +2109,9 @@
    "window": "down to the sheet tabs at the very bottom",
    "do": "MOVE | target: Sheet1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 18: second address, same routine. Cursor's moving down to the tabs at the bottom.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1895,7 +2127,9 @@
    "window": "sheet tabs, bottom left",
    "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"a left click on it\" | why: the decision needs the raw rows, not only counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sheet1, bottom left, a left click on it, since the rows are what I judge from.\""
+   ],
    "image": "images/117.png",
    "imageSource": "shots/25.png",
    "missing": [
@@ -1912,7 +2146,9 @@
    "window": "row 1, right edge of F1",
    "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"clicking\" | why: opens the value list for src_ip",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Up to F1, filter icon at the cell's right side, clicking so the value list opens.\""
+   ],
    "image": "images/118.png",
    "imageSource": "shots/25.png",
    "missing": [
@@ -1929,7 +2165,9 @@
    "window": "filter panel, under Filter by values",
    "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear first\" | why: clears every tick first, so exactly one IP is left",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clear first, under Filter by values, so the last IP's unticked too.\""
+   ],
    "image": "images/119.png",
    "imageSource": "shots/25.png",
    "missing": [
@@ -1946,7 +2184,9 @@
    "window": "down the value list",
    "do": "PANEL-PICK | target: 198.51.100.23 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down the list to 198.51.100.23, ticking it, so I see only its attempts.\""
+   ],
    "image": "images/120.png",
    "imageSource": "shots/25.png",
    "missing": [
@@ -1963,7 +2203,9 @@
    "window": "bottom right of the filter panel",
    "do": "CLICK | target: OK | cue: pause 1 s after \"clicking\" | why: applies the one-IP filter",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"OK at the bottom right, clicking to filter.\""
+   ],
    "image": "images/121.png",
    "imageSource": "shots/25.png",
    "missing": [
@@ -1980,7 +2222,9 @@
    "window": "bottom right of the window",
    "do": "READ | target: count in the bottom right",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Its rows only. The count, bottom right, reads 14.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -1996,7 +2240,9 @@
    "window": "columns D, E and A",
    "do": "READ | target: user, invalid_user, timestamps",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Column E says yes on every row. Test, ubuntu, oracle, 02:03:00 to 02:05:23, nothing Accepted.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2012,7 +2258,9 @@
    "window": "filtered rows",
    "do": "DECIDE | target: verdict for 198.51.100.23 | why: [decided on camera from what the rows show]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Weighing it up, since the rows are clear: [say the evidence from the rows]. My call's [say the decision].\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2028,7 +2276,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "MOVE | target: Pivot Table 1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Back down to the tabs, moving towards Pivot Table 1 on the right of Sheet1.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2045,7 +2295,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Left click on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Left click on the Pivot Table 1 tab, to record that decision.\""
+   ],
    "image": "images/126.png",
    "imageSource": "shots/18-11-annotated.png",
    "missing": [
@@ -2061,7 +2313,9 @@
    "window": "E4, next to 198.51.100.23",
    "do": "CLICK | target: E4 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E4, beside 198.51.100.23, clicking its chip so this decision's on its own row.\""
+   ],
    "image": "images/127.png",
    "imageSource": "shots/18-13-annotated.png",
    "missing": [
@@ -2077,7 +2331,9 @@
    "window": "the list under the chip",
    "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"choose\" | why: [the verdict just decided, said as the screen shows]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"From the list below I'll choose the word that fits, since the rows backed it up.\""
+   ],
    "image": "images/128.png",
    "imageSource": "shots/26-annotated.png",
    "missing": [
@@ -2093,7 +2349,9 @@
    "window": "cell E4",
    "do": "READ | target: E4",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E4 has its word now, and E3 above still keeps its own.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2109,7 +2367,9 @@
    "window": "down to the sheet tabs at the very bottom",
    "do": "MOVE | target: Sheet1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 19: the third IP, the first that got in. Moving down to the tabs.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2125,7 +2385,9 @@
    "window": "sheet tabs, bottom left",
    "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"Clicking Sheet1\" | why: the decision needs the raw rows, not only counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clicking Sheet1 at the bottom left, so I can read its raw lines.\""
+   ],
    "image": "images/131.png",
    "imageSource": "shots/27.png",
    "missing": [
@@ -2142,7 +2404,9 @@
    "window": "row 1, right edge of F1",
    "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"a click on it\" | why: opens the value list for src_ip",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Filter icon on F1 again, a click on it to open the list.\""
+   ],
    "image": "images/132.png",
    "imageSource": "shots/27.png",
    "missing": [
@@ -2159,7 +2423,9 @@
    "window": "filter panel, under Filter by values",
    "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Pressing Clear\" | why: clears every tick first, so exactly one IP is left",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Pressing Clear in the panel below, so I start from nothing ticked.\""
+   ],
    "image": "images/133.png",
    "imageSource": "shots/27.png",
    "missing": [
@@ -2176,7 +2442,9 @@
    "window": "down the value list",
    "do": "PANEL-PICK | target: 192.0.2.77 checkbox | cue: pause 1 s after \"Ticking\" | why: only this IP's rows stay, so the rows read next are its whole story",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Ticking 192.0.2.77 further down the list, so only its rows stay.\""
+   ],
    "image": "images/134.png",
    "imageSource": "shots/27.png",
    "missing": [
@@ -2193,7 +2461,9 @@
    "window": "bottom right of the filter panel",
    "do": "CLICK | target: OK | cue: pause 1 s after \"left clicking it\" | why: applies the one-IP filter",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"OK at the bottom right, left clicking it to apply.\""
+   ],
    "image": "images/135.png",
    "imageSource": "shots/27.png",
    "missing": [
@@ -2210,7 +2480,9 @@
    "window": "bottom right of the window",
    "do": "READ | target: count in the bottom right",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Its rows only. Bottom right shows 10, nine failures and a login.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2226,7 +2498,9 @@
    "window": "columns D, E and A",
    "do": "READ | target: user, invalid_user, timestamps",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"svc_backup and deploy failing 03:40:00 to 03:45:49, then svc_backup gets in at 03:52:34.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2242,7 +2516,9 @@
    "window": "filtered rows",
    "do": "DECIDE | target: verdict for 192.0.2.77 | why: [decided on camera from what the rows show]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Failures, then a success on the same account. [say the evidence from the rows], which makes it [say the decision].\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2258,7 +2534,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "MOVE | target: Pivot Table 1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Moving down to the tabs once more, Pivot Table 1 on the right.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2275,7 +2553,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Click on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Click on the Pivot Table 1 tab, so this one gets marked too.\""
+   ],
    "image": "images/140.png",
    "imageSource": "shots/29.png",
    "missing": [
@@ -2292,7 +2572,9 @@
    "window": "E5, next to 192.0.2.77",
    "do": "CLICK | target: E5 chip ICON | cue: pause 1 s after \"clicking the chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E5, next to 192.0.2.77, clicking the chip so the choice goes on that row.\""
+   ],
    "image": "images/141.png",
    "imageSource": "shots/29.png",
    "missing": [
@@ -2309,7 +2591,9 @@
    "window": "the list under the chip",
    "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"picking\" | why: [the verdict just decided, said as the screen shows]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"And picking from the list that opens below, because that's what the rows point to.\""
+   ],
    "image": "images/142.png",
    "imageSource": "shots/29.png",
    "missing": [
@@ -2326,7 +2610,9 @@
    "window": "cell E5",
    "do": "READ | target: E5",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E5's chip shows the word now.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2342,7 +2628,9 @@
    "window": "down to the sheet tabs at the very bottom",
    "do": "MOVE | target: Sheet1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 20: the fourth address. Moving the cursor down to the tabs at the very bottom.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2358,7 +2646,9 @@
    "window": "sheet tabs, bottom left",
    "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"clicking it\" | why: the decision needs the raw rows, not only counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sheet1 on the left, clicking it, because I want this IP's own lines.\""
+   ],
    "image": "images/145.png",
    "imageSource": "shots/30.png",
    "missing": [
@@ -2375,7 +2665,9 @@
    "window": "row 1, right edge of F1",
    "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"and click\" | why: opens the value list for src_ip",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Back to F1, filter icon on its right edge, and click, so the list opens.\""
+   ],
    "image": "images/146.png",
    "imageSource": "shots/30.png",
    "missing": [
@@ -2392,7 +2684,9 @@
    "window": "filter panel, under Filter by values",
    "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear\" | why: clears every tick first, so exactly one IP is left",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Under Filter by values in the panel, Clear, so the earlier tick's gone.\""
+   ],
    "image": "images/147.png",
    "imageSource": "shots/30.png",
    "missing": [
@@ -2409,7 +2703,9 @@
    "window": "down the value list",
    "do": "PANEL-PICK | target: 198.51.100.140 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down to 198.51.100.140, ticking it, so just its rows are left.\""
+   ],
    "image": "images/148.png",
    "imageSource": "shots/30.png",
    "missing": [
@@ -2426,7 +2722,9 @@
    "window": "bottom right of the filter panel",
    "do": "CLICK | target: OK | cue: pause 1 s after \"pressing it\" | why: applies the one-IP filter",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"OK, bottom right of the panel, pressing it to filter.\""
+   ],
    "image": "images/149.png",
    "imageSource": "shots/30.png",
    "missing": [
@@ -2443,7 +2741,9 @@
    "window": "bottom right of the window",
    "do": "READ | target: count in the bottom right",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"There we go. The count down in the corner says 8.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2459,7 +2759,9 @@
    "window": "columns D, E and A",
    "do": "READ | target: user, invalid_user, timestamps",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"All jsmith, failing 04:15:00 to 04:18:08, then in at 04:20:34.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2475,7 +2777,9 @@
    "window": "filtered rows",
    "do": "DECIDE | target: verdict for 198.51.100.140 | why: [decided on camera from what the rows show]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"One user failing, then that same user in. [say the evidence from the rows], so I'm going with [say the decision].\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2491,7 +2795,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "MOVE | target: Pivot Table 1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down to the bottom again, moving over to the Pivot Table 1 tab.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2508,7 +2814,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"clicking the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"And clicking the Pivot Table 1 tab, to go and record it.\""
+   ],
    "image": "images/154.png",
    "imageSource": "shots/31.png",
    "missing": [
@@ -2525,7 +2833,9 @@
    "window": "E6, next to 198.51.100.140",
    "do": "CLICK | target: E6 chip ICON | cue: pause 1 s after \"clicking that chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E6, beside 198.51.100.140, clicking that chip so the decision lines up with the address.\""
+   ],
    "image": "images/155.png",
    "imageSource": "shots/31.png",
    "missing": [
@@ -2542,7 +2852,9 @@
    "window": "the list under the chip",
    "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"Choosing\" | why: [the verdict just decided, said as the screen shows]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Choosing from the list under it, since that's where the evidence led.\""
+   ],
    "image": "images/156.png",
    "imageSource": "shots/31.png",
    "missing": [
@@ -2559,7 +2871,9 @@
    "window": "cell E6",
    "do": "READ | target: E6",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E6 has its word in now.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2575,7 +2889,9 @@
    "window": "down to the sheet tabs at the very bottom",
    "do": "MOVE | target: Sheet1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 21: the internal address. Moving down to the tabs along the bottom edge.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2591,7 +2907,9 @@
    "window": "sheet tabs, bottom left",
    "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"a left click\" | why: the decision needs the raw rows, not only counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sheet1, far left, a left click, so the raw rows are back.\""
+   ],
    "image": "images/159.png",
    "imageSource": "shots/32.png",
    "missing": [
@@ -2608,7 +2926,9 @@
    "window": "row 1, right edge of F1",
    "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"I'm clicking it\" | why: opens the value list for src_ip",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"F1's filter icon, right side of the header, and I'm clicking it to open the list.\""
+   ],
    "image": "images/160.png",
    "imageSource": "shots/32.png",
    "missing": [
@@ -2625,7 +2945,9 @@
    "window": "filter panel, under Filter by values",
    "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear\" | why: clears every tick first, so exactly one IP is left",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clear under Filter by values, so the old tick goes.\""
+   ],
    "image": "images/161.png",
    "imageSource": "shots/32.png",
    "missing": [
@@ -2642,7 +2964,9 @@
    "window": "down the value list",
    "do": "PANEL-PICK | target: 10.20.4.11 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The ten-dot address near the top of the list, ticking it, so it's on its own.\""
+   ],
    "image": "images/162.png",
    "imageSource": "shots/32.png",
    "missing": [
@@ -2659,7 +2983,9 @@
    "window": "bottom right of the filter panel",
    "do": "CLICK | target: OK | cue: pause 1 s after \"click\" | why: applies the one-IP filter",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"OK in the bottom right corner, clicking it to apply the filter.\""
+   ],
    "image": "images/163.png",
    "imageSource": "shots/32.png",
    "missing": [
@@ -2676,7 +3002,9 @@
    "window": "bottom right of the window",
    "do": "READ | target: count in the bottom right",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Only its rows. The status count down in the corner reads 7.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2692,7 +3020,9 @@
    "window": "columns D, E and A",
    "do": "READ | target: user, invalid_user, timestamps",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"A private ten-dot address. ops.admin fails three times, 06:02:00 to 06:02:51, then gets in at 06:04:12.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2708,7 +3038,9 @@
    "window": "filtered rows",
    "do": "DECIDE | target: verdict for 10.20.4.11 | why: [decided on camera from what the rows show]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Internal range, a known admin, a login right after. [say the evidence from the rows]. I'd call it [say the decision].\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2724,7 +3056,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "MOVE | target: Pivot Table 1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down to the tabs, moving over to Pivot Table 1.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2741,7 +3075,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Clicking on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clicking on the Pivot Table 1 tab, so I can mark it.\""
+   ],
    "image": "images/168.png",
    "imageSource": "shots/35.png",
    "missing": [
@@ -2758,7 +3094,9 @@
    "window": "E7, next to 10.20.4.11",
    "do": "CLICK | target: E7 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E7, beside the ten-dot address, clicking its chip so the decision's on its row.\""
+   ],
    "image": "images/169.png",
    "imageSource": "shots/35.png",
    "missing": [
@@ -2775,7 +3113,9 @@
    "window": "the list under the chip",
    "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"pick\" | why: [the verdict just decided, said as the screen shows]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"I'll pick from the list that drops down, because that's what fits these rows.\""
+   ],
    "image": "images/170.png",
    "imageSource": "shots/35.png",
    "missing": [
@@ -2792,7 +3132,9 @@
    "window": "cell E7",
    "do": "READ | target: E7",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E7's filled in too.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2808,7 +3150,9 @@
    "window": "down to the sheet tabs at the very bottom",
    "do": "MOVE | target: Sheet1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 22: last address, the smallest. Moving down to the sheet tabs.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2824,7 +3168,9 @@
    "window": "sheet tabs, bottom left",
    "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"Clicking Sheet1\" | why: the decision needs the raw rows, not only counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clicking Sheet1, bottom left, to get its raw rows.\""
+   ],
    "image": "images/173.png",
    "imageSource": "shots/33-annotated.png",
    "missing": [
@@ -2840,7 +3186,9 @@
    "window": "row 1, right edge of F1",
    "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"a single click\" | why: opens the value list for src_ip",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Filter icon on F1, at the right edge, a single click to open the values.\""
+   ],
    "image": "images/174.png",
    "imageSource": "shots/33-annotated.png",
    "missing": [
@@ -2856,7 +3204,9 @@
    "window": "filter panel, under Filter by values",
    "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear\" | why: clears every tick first, so exactly one IP is left",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clear in the panel first, so only one IP ends up ticked.\""
+   ],
    "image": "images/175.png",
    "imageSource": "shots/33-annotated.png",
    "missing": [
@@ -2872,7 +3222,9 @@
    "window": "down the value list",
    "do": "PANEL-PICK | target: 192.0.2.200 checkbox | cue: pause 1 s after \"Ticking\" | why: only this IP's rows stay, so the rows read next are its whole story",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Ticking 192.0.2.200, down near the end of the list, so it's on its own.\""
+   ],
    "image": "images/176.png",
    "imageSource": "shots/33-annotated.png",
    "missing": [
@@ -2888,7 +3240,9 @@
    "window": "bottom right of the filter panel",
    "do": "CLICK | target: OK | cue: pause 1 s after \"left click\" | why: applies the one-IP filter",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"OK, bottom right, left click to filter.\""
+   ],
    "image": "images/177.png",
    "imageSource": "shots/33-annotated.png",
    "missing": [
@@ -2904,7 +3258,9 @@
    "window": "bottom right of the window",
    "do": "READ | target: count in the bottom right",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Just its rows, and the count bottom right is 2.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2920,7 +3276,9 @@
    "window": "columns D, E and A",
    "do": "READ | target: user, invalid_user, timestamps",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Root twice, at 05:30:00 and 05:31:00, and nothing Accepted.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2936,7 +3294,9 @@
    "window": "filtered rows",
    "do": "DECIDE | target: verdict for 192.0.2.200 | why: [decided on camera from what the rows show]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Two tries, no success. [say the evidence from the rows], and that's [say the decision].\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2952,7 +3312,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "MOVE | target: Pivot Table 1 tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"One more trip down, moving to the Pivot Table 1 tab.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -2969,7 +3331,9 @@
    "window": "sheet tabs at the bottom, right of Sheet1",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Pressing on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Pressing on the Pivot Table 1 tab to mark the last one.\""
+   ],
    "image": "images/182.png",
    "imageSource": "shots/35.png",
    "missing": [
@@ -2986,7 +3350,9 @@
    "window": "E8, next to 192.0.2.200",
    "do": "CLICK | target: E8 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E8, next to 192.0.2.200, clicking its chip so the choice lands on that row.\""
+   ],
    "image": "images/183.png",
    "imageSource": "shots/35.png",
    "missing": [
@@ -3003,7 +3369,9 @@
    "window": "the list under the chip",
    "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"selecting\" | why: [the verdict just decided, said as the screen shows]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"In the list below I'm selecting the one that fits, since two rows made it clear.\""
+   ],
    "image": "images/184.png",
    "imageSource": "shots/35.png",
    "missing": [
@@ -3020,7 +3388,9 @@
    "window": "cell E8",
    "do": "READ | target: E8",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E8's done, so all six rows are marked.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3036,7 +3406,9 @@
    "window": "sheet tabs, bottom left",
    "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"Clicking the Sheet1 tab\" | why: the filter lives on Sheet1",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 23: every row back. Clicking the Sheet1 tab, bottom left, so I can clear the filter.\""
+   ],
    "image": "images/186.png",
    "imageSource": "shots/34.png",
    "missing": [
@@ -3053,7 +3425,9 @@
    "window": "row 1, right edge of F1",
    "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"clicking it\" | why: opens the filter panel to undo the one-IP filter",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Up to F1 and its filter icon, clicking it to open the list.\""
+   ],
    "image": "images/187.png",
    "imageSource": "shots/34.png",
    "missing": [
@@ -3070,7 +3444,9 @@
    "window": "filter panel",
    "do": "PANEL-PICK | target: Select all | cue: pause 1 s after \"Select all\" | why: all 59 rows back before the file is downloaded",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"In the panel, Select all, to bring all 59 rows back before any download.\""
+   ],
    "image": "images/188.png",
    "imageSource": "shots/34.png",
    "missing": [
@@ -3087,7 +3463,9 @@
    "window": "bottom right of the filter panel",
    "do": "CLICK | target: OK | cue: pause 1 s after \"clicking it\" | why: applies Select all, so the filter is lifted",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"OK at the bottom right, clicking it to lift the filter.\""
+   ],
    "image": "images/189.png",
    "imageSource": "shots/34.png",
    "missing": [
@@ -3104,7 +3482,9 @@
    "window": "row numbers",
    "do": "READ | target: rows 2 to 60 visible",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down the row numbers on the left, 60's there again. The full data's back.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3120,7 +3500,9 @@
    "window": "sheet tabs",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Clicking the Pivot Table 1 tab\" | why: the totals go under the pivot",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 24: decision totals. Clicking the Pivot Table 1 tab at the bottom to go back.\""
+   ],
    "image": "images/191.png",
    "imageSource": "shots/37-annotated.png",
    "missing": [
@@ -3136,7 +3518,9 @@
    "window": "cell D10, under the pivot",
    "do": "CLICK | target: D10 | cue: pause 1 s after \"a click there\" | why: totals sit under the decisions",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"D10, just under the pivot, a click there, because the totals belong under the decisions.\""
+   ],
    "image": "images/192.png",
    "imageSource": "shots/37-annotated.png",
    "missing": [
@@ -3152,7 +3536,9 @@
    "window": "D10 to D12",
    "do": "TYPE | target: labels | cue: speak while typing; no pause | why: each total gets a label beside it",
    "type": "Block Return Watch Return Ignore Return",
-   "say": [],
+   "say": [
+    "\"Typing Block, Watch and Ignore down D10 to D12 to give each total a label.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3168,7 +3554,9 @@
    "window": "cell E10",
    "do": "CLICK | target: E10 | cue: pause 1 s after \"clicking it\" | why: first formula cell, beside Block",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Then E10, right of Block, clicking it for the first formula.\""
+   ],
    "image": "images/194.png",
    "imageSource": "shots/37-annotated.png",
    "missing": [
@@ -3184,7 +3572,9 @@
    "window": "cell E10",
    "do": "TYPE | target: formula | cue: speak while typing; no pause | why: counts the Block chips in E3 to E8",
    "type": "=COUNTIF(E3:E8,\"Block\")",
-   "say": [],
+   "say": [
+    "\"Typing equals COUNTIF over E3 to E8 for Block, which counts the Block chips.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3200,7 +3590,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hit Return to move down to E11.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3216,7 +3608,9 @@
    "window": "cell E11",
    "do": "TYPE | target: formula | cue: speak while typing; no pause | why: counts the Watch chips",
    "type": "=COUNTIF(E3:E8,\"Watch\")",
-   "say": [],
+   "say": [
+    "\"Same formula in E11 for Watch, typing it so the Watch chips get counted.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3232,7 +3626,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Return again, hitting it to get down to E12.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3248,7 +3644,9 @@
    "window": "cell E12",
    "do": "TYPE | target: formula | cue: speak while typing; no pause | why: counts the Ignore chips",
    "type": "=COUNTIF(E3:E8,\"Ignore\")",
-   "say": [],
+   "say": [
+    "\"In E12, typing COUNTIF for Ignore, so the last word's got a total too.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3264,7 +3662,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return to finish the third cell, E12.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3280,7 +3680,9 @@
    "window": "E10:E12",
    "do": "DECIDE | target: COUNTIF totals | why: totals by decision word let the note quote counts the sheet can show",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Counting by the word means the note quotes the sheet, so nothing's tallied in my head.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3296,7 +3698,9 @@
    "window": "E10:E12",
    "do": "READ | target: three totals",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"E10 to E12 now have their three totals, and I'll read them out.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3312,7 +3716,9 @@
    "window": "E10 to E12 against E3 to E8",
    "do": "VERIFY | target: totals add up to six IPs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Those three should add up to six, one per IP in E3 to E8. Six and six, they match.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3328,7 +3734,9 @@
    "window": "cell A2",
    "do": "CLICK | target: A2 | cue: pause 1 s after \"Clicking A2\" | why: start of the IP rows with the event headers",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 25: copying for the note. Clicking A2 up top to start the copy at the IPs and headers.\""
+   ],
    "image": "images/204.png",
    "imageSource": "shots/38-annotated.png",
    "missing": [
@@ -3344,7 +3752,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Shift click E8 | cue: speak while typing; no pause | why: A2:E8: IPs, counts and decisions",
    "type": "Shift-click E8",
-   "say": [],
+   "say": [
+    "\"Shift-clicking E8 down to the right, so it's A2 to E8, IPs, counts and decisions.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3360,7 +3770,9 @@
    "window": "name box",
    "do": "READ | target: range",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The name box at the top left confirms A2 to E8.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3376,7 +3788,9 @@
    "window": "sheet grid",
    "do": "KEY | target: Command C | cue: speak while typing; no pause",
    "type": "Command C",
-   "say": [],
+   "say": [
+    "\"Command C, copying the selected cells, A2 to E8.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3392,7 +3806,9 @@
    "window": "A2:E8",
    "do": "READ | target: marching ants border",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"A dashed border runs round A2 to E8, so it's on the clipboard.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3408,7 +3824,9 @@
    "window": "Firefox tab strip, right end",
    "do": "CLICK | target: + new tab ICON | cue: pause 1 s after \"clicking it\" | why: a new tab keeps the sheet one click away",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 26: the note goes in Google Docs. Up to the plus at the right of the tab strip, clicking it so the sheet stays a tab away.\""
+   ],
    "image": "images/209.png",
    "imageSource": "shots/39-annotated.png",
    "missing": [
@@ -3424,7 +3842,9 @@
    "window": "Firefox address bar",
    "do": "TYPE | target: address | cue: speak while typing; no pause | why: typed in full; suggestions are off (Part A)",
    "type": "docs.new",
-   "say": [],
+   "say": [
+    "\"In the address bar at the top, typing docs dot new, the quickest way to a blank Google Doc.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3440,7 +3860,9 @@
    "window": "address bar",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return in the address bar at the top to load the page.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3456,7 +3878,9 @@
    "window": "Firefox",
    "do": "WAIT | target: blank Google Doc loads | cue: silence up to 4 s (plan cap 10 s)",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Waiting for the blank doc, then I'll name it at the top left.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3472,7 +3896,9 @@
    "window": "top left, title box",
    "do": "CLICK | target: Untitled document | cue: pause 1 s after \"Clicking into it\" | why: the doc needs the brief's file name",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Top left, the Untitled document box. Clicking into it to rename the file.\""
+   ],
    "image": "images/213.png",
    "imageSource": "shots/40.png",
    "missing": [
@@ -3489,7 +3915,9 @@
    "window": "title box",
    "do": "TYPE | target: title | cue: speak while typing; no pause | why: the file name the brief asks for",
    "type": "final output 2",
-   "say": [],
+   "say": [
+    "\"Typing final output 2 in the title box, because that's the name the brief asks for.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3505,7 +3933,9 @@
    "window": "title box",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return, and the title box keeps the name.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3521,7 +3951,9 @@
    "window": "document body, first line",
    "do": "CLICK | target: I-beam ICON in the body | cue: pause 1 s after \"clicking\" | why: cursor back in the page",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 27: heading and table. Into the body, first line, clicking so the cursor's in.\""
+   ],
    "image": "images/216.png",
    "imageSource": "shots/41.png",
    "missing": [
@@ -3538,7 +3970,9 @@
    "window": "first line",
    "do": "TYPE | target: heading | cue: speak while typing; no pause | why: names the host and the night every log line comes from",
    "type": "jump01 overnight SSH triage, 20 Oct",
-   "say": [],
+   "say": [
+    "\"On that first line, typing jump01 overnight SSH triage, 20 Oct, since every line's from that night.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3554,7 +3988,9 @@
    "window": "first letter of the heading",
    "do": "BRANCH | target: if Docs capitalised the j go to 41.3a, else 41.4",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"I'm glancing at the first letter, up top, to see if Docs capitalised the j.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3571,7 +4007,9 @@
    "window": "document body",
    "do": "KEY | target: Command Z | cue: speak while typing; no pause | why: undoes the auto-capital only",
    "type": "Command Z",
-   "say": [],
+   "say": [
+    "\"It did, so pressing Command Z, which undoes the capital and keeps the hostname lowercase.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3587,7 +4025,9 @@
    "window": "document body",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return for a new line under the heading.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3603,7 +4043,9 @@
    "window": "document body",
    "do": "KEY | target: Command V | cue: speak while typing; no pause",
    "type": "Command V",
-   "say": [],
+   "say": [
+    "\"Command V on the new line below, pasting the table in.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3619,7 +4061,9 @@
    "window": "beside the pasted table",
    "do": "POPUP | target: Paste linked/unlinked dialog",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"A Paste table box pops up in the middle, asking about linking to the sheet.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3636,7 +4080,9 @@
    "window": "Paste table dialog",
    "do": "PASTE-OPTION | target: Paste unlinked | cue: pause 1 s after \"Paste unlinked\" | why: a static copy; the note will not change if the sheet does",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"In the box I'm picking Paste unlinked, so the note stays fixed if the sheet changes.\""
+   ],
    "image": "images/223.png",
    "imageSource": "shots/41.png",
    "missing": [
@@ -3653,7 +4099,9 @@
    "window": "bottom right of the dialog",
    "do": "CLICK | target: Paste | cue: pause 1 s after \"Clicking it\" | why: drops the unlinked table into the note",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Paste, bottom right of the box. Clicking it to drop the table in.\""
+   ],
    "image": "images/224.png",
    "imageSource": "shots/41.png",
    "missing": [
@@ -3670,7 +4118,9 @@
    "window": "document body",
    "do": "READ | target: pasted table",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The table's in below the heading, seven rows by five columns, decisions in the last one.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3686,7 +4136,9 @@
    "window": "pasted table against the pivot",
    "do": "VERIFY | target: 203.0.113.45 18 in both",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"First row in the doc shows 18 for 203.0.113.45, and D3 in the sheet says 18. They match.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3702,7 +4154,9 @@
    "window": "document body, under the table",
    "do": "CLICK | target: I-beam ICON below the table | cue: pause 1 s after \"Clicking\" | why: places the cursor under the table for the action lines",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 28: the action lines. Clicking just under the table, so the cursor sits below it.\""
+   ],
    "image": "images/227.png",
    "imageSource": "shots/44.png",
    "missing": [
@@ -3719,7 +4173,9 @@
    "window": "new line",
    "do": "TYPE | target: Block line | cue: speak while typing; no pause | why: states the Block action for the two no-login failure storms",
    "type": "Block (temporary, 24h here): {Block IPs},",
-   "say": [],
+   "say": [
+    "\"On the line below, typing Block, temporary, 24h here, then [say the IPs marked Block in column E], with a comma after.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3735,7 +4191,9 @@
    "window": "same line, after the Block IPs",
    "do": "TYPE | target: Block reason | cue: speak while typing; no pause | why: the reason on the line tells the reader why those IPs are blocked",
    "type": " failure storms, no login.",
-   "say": [],
+   "say": [
+    "\"And finishing that line with the reason, failure storms and no login, so whoever reads it knows why.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3751,7 +4209,9 @@
    "window": "document body",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return for the next line down.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3767,7 +4227,9 @@
    "window": "new line",
    "do": "TYPE | target: Watch line, piece 1 | cue: speak while typing; no pause | why: account action for the address that got into svc_backup",
    "type": "Watch: {Watch IP 1} ({why})",
-   "say": [],
+   "say": [
+    "\"The Watch line below it, typing [say the first IP marked Watch in column E] and [say its reason], because it got in.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3783,7 +4245,9 @@
    "window": "same line",
    "do": "TYPE | target: Watch line, piece 2 | cue: speak while typing; no pause | why: account check for the address that got into jsmith",
    "type": " and {Watch IP 2} ({why}).",
-   "say": [],
+   "say": [
+    "\"Same line, typing [say the remaining Watch IPs from column E] with [say their reasons], to check each login.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3799,7 +4263,9 @@
    "window": "Watch line",
    "do": "DECIDE | target: account action over blocking | why: both IPs got in, so the accounts are fixed; a block on a possibly shared address could lock out real users",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Those got in, so it's an account problem. Blocking a shared address could lock real people out.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3815,7 +4281,9 @@
    "window": "document body",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return again to start a new line below for Ignore.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3831,7 +4299,9 @@
    "window": "new line",
    "do": "TYPE | target: Ignore line, piece 1 | cue: speak while typing; no pause | why: records the internal admin address as ignored, with its reason",
    "type": "Ignore: {Ignore IP 1} ({why})",
-   "say": [],
+   "say": [
+    "\"On the Ignore line underneath, typing [say the first IP marked Ignore in column E] and [say its reason], since column E says so.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3847,7 +4317,9 @@
    "window": "same line",
    "do": "TYPE | target: Ignore line, piece 2 | cue: speak while typing; no pause | why: records the two-try address as noise and names who acts",
    "type": " and {Ignore IP 2} ({why}). SOC on-call",
-   "say": [],
+   "say": [
+    "\"Then at the end of that line, typing [say the remaining Ignore IPs from column E] with [say their reasons], and SOC on-call so someone owns it.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3863,7 +4335,9 @@
    "window": "document body",
    "do": "READ | target: three action lines",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Reading it back, the three action lines sit under the table.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3879,7 +4353,9 @@
    "window": "Docs menu bar",
    "do": "MOVE | target: File menu",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 29: saving the note as Word. Up to the Docs menu bar, to File.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3895,7 +4371,9 @@
    "window": "Docs menu bar",
    "do": "MENU-OPEN | target: File | cue: pause 1 s after \"Left click on File\" | why: Download is under File",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Left click on File to open its list.\""
+   ],
    "image": "images/239.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -3911,7 +4389,9 @@
    "window": "File menu",
    "do": "MENU-ITEM | target: Download | cue: pause 1 s after \"Download\" | why: Download opens the format list",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down to Download, and a side menu opens to the right to pick a format.\""
+   ],
    "image": "images/240.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -3927,7 +4407,9 @@
    "window": "Download submenu",
    "do": "EXPORT | target: Microsoft Word (.docx) | cue: pause 1 s after \"Microsoft Word, dot docx\" | why: the brief asks for final output 2 as .docx",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Across to the right, Microsoft Word, dot docx, clicking it, because the brief asks for final output 2 as .docx.\""
+   ],
    "image": "images/241.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -3943,7 +4425,9 @@
    "window": "Save dialog, sidebar",
    "do": "DIALOG | target: Documents | cue: pause 1 s after \"clicking it\" | why: saves next to the inputs in Documents",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The save box opens. Documents in the left sidebar, clicking it to keep it with the inputs.\""
+   ],
    "image": "images/242.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -3959,7 +4443,9 @@
    "window": "Save dialog list",
    "do": "DOUBLE-CLICK | target: Project | cue: pause 1 s after \"double-clicking\" | why: Project is the deliverables folder",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Then Project in the list, double-clicking to save in there.\""
+   ],
    "image": "images/243.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -3975,7 +4461,9 @@
    "window": "Save As box",
    "do": "READ | target: file name",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The Save As field at the top reads final output 2, dot docx. That's right.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -3991,7 +4479,9 @@
    "window": "bottom right of the Save dialog",
    "do": "CLICK | target: Save | cue: pause 1 s after \"pressing it\" | why: writes the .docx to disk",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Bottom right, Save, pressing it to write the file.\""
+   ],
    "image": "images/245.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -4007,7 +4497,9 @@
    "window": "Firefox toolbar, downloads ICON",
    "do": "ERROR-CHECK | target: final output 2.docx | why: re-open check: the exported file opened once (item 29)",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Up in the toolbar, the downloads icon. final output 2's finished, no error, so it saved.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4023,7 +4515,9 @@
    "window": "downloads panel",
    "do": "CLICK | target: final output 2.docx row ICON | cue: pause 1 s after \"Clicking that row\" | why: preview of the exported file [confirm on Mac frame: opens Quick Look or default app]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clicking that row, so I can open the export once and look at it.\""
+   ],
    "image": "images/247.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -4039,7 +4533,9 @@
    "window": "preview",
    "do": "READ | target: note contents",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The preview's got the heading, the table and three action lines.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4055,7 +4551,9 @@
    "window": "preview window, top left",
    "do": "WINDOW | target: red close ICON | cue: pause 1 s after \"clicking it\"",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Top left of the preview, the close button, clicking it. I'm done checking.\""
+   ],
    "image": "images/249.png",
    "imageSource": "shots/47-annotated.png",
    "missing": [
@@ -4071,7 +4569,9 @@
    "window": "Firefox tab strip",
    "do": "CLICK | target: jump01 overnight triage tab | cue: pause 1 s after \"clicking it\" | why: back to the sheet",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 30: now the sheet. In the tab strip, the jump01 overnight triage tab, clicking it to go back.\""
+   ],
    "image": "images/250.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4088,7 +4588,9 @@
    "window": "Sheets menu bar",
    "do": "MOVE | target: File menu",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Up to the Sheets menu bar, File on the left.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4104,7 +4606,9 @@
    "window": "Sheets menu bar",
    "do": "MENU-OPEN | target: File | cue: pause 1 s after \"Clicking File\" | why: Download is under File",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clicking File up there to open the menu.\""
+   ],
    "image": "images/252.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4121,7 +4625,9 @@
    "window": "File menu",
    "do": "MENU-ITEM | target: Download | cue: pause 1 s after \"Download\" | why: Download opens the format list",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down to Download, and the formats slide out to its right to choose one.\""
+   ],
    "image": "images/253.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4138,7 +4644,9 @@
    "window": "Download submenu",
    "do": "EXPORT | target: Microsoft Excel (.xlsx) | cue: pause 1 s after \"Microsoft Excel, dot xlsx\" | why: the brief asks for an Excel file",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Across to the right, Microsoft Excel, dot xlsx, selecting it, since the brief asks for an .xlsx file.\""
+   ],
    "image": "images/254.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4155,7 +4663,9 @@
    "window": "Save As box",
    "do": "CLICK | target: name box | cue: pause 1 s after \"clicking the Save As field\" | why: the sheet title is not the brief's file name",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"In the save box, clicking the Save As field at the top, because the title isn't the brief's name.\""
+   ],
    "image": "images/255.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4172,7 +4682,9 @@
    "window": "Save As box",
    "do": "KEY | target: Command A | cue: speak while typing; no pause",
    "type": "Command A",
-   "say": [],
+   "say": [
+    "\"Command A in that field, so the old name's selected.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4188,7 +4700,9 @@
    "window": "Save As box",
    "do": "TYPE | target: file name | cue: speak while typing; no pause | why: the brief's file name",
    "type": "final output 1",
-   "say": [],
+   "say": [
+    "\"Typing final output 1 in that field, so the file's named the way the brief wants.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4204,7 +4718,9 @@
    "window": "Save dialog, sidebar",
    "do": "DIALOG | target: Documents | cue: pause 1 s after \"a click on it\" | why: saves next to the inputs in Documents",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Documents in the left sidebar, a click on it, to save beside the other files.\""
+   ],
    "image": "images/258.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4221,7 +4737,9 @@
    "window": "Save dialog list",
    "do": "DOUBLE-CLICK | target: Project | cue: pause 1 s after \"double-click\" | why: Project is the deliverables folder",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Project in the list on the right, double-click to open it.\""
+   ],
    "image": "images/259.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4238,7 +4756,9 @@
    "window": "bottom right of the Save dialog",
    "do": "CLICK | target: Save | cue: pause 1 s after \"clicking\" | why: writes the .xlsx to disk",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Save, bottom right, clicking it to write the Excel file.\""
+   ],
    "image": "images/260.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4255,7 +4775,9 @@
    "window": "Firefox downloads panel",
    "do": "ERROR-CHECK | target: final output 1.xlsx | why: re-open check of the second exported file",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The downloads panel up top lists final output 1, finished, so that one saved too.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4271,7 +4793,9 @@
    "window": "downloads panel",
    "do": "CLICK | target: final output 1.xlsx row | cue: pause 1 s after \"click that row\" | why: preview shows both tabs came through [confirm on Mac frame]",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"I'll click that row too, to see both tabs made it in.\""
+   ],
    "image": "images/262.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4288,7 +4812,9 @@
    "window": "preview",
    "do": "READ | target: tabs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Sheet1 and Pivot Table 1 are both there in the preview.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4304,7 +4830,9 @@
    "window": "preview window, top left",
    "do": "WINDOW | target: red close ICON | cue: pause 1 s after \"Closing the preview\"",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Closing the preview with the button at its top left.\""
+   ],
    "image": "images/264.png",
    "imageSource": "shots/48.png",
    "missing": [
@@ -4321,7 +4849,9 @@
    "window": "top left of the Firefox window",
    "do": "WINDOW | target: yellow minimise ICON | cue: pause 1 s after \"the minimise button\"",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 31: back to Terminal. Top left of Firefox, the minimise button, to get it out of the way.\""
+   ],
    "image": "images/265.png",
    "imageSource": "shots/49.png",
    "missing": [
@@ -4338,7 +4868,9 @@
    "window": "Dock, left edge",
    "do": "MOVE | target: Terminal ICON",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Moving down to the dock on the left edge, finding Terminal.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4354,7 +4886,9 @@
    "window": "Dock, left edge",
    "do": "SWITCH | target: Terminal ICON | cue: pause 1 s after \"Clicking it\" | why: second tool for the after-export checks",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"There's its label. Clicking it, because the raw log's my second source.\""
+   ],
    "image": "images/267.png",
    "imageSource": "shots/50.png",
    "missing": [
@@ -4371,7 +4905,9 @@
    "window": "Terminal prompt",
    "do": "TYPE | target: command, piece 1 | cue: speak while typing; no pause | why: on Failed password lines, normal and invalid-user alike, $(NF-3) is the IP; on Accepted publickey lines it would give the port, so this grep keeps to Failed password only (terminal-verify.txt)",
    "type": "grep 'Failed password' auth-jump01.log | awk '{print $(NF-3)}'",
-   "say": [],
+   "say": [
+    "\"Step 32: failures per IP from the raw log. In the window, typing grep Failed password piped to awk, the fourth field from the end.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4387,7 +4923,9 @@
    "window": "same line",
    "do": "TYPE | target: command, piece 2 | cue: speak while typing; no pause | why: counts per IP, largest first, to compare with column D",
    "type": " | sort | uniq -c | sort -rn",
-   "say": [],
+   "say": [
+    "\"Then typing sort, uniq dash c and sort dash r n, so each IP gets a count, biggest first.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4403,7 +4941,9 @@
    "window": "Terminal",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return to print the counts below.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4419,7 +4959,9 @@
    "window": "Terminal output",
    "do": "READ | target: six counted IPs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"18 203.0.113.45, 14 198.51.100.23, 9 192.0.2.77, 7 198.51.100.140, 3 for the ten-dot address, and 2 192.0.2.200.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4435,7 +4977,9 @@
    "window": "Terminal output",
    "do": "DECIDE | target: field choice | why: counting from the raw log, not the sheet, so a mistake in the import would show up",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The raw log, not the sheet, so an import slip would show. On failure lines, counting from the end hits the IP.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4451,7 +4995,9 @@
    "window": "Terminal counts against the pivot column D",
    "do": "VERIFY | target: six counts",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Those six against D3 to D8 in the pivot, 18, 14, 9, 7, 3, 2. All match.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4467,7 +5013,9 @@
    "window": "Terminal prompt",
    "do": "TYPE | target: command | cue: speak while typing; no pause | why: IP after \"from\" works for password and publickey lines alike",
    "type": "grep 'Accepted' auth-jump01.log | grep -o 'from [0-9.]*' | sort | uniq -c",
-   "say": [],
+   "say": [
+    "\"Step 33: logins per IP. In the window, typing grep Accepted, grep dash o on from and the IP, sort, uniq dash c, because publickey lines end in a key.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4483,7 +5031,9 @@
    "window": "Terminal",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Return at the bottom of the window, hitting it to run.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4499,7 +5049,9 @@
    "window": "Terminal output",
    "do": "READ | target: three lines",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Three lines below. 4 from the ten-dot address, 1 from 192.0.2.77, and 1 from 198.51.100.140.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4515,7 +5067,9 @@
    "window": "Terminal counts against pivot columns B and C",
    "do": "VERIFY | target: Accepted per IP",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The pivot had the ten-dot address at 1 plus 3, that's 4, and 1 each for the others. All three match.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4531,7 +5085,9 @@
    "window": "Terminal prompt",
    "do": "TYPE | target: command | cue: speak while typing; no pause | why: shows the last failure and the success in log order",
    "type": "grep -n \"192.0.2.77\" auth-jump01.log | tail -2",
-   "say": [],
+   "say": [
+    "\"Last one below, typing grep dash n for 192.0.2.77, tail dash 2, so I see the failure and success in order.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4547,7 +5103,9 @@
    "window": "Terminal",
    "do": "KEY | target: Return | cue: speak while typing; no pause",
    "type": "Return",
-   "say": [],
+   "say": [
+    "\"Hitting Return on that one, down at the prompt.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4563,7 +5121,9 @@
    "window": "Terminal output",
    "do": "READ | target: two lines",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Line 42, 03:45:49, Failed for svc_backup, then line 43, 03:52:34, Accepted. Under seven minutes apart.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4579,7 +5139,9 @@
    "window": "top left of the Terminal window",
    "do": "WINDOW | target: yellow minimise ICON | cue: pause 1 s after \"Minimising Terminal\"",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 34: back to the sheet. Minimising Terminal with the button at its top left.\""
+   ],
    "image": "images/281.png",
    "imageSource": "shots/54.png",
    "missing": [
@@ -4596,7 +5158,9 @@
    "window": "Dock, left edge",
    "do": "MOVE | target: Firefox ICON",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Cursor down to the Dock, left edge, to the Firefox icon.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4612,7 +5176,9 @@
    "window": "Dock, left edge",
    "do": "SWITCH | target: Firefox ICON | cue: pause 1 s after \"Clicking Firefox\" | why: Firefox is minimised, Dock brings it back",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Clicking Firefox in the dock on the left to bring it back.\""
+   ],
    "image": "images/283.png",
    "imageSource": "shots/54.png",
    "missing": [
@@ -4629,7 +5195,9 @@
    "window": "sheet tabs",
    "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"clicking it\" | why: ends on the deliverable tab",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Down at the bottom, the Pivot Table 1 tab, clicking it to end on the finished table.\""
+   ],
    "image": "images/284.png",
    "imageSource": "shots/54.png",
    "missing": [
@@ -4646,7 +5214,9 @@
    "window": "pivot and E column",
    "do": "READ | target: final view | why: ends on the deliverable sheet so the epilogue can point at it",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"So that's the result. IPs ranked by failures, decisions in E3 to E8, totals below.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4662,7 +5232,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 1: what was done, start to finish | why: sums up the work for the reviewer",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 35: to wrap up, I counted in Terminal first, so the sheet had numbers to hit before I trusted anything it showed me.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4678,7 +5250,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 1: what was done, start to finish",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Then the pivot, because it counts every IP and event at once, sorted so the riskiest address came up first.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4694,7 +5268,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 1: what was done, start to finish",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"I read each IP's raw rows before choosing, since a count doesn't say whether someone got in or which accounts they were after.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4710,7 +5286,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 2: the evidence behind the Block IPs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"For [say the Block IPs from column E], the raw rows showed failure storms with no success at all, nothing that needed an account check.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4726,7 +5304,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 2: the evidence behind the Block IPs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"On block length, fail2ban's default is ten minutes, though plenty of admins raise it to a day.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4742,7 +5322,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 2: the evidence behind the Block IPs",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"So the block is temporary, 24h here, because a temporary block is easy to undo if an address turns out to be shared.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4758,7 +5340,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 3: why the Watch IPs got account actions",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"What's easy to miss is a success after a run of failures. For [say the Watch IPs from column E], the rows in time order showed that.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4774,7 +5358,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 3: why the Watch IPs got account actions",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"An address that got in is an account problem first, so those got account checks rather than a block.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4790,7 +5376,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 3: why the Watch IPs got account actions",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Blocking them can lock out a shared office and still leave a stolen password working, which is why I'd ask the account owners.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4806,7 +5394,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 4: how the Terminal checks matched the sheet",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"For checking, the pivot's grand total of 53 matched the grep count from Terminal, and 59 rows matched the 59 log lines.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4822,7 +5412,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 4: how the Terminal checks matched the sheet",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The tricky part was the log itself. Lines vary in length, so a fixed awk field grabs the wrong word, and counting from the end only works on failure lines.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4838,7 +5430,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 4: how the Terminal checks matched the sheet",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"After the export I recounted failures per IP from the raw log, and they matched column D, with logins matching too, four, one and one.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4854,7 +5448,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 5: what the files contain and where they are",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"The files are in Documents, Project. final output 1 is the Google Sheets export saved as .xlsx, raw rows on Sheet1 and the pivot on Pivot Table 1.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4870,7 +5466,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 5: what the files contain and where they are",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"final output 2 is the Google Docs note saved as .docx, with the 20 Oct heading, the pasted table, and one action line for each decision word.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4886,7 +5484,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 5: what the files contain and where they are",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"I opened both after downloading, and the note's table is unlinked, so it's a snapshot that won't drift if someone edits the sheet.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4902,7 +5502,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 6: what I would do next with more time",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"With more time I'd pull a few more nights of logs, to see whether these addresses come back or new ones show up.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4918,7 +5520,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 6: what I would do next with more time",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"I'd check whether any belong to a known office or VPN range before a longer block.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4934,7 +5538,9 @@
    "window": "pivot on screen",
    "do": "EPILOGUE | target: topic 6: what I would do next with more time",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"And I'd save the Terminal counts as a small script, so the same cross-check runs every morning.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4950,7 +5556,9 @@
    "window": "whole screen",
    "do": "ERROR-CHECK | target: no error dialogs or unsaved marks | why: last check before stopping",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Step 36: a last look round the screen to make sure. No errors, nothing unsaved, just the pivot.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4966,7 +5574,9 @@
    "window": "Firefox",
    "do": "CLOSE | target: leave the pivot on screen",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"I'm leaving the pivot up on screen as the final view.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
@@ -4982,7 +5592,9 @@
    "window": "menu bar, TaskRecorder",
    "do": "STOP | target: Stop | cue: pause 1 s after \"stopping the recording\" | why: recording ends",
    "type": "nothing",
-   "say": [],
+   "say": [
+    "\"Up to the menu bar at the top right, and stopping the recording now.\""
+   ],
    "image": null,
    "imageSource": null,
    "missing": [
