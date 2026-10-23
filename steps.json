@@ -7,7 +7,7 @@
    "time": "0:00",
    "title": "1.1 · Step 1 Opener",
    "window": "",
-   "do": "The recorder is already running. Say the opener, then minimise the recorder.",
+   "do": "The recorder is already running. Say the opener, then minimise the TaskRecorder window only; leave the Goal doc open.",
    "verified": false,
    "type": "nothing",
    "say": [
