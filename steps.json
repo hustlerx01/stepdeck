@@ -1,0 +1,802 @@
+{
+ "title": "Take script v9: overnight SSH triage on jump01 (Terminal.app + Google Sheets + Google Docs in Firefox)",
+ "steps": [
+  {
+   "n": 1,
+   "time": "0:00",
+   "title": "Opener",
+   "window": "Goal doc window (Firefox)",
+   "do": "Recorder already running and minimised; the Goal doc is in front. Speak the opener with the cursor still.",
+   "type": "nothing",
+   "say": [
+    "\"I will be beginning my task soon. Here is the workflow I have in mind. Um, I'm going through last night's failed SSH logins on jump01, to decide what gets blocked.\""
+   ],
+   "image": "images/01.png",
+   "imageSource": "shots/01.png"
+  },
+  {
+   "n": 2,
+   "time": "0:14",
+   "title": "Minimise the Goal doc",
+   "window": "Goal doc window (Firefox)",
+   "do": "Click the yellow minimise button of the Goal doc window [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Okay, so I'm moving my cursor up to the top left corner of the Goal doc, to the yellow minimise button, and\" [click now] \"clicking it, so only my working apps are on screen.\""
+   ],
+   "image": "images/02.png",
+   "imageSource": "shots/02.png"
+  },
+  {
+   "n": 3,
+   "time": "0:31",
+   "title": "Open Terminal",
+   "window": "Dock",
+   "do": "Click the Terminal icon in the Dock [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Now I'm moving my cursor over to the Dock, which is on the left side of the screen. Terminal is the third icon from the top, and I'm\" [click now] \"clicking it to look at the raw log first.\""
+   ],
+   "image": "images/03.png",
+   "imageSource": "shots/03.png"
+  },
+  {
+   "n": 4,
+   "time": "0:45",
+   "title": "cd into Project",
+   "window": "Terminal (left half, neutral $ prompt)",
+   "do": "Type the command, press Return [1s].",
+   "type": "`cd ~/Documents/Project`",
+   "say": [
+    "\"Alright, Terminal's open and my cursor's sitting at the prompt.\"",
+    "\"I'm typing a cd into my Project folder in Documents, then Return, because the log sits in that folder.\""
+   ],
+   "image": "images/04.png",
+   "imageSource": "shots/04-annotated.png"
+  },
+  {
+   "n": 5,
+   "time": "0:58",
+   "title": "Count failed logins",
+   "window": "Terminal (left half, neutral $ prompt)",
+   "do": "Type the command, press Return [1s]. Point at 53.",
+   "type": "`grep -c \"Failed password\" auth-jump01.log`",
+   "say": [
+    "\"Next I'll count the failures. Typing a grep count of the Failed password lines in the jump01 auth log, and Return.\"",
+    "\"Hmm, it printed 53. That's a lot of failed logins for one night on a jump host.\"",
+    "\"My cursor's resting on that 53 now. It's failures only, so I don't know who sent them yet.\"",
+    "\"Hmm, okay… and that's just one night.\""
+   ],
+   "image": "images/05.png",
+   "imageSource": "shots/05-annotated.png"
+  },
+  {
+   "n": 6,
+   "time": "1:30",
+   "title": "List successful logins",
+   "window": "Terminal (left half, neutral $ prompt)",
+   "do": "Type the command, press Return [1s]. Point at the 03:52:34 and 04:20:34 lines.",
+   "type": "`grep \"Accepted\" auth-jump01.log`",
+   "say": [
+    "\"The bigger question is who actually got in, so I'm typing grep, Accepted in quotes, the same log file, and Return.\"",
+    "\"Six lines. I'm moving my cursor down them. Four are ops.admin from our internal 10 range, which is fine.\"",
+    "\"But the 03:52:34 line, svc_backup from 192.0.2.77, and the 04:20:34 one, jsmith from 198.51.100.140. I'll keep those two in mind.\"",
+    "\"Right, so it's two outside logins I need to look at.\""
+   ],
+   "image": "images/06.png",
+   "imageSource": "shots/06-annotated.png"
+  },
+  {
+   "n": 7,
+   "time": "2:07",
+   "title": "Minimise Terminal",
+   "window": "Terminal (left half, neutral $ prompt)",
+   "do": "Click the yellow minimise button of Terminal [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Okay, my cursor is going up to the top left of the Terminal window, to the yellow minimise button, and I'm\" [click now] \"clicking it, so Terminal's out of the way for Sheets.\""
+   ],
+   "image": "images/07.png",
+   "imageSource": "shots/07.png"
+  },
+  {
+   "n": 8,
+   "time": "2:22",
+   "title": "Open the sheet",
+   "window": "Dock",
+   "do": "Click the minimised Firefox window in the Dock [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Now down to the bottom of the Dock on the left, where the minimised Firefox window sits. I'm\" [click now] \"single clicking it, and my blank sheet opens.\""
+   ],
+   "image": "images/08.png",
+   "imageSource": "shots/08.png"
+  },
+  {
+   "n": 9,
+   "time": "2:34",
+   "title": "Import",
+   "window": "Firefox, Sheets tab",
+   "do": "Click File [1s]. Click Import [1s]. Click the Upload tab [1s]. Click Browse [1s].",
+   "type": "nothing",
+   "say": [
+    "\"So I'm moving my cursor up to the menu bar at the top left, to File, the first option.\" [click now] \"Clicking it. Then down to Import,\" [click now] \"click.\"",
+    "\"In the Import file window, I'll take the\" [click now] \"Upload tab at the top and then the\" [click now] \"Browse button, because I want the raw export of that log.\""
+   ],
+   "image": "images/09.png",
+   "imageSource": "shots/09-annotated.png"
+  },
+  {
+   "n": 10,
+   "time": "2:57",
+   "title": "Pick the excerpt file",
+   "window": "Firefox file picker",
+   "do": "Click Documents in the sidebar [1s]. Double-click Project [1s]. Click auth-jump01-excerpt [1s]. Click Open [1s].",
+   "type": "nothing",
+   "say": [
+    "\"The file picker's open. I'm moving my cursor to the left sidebar and\" [click now] \"clicking Documents, then double-clicking the\" [click now] \"Project folder.\"",
+    "\"Now the auth jump01 excerpt file,\" [click now] \"click, and the\" [click now] \"Open button at the bottom right.\""
+   ],
+   "image": "images/10.png",
+   "imageSource": "shots/10.png"
+  },
+  {
+   "n": 11,
+   "time": "3:14",
+   "title": "Import data",
+   "window": "Import dialog",
+   "do": "Click the Import location dropdown [1s]. Click Replace current sheet [1s]. Leave Detect automatically. Click Import data [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Okay, my cursor's on the Import location dropdown in the middle. I'm\" [click now] \"opening it and picking\" [click now] \"Replace current sheet, so my blank sheet gets the rows.\"",
+    "\"Separator type stays on Detect automatically. And down to the\" [click now] \"Import data button at the bottom left.\""
+   ],
+   "image": "images/11.png",
+   "imageSource": "shots/11-annotated.png"
+  },
+  {
+   "n": 12,
+   "time": "3:35",
+   "title": "Read the columns",
+   "window": "Firefox, Sheets tab",
+   "do": "Sweep the header row, scroll to row 60, point at row 2. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Alright, the rows are in. I'm moving my cursor along row 1, left to right: timestamp, host, event, user, invalid user, source IP, and an empty decision column at G.\"",
+    "\"Scrolling down now. Let me see, the last row is 60, so 59 events plus the header, same as the log.\"",
+    "\"And back up to row 2, ops.admin from 10.20.4.11, the first line of the log too.\""
+   ],
+   "image": "images/12.png",
+   "imageSource": "shots/12.png"
+  },
+  {
+   "n": 13,
+   "time": "4:08",
+   "title": "Freeze and filter",
+   "window": "Firefox, Sheets tab",
+   "do": "Click View [1s]. Click Freeze [1s]. Click 1 row [1s]. Click A1 [1s]. Click Data [1s]. Click Create a filter [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Next, my cursor's going up to the View menu,\" [click now] \"click.\"",
+    "\"Down to Freeze…\" [click now] \"click… and\" [click now] \"1 row, so the headers stay put.\"",
+    "\"Now cell A1 at the top left,\" [click now] \"click. Up to the Data menu,\" [click now] \"click, and then\" [click now] \"Create a filter, so every header gets its own filter button.\""
+   ],
+   "image": "images/13.png",
+   "imageSource": "shots/13-annotated.png"
+  },
+  {
+   "n": 14,
+   "time": "4:31",
+   "title": "Insert the pivot",
+   "window": "Firefox, Sheets tab",
+   "do": "Click A1 [1s]. Scroll down, Shift-click G60 [1s]. Click Insert [1s]. Click Pivot table [1s]. Check New sheet is set, click Create [1s]. Point at the range box.",
+   "type": "nothing",
+   "say": [
+    "\"With A1 selected, I'll scroll right down to row 60, the last event.\"",
+    "\"Holding Shift and\" [click now] \"clicking G60, at the bottom right of the table.\"",
+    "\"Now I'm moving my cursor up to Insert in the menu bar,\" [click now] \"click… and\" [click now] \"Pivot table. New sheet is already ticked, so I'm clicking the\" [click now] \"Create button.\"",
+    "\"Okay, a new tab, Pivot table 1. The range box at the top says A1 to G60, so all 59 rows are in.\""
+   ],
+   "image": "images/14.png",
+   "imageSource": "shots/14-annotated.png"
+  },
+  {
+   "n": 15,
+   "time": "5:03",
+   "title": "Rows and Values",
+   "window": "Firefox, Sheets tab, pivot editor on the right",
+   "do": "Click Add next to Rows [1s]. Click src_ip [1s]. Click Add next to Columns [1s]. Click event [1s]. Click the Show totals checkbox under event to untick it [1s].",
+   "type": "nothing",
+   "say": [
+    "\"The pivot editor is on the right side. I'm moving my cursor to Add next to Rows,\" [click now] \"clicking it, and picking\" [click now] \"src underscore ip.\"",
+    "\"Then Add next to Columns,\" [click now] \"click, and\" [click now] \"event. Just under it I'm\" [click now] \"unticking Show totals, so no total column lands in E.\""
+   ],
+   "image": "images/15.png",
+   "imageSource": "shots/15.png"
+  },
+  {
+   "n": 16,
+   "time": "5:28",
+   "title": "Values as COUNTA",
+   "window": "Firefox, Sheets tab, pivot editor",
+   "do": "Click Add next to Values [1s]. Click src_ip [1s]. Click the Summarise by dropdown [1s]. Click COUNTA [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Now down to Add next to Values,\" [click now] \"click… and\" [click now] \"src underscore ip again.\"",
+    "\"Then the Summarise by dropdown, I'm\" [click now] \"opening it and picking\" [click now] \"COUNTA, because I'm counting attempts.\""
+   ],
+   "image": "images/16.png",
+   "imageSource": "shots/16.png"
+  },
+  {
+   "n": 17,
+   "time": "5:41",
+   "title": "Sort descending",
+   "window": "Firefox, Sheets tab, pivot editor",
+   "do": "Click the Order dropdown under Rows [1s], click Descending [1s]. Click the Sort by dropdown [1s], click Failed password [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Now back up to Rows in the editor. I'll open the Order dropdown…\" [click now] \"and pick\" [click now] \"Descending.\"",
+    "\"Then the Sort by dropdown,\" [click now] \"open it, and choose\" [click now] \"Failed password, so the noisiest IP comes on top.\""
+   ],
+   "image": "images/17.png",
+   "imageSource": "shots/17.png"
+  },
+  {
+   "n": 18,
+   "time": "5:56",
+   "title": "Grand total check",
+   "window": "Firefox, Sheets tab",
+   "do": "Point at D9, the Failed password Grand Total. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Let me move my cursor over to D9, the Grand Total under Failed password. It says 53, exactly what grep counted, so nothing got lost in the import.\""
+   ],
+   "image": "images/18.png",
+   "imageSource": "shots/18.png"
+  },
+  {
+   "n": 19,
+   "time": "6:09",
+   "title": "Read the ranking",
+   "window": "Firefox, Sheets tab",
+   "do": "Move the pointer down column A, rows 3 to 8, then down column D. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Now I'm running my cursor down column A, rows 3 to 8, and reading across to column D for each count.\"",
+    "\"203.0.113.45 with 18, 198.51.100.23 with 14, 192.0.2.77 with 9, 198.51.100.140 with 7, 10.20.4.11 with 3, and 192.0.2.200 with 2.\"",
+    "\"I think the count only tells me who's loud, not who got in, so I'll check each IP's raw rows.\"",
+    "\"Yeah, that ordering makes sense.\""
+   ],
+   "image": "images/19.png",
+   "imageSource": "shots/19.png"
+  },
+  {
+   "n": 20,
+   "time": "6:46",
+   "title": "Decision header",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click E2 [1s]. Type the header, press Return [1s].",
+   "type": "`Decision`",
+   "say": [
+    "\"Okay, my cursor's going to E2, the first empty column to the right of the pivot.\" [click now] \"Clicking it, typing Decision, and Return.\""
+   ],
+   "image": "images/20.png",
+   "imageSource": "shots/20-annotated.png"
+  },
+  {
+   "n": 21,
+   "time": "6:58",
+   "title": "Dropdown chips",
+   "window": "Firefox, Sheets tab, pivot tab, side panel",
+   "do": "Click E3 [1s]. Shift-click E8 [1s]. Click Insert [1s]. Click Dropdown [1s]. Type Block, click Add another item [1s], type Watch, click Add another item [1s], type Ignore. Click Done [1s].",
+   "type": "`Block, Watch, Ignore (one per option box)`",
+   "say": [
+    "\"Right, my cursor is on E3, next to 203.0.113.45,\" [click now] \"click. Holding Shift and\" [click now] \"clicking E8, so all six cells are selected. Then\" [click now] \"Insert at the top, and\" [click now] \"Dropdown.\"",
+    "\"The panel opens on the right. I'll click into the first item box and type Block.\"",
+    "\"Then\" [click now] \"Add another item, Watch,\" [click now] \"Add another item, Ignore, and down to\" [click now] \"Done button.\""
+   ],
+   "image": "images/21.png",
+   "imageSource": "shots/21-annotated.png"
+  },
+  {
+   "n": 22,
+   "time": "7:27",
+   "title": "Filter the top IP",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Click the raw data tab [1s]. Click the F1 filter button [1s]. Click Clear [1s]. Click the 203.0.113.45 tick box [1s]. Click OK [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Okay, the top IP first. I'm moving my cursor down to the raw data tab at the bottom left and\" [click now] \"clicking it.\"",
+    "\"Then up to the filter icon in F1, the source IP header. I'll\" [click now] \"open it,\" [click now] \"Clear, then\" [click now] \"tick 203.0.113.45, and\" [click now] \"OK.\""
+   ],
+   "image": "images/22.png",
+   "imageSource": "shots/22.png"
+  },
+  {
+   "n": 23,
+   "time": "7:48",
+   "title": "Read 203.0.113.45",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Scroll slowly through the 18 rows; point at columns D, A and E. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Eighteen rows now. I'm scrolling down slowly, my cursor on column D, user. It's root eleven times and admin seven.\"",
+    "\"Over to column A, the timestamps. They're only seconds apart, eighteen tries in about four minutes. That rhythm is a script, not a person.\"",
+    "\"Column E, invalid user, says no, and there's no Accepted row, so this one's a Block.\""
+   ],
+   "image": "images/23.png",
+   "imageSource": "shots/23.png"
+  },
+  {
+   "n": 24,
+   "time": "8:22",
+   "title": "Mark Block",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click the Pivot table 1 tab [1s]. Click the E3 chip [1s]. Click Block [1s].",
+   "type": "nothing",
+   "say": [
+    "\"So I'll go back to the\" [click now] \"Pivot table 1 tab at the bottom, and on E3, next to 203.0.113.45, I'm\" [click now] \"opening the dropdown and choosing\" [click now] \"Block.\""
+   ],
+   "image": "images/24.png",
+   "imageSource": "shots/24.png"
+  },
+  {
+   "n": 25,
+   "time": "8:33",
+   "title": "Read 198.51.100.23",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Click the raw data tab [1s]. Click the F1 filter button [1s]. Click Clear [1s]. Click the 198.51.100.23 tick box [1s]. Click OK [1s]. Point at user and invalid_user.",
+   "type": "nothing",
+   "say": [
+    "\"Okay, next IP. I'll go back down to the raw data tab at the bottom left and\" [click now] \"click it.\"",
+    "\"Now up to the little filter icon on the source IP header,\" [click now] \"click,\" [click now] \"clear everything, and tick\" [click now] \"198.51.100.23, then\" [click now] \"OK.\"",
+    "\"The users are test, ubuntu and oracle, and my cursor's on invalid user, yes on every row. These accounts don't exist on our host.\"",
+    "\"Right, that's a username spray, fourteen tries and no success. Different tactic from the first, but both are automated.\""
+   ],
+   "image": "images/25.png",
+   "imageSource": "shots/25.png"
+  },
+  {
+   "n": 26,
+   "time": "9:14",
+   "title": "Mark Block",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click the Pivot table 1 tab [1s]. Click the E4 chip [1s]. Click Block [1s].",
+   "type": "nothing",
+   "say": [
+    "\"That's a Block too. Down to the\" [click now] \"Pivot table 1 tab. My cursor's going to E3, no, sorry, E4, next to 198.51.100.23. I'll\" [click now] \"open the chip and\" [click now] \"pick Block.\""
+   ],
+   "image": "images/26.png",
+   "imageSource": "shots/26-annotated.png"
+  },
+  {
+   "n": 27,
+   "time": "9:28",
+   "title": "Read 192.0.2.77",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Click the raw data tab [1s]. Click the F1 filter button [1s]. Click Clear [1s]. Click the 192.0.2.77 tick box [1s]. Click OK [1s]. Point at 03:42:17, 03:45:08 and 03:45:49.",
+   "type": "nothing",
+   "say": [
+    "\"192.0.2.77 now. Back to raw data at the bottom,\" [click now] \"click.\"",
+    "\"I'm moving my cursor up to the F1 filter again and\" [click now] \"left clicking it.\" [click now] \"Clear, then\" [click now] \"tick 192.0.2.77, and\" [click now] \"OK.\"",
+    "\"Nine failures. Column D shows two as deploy and seven as svc_backup.\"",
+    "\"Over to column A. They're slow, roughly forty-five seconds apart, like someone staying under a lockout limit.\"",
+    "\"And deploy is a real account on our host, so it's not a default username list.\""
+   ],
+   "image": "images/27.png",
+   "imageSource": "shots/27.png"
+  },
+  {
+   "n": 28,
+   "time": "10:03",
+   "title": "Why Watch, not Block",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Keep the pointer on the 03:52:34 Accepted row. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Hmm, and I'm moving my cursor one row down. 03:52:34, Accepted password for svc_backup, same IP. Yeah, that's the worrying one.\"",
+    "\"I'm sliding my cursor back up over the seven svc_backup fails. Yeah, seven fails then a login looks like a guessed password, so it's Watch, and svc_backup gets a reset.\""
+   ],
+   "image": "images/28.png",
+   "imageSource": "shots/28.png"
+  },
+  {
+   "n": 29,
+   "time": "10:28",
+   "title": "Mark Watch",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click the Pivot table 1 tab [1s]. Click the E5 chip [1s]. Click Watch [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Okay, back to the\" [click now] \"Pivot tab. E5 is 192.0.2.77, so I'll\" [click now] \"open that chip and pick\" [click now] \"Watch.\""
+   ],
+   "image": "images/29.png",
+   "imageSource": "shots/29.png"
+  },
+  {
+   "n": 30,
+   "time": "10:36",
+   "title": "Read 198.51.100.140",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Click the raw data tab [1s]. Click the F1 filter button [1s]. Click Clear [1s]. Click the 198.51.100.140 tick box [1s]. Click OK [1s]. Point at 04:18:08, then 04:20:34.",
+   "type": "nothing",
+   "say": [
+    "\"Right, the jsmith one. Moving my cursor back to the raw data tab,\" [click now] \"click, and up to the source IP filter,\" [click now] \"opening it.\" [click now] \"Clear, tick 198.51.100.140, then\" [click now] \"OK.\"",
+    "\"It's all jsmith. Pointing at the last fail, 04:18:08, then one row down, Accepted at 04:20:34.\"",
+    "\"One real username, seven fails, then a login. That reads more like someone fumbling a password from home.\""
+   ],
+   "image": "images/30.png",
+   "imageSource": "shots/30.png"
+  },
+  {
+   "n": 31,
+   "time": "11:12",
+   "title": "Mark Watch",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click the Pivot table 1 tab [1s]. Click the E6 chip [1s]. Click Watch [1s].",
+   "type": "nothing",
+   "say": [
+    "\"I think I can't prove it's him, so not Ignore. Back on the\" [click now] \"pivot, I'm\" [click now] \"opening E6's chip and picking\" [click now] \"Watch, and we'll check with jsmith.\""
+   ],
+   "image": "images/31.png",
+   "imageSource": "shots/31.png"
+  },
+  {
+   "n": 32,
+   "time": "11:26",
+   "title": "Read 10.20.4.11",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Click the raw data tab [1s]. Click the F1 filter button [1s]. Click Clear [1s]. Click the 10.20.4.11 tick box [1s]. Click OK [1s]. Point at the 06:02 rows.",
+   "type": "nothing",
+   "say": [
+    "\"Now our internal one. Down to raw data,\" [click now] \"clicking it.\"",
+    "\"Then I'm moving my cursor up to the filter on column F and\" [click now] \"clicking it open.\" [click now] \"Clear, then\" [click now] \"tick 10.20.4.11, and\" [click now] \"OK.\"",
+    "\"Down on the 06:02 rows, it's ops.admin from inside our 10 range, three password fails and then an Accepted.\"",
+    "\"I think it's our admin on a laptop without the key. Internal, nothing for the firewall.\""
+   ],
+   "image": "images/32.png",
+   "imageSource": "shots/32.png"
+  },
+  {
+   "n": 33,
+   "time": "12:04",
+   "title": "Read 192.0.2.200",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Click the F1 filter button [1s]. Click Clear [1s]. Click the 192.0.2.200 tick box [1s]. Click OK [1s].",
+   "type": "nothing",
+   "say": [
+    "\"And the last IP. Same filter at the top of F, I'll\" [click now] \"open it,\" [click now] \"clear it, then\" [click now] \"tick 192.0.2.200, and\" [click now] \"OK.\"",
+    "\"Just two rows, both root, both failed. Background noise, so it's under my threshold.\""
+   ],
+   "image": "images/33.png",
+   "imageSource": "shots/33-annotated.png"
+  },
+  {
+   "n": 34,
+   "time": "12:21",
+   "title": "Clear the filter OPTIONAL",
+   "window": "Firefox, Sheets tab, raw data tab",
+   "do": "Click the F1 filter button [1s]. Click Select all [1s]. Click OK [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Let me put the filter back, so no rows look missing later. My cursor's on the F1 button,\" [click now] \"click,\" [click now] \"Select all, and\" [click now] \"OK. All 59 rows are back.\""
+   ],
+   "image": "images/34.png",
+   "imageSource": "shots/34.png"
+  },
+  {
+   "n": 35,
+   "time": "12:35",
+   "title": "Mark both Ignore",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click the Pivot table 1 tab [1s]. Click the E7 chip [1s], click Ignore [1s]. Click the E8 chip [1s], click Ignore [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Alright, back to the Pivot table 1 tab,\" [click now] \"click. E7 is 10.20.4.11, so I'll\" [click now] \"open its chip and pick\" [click now] \"Ignore.\"",
+    "\"And E8 just below, 192.0.2.200, same thing,\" [click now] \"open the chip and\" [click now] \"Ignore.\""
+   ],
+   "image": "images/35.png",
+   "imageSource": "shots/35.png"
+  },
+  {
+   "n": 36,
+   "time": "12:51",
+   "title": "Check the decisions",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Point down E3 to E8. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Now I'm moving my cursor down column E, E3 to E8. Block, Block, Watch, Watch, Ignore, Ignore. Nothing's left blank.\"",
+    "\"And the two Watch rows are exactly the two Accepted lines Terminal showed me earlier, so the sheet and the log agree on who got in.\"",
+    "\"Okay, that looks right.\""
+   ],
+   "image": "images/36.png",
+   "imageSource": "shots/36.png"
+  },
+  {
+   "n": 37,
+   "time": "13:19",
+   "title": "Decision totals",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click D10 [1s]. Type the three labels, Return after each. Click E10 [1s]. Type the three formulas, Return after each. Point at E10 to E12.",
+   "type": "the lines below, Return after each",
+   "say": [
+    "\"Okay, a small totals block. I'm\" [click now] \"clicking D10, under the pivot, and typing Block, Return, Watch, Return, Ignore, Return.\"",
+    "\"Then\" [click now] \"E10, and I'm typing a COUNTIF over E3 to E8 for Block, to total the decisions, and Return.\"",
+    "\"Return drops me to E11, and the same for Watch, then E12 for Ignore.\"",
+    "\"My cursor's on E10 to E12 now. It reads 2, 2 and 2, so all six IPs are decided.\""
+   ],
+   "image": "images/37.png",
+   "imageSource": "shots/37-annotated.png"
+  },
+  {
+   "n": 38,
+   "time": "13:56",
+   "title": "Copy the pivot and decisions",
+   "window": "Firefox, Sheets tab, pivot tab",
+   "do": "Click A2 [1s]. Shift-click E8 [1s]. Press Command C.",
+   "type": "nothing",
+   "say": [
+    "\"Now I'm moving my cursor up to A2, the src ip header,\" [click now] \"click, holding Shift, and\" [click now] \"clicking E8, the last decision.\"",
+    "\"And Command C to copy, which gives the note the exact IPs and counts without retyping.\""
+   ],
+   "image": "images/38.png",
+   "imageSource": "shots/38-annotated.png"
+  },
+  {
+   "n": 39,
+   "time": "14:14",
+   "title": "New doc",
+   "window": "Firefox, Docs tab",
+   "do": "Click the + at the right of the tab bar [1s]. Type the address, press Return [1s].",
+   "type": "`docs.new`",
+   "say": [
+    "\"I'm done in Sheets for now. Up to the tab bar at the top, the plus at the right end,\" [click now] \"click. Typing docs dot new and pressing Return, to open a blank Google Doc.\""
+   ],
+   "image": "images/39.png",
+   "imageSource": "shots/39-annotated.png"
+  },
+  {
+   "n": 40,
+   "time": "14:33",
+   "title": "Title the doc",
+   "window": "Firefox, Docs tab",
+   "do": "Click Untitled document [1s]. Type the title, press Return [1s].",
+   "type": "`final output 2`",
+   "say": [
+    "\"Okay, my cursor goes to the top left, Untitled document,\" [click now] \"click. Typing final output 2, and Return, which names the download.\""
+   ],
+   "image": "images/40.png",
+   "imageSource": "shots/40.png"
+  },
+  {
+   "n": 41,
+   "time": "14:43",
+   "title": "Heading CONDITIONAL",
+   "window": "Firefox, Docs tab",
+   "do": "Click into the page body [1s]. Type the heading. If Docs auto-capitalises jump01 to Jump01, press Command Z straight away and say the sorry line; otherwise skip it. Check it reads jump01, press Return.",
+   "type": "`jump01 overnight SSH triage, 20 Oct`",
+   "say": [
+    "\"Now down into the page body,\" [click now] \"click, and typing the heading, jump01 overnight SSH triage, 20 Oct.\"",
+    "\"Oh, sorry, Docs capitalised it, so I'm pressing Command Z to undo that. There, jump01 is lowercase again, and Return.\""
+   ],
+   "image": "images/41.png",
+   "imageSource": "shots/41.png"
+  },
+  {
+   "n": 42,
+   "time": "15:01",
+   "title": "Paste the table",
+   "window": "Firefox, Docs tab",
+   "do": "Press Command V. Click Paste unlinked in the pop-up [1s].",
+   "type": "nothing",
+   "say": [
+    "\"On the empty line I'm pressing Command V. A small pop-up comes up near the table, and I'm\" [click now] \"clicking Paste unlinked, to keep the note a fixed record.\""
+   ],
+   "image": "images/42.png",
+   "imageSource": "shots/42.png"
+  },
+  {
+   "n": 43,
+   "time": "15:17",
+   "title": "Check the pasted table",
+   "window": "Firefox, Docs tab",
+   "do": "Point down the pasted rows. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Let me run my cursor down the pasted table. Header row, then the six IPs with their counts and decisions. It matches the sheet, so nothing shifted.\"",
+    "\"Yeah, the IPs came across as plain text, not links.\"",
+    "\"Hmm, let me just check the last row… 192.0.2.200, 2, Ignore. Yes.\""
+   ],
+   "image": "images/43.png",
+   "imageSource": "shots/43.png"
+  },
+  {
+   "n": 44,
+   "time": "15:42",
+   "title": "Block line",
+   "window": "Firefox, Docs tab",
+   "do": "Click the empty line under the table [1s]. Type the line, press Return.",
+   "type": "`Block 24h: 203.0.113.45 and 198.51.100.23, failure storms, no login.`",
+   "say": [
+    "\"So I'm moving my cursor to the empty line just under the table,\" [click now] \"click, and typing Block 24h, 203.0.113.45 and 198.51.100.23, failure storms, no login, then Return, for the firewall owner.\""
+   ],
+   "image": "images/44.png",
+   "imageSource": "shots/44.png"
+  },
+  {
+   "n": 45,
+   "time": "15:59",
+   "title": "Watch line",
+   "window": "Firefox, Docs tab",
+   "do": "Type the line, press Return. Keep the pointer moving.",
+   "type": "the line below (one line, shown wrapped is fine)",
+   "say": [
+    "\"Next the Watch line. I'm typing Watch, 192.0.2.77, resetting svc_backup today, and 198.51.100.140, confirming with jsmith.\"",
+    "\"If I block a shared office IP I might lock out real people, so I'm fixing the accounts instead.\""
+   ],
+   "image": "images/45.png",
+   "imageSource": "shots/45.png"
+  },
+  {
+   "n": 46,
+   "time": "16:16",
+   "title": "Close line",
+   "window": "Firefox, Docs tab",
+   "do": "Type the last line.",
+   "type": "`Ignore: 10.20.4.11 (internal admin typos) and 192.0.2.200 (2 tries, noise). SOC on-call`",
+   "say": [
+    "\"And the last line, Ignore, 10.20.4.11, internal admin typos, and 192.0.2.200, two tries, noise. Signing it SOC on-call, so they know who to come back to.\""
+   ],
+   "image": "images/46.png",
+   "imageSource": "shots/46.png"
+  },
+  {
+   "n": 47,
+   "time": "16:29",
+   "title": "Download .docx",
+   "window": "Firefox, Docs tab, then Firefox save dialog",
+   "do": "Click File [1s]. Click Download [1s]. Click Microsoft Word (.docx) [1s]. Click Documents [1s]. Double-click Project [1s]. Check the name reads final output 2.docx, click Save [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Time to save. Up to File, top left,\" [click now] \"click.\"",
+    "\"Down to Download,\" [click now] \"click… and\" [click now] \"Microsoft Word.\"",
+    "\"In the save window, the sidebar on the left,\" [click now] \"Documents, then double-click\" [click now] \"Project. Name reads final output 2 dot docx.\" [click now] \"Save, bottom right.\""
+   ],
+   "image": "images/47.png",
+   "imageSource": "shots/47-annotated.png"
+  },
+  {
+   "n": 48,
+   "time": "16:48",
+   "title": "Download .xlsx",
+   "window": "Firefox, Sheets tab, then Firefox save dialog",
+   "do": "Click the Sheets tab [1s]. Click File [1s]. Click Download [1s]. Click Microsoft Excel (.xlsx) [1s]. Click the name box [1s], Command A, type the name, read it back. Click Documents [1s], double-click Project [1s], click Save [1s].",
+   "type": "`final output 1`",
+   "say": [
+    "\"Now the sheet. I'll take my cursor up to the jump01 overnight triage tab and\" [click now] \"click it. Then\" [click now] \"File at the top left… down to\" [click now] \"Download… and\" [click now] \"Microsoft Excel.\"",
+    "\"My cursor's on the name box,\" [click now] \"click, and Command A to select the old name.\"",
+    "\"Typing final output 1, so it's final output 1 dot xlsx.\" [click now] \"Documents,\" [click now] \"Project,\" [click now] \"Save.\""
+   ],
+   "image": "images/48.png",
+   "imageSource": "shots/48.png"
+  },
+  {
+   "n": 49,
+   "time": "17:16",
+   "title": "Minimise Firefox",
+   "window": "Firefox",
+   "do": "Click the yellow minimise button of Firefox [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Both files are saved. My cursor is going to the top left corner of Firefox, the yellow minimise button, and I'm\" [click now] \"clicking it, so the browser's off screen for one last check.\""
+   ],
+   "image": "images/49.png",
+   "imageSource": "shots/49.png"
+  },
+  {
+   "n": 50,
+   "time": "17:32",
+   "title": "Back to Terminal",
+   "window": "Dock",
+   "do": "Click the Terminal icon in the Dock [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Over to the Dock on the left again, Terminal, the third icon from the top,\" [click now] \"clicking it. I want the per-IP counts straight from the raw log this time.\""
+   ],
+   "image": "images/50.png",
+   "imageSource": "shots/50.png"
+  },
+  {
+   "n": 51,
+   "time": "17:47",
+   "title": "Per-IP count",
+   "window": "Terminal (left half, neutral $ prompt)",
+   "do": "Type the command, press Return [1s].",
+   "type": "the one command below, then Return",
+   "say": [
+    "\"I'm typing a grep for the Failed password lines, then awk for the third field from the end, that's the source IP even on invalid user lines.\"",
+    "\"Then I pipe it through sort and uniq to count each IP, and sort again with the biggest first, and Return.\""
+   ],
+   "image": "images/51.png",
+   "imageSource": "shots/51-annotated.png"
+  },
+  {
+   "n": 52,
+   "time": "18:11",
+   "title": "Compare with the pivot",
+   "window": "Terminal (left half, neutral $ prompt)",
+   "do": "Point down the output lines. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"Okay, my cursor's on the first output line. 18 for 203.0.113.45, then 14 for 198.51.100.23, then 9, 7, 3 and 2.\"",
+    "\"Moving down the lines, that's the Sheets pivot exactly, row for row. Two tools, same answer, which means the import was clean.\""
+   ],
+   "image": "images/52.png",
+   "imageSource": "shots/52.png"
+  },
+  {
+   "n": 53,
+   "time": "18:31",
+   "title": "One more Accepted check STRETCH",
+   "window": "Terminal (left half, neutral $ prompt)",
+   "do": "Type the command, press Return [1s]. Point at the single svc_backup line at 03:52:34. No clicks. Skip this step if you are running long.",
+   "type": "the one command below, then Return",
+   "say": [
+    "\"Okay, one more quick check, if I have time. I'm typing grep, Accepted, then pipe grep 192.0.2.77, and Return…\"",
+    "\"Just the one svc_backup line at 03:52:34, so nothing else got in from that IP.\""
+   ],
+   "image": "images/53.png",
+   "imageSource": "shots/52.png"
+  },
+  {
+   "n": 54,
+   "time": "18:53",
+   "title": "Back to the pivot",
+   "window": "Terminal (left half, neutral $ prompt), then Firefox",
+   "do": "Click the yellow minimise button of Terminal [1s]. Click the minimised Firefox window in the Dock [1s]. Click the Pivot table 1 tab [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Alright, up to the yellow minimise button at the top left of Terminal,\" [click now] \"click, since I'm done in the shell.\"",
+    "\"Then\" [click now] \"Firefox from the bottom of the Dock, for the final check on the pivot, and the\" [click now] \"Pivot table 1 tab.\""
+   ],
+   "image": "images/54.png",
+   "imageSource": "shots/53-annotated.png"
+  },
+  {
+   "n": 55,
+   "time": "19:10",
+   "title": "Sanity check",
+   "window": "Firefox, Sheets tab, Pivot table 1",
+   "do": "Talk and point: D9, then rows 3 to 8, then E5 and E6, then rows 7 and 8, then E10 to E12. No clicks.",
+   "type": "nothing",
+   "say": [
+    "\"So, how did I check it? I'm moving my cursor to D9, the grand total. The pivot says 53, and the grep count in Terminal said 53 too.\"",
+    "\"Now down rows 3 to 8 in column D. 18, 14, 9, 7, 3 and 2, same as the pipeline, nothing dropped or doubled.\"",
+    "\"And now I'll take my cursor to rows 3 and 4, the two blocks. Neither had an Accepted row, so a firewall rule there costs us nothing.\"",
+    "\"Twenty-four hours is on purpose. These addresses change hands, so a permanent block mostly hits whoever gets them next.\"",
+    "\"The tricky one was 192.0.2.77, E5. Nine fails, two as deploy, seven as svc_backup, then svc_backup in at 03:52:34.\"",
+    "\"Moving down to E6, jsmith's address, 198.51.100.140. Both Watch rows are the two outside logins grep Accepted showed me, so they get an account action, not a block.\"",
+    "\"Rows 7 and 8: 10.20.4.11 is our admin mistyping, and 192.0.2.200 is two tries of noise. Blocking those just bloats the list.\"",
+    "\"Honestly, if I had more time, I'd check jsmith's login against the VPN logs and see what svc_backup touched after 03:52:34.\"",
+    "\"Last, my cursor's on E10 to E12, 2, 2 and 2. The note says exactly what to change, and both files are in the Project folder.\""
+   ],
+   "image": "images/55.png",
+   "imageSource": "shots/54.png"
+  },
+  {
+   "n": 56,
+   "time": "22:17",
+   "title": "Close",
+   "window": "Firefox, Sheets tab, Pivot table 1",
+   "do": "Say the close line, then click the recorder in the Dock [1s] and click Stop silently [1s].",
+   "type": "nothing",
+   "say": [
+    "\"Everything matches and both files are done. And that completes this task.\""
+   ],
+   "image": "images/56.png",
+   "imageSource": "shots/55.png"
+  }
+ ]
+}
