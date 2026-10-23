@@ -6,8 +6,9 @@
    "beat": "1.1",
    "time": "0:00",
    "title": "1.1 · Step 1 Opener",
-   "window": "TaskRecorder card",
-   "do": "OPENER | target: card sentence | cue: no pause after \"in mind\"; start sliding the cursor toward the Goal doc's yellow minimise button during the last words, then minimise TaskRecorder",
+   "window": "",
+   "do": "Recorder is running. Say the opener, then minimise the recorder.",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 1: I will be beginning my task soon. Here is the workflow I have in mind.\""
@@ -24,8 +25,9 @@
    "beat": "1.2",
    "time": "0:07",
    "title": "1.2 · Step 1 Opener",
-   "window": "top left of the Goal doc window",
-   "do": "WINDOW | target: yellow minimise ICON | cue: cursor already moving from 1.1; click on the first word, \"Minimising\"; pause 1 s after the click | why: clears the Goal doc; first click lands by 0:09.5 (internal target)",
+   "window": "",
+   "do": "Click yellow minimise icon, top left of the Goal doc window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Minimising, top left, to clear.\""
@@ -43,8 +45,9 @@
    "beat": "2.1",
    "time": "0:10",
    "title": "2.1 · Step 2 Terminal first look",
-   "window": "Dock, left edge",
-   "do": "MOVE | target: Terminal ICON",
+   "window": "",
+   "do": "Move the mouse to Terminal icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 2: Terminal first. Moving down to the dock on the left.\""
@@ -61,8 +64,9 @@
    "beat": "2.2",
    "time": "0:15",
    "title": "2.2 · Step 2 Terminal first look",
-   "window": "Dock, left edge",
-   "do": "SWITCH | target: Terminal ICON | cue: pause 1 s after \"clicking it\" | why: Terminal was opened and cd-ed into Documents/Project before Start (s19.4 item 3), so it is brought forward, not launched",
+   "window": "",
+   "do": "Switch to Terminal icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Terminal's label pops up beside the icon. It's open in the project folder, so I'm clicking it.\""
@@ -80,8 +84,9 @@
    "beat": "2.3",
    "time": "0:22",
    "title": "2.3 · Step 2 Terminal first look",
-   "window": "Terminal window",
-   "do": "READ | target: prompt \"$ \" in Documents/Project",
+   "window": "",
+   "do": "Read prompt \"$ \" in Documents/Project, Terminal window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"It comes forward in Documents, Project, ready to start straight away.\""
@@ -98,8 +103,9 @@
    "beat": "2.4",
    "time": "0:29",
    "title": "2.4 · Step 2 Terminal first look",
-   "window": "Terminal prompt",
-   "do": "TYPE | target: command line | cue: speak while typing; no pause | why: line count first, so the sheet import can be checked against it later",
+   "window": "",
+   "do": "Type in Terminal prompt",
+   "verified": false,
    "type": "wc -l auth-jump01.log",
    "say": [
     "\"In the window, typing w c dash l and the log name, to get a raw line count.\""
@@ -116,8 +122,9 @@
    "beat": "2.5",
    "time": "0:36",
    "title": "2.5 · Step 2 Terminal first look",
-   "window": "Terminal",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (Terminal)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return to run it, and the count prints just below the prompt.\""
@@ -134,8 +141,9 @@
    "beat": "2.6",
    "time": "0:41",
    "title": "2.6 · Step 2 Terminal first look",
-   "window": "Terminal output",
-   "do": "READ | target: wc output",
+   "window": "",
+   "do": "Read wc output, Terminal output",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"It prints 59 beside auth-jump01.log. That's 59 lines, and I'll hold on to it.\""
@@ -152,8 +160,9 @@
    "beat": "3.1",
    "time": "0:49",
    "title": "3.1 · Step 3 Count failed and unknown-account logins",
-   "window": "Terminal prompt",
-   "do": "TYPE | target: command line | cue: speak while typing; no pause | why: one total of failed logins, used later to check the pivot grand total",
+   "window": "",
+   "do": "Type in Terminal prompt",
+   "verified": false,
    "type": "grep -c \"Failed password\" auth-jump01.log",
    "say": [
     "\"Step 3: failures. Typing grep dash c for Failed password in the window, to get a total the pivot must match.\""
@@ -170,8 +179,9 @@
    "beat": "3.2",
    "time": "0:59",
    "title": "3.2 · Step 3 Count failed and unknown-account logins",
-   "window": "Terminal",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (Terminal)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return, and the number comes back just below.\""
@@ -188,8 +198,9 @@
    "beat": "3.3",
    "time": "1:04",
    "title": "3.3 · Step 3 Count failed and unknown-account logins",
-   "window": "Terminal output",
-   "do": "READ | target: count",
+   "window": "",
+   "do": "Read count, Terminal output",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"53 Failed password lines. That's what the pivot's total has to hit.\""
@@ -206,8 +217,9 @@
    "beat": "3.4",
    "time": "1:11",
    "title": "3.4 · Step 3 Count failed and unknown-account logins",
-   "window": "Terminal prompt",
-   "do": "TYPE | target: command line | cue: speak while typing; no pause | why: counts attempts on accounts that do not exist on jump01",
+   "window": "",
+   "do": "Type in Terminal prompt",
+   "verified": false,
    "type": "grep -c \"invalid user\" auth-jump01.log",
    "say": [
     "\"Below that, typing grep dash c for invalid user, to count tries on accounts that don't exist.\""
@@ -224,8 +236,9 @@
    "beat": "3.5",
    "time": "1:21",
    "title": "3.5 · Step 3 Count failed and unknown-account logins",
-   "window": "Terminal",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (Terminal)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return, and the second count lands underneath.\""
@@ -242,8 +255,9 @@
    "beat": "3.6",
    "time": "1:26",
    "title": "3.6 · Step 3 Count failed and unknown-account logins",
-   "window": "Terminal output",
-   "do": "READ | target: count",
+   "window": "",
+   "do": "Read count, Terminal output",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"14 invalid user lines. That's someone guessing names, not a fumbled password.\""
@@ -260,8 +274,9 @@
    "beat": "3.7",
    "time": "1:33",
    "title": "3.7 · Step 3 Count failed and unknown-account logins",
-   "window": "Terminal output",
-   "do": "DECIDE | target: the two counts | why: totals before ranking: the 53 is the number the pivot has to reproduce, and invalid-user tries are guessing, not mistyped passwords",
+   "window": "",
+   "do": "Decide live: use the totals as the bar the pivot must hit if they are clean whole counts; if a count looks off, recheck the grep pattern",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clean totals, so they're my bar. If the pivot isn't 53, the import's wrong.\""
@@ -278,8 +293,9 @@
    "beat": "4.1",
    "time": "1:44",
    "title": "4.1 · Step 4 List successful logins",
-   "window": "Terminal prompt",
-   "do": "TYPE | target: command line | cue: speak while typing; no pause | why: prints every successful login, so a failure run followed by a success stands out",
+   "window": "",
+   "do": "Type in Terminal prompt",
+   "verified": false,
    "type": "grep 'Accepted' auth-jump01.log",
    "say": [
     "\"Step 4: who got in. To make successes stand out, typing grep Accepted on the next line down.\""
@@ -296,8 +312,9 @@
    "beat": "4.2",
    "time": "1:52",
    "title": "4.2 · Step 4 List successful logins",
-   "window": "Terminal",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (Terminal)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return, and the logins print further down.\""
@@ -314,8 +331,9 @@
    "beat": "4.3",
    "time": "1:56",
    "title": "4.3 · Step 4 List successful logins",
-   "window": "Terminal output",
-   "do": "READ | target: six Accepted lines",
+   "window": "",
+   "do": "Read six Accepted lines, Terminal output",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Six Accepted lines, three publickey, three password. It's the password ones I'm after.\""
@@ -332,8 +350,9 @@
    "beat": "4.4",
    "time": "2:04",
    "title": "4.4 · Step 4 List successful logins",
-   "window": "Terminal output, line 2",
-   "do": "READ | target: 03:52:34 svc_backup from 192.0.2.77",
+   "window": "",
+   "do": "Read 03:52:34 svc_backup from 192.0.2.77, Terminal output, line 2",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Second line, 03:52:34, Accepted password for svc_backup from 192.0.2.77. That's interesting.\""
@@ -350,8 +369,9 @@
    "beat": "4.5",
    "time": "2:12",
    "title": "4.5 · Step 4 List successful logins",
-   "window": "Terminal output",
-   "do": "DECIDE | target: the password successes | why: an IP that failed and then got in needs an account check, so those IPs are compared in the sheet, not blocked from Terminal",
+   "window": "",
+   "do": "Decide live: an IP with failures then Accepted password gets a closer look; IPs with only publickey or no success stay on the failure count",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"An IP that failed then got in needs its account checked, so I'll compare in the sheet first.\""
@@ -368,8 +388,9 @@
    "beat": "5.1",
    "time": "2:22",
    "title": "5.1 · Step 5 Leave Terminal for the sheet",
-   "window": "top left of the Terminal window",
-   "do": "WINDOW | target: yellow minimise ICON | cue: pause 1 s after \"clicking\" | why: minimise before switching apps (s19.4)",
+   "window": "",
+   "do": "Click yellow minimise icon, top left of the Terminal window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 5: Terminal's done for now. Top left, the minimise button, clicking to tuck it away.\""
@@ -387,8 +408,9 @@
    "beat": "5.2",
    "time": "2:28",
    "title": "5.2 · Step 5 Leave Terminal for the sheet",
-   "window": "Dock, left edge",
-   "do": "MOVE | target: Firefox ICON",
+   "window": "",
+   "do": "Move the mouse to Firefox icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Moving back down to the dock on the left, looking for Firefox.\""
@@ -405,8 +427,9 @@
    "beat": "5.3",
    "time": "2:33",
    "title": "5.3 · Step 5 Leave Terminal for the sheet",
-   "window": "Dock, left edge",
-   "do": "SWITCH | target: Firefox ICON | cue: pause 1 s after \"click it\" | why: Firefox holds the blank sheet \"jump01 overnight triage\", opened before Start",
+   "window": "",
+   "do": "Switch to Firefox icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Firefox's label shows over the dock. The sheet's waiting there, so I'll click it.\""
@@ -424,8 +447,9 @@
    "beat": "5.4",
    "time": "2:40",
    "title": "5.4 · Step 5 Leave Terminal for the sheet",
-   "window": "Firefox, Google Sheets",
-   "do": "READ | target: blank sheet \"jump01 overnight triage\"",
+   "window": "",
+   "do": "Read blank sheet \"jump01 overnight triage\", Firefox, Google Sheets",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Google Sheets is up, jump01 overnight triage, and the grid's empty.\""
@@ -442,8 +466,9 @@
    "beat": "6.1",
    "time": "2:48",
    "title": "6.1 · Step 6 Import the log export",
-   "window": "Sheets menu bar",
-   "do": "MOVE | target: File menu",
+   "window": "",
+   "do": "Move the mouse to File menu, Sheets menu bar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 6: getting the export in. Up to the menu bar, File on the far left.\""
@@ -460,8 +485,9 @@
    "beat": "6.2",
    "time": "2:52",
    "title": "6.2 · Step 6 Import the log export",
-   "window": "Sheets menu bar",
-   "do": "MENU-OPEN | target: File | cue: pause 1 s after \"left click\" | why: File holds the Import option",
+   "window": "",
+   "do": "Open the menu File, Sheets menu bar",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"On File, left click to drop the menu down.\""
@@ -478,8 +504,9 @@
    "beat": "6.3",
    "time": "2:58",
    "title": "6.3 · Step 6 Import the log export",
-   "window": "File menu",
-   "do": "MENU-ITEM | target: Import | cue: pause 1 s after \"selecting it\" | why: brings the log export into this sheet rather than opening a second file",
+   "window": "",
+   "do": "Choose Import, File menu",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Down the list to Import, selecting it to bring the data into this sheet.\""
@@ -496,8 +523,9 @@
    "beat": "6.4",
    "time": "3:05",
    "title": "6.4 · Step 6 Import the log export",
-   "window": "Import files dialog, top tabs",
-   "do": "PANEL-TAB | target: Upload | cue: pause 1 s after \"clicking the Upload tab\" | why: the excerpt is a local file on the Mac, so Upload, not Drive",
+   "window": "",
+   "do": "Open the tab Upload, Import files dialog, top tabs",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"An Import box opens. The file's on my Mac, so clicking the Upload tab on top.\""
@@ -514,8 +542,9 @@
    "beat": "6.5",
    "time": "3:11",
    "title": "6.5 · Step 6 Import the log export",
-   "window": "Upload tab, centre",
-   "do": "CLICK | target: Browse | cue: pause 1 s after \"Pressing it\" | why: picking the file by hand from the picker",
+   "window": "",
+   "do": "Click Browse, Upload tab, centre",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Middle of that tab there's Browse. Pressing it to pick the file myself.\""
@@ -532,8 +561,9 @@
    "beat": "6.6",
    "time": "3:17",
    "title": "6.6 · Step 6 Import the log export",
-   "window": "macOS file picker, sidebar",
-   "do": "DIALOG | target: Documents | cue: pause 1 s after \"a click there\" | why: the inputs sit under Documents",
+   "window": "",
+   "do": "In the dialog, click Documents, macOS file picker, sidebar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The Mac picker opens. Documents in the left sidebar, a click there to reach the folder.\""
@@ -551,8 +581,9 @@
    "beat": "6.7",
    "time": "3:23",
    "title": "6.7 · Step 6 Import the log export",
-   "window": "file picker list",
-   "do": "DOUBLE-CLICK | target: Project | cue: pause 1 s after \"double-clicking it\" | why: Project is the folder holding both inputs",
+   "window": "",
+   "do": "Double-click Project, file picker list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Project's in the list on the right. Both inputs live there, so double-clicking it.\""
@@ -570,8 +601,9 @@
    "beat": "6.8",
    "time": "3:30",
    "title": "6.8 · Step 6 Import the log export",
-   "window": "file picker list",
-   "do": "CLICK | target: auth-jump01-excerpt.csv | cue: pause 1 s after \"selects it\" | why: the excerpt is the spreadsheet copy of the same 59 log lines",
+   "window": "",
+   "do": "Click auth-jump01-excerpt.csv, file picker list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The excerpt file sits below, the spreadsheet copy of the 59 lines. One click selects it, so it's ready.\""
@@ -589,8 +621,9 @@
    "beat": "6.9",
    "time": "3:36",
    "title": "6.9 · Step 6 Import the log export",
-   "window": "bottom right of the file picker",
-   "do": "CLICK | target: Open | cue: pause 1 s after \"Clicking it\" | why: starts the upload of the chosen file",
+   "window": "",
+   "do": "Click Open, bottom right of the file picker",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Open, bottom right of the picker. Clicking it to start the upload.\""
@@ -608,8 +641,9 @@
    "beat": "6.10",
    "time": "3:42",
    "title": "6.10 · Step 6 Import the log export",
-   "window": "Import file dialog, Import location",
-   "do": "PANEL-PICK | target: Replace current sheet | cue: pause 1 s after \"Replace current sheet\" | why: the blank sheet is already named for the job, so the data goes straight into it",
+   "window": "",
+   "do": "Pick Replace current sheet, Import file dialog, Import location",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Under Import location in the box, picking Replace current sheet. This one's already named, so that's the right fit.\""
@@ -626,8 +660,9 @@
    "beat": "6.11",
    "time": "3:49",
    "title": "6.11 · Step 6 Import the log export",
-   "window": "bottom of the Import file dialog",
-   "do": "CLICK | target: Import data | cue: pause 1 s after \"press that\" | why: brings the rows into the sheet",
+   "window": "",
+   "do": "Click Import data, bottom of the Import file dialog",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Import data at the bottom of the box. I'll press that to bring the rows in.\""
@@ -644,8 +679,9 @@
    "beat": "6.12",
    "time": "3:55",
    "title": "6.12 · Step 6 Import the log export",
-   "window": "sheet grid",
-   "do": "WAIT | target: import finishes | cue: silence up to 4 s (plan cap 10 s)",
+   "window": "",
+   "do": "Wait for import finishes, sheet grid",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Waiting a second while the rows fill in below.\""
@@ -662,11 +698,12 @@
    "beat": "6.13",
    "time": "4:03",
    "title": "6.13 · Step 6 Import the log export",
-   "window": "Import file dialog choices",
-   "do": "DECIDE | target: Replace current sheet over a new sheet | why: one sheet, one tab of raw data, so the pivot and decisions sit next to their source",
+   "window": "",
+   "do": "Decide live: Replace if the open sheet is blank and already named; New sheet if it holds anything",
+   "verified": false,
    "type": "nothing",
    "say": [
-    "\"Replace beat a new sheet, since it was blank and named. Data, pivot and decisions share one file.\""
+    "\"Replace current sheet, not a new one, since this sheet was blank and named. Data, pivot and decisions share one file.\""
    ],
    "image": null,
    "imageSource": null,
@@ -680,8 +717,9 @@
    "beat": "7.1",
    "time": "4:13",
    "title": "7.1 · Step 7 Read the columns and count the rows",
-   "window": "row 1",
-   "do": "READ | target: header row | why: src_ip in F is the column the per-IP filter uses later",
+   "window": "",
+   "do": "Read header row, row 1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 7: checking the import. Row 1 at the top: timestamp, host, event, user, invalid user, src ip, decision. So F's my filter column.\""
@@ -698,8 +736,9 @@
    "beat": "7.2",
    "time": "4:21",
    "title": "7.2 · Step 7 Read the columns and count the rows",
-   "window": "column G",
-   "do": "READ | target: decision column",
+   "window": "",
+   "do": "Read decision column, column G",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Column G on the right, decision, is empty all the way down. That's mine to fill.\""
@@ -716,8 +755,9 @@
    "beat": "7.3",
    "time": "4:29",
    "title": "7.3 · Step 7 Read the columns and count the rows",
-   "window": "sheet grid",
-   "do": "KEY | target: Command Down | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Command Down (sheet grid)",
+   "verified": false,
    "type": "Command Down",
    "say": [
     "\"Holding Command, then Down, to jump to the bottom of the data.\""
@@ -734,8 +774,9 @@
    "beat": "7.4",
    "time": "4:34",
    "title": "7.4 · Step 7 Read the columns and count the rows",
-   "window": "left edge, row numbers",
-   "do": "READ | target: last row number",
+   "window": "",
+   "do": "Read last row number, left edge, row numbers",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down on the left, the last row number's 60, with 07:40:00 in the timestamp.\""
@@ -752,8 +793,9 @@
    "beat": "7.5",
    "time": "4:41",
    "title": "7.5 · Step 7 Read the columns and count the rows",
-   "window": "row 60 against the Terminal wc count",
-   "do": "VERIFY | target: 59 data rows vs 59 lines",
+   "window": "",
+   "do": "Check 59 data rows vs 59 lines, row 60 against the Terminal wc count",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sixty minus the header's 59, same as Terminal. Nothing's dropped.\""
@@ -770,8 +812,9 @@
    "beat": "7.6",
    "time": "4:51",
    "title": "7.6 · Step 7 Read the columns and count the rows",
-   "window": "sheet grid",
-   "do": "KEY | target: Command Up | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Command Up (sheet grid)",
+   "verified": false,
    "type": "Command Up",
    "say": [
     "\"Holding Command, then Up, back to the top row.\""
@@ -788,8 +831,9 @@
    "beat": "8.1",
    "time": "4:56",
    "title": "8.1 · Step 8 Freeze the header and add a filter",
-   "window": "Sheets menu bar",
-   "do": "MOVE | target: View menu",
+   "window": "",
+   "do": "Move the mouse to View menu, Sheets menu bar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 8: freezing the header before I scroll. Up to the menu bar, across to View.\""
@@ -806,8 +850,9 @@
    "beat": "8.2",
    "time": "5:01",
    "title": "8.2 · Step 8 Freeze the header and add a filter",
-   "window": "Sheets menu bar",
-   "do": "MENU-OPEN | target: View | cue: pause 1 s after \"left click\" | why: the freeze options are under View",
+   "window": "",
+   "do": "Open the menu View, Sheets menu bar",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Cursor's on View, left click to open the list. The freeze options live there.\""
@@ -824,8 +869,9 @@
    "beat": "8.3",
    "time": "5:07",
    "title": "8.3 · Step 8 Freeze the header and add a filter",
-   "window": "View menu",
-   "do": "MENU-ITEM | target: Freeze | cue: pause 1 s after \"Freeze\" | why: Freeze opens the row choices",
+   "window": "",
+   "do": "Choose Freeze, View menu",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Down to Freeze, and a menu slides out to the right to choose rows.\""
@@ -842,8 +888,9 @@
    "beat": "8.4",
    "time": "5:14",
    "title": "8.4 · Step 8 Freeze the header and add a filter",
-   "window": "Freeze submenu",
-   "do": "MENU-ITEM | target: 1 row | cue: pause 1 s after \"clicking it\" | why: keeps the column names on screen while scrolling",
+   "window": "",
+   "do": "Choose 1 row, Freeze submenu",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Across to 1 row, clicking it to keep the names up top while I scroll.\""
@@ -860,8 +907,9 @@
    "beat": "8.5",
    "time": "5:20",
    "title": "8.5 · Step 8 Freeze the header and add a filter",
-   "window": "toolbar, right side",
-   "do": "CLICK | target: Create a filter ICON | cue: pause 1 s after \"A click on that\" | why: filter buttons on every column, used per IP later",
+   "window": "",
+   "do": "Click Create a filter icon, toolbar, right side",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Toolbar, right side, Create a filter. A click on that to filter by IP later.\""
@@ -878,8 +926,9 @@
    "beat": "8.6",
    "time": "5:27",
    "title": "8.6 · Step 8 Freeze the header and add a filter",
-   "window": "row 1",
-   "do": "READ | target: filter ICONs",
+   "window": "",
+   "do": "Read filter icons, row 1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Row 1 now shows a filter icon in every header, A1 across to G1.\""
@@ -896,8 +945,9 @@
    "beat": "9.1",
    "time": "5:34",
    "title": "9.1 · Step 9 Insert the pivot table",
-   "window": "column header A",
-   "do": "CLICK | target: column A | cue: pause 1 s after \"clicking it\" | why: starting the selection at A1",
+   "window": "",
+   "do": "Click column A, column header A",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Step 9: the pivot. Up to the column A header, clicking it to start the selection at A1.\""
@@ -914,8 +964,9 @@
    "beat": "9.2",
    "time": "5:41",
    "title": "9.2 · Step 9 Insert the pivot table",
-   "window": "sheet grid",
-   "do": "KEY | target: Command A | cue: speak while typing; no pause | why: selects A1:G60, the whole import",
+   "window": "",
+   "do": "Press Command A (sheet grid)",
+   "verified": false,
    "type": "Command A",
    "say": [
     "\"Command A, so the whole import's selected in one go, top to bottom.\""
@@ -932,8 +983,9 @@
    "beat": "9.3",
    "time": "5:45",
    "title": "9.3 · Step 9 Insert the pivot table",
-   "window": "name box, top left",
-   "do": "READ | target: range",
+   "window": "",
+   "do": "Read range, name box, top left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The name box, top left, says A1 to G60. Everything's in.\""
@@ -950,8 +1002,9 @@
    "beat": "9.4",
    "time": "5:53",
    "title": "9.4 · Step 9 Insert the pivot table",
-   "window": "Sheets menu bar",
-   "do": "MOVE | target: Insert menu",
+   "window": "",
+   "do": "Move the mouse to Insert menu, Sheets menu bar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Back up to the menu bar, to Insert, a little right of View.\""
@@ -968,8 +1021,9 @@
    "beat": "9.5",
    "time": "5:58",
    "title": "9.5 · Step 9 Insert the pivot table",
-   "window": "Sheets menu bar",
-   "do": "MENU-OPEN | target: Insert | cue: pause 1 s after \"clicking Insert\" | why: the pivot table option is in Insert",
+   "window": "",
+   "do": "Open the menu Insert, Sheets menu bar",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"The pivot table option's in Insert, so clicking Insert up there.\""
@@ -986,8 +1040,9 @@
    "beat": "9.6",
    "time": "6:04",
    "title": "9.6 · Step 9 Insert the pivot table",
-   "window": "Insert menu",
-   "do": "MENU-ITEM | target: Pivot table | cue: pause 1 s after \"choosing it\" | why: one row per IP with counts per event needs a pivot",
+   "window": "",
+   "do": "Choose Pivot table, Insert menu",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Down the list to Pivot table, choosing it to get one row per IP.\""
@@ -1004,8 +1059,9 @@
    "beat": "9.7",
    "time": "6:11",
    "title": "9.7 · Step 9 Insert the pivot table",
-   "window": "Create pivot table dialog",
-   "do": "PANEL-PICK | target: New sheet | cue: pause 1 s after \"New sheet\" | why: keeps the raw rows untouched on Sheet1",
+   "window": "",
+   "do": "Pick New sheet, Create pivot table dialog",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"A Create pivot table box opens. I'm picking New sheet to leave Sheet1's rows untouched.\""
@@ -1022,8 +1078,9 @@
    "beat": "9.8",
    "time": "6:17",
    "title": "9.8 · Step 9 Insert the pivot table",
-   "window": "bottom right of the dialog",
-   "do": "CLICK | target: Create | cue: pause 1 s after \"Pressing it\" | why: builds the pivot on its own tab",
+   "window": "",
+   "do": "Click Create, bottom right of the dialog",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Create, bottom right of the box. Pressing it to give the pivot its own tab.\""
@@ -1040,8 +1097,9 @@
    "beat": "9.9",
    "time": "6:23",
    "title": "9.9 · Step 9 Insert the pivot table",
-   "window": "sheet tabs and right side",
-   "do": "READ | target: new tab and editor",
+   "window": "",
+   "do": "Read new tab and editor, sheet tabs and right side",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"A new tab appears at the bottom, Pivot Table 1, with the editor on the right.\""
@@ -1058,8 +1116,9 @@
    "beat": "9.10",
    "time": "6:31",
    "title": "9.10 · Step 9 Insert the pivot table",
-   "window": "pivot editor",
-   "do": "DECIDE | target: pivot over COUNTIF formulas | why: one pivot counts every IP and event type at once; formulas would need one per pair",
+   "window": "",
+   "do": "Decide live: pivot when counts are needed for many IP and event pairs; formulas when only one or two numbers are needed",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"COUNTIF means a formula per IP and event. A pivot counts them all at once, so I'll stick with it.\""
@@ -1076,8 +1135,9 @@
    "beat": "10.1",
    "time": "6:41",
    "title": "10.1 · Step 10 Rows and columns",
-   "window": "pivot editor, Rows",
-   "do": "CLICK | target: Rows Add | cue: pause 1 s after \"Clicking it\" | why: IPs down the side",
+   "window": "",
+   "do": "Click Rows Add, pivot editor, Rows",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 10: the rows. In the editor on the right, the Add beside Rows. Clicking it, because IPs run down the side.\""
@@ -1095,8 +1155,9 @@
    "beat": "10.2",
    "time": "6:48",
    "title": "10.2 · Step 10 Rows and columns",
-   "window": "Rows field list",
-   "do": "PANEL-PICK | target: src_ip | cue: pause 1 s after \"src underscore ip\" | why: groups the rows by source address",
+   "window": "",
+   "do": "Pick src_ip, Rows field list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"A list drops down below. Picking src underscore ip to give every address its own row.\""
@@ -1114,8 +1175,9 @@
    "beat": "10.3",
    "time": "6:54",
    "title": "10.3 · Step 10 Rows and columns",
-   "window": "pivot editor, Columns",
-   "do": "CLICK | target: Columns Add | cue: pause 1 s after \"Left click there\" | why: event types across the top",
+   "window": "",
+   "do": "Click Columns Add, pivot editor, Columns",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Further down, the Add beside Columns. Left click there to put event types across the top.\""
@@ -1133,8 +1195,9 @@
    "beat": "10.4",
    "time": "7:00",
    "title": "10.4 · Step 10 Rows and columns",
-   "window": "Columns field list",
-   "do": "PANEL-PICK | target: event | cue: pause 1 s after \"selecting it\" | why: each event type becomes its own column",
+   "window": "",
+   "do": "Pick event, Columns field list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Event from that list, selecting it, since it's the type of each try.\""
@@ -1152,8 +1215,9 @@
    "beat": "10.5",
    "time": "7:07",
    "title": "10.5 · Step 10 Rows and columns",
-   "window": "Columns card, event",
-   "do": "CLICK | target: Show totals checkbox | cue: pause 1 s after \"Unticking it\" | why: untick: a row total column is not needed, the D column already holds failures",
+   "window": "",
+   "do": "Click Show totals checkbox, Columns card, event",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Below event, Show totals is ticked. Unticking it, because column D already has the failures.\""
@@ -1171,8 +1235,9 @@
    "beat": "10.6",
    "time": "7:13",
    "title": "10.6 · Step 10 Rows and columns",
-   "window": "pivot grid",
-   "do": "READ | target: columns B to D",
+   "window": "",
+   "do": "Read columns B to D, pivot grid",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Across the top, B's Accepted password, C's Accepted publickey, D's Failed password.\""
@@ -1189,8 +1254,9 @@
    "beat": "11.1",
    "time": "7:21",
    "title": "11.1 · Step 11 Values: count the rows",
-   "window": "pivot editor, Values",
-   "do": "CLICK | target: Values Add | cue: pause 1 s after \"Clicking\" | why: the value card sets what gets counted",
+   "window": "",
+   "do": "Click Values Add, pivot editor, Values",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 11: the counts. Down to Values and its Add button. Clicking, so I can say what's counted.\""
@@ -1208,8 +1274,9 @@
    "beat": "11.2",
    "time": "7:27",
    "title": "11.2 · Step 11 Values: count the rows",
-   "window": "Values field list",
-   "do": "PANEL-PICK | target: event | cue: pause 1 s after \"pick event\" | why: every row has an event, so counting it counts the rows",
+   "window": "",
+   "do": "Pick event, Values field list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"From the list below I'll pick event, because every row has one.\""
@@ -1227,8 +1294,9 @@
    "beat": "11.3",
    "time": "7:33",
    "title": "11.3 · Step 11 Values: count the rows",
-   "window": "Summarize by box",
-   "do": "BRANCH | target: if it shows COUNTA go to 11.3a, if SUM go to 11.3b",
+   "window": "",
+   "do": "If needed: if it shows COUNTA go to 11.3a, if SUM go to 11.3b, Summarize by box",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Checking the Summarize by box, lower on the value card, to see what it's set to.\""
@@ -1246,8 +1314,9 @@
    "beat": "11.3a",
    "time": "7:39",
    "title": "11.3a · Step 11 Values: count the rows",
-   "window": "Summarize by box",
-   "do": "READ | target: COUNTA",
+   "window": "",
+   "do": "Read COUNTA, Summarize by box",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Summarize by already says COUNTA, so I'm leaving it as it is.\""
@@ -1264,8 +1333,9 @@
    "beat": "11.3b",
    "time": "7:46",
    "title": "11.3b · Step 11 Values: count the rows",
-   "window": "Summarize by list",
-   "do": "PANEL-PICK | target: COUNTA | cue: pause 1 s after \"moving down to COUNTA\" | why: COUNTA counts the text IPs, which is what an attempt count needs",
+   "window": "",
+   "do": "Pick COUNTA, Summarize by list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"It's showing SUM, so I'm opening that dropdown and moving down to COUNTA, since these are words.\""
@@ -1283,8 +1353,9 @@
    "beat": "11.4",
    "time": "7:53",
    "title": "11.4 · Step 11 Values: count the rows",
-   "window": "Values card",
-   "do": "DECIDE | target: COUNTA | why: each log line is one attempt, so counting rows gives attempts per IP and event",
+   "window": "",
+   "do": "Decide live: COUNTA when the value field is text; SUM only for numeric fields",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Each line's one attempt, so COUNTA fits. It counts the text entries, which is what I need.\""
@@ -1301,8 +1372,9 @@
    "beat": "11.5",
    "time": "8:03",
    "title": "11.5 · Step 11 Values: count the rows",
-   "window": "pivot grid",
-   "do": "READ | target: grand total row",
+   "window": "",
+   "do": "Read grand total row, pivot grid",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Counts fill in, with a Grand Total on row 9.\""
@@ -1319,8 +1391,9 @@
    "beat": "12.1",
    "time": "8:11",
    "title": "12.1 · Step 12 Sort by failures",
-   "window": "Rows card, Order",
-   "do": "PANEL-PICK | target: Descending | cue: pause 1 s after \"Descending\" | why: largest counts first",
+   "window": "",
+   "do": "Pick Descending, Rows card, Order",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 12: noisiest first. In the Rows card, under Order, choosing Descending to lead with big numbers.\""
@@ -1338,8 +1411,9 @@
    "beat": "12.2",
    "time": "8:17",
    "title": "12.2 · Step 12 Sort by failures",
-   "window": "Rows card, Sort by",
-   "do": "PANEL-PICK | target: Failed password | cue: pause 1 s after \"Failed password\" | why: noisiest IP on top",
+   "window": "",
+   "do": "Pick Failed password, Rows card, Sort by",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sort by, just below it, I'll pick Failed password to put the most failures on top.\""
@@ -1357,8 +1431,9 @@
    "beat": "12.3",
    "time": "8:23",
    "title": "12.3 · Step 12 Sort by failures",
-   "window": "pivot rows 3 to 8",
-   "do": "READ | target: IP order",
+   "window": "",
+   "do": "Read IP order, pivot rows 3 to 8",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Reading down: 203.0.113.45 18, 198.51.100.23 14, 192.0.2.77 9, 198.51.100.140 7, the ten-dot address 3, 192.0.2.200 2.\""
@@ -1375,8 +1450,9 @@
    "beat": "12.4",
    "time": "8:31",
    "title": "12.4 · Step 12 Sort by failures",
-   "window": "pivot rows",
-   "do": "DECIDE | target: sort by failure count | why: the walk goes from most to fewest failures, so the biggest risk is decided first",
+   "window": "",
+   "do": "Decide live: descending by Failed password when risk is driven by attempt volume; by time if the question were order of events",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sorted like this, I'll work down from the biggest risk.\""
@@ -1393,8 +1469,9 @@
    "beat": "12.5",
    "time": "8:42",
    "title": "12.5 · Step 12 Sort by failures",
-   "window": "top right of the pivot editor",
-   "do": "CLICK | target: editor close ICON | cue: pause 1 s after \"Clicking it\" | why: frees the screen for column E",
+   "window": "",
+   "do": "Click editor close icon, top right of the pivot editor",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Top right of the editor, the close icon. Clicking it to get the full sheet back.\""
@@ -1412,8 +1489,9 @@
    "beat": "13.1",
    "time": "8:48",
    "title": "13.1 · Step 13 Check the pivot total against Terminal",
-   "window": "cell D9",
-   "do": "CLICK | target: D9 | cue: pause 1 s after \"Clicking D9\" | why: the failed-password grand total",
+   "window": "",
+   "do": "Click D9, cell D9",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 13: a check against Terminal. Clicking D9, bottom of column D, to read the failure total.\""
@@ -1431,8 +1509,9 @@
    "beat": "13.2",
    "time": "8:54",
    "title": "13.2 · Step 13 Check the pivot total against Terminal",
-   "window": "cell D9",
-   "do": "READ | target: D9",
+   "window": "",
+   "do": "Read D9, cell D9",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"D9 reads 53 failures.\""
@@ -1449,8 +1528,9 @@
    "beat": "13.3",
    "time": "9:02",
    "title": "13.3 · Step 13 Check the pivot total against Terminal",
-   "window": "D9 against the Terminal grep count",
-   "do": "VERIFY | target: 53 vs 53",
+   "window": "",
+   "do": "Check 53 vs 53, D9 against the Terminal grep count",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Pivot says 53, grep said 53. They match, so nothing's missing.\""
@@ -1467,8 +1547,9 @@
    "beat": "13.4",
    "time": "9:12",
    "title": "13.4 · Step 13 Check the pivot total against Terminal",
-   "window": "row 9, B and C",
-   "do": "READ | target: accepted totals",
+   "window": "",
+   "do": "Read accepted totals, row 9, B and C",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Left of it, B9 and C9 are 3 each, password and publickey, same as Terminal.\""
@@ -1485,8 +1566,9 @@
    "beat": "14.1",
    "time": "9:20",
    "title": "14.1 · Step 14 Read the ranking",
-   "window": "rows 3 and 4, column D",
-   "do": "READ | target: top two | why: the two biggest failure counts are read first, they carry the most risk",
+   "window": "",
+   "do": "Read top two, rows 3 and 4, column D",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 14: the ranking. Rows 3 and 4, 203.0.113.45 with 18 and 198.51.100.23 with 14. I'm starting there because they're the biggest risk.\""
@@ -1503,8 +1585,9 @@
    "beat": "14.2",
    "time": "9:28",
    "title": "14.2 · Step 14 Read the ranking",
-   "window": "rows 5 and 6, columns B and D",
-   "do": "READ | target: success after failures",
+   "window": "",
+   "do": "Read success after failures, rows 5 and 6, columns B and D",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Rows 5 and 6. 192.0.2.77 has 9 and 1, 198.51.100.140 has 7 and 1. Both got in after failing.\""
@@ -1521,8 +1604,9 @@
    "beat": "14.3",
    "time": "9:35",
    "title": "14.3 · Step 14 Read the ranking",
-   "window": "rows 7 and 8",
-   "do": "READ | target: small counts",
+   "window": "",
+   "do": "Read small counts, rows 7 and 8",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Rows 7 and 8 are small. The ten-dot address has 1, 3 and 3, and 192.0.2.200 just 2.\""
@@ -1539,8 +1623,9 @@
    "beat": "15.1",
    "time": "9:43",
    "title": "15.1 · Step 15 Decision column header",
-   "window": "cell E2, right of the pivot",
-   "do": "CLICK | target: E2 | cue: pause 1 s after \"clicking there\" | why: header beside the event names row",
+   "window": "",
+   "do": "Click E2, cell E2, right of the pivot",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Step 15: a decision column. Over to E2, right of Failed password, clicking there so decisions sit beside counts.\""
@@ -1557,8 +1642,9 @@
    "beat": "15.2",
    "time": "9:49",
    "title": "15.2 · Step 15 Decision column header",
-   "window": "cell E2",
-   "do": "TYPE | target: header | cue: speak while typing; no pause | why: labels the decision column",
+   "window": "",
+   "do": "Type in cell E2",
+   "verified": false,
    "type": "Decision",
    "say": [
     "\"Typing Decision in E2 to make clear what the column's for.\""
@@ -1575,8 +1661,9 @@
    "beat": "15.3",
    "time": "9:56",
    "title": "15.3 · Step 15 Decision column header",
-   "window": "sheet grid",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (sheet grid)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return to drop the cursor down to E3.\""
@@ -1593,8 +1680,9 @@
    "beat": "16.1",
    "time": "10:01",
    "title": "16.1 · Step 16 Dropdown chips",
-   "window": "E3, next to 203.0.113.45",
-   "do": "CLICK | target: E3 | cue: pause 1 s after \"a click there\" | why: the range has to start on the first IP",
+   "window": "",
+   "do": "Click E3, E3, next to 203.0.113.45",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Step 16: the choices. E3, beside 203.0.113.45, a click there, because the range starts on the first IP.\""
@@ -1611,8 +1699,9 @@
    "beat": "16.2",
    "time": "10:07",
    "title": "16.2 · Step 16 Dropdown chips",
-   "window": "sheet grid",
-   "do": "KEY | target: Shift Down x5 | cue: speak while typing; no pause | why: E3:E8, one cell per IP",
+   "window": "",
+   "do": "Press Shift Down five times (sheet grid)",
+   "verified": false,
    "type": "Shift Down five times",
    "say": [
     "\"Shift and Down five times, so E3 to E8's selected, one cell per IP.\""
@@ -1629,8 +1718,9 @@
    "beat": "16.3",
    "time": "10:12",
    "title": "16.3 · Step 16 Dropdown chips",
-   "window": "name box",
-   "do": "READ | target: range",
+   "window": "",
+   "do": "Read range, name box",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Name box up top confirms E3 to E8, six cells for six addresses.\""
@@ -1647,8 +1737,9 @@
    "beat": "16.4",
    "time": "10:20",
    "title": "16.4 · Step 16 Dropdown chips",
-   "window": "Sheets menu bar",
-   "do": "MOVE | target: Insert menu",
+   "window": "",
+   "do": "Move the mouse to Insert menu, Sheets menu bar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Heading back up to the menu bar, over to Insert.\""
@@ -1665,8 +1756,9 @@
    "beat": "16.5",
    "time": "10:24",
    "title": "16.5 · Step 16 Dropdown chips",
-   "window": "Sheets menu bar",
-   "do": "MENU-OPEN | target: Insert | cue: pause 1 s after \"clicking\" | why: Dropdown is under Insert",
+   "window": "",
+   "do": "Open the menu Insert, Sheets menu bar",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"On Insert, top of the screen, clicking, since Dropdown's one of its options.\""
@@ -1683,8 +1775,9 @@
    "beat": "16.6",
    "time": "10:30",
    "title": "16.6 · Step 16 Dropdown chips",
-   "window": "Insert menu",
-   "do": "MENU-ITEM | target: Dropdown | cue: pause 1 s after \"selecting it\" | why: forces each decision to one of three fixed words",
+   "window": "",
+   "do": "Choose Dropdown, Insert menu",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Down the list to Dropdown, selecting it to keep decisions to fixed words.\""
@@ -1701,8 +1794,9 @@
    "beat": "16.7",
    "time": "10:37",
    "title": "16.7 · Step 16 Dropdown chips",
-   "window": "Data validation, Option 1",
-   "do": "TYPE | target: option | cue: speak while typing; no pause | why: first fixed word, for an address to shut out",
+   "window": "",
+   "do": "Type in Data validation, Option 1",
+   "verified": false,
    "type": "Block",
    "say": [
     "\"A Data validation panel opens on the right. In Option 1, typing Block, so there's a word for shutting one out.\""
@@ -1719,8 +1813,9 @@
    "beat": "16.8",
    "time": "10:44",
    "title": "16.8 · Step 16 Dropdown chips",
-   "window": "Data validation panel",
-   "do": "CLICK | target: Add another item | cue: pause 1 s after \"Hitting it\" | why: makes room for the second option",
+   "window": "",
+   "do": "Click Add another item, Data validation panel",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Just below, Add another item. Hitting it to add a second box.\""
@@ -1737,8 +1832,9 @@
    "beat": "16.9",
    "time": "10:50",
    "title": "16.9 · Step 16 Dropdown chips",
-   "window": "Data validation, Option 2",
-   "do": "TYPE | target: option | cue: speak while typing; no pause | why: second fixed word, the middle ground",
+   "window": "",
+   "do": "Type in Data validation, Option 2",
+   "verified": false,
    "type": "Watch",
    "say": [
     "\"Option 2 underneath, Watch, so there's a middle ground for accounts that need checking.\""
@@ -1755,8 +1851,9 @@
    "beat": "16.10",
    "time": "10:57",
    "title": "16.10 · Step 16 Dropdown chips",
-   "window": "Data validation panel",
-   "do": "CLICK | target: Add another item | cue: pause 1 s after \"pressing it\" | why: makes room for the third option",
+   "window": "",
+   "do": "Click Add another item, Data validation panel",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Add another item once more, lower down, pressing it to get a third box.\""
@@ -1773,8 +1870,9 @@
    "beat": "16.11",
    "time": "11:03",
    "title": "16.11 · Step 16 Dropdown chips",
-   "window": "Data validation, Option 3",
-   "do": "TYPE | target: option | cue: speak while typing; no pause | why: third fixed word, for harmless addresses",
+   "window": "",
+   "do": "Type in Data validation, Option 3",
+   "verified": false,
    "type": "Ignore",
    "say": [
     "\"In the third box, Option 3, typing Ignore, so the harmless ones have a word too.\""
@@ -1791,8 +1889,9 @@
    "beat": "16.12",
    "time": "11:10",
    "title": "16.12 · Step 16 Dropdown chips",
-   "window": "bottom of the Data validation panel",
-   "do": "CLICK | target: Done | cue: pause 1 s after \"Clicking it\" | why: saves the three options to E3:E8",
+   "window": "",
+   "do": "Click Done, bottom of the Data validation panel",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Done at the bottom of the panel. Clicking it to save the choices to E3 to E8.\""
@@ -1809,8 +1908,9 @@
    "beat": "16.13",
    "time": "11:16",
    "title": "16.13 · Step 16 Dropdown chips",
-   "window": "column E",
-   "do": "DECIDE | target: dropdown over free text | why: three fixed words can be counted with COUNTIF; free text would not match exactly",
+   "window": "",
+   "do": "Decide live: dropdown when the cell must be counted later; free text only for notes",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Fixed words, because COUNTIF needs exact matches. Blocked and block would count apart.\""
@@ -1827,8 +1927,9 @@
    "beat": "16.14",
    "time": "11:27",
    "title": "16.14 · Step 16 Dropdown chips",
-   "window": "E3:E8",
-   "do": "READ | target: chips",
+   "window": "",
+   "do": "Read chips, E3:E8",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E3 to E8 each have a little chip with a down arrow now.\""
@@ -1845,8 +1946,9 @@
    "beat": "17.1",
    "time": "11:34",
    "title": "17.1 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "down to the sheet tabs at the very bottom",
-   "do": "MOVE | target: Sheet1 tab",
+   "window": "",
+   "do": "Move the mouse to Sheet1 tab, down to the sheet tabs at the very bottom",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 17: before deciding on the top IP, its raw lines. Moving down to the sheet tabs.\""
@@ -1863,8 +1965,9 @@
    "beat": "17.2",
    "time": "11:39",
    "title": "17.2 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "sheet tabs, bottom left",
-   "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"clicking that tab\" | why: the decision needs the raw rows, not only counts",
+   "window": "",
+   "do": "Click Sheet1 tab, sheet tabs, bottom left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sheet1, bottom left. I'm clicking that tab, because the decision needs raw rows, not just counts.\""
@@ -1882,8 +1985,9 @@
    "beat": "17.3",
    "time": "11:45",
    "title": "17.3 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "row 1, right edge of F1",
-   "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"clicking its filter icon\" | why: src_ip is the column filtered on",
+   "window": "",
+   "do": "Click filter icon, row 1, right edge of",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Up to F1, clicking its filter icon at the right edge, since that's my filter column.\""
@@ -1901,8 +2005,9 @@
    "beat": "17.4",
    "time": "11:52",
    "title": "17.4 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "filter panel, under Filter by values",
-   "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"press Clear\" | why: clears every tick first, so exactly one IP is left",
+   "window": "",
+   "do": "Pick Clear, filter panel, under Filter by values",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The panel opens below. Under Filter by values I'll press Clear, so nothing's ticked.\""
@@ -1920,8 +2025,9 @@
    "beat": "17.5",
    "time": "11:58",
    "title": "17.5 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "down the value list",
-   "do": "PANEL-PICK | target: 203.0.113.45 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
+   "window": "",
+   "do": "Pick 203.0.113.45 checkbox, down the value list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Scrolling down the list to 203.0.113.45 and ticking it, so only its rows come back.\""
@@ -1939,8 +2045,9 @@
    "beat": "17.6",
    "time": "12:04",
    "title": "17.6 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "bottom right of the filter panel",
-   "do": "CLICK | target: OK | cue: pause 1 s after \"left click\" | why: applies the one-IP filter",
+   "window": "",
+   "do": "Click OK, bottom right of the filter panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"OK, bottom right of the panel, left click to apply.\""
@@ -1958,8 +2065,9 @@
    "beat": "17.7",
    "time": "12:11",
    "title": "17.7 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "bottom right of the window",
-   "do": "READ | target: count in the bottom right",
+   "window": "",
+   "do": "Read count in the bottom right, bottom right of the window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Just this IP now. The count, bottom right, says 18, same as the pivot.\""
@@ -1976,8 +2084,9 @@
    "beat": "17.8",
    "time": "12:18",
    "title": "17.8 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "columns D, E and A",
-   "do": "READ | target: user, invalid_user, timestamps",
+   "window": "",
+   "do": "Read user, invalid_user, timestamps, columns D, E and A",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Column D is root and admin over and over, E says no, from 01:12:00 to 01:16:05.\""
@@ -1994,8 +2103,9 @@
    "beat": "17.9",
    "time": "12:26",
    "title": "17.9 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "filtered rows",
-   "do": "DECIDE | target: verdict for 203.0.113.45 | why: [decided on camera from what the rows show]",
+   "window": "",
+   "do": "Decide live: outside IP, 5+ failures, real admin account names tried, and no success line; if met -> Block (goal )",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Putting it together: [say the evidence from the rows]. That makes this one [say the decision].\""
@@ -2012,8 +2122,9 @@
    "beat": "17.10",
    "time": "12:37",
    "title": "17.10 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "MOVE | target: Pivot Table 1 tab",
+   "window": "",
+   "do": "Move the mouse to Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Moving back down to the tabs, to Pivot Table 1, just right of Sheet1.\""
@@ -2031,8 +2142,9 @@
    "beat": "17.11",
    "time": "12:41",
    "title": "17.11 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Clicking the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clicking the Pivot Table 1 tab, so the decision goes beside the count.\""
@@ -2050,8 +2162,9 @@
    "beat": "17.12",
    "time": "12:48",
    "title": "17.12 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "E3, next to 203.0.113.45",
-   "do": "CLICK | target: E3 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
+   "window": "",
+   "do": "Click E3 chip icon, E3, next to 203.0.113.45",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Over to E3, next to 203.0.113.45, clicking its chip so the decision lands on the right row.\""
@@ -2069,8 +2182,9 @@
    "beat": "17.13",
    "time": "12:54",
    "title": "17.13 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "the list under the chip",
-   "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"picking\" | why: [the verdict just decided, said as the screen shows]",
+   "window": "",
+   "do": "Pick [the decision from the DECIDE above], the list under the chip",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The list opens under the chip, and I'm picking my choice, to match what I said.\""
@@ -2088,8 +2202,9 @@
    "beat": "17.14",
    "time": "13:00",
    "title": "17.14 · Step 17 Filter, read and mark 203.0.113.45",
-   "window": "cell E3",
-   "do": "READ | target: E3",
+   "window": "",
+   "do": "Read E3, cell E3",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E3 now shows the word I picked.\""
@@ -2106,8 +2221,9 @@
    "beat": "18.1",
    "time": "13:08",
    "title": "18.1 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "down to the sheet tabs at the very bottom",
-   "do": "MOVE | target: Sheet1 tab",
+   "window": "",
+   "do": "Move the mouse to Sheet1 tab, down to the sheet tabs at the very bottom",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 18: second address, same routine. Cursor's moving down to the tabs at the bottom.\""
@@ -2124,8 +2240,9 @@
    "beat": "18.2",
    "time": "13:13",
    "title": "18.2 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "sheet tabs, bottom left",
-   "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"a left click on it\" | why: the decision needs the raw rows, not only counts",
+   "window": "",
+   "do": "Click Sheet1 tab, sheet tabs, bottom left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sheet1, bottom left, a left click on it, since the rows are what I judge from.\""
@@ -2143,8 +2260,9 @@
    "beat": "18.3",
    "time": "13:19",
    "title": "18.3 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "row 1, right edge of F1",
-   "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"clicking\" | why: opens the value list for src_ip",
+   "window": "",
+   "do": "Click filter icon, row 1, right edge of",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Up to F1, filter icon at the cell's right side, clicking so the value list opens.\""
@@ -2162,8 +2280,9 @@
    "beat": "18.4",
    "time": "13:25",
    "title": "18.4 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "filter panel, under Filter by values",
-   "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear first\" | why: clears every tick first, so exactly one IP is left",
+   "window": "",
+   "do": "Pick Clear, filter panel, under Filter by values",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clear first, under Filter by values, so the last IP's unticked too.\""
@@ -2181,8 +2300,9 @@
    "beat": "18.5",
    "time": "13:32",
    "title": "18.5 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "down the value list",
-   "do": "PANEL-PICK | target: 198.51.100.23 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
+   "window": "",
+   "do": "Pick 198.51.100.23 checkbox, down the value list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down the list to 198.51.100.23, ticking it, so I see only its attempts.\""
@@ -2200,8 +2320,9 @@
    "beat": "18.6",
    "time": "13:38",
    "title": "18.6 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "bottom right of the filter panel",
-   "do": "CLICK | target: OK | cue: pause 1 s after \"clicking\" | why: applies the one-IP filter",
+   "window": "",
+   "do": "Click OK, bottom right of the filter panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"OK at the bottom right, clicking to filter.\""
@@ -2219,8 +2340,9 @@
    "beat": "18.7",
    "time": "13:44",
    "title": "18.7 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "bottom right of the window",
-   "do": "READ | target: count in the bottom right",
+   "window": "",
+   "do": "Read count in the bottom right, bottom right of the window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Its rows only. The count, bottom right, reads 14.\""
@@ -2237,8 +2359,9 @@
    "beat": "18.8",
    "time": "13:52",
    "title": "18.8 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "columns D, E and A",
-   "do": "READ | target: user, invalid_user, timestamps",
+   "window": "",
+   "do": "Read user, invalid_user, timestamps, columns D, E and A",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Column E says yes on every row. Test, ubuntu, oracle, 02:03:00 to 02:05:23, nothing Accepted.\""
@@ -2255,8 +2378,9 @@
    "beat": "18.9",
    "time": "14:00",
    "title": "18.9 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "filtered rows",
-   "do": "DECIDE | target: verdict for 198.51.100.23 | why: [decided on camera from what the rows show]",
+   "window": "",
+   "do": "Decide live: outside IP, 5+ failures on accounts that do not exist on jump01, and no success line; if met -> Block (goal )",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Weighing it up, since the rows are clear: [say the evidence from the rows]. My call's [say the decision].\""
@@ -2273,8 +2397,9 @@
    "beat": "18.10",
    "time": "14:10",
    "title": "18.10 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "MOVE | target: Pivot Table 1 tab",
+   "window": "",
+   "do": "Move the mouse to Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Back down to the tabs, moving towards Pivot Table 1 on the right of Sheet1.\""
@@ -2292,8 +2417,9 @@
    "beat": "18.11",
    "time": "14:15",
    "title": "18.11 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Left click on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Left click on the Pivot Table 1 tab, to record that decision.\""
@@ -2310,8 +2436,9 @@
    "beat": "18.13",
    "time": "14:21",
    "title": "18.13 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "E4, next to 198.51.100.23",
-   "do": "CLICK | target: E4 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
+   "window": "",
+   "do": "Click E4 chip icon, E4, next to 198.51.100.23",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E4, beside 198.51.100.23, clicking its chip so this decision's on its own row.\""
@@ -2328,8 +2455,9 @@
    "beat": "18.14",
    "time": "14:28",
    "title": "18.14 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "the list under the chip",
-   "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"choose\" | why: [the verdict just decided, said as the screen shows]",
+   "window": "",
+   "do": "Pick [the decision from the DECIDE above], the list under the chip",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"From the list below I'll choose the word that fits, since the rows backed it up.\""
@@ -2346,8 +2474,9 @@
    "beat": "18.15",
    "time": "14:34",
    "title": "18.15 · Step 18 Filter, read and mark 198.51.100.23",
-   "window": "cell E4",
-   "do": "READ | target: E4",
+   "window": "",
+   "do": "Read E4, cell E4",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E4 has its word now, and E3 above still keeps its own.\""
@@ -2364,8 +2493,9 @@
    "beat": "19.1",
    "time": "14:42",
    "title": "19.1 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "down to the sheet tabs at the very bottom",
-   "do": "MOVE | target: Sheet1 tab",
+   "window": "",
+   "do": "Move the mouse to Sheet1 tab, down to the sheet tabs at the very bottom",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 19: the third IP, the first that got in. Moving down to the tabs.\""
@@ -2382,8 +2512,9 @@
    "beat": "19.2",
    "time": "14:46",
    "title": "19.2 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "sheet tabs, bottom left",
-   "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"Clicking Sheet1\" | why: the decision needs the raw rows, not only counts",
+   "window": "",
+   "do": "Click Sheet1 tab, sheet tabs, bottom left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clicking Sheet1 at the bottom left, so I can read its raw lines.\""
@@ -2401,8 +2532,9 @@
    "beat": "19.3",
    "time": "14:53",
    "title": "19.3 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "row 1, right edge of F1",
-   "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"a click on it\" | why: opens the value list for src_ip",
+   "window": "",
+   "do": "Click filter icon, row 1, right edge of",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Filter icon on F1 again, a click on it to open the list.\""
@@ -2420,8 +2552,9 @@
    "beat": "19.4",
    "time": "14:59",
    "title": "19.4 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "filter panel, under Filter by values",
-   "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Pressing Clear\" | why: clears every tick first, so exactly one IP is left",
+   "window": "",
+   "do": "Pick Clear, filter panel, under Filter by values",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Pressing Clear in the panel below, so I start from nothing ticked.\""
@@ -2439,8 +2572,9 @@
    "beat": "19.5",
    "time": "15:05",
    "title": "19.5 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "down the value list",
-   "do": "PANEL-PICK | target: 192.0.2.77 checkbox | cue: pause 1 s after \"Ticking\" | why: only this IP's rows stay, so the rows read next are its whole story",
+   "window": "",
+   "do": "Pick 192.0.2.77 checkbox, down the value list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Ticking 192.0.2.77 further down the list, so only its rows stay.\""
@@ -2458,8 +2592,9 @@
    "beat": "19.6",
    "time": "15:12",
    "title": "19.6 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "bottom right of the filter panel",
-   "do": "CLICK | target: OK | cue: pause 1 s after \"left clicking it\" | why: applies the one-IP filter",
+   "window": "",
+   "do": "Click OK, bottom right of the filter panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"OK at the bottom right, left clicking it to apply.\""
@@ -2477,8 +2612,9 @@
    "beat": "19.7",
    "time": "15:18",
    "title": "19.7 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "bottom right of the window",
-   "do": "READ | target: count in the bottom right",
+   "window": "",
+   "do": "Read count in the bottom right, bottom right of the window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Its rows only. Bottom right shows 10, nine failures and a login.\""
@@ -2495,8 +2631,9 @@
    "beat": "19.8",
    "time": "15:26",
    "title": "19.8 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "columns D, E and A",
-   "do": "READ | target: user, invalid_user, timestamps",
+   "window": "",
+   "do": "Read user, invalid_user, timestamps, columns D, E and A",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"svc_backup and deploy failing 03:40:00 to 03:45:49, then svc_backup gets in at 03:52:34.\""
@@ -2513,8 +2650,9 @@
    "beat": "19.9",
    "time": "15:33",
    "title": "19.9 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "filtered rows",
-   "do": "DECIDE | target: verdict for 192.0.2.77 | why: [decided on camera from what the rows show]",
+   "window": "",
+   "do": "Decide live: outside IP, failures followed by a success on the same account; if met -> Watch (goal )",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Failures, then a success on the same account. [say the evidence from the rows], which makes it [say the decision].\""
@@ -2531,8 +2669,9 @@
    "beat": "19.10",
    "time": "15:44",
    "title": "19.10 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "MOVE | target: Pivot Table 1 tab",
+   "window": "",
+   "do": "Move the mouse to Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Moving down to the tabs once more, Pivot Table 1 on the right.\""
@@ -2550,8 +2689,9 @@
    "beat": "19.11",
    "time": "15:49",
    "title": "19.11 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Click on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Click on the Pivot Table 1 tab, so this one gets marked too.\""
@@ -2569,8 +2709,9 @@
    "beat": "19.12",
    "time": "15:55",
    "title": "19.12 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "E5, next to 192.0.2.77",
-   "do": "CLICK | target: E5 chip ICON | cue: pause 1 s after \"clicking the chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
+   "window": "",
+   "do": "Click E5 chip icon, E5, next to 192.0.2.77",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E5, next to 192.0.2.77, clicking the chip so the choice goes on that row.\""
@@ -2588,8 +2729,9 @@
    "beat": "19.13",
    "time": "16:01",
    "title": "19.13 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "the list under the chip",
-   "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"picking\" | why: [the verdict just decided, said as the screen shows]",
+   "window": "",
+   "do": "Pick [the decision from the DECIDE above], the list under the chip",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"And picking from the list that opens below, because that's what the rows point to.\""
@@ -2607,8 +2749,9 @@
    "beat": "19.14",
    "time": "16:08",
    "title": "19.14 · Step 19 Filter, read and mark 192.0.2.77",
-   "window": "cell E5",
-   "do": "READ | target: E5",
+   "window": "",
+   "do": "Read E5, cell E5",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E5's chip shows the word now.\""
@@ -2625,8 +2768,9 @@
    "beat": "20.1",
    "time": "16:15",
    "title": "20.1 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "down to the sheet tabs at the very bottom",
-   "do": "MOVE | target: Sheet1 tab",
+   "window": "",
+   "do": "Move the mouse to Sheet1 tab, down to the sheet tabs at the very bottom",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 20: the fourth address. Moving the cursor down to the tabs at the very bottom.\""
@@ -2643,8 +2787,9 @@
    "beat": "20.2",
    "time": "16:20",
    "title": "20.2 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "sheet tabs, bottom left",
-   "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"clicking it\" | why: the decision needs the raw rows, not only counts",
+   "window": "",
+   "do": "Click Sheet1 tab, sheet tabs, bottom left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sheet1 on the left, clicking it, because I want this IP's own lines.\""
@@ -2662,8 +2807,9 @@
    "beat": "20.3",
    "time": "16:26",
    "title": "20.3 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "row 1, right edge of F1",
-   "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"and click\" | why: opens the value list for src_ip",
+   "window": "",
+   "do": "Click filter icon, row 1, right edge of",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Back to F1, filter icon on its right edge, and click, so the list opens.\""
@@ -2681,8 +2827,9 @@
    "beat": "20.4",
    "time": "16:33",
    "title": "20.4 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "filter panel, under Filter by values",
-   "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear\" | why: clears every tick first, so exactly one IP is left",
+   "window": "",
+   "do": "Pick Clear, filter panel, under Filter by values",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Under Filter by values in the panel, Clear, so the earlier tick's gone.\""
@@ -2700,8 +2847,9 @@
    "beat": "20.5",
    "time": "16:39",
    "title": "20.5 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "down the value list",
-   "do": "PANEL-PICK | target: 198.51.100.140 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
+   "window": "",
+   "do": "Pick 198.51.100.140 checkbox, down the value list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down to 198.51.100.140, ticking it, so just its rows are left.\""
@@ -2719,8 +2867,9 @@
    "beat": "20.6",
    "time": "16:45",
    "title": "20.6 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "bottom right of the filter panel",
-   "do": "CLICK | target: OK | cue: pause 1 s after \"pressing it\" | why: applies the one-IP filter",
+   "window": "",
+   "do": "Click OK, bottom right of the filter panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"OK, bottom right of the panel, pressing it to filter.\""
@@ -2738,8 +2887,9 @@
    "beat": "20.7",
    "time": "16:52",
    "title": "20.7 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "bottom right of the window",
-   "do": "READ | target: count in the bottom right",
+   "window": "",
+   "do": "Read count in the bottom right, bottom right of the window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"There we go. The count down in the corner says 8.\""
@@ -2756,8 +2906,9 @@
    "beat": "20.8",
    "time": "16:59",
    "title": "20.8 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "columns D, E and A",
-   "do": "READ | target: user, invalid_user, timestamps",
+   "window": "",
+   "do": "Read user, invalid_user, timestamps, columns D, E and A",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"All jsmith, failing 04:15:00 to 04:18:08, then in at 04:20:34.\""
@@ -2774,8 +2925,9 @@
    "beat": "20.9",
    "time": "17:07",
    "title": "20.9 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "filtered rows",
-   "do": "DECIDE | target: verdict for 198.51.100.140 | why: [decided on camera from what the rows show]",
+   "window": "",
+   "do": "Decide live: outside IP, one user's failures followed by that user getting in; if met -> Watch (goal )",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"One user failing, then that same user in. [say the evidence from the rows], so I'm going with [say the decision].\""
@@ -2792,8 +2944,9 @@
    "beat": "20.10",
    "time": "17:18",
    "title": "20.10 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "MOVE | target: Pivot Table 1 tab",
+   "window": "",
+   "do": "Move the mouse to Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down to the bottom again, moving over to the Pivot Table 1 tab.\""
@@ -2811,8 +2964,9 @@
    "beat": "20.11",
    "time": "17:22",
    "title": "20.11 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"clicking the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"And clicking the Pivot Table 1 tab, to go and record it.\""
@@ -2830,8 +2984,9 @@
    "beat": "20.12",
    "time": "17:29",
    "title": "20.12 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "E6, next to 198.51.100.140",
-   "do": "CLICK | target: E6 chip ICON | cue: pause 1 s after \"clicking that chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
+   "window": "",
+   "do": "Click E6 chip icon, E6, next to 198.51.100.140",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E6, beside 198.51.100.140, clicking that chip so the decision lines up with the address.\""
@@ -2849,8 +3004,9 @@
    "beat": "20.13",
    "time": "17:35",
    "title": "20.13 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "the list under the chip",
-   "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"Choosing\" | why: [the verdict just decided, said as the screen shows]",
+   "window": "",
+   "do": "Pick [the decision from the DECIDE above], the list under the chip",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Choosing from the list under it, since that's where the evidence led.\""
@@ -2868,8 +3024,9 @@
    "beat": "20.14",
    "time": "17:41",
    "title": "20.14 · Step 20 Filter, read and mark 198.51.100.140",
-   "window": "cell E6",
-   "do": "READ | target: E6",
+   "window": "",
+   "do": "Read E6, cell E6",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E6 has its word in now.\""
@@ -2886,8 +3043,9 @@
    "beat": "21.1",
    "time": "17:49",
    "title": "21.1 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "down to the sheet tabs at the very bottom",
-   "do": "MOVE | target: Sheet1 tab",
+   "window": "",
+   "do": "Move the mouse to Sheet1 tab, down to the sheet tabs at the very bottom",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 21: the internal address. Moving down to the tabs along the bottom edge.\""
@@ -2904,8 +3062,9 @@
    "beat": "21.2",
    "time": "17:54",
    "title": "21.2 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "sheet tabs, bottom left",
-   "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"a left click\" | why: the decision needs the raw rows, not only counts",
+   "window": "",
+   "do": "Click Sheet1 tab, sheet tabs, bottom left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sheet1, far left, a left click, so the raw rows are back.\""
@@ -2923,8 +3082,9 @@
    "beat": "21.3",
    "time": "18:00",
    "title": "21.3 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "row 1, right edge of F1",
-   "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"I'm clicking it\" | why: opens the value list for src_ip",
+   "window": "",
+   "do": "Click filter icon, row 1, right edge of",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"F1's filter icon, right side of the header, and I'm clicking it to open the list.\""
@@ -2942,8 +3102,9 @@
    "beat": "21.4",
    "time": "18:06",
    "title": "21.4 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "filter panel, under Filter by values",
-   "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear\" | why: clears every tick first, so exactly one IP is left",
+   "window": "",
+   "do": "Pick Clear, filter panel, under Filter by values",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clear under Filter by values, so the old tick goes.\""
@@ -2961,8 +3122,9 @@
    "beat": "21.5",
    "time": "18:13",
    "title": "21.5 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "down the value list",
-   "do": "PANEL-PICK | target: 10.20.4.11 checkbox | cue: pause 1 s after \"ticking it\" | why: only this IP's rows stay, so the rows read next are its whole story",
+   "window": "",
+   "do": "Pick 10.20.4.11 checkbox, down the value list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The ten-dot address near the top of the list, ticking it, so it's on its own.\""
@@ -2980,8 +3142,9 @@
    "beat": "21.6",
    "time": "18:19",
    "title": "21.6 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "bottom right of the filter panel",
-   "do": "CLICK | target: OK | cue: pause 1 s after \"click\" | why: applies the one-IP filter",
+   "window": "",
+   "do": "Click OK, bottom right of the filter panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"OK in the bottom right corner, clicking it to apply the filter.\""
@@ -2999,8 +3162,9 @@
    "beat": "21.7",
    "time": "18:25",
    "title": "21.7 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "bottom right of the window",
-   "do": "READ | target: count in the bottom right",
+   "window": "",
+   "do": "Read count in the bottom right, bottom right of the window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Only its rows. The status count down in the corner reads 7.\""
@@ -3017,8 +3181,9 @@
    "beat": "21.8",
    "time": "18:33",
    "title": "21.8 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "columns D, E and A",
-   "do": "READ | target: user, invalid_user, timestamps",
+   "window": "",
+   "do": "Read user, invalid_user, timestamps, columns D, E and A",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"A private ten-dot address. ops.admin fails three times, 06:02:00 to 06:02:51, then gets in at 06:04:12.\""
@@ -3035,8 +3200,9 @@
    "beat": "21.9",
    "time": "18:41",
    "title": "21.9 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "filtered rows",
-   "do": "DECIDE | target: verdict for 10.20.4.11 | why: [decided on camera from what the rows show]",
+   "window": "",
+   "do": "Decide live: internal 10/8 range, a known admin, success right after; if met -> Ignore (goal , internal)",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Internal range, a known admin, a login right after. [say the evidence from the rows]. I'd call it [say the decision].\""
@@ -3053,8 +3219,9 @@
    "beat": "21.10",
    "time": "18:51",
    "title": "21.10 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "MOVE | target: Pivot Table 1 tab",
+   "window": "",
+   "do": "Move the mouse to Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down to the tabs, moving over to Pivot Table 1.\""
@@ -3072,8 +3239,9 @@
    "beat": "21.11",
    "time": "18:56",
    "title": "21.11 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Clicking on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clicking on the Pivot Table 1 tab, so I can mark it.\""
@@ -3091,8 +3259,9 @@
    "beat": "21.12",
    "time": "19:02",
    "title": "21.12 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "E7, next to 10.20.4.11",
-   "do": "CLICK | target: E7 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
+   "window": "",
+   "do": "Click E7 chip icon, E7, next to 10.20.4.11",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E7, beside the ten-dot address, clicking its chip so the decision's on its row.\""
@@ -3110,8 +3279,9 @@
    "beat": "21.13",
    "time": "19:09",
    "title": "21.13 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "the list under the chip",
-   "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"pick\" | why: [the verdict just decided, said as the screen shows]",
+   "window": "",
+   "do": "Pick [the decision from the DECIDE above], the list under the chip",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"I'll pick from the list that drops down, because that's what fits these rows.\""
@@ -3129,8 +3299,9 @@
    "beat": "21.14",
    "time": "19:15",
    "title": "21.14 · Step 21 Filter, read and mark 10.20.4.11",
-   "window": "cell E7",
-   "do": "READ | target: E7",
+   "window": "",
+   "do": "Read E7, cell E7",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E7's filled in too.\""
@@ -3147,8 +3318,9 @@
    "beat": "22.1",
    "time": "19:23",
    "title": "22.1 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "down to the sheet tabs at the very bottom",
-   "do": "MOVE | target: Sheet1 tab",
+   "window": "",
+   "do": "Move the mouse to Sheet1 tab, down to the sheet tabs at the very bottom",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 22: last address, the smallest. Moving down to the sheet tabs.\""
@@ -3165,8 +3337,9 @@
    "beat": "22.2",
    "time": "19:27",
    "title": "22.2 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "sheet tabs, bottom left",
-   "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"Clicking Sheet1\" | why: the decision needs the raw rows, not only counts",
+   "window": "",
+   "do": "Click Sheet1 tab, sheet tabs, bottom left",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Clicking Sheet1, bottom left, to get its raw rows.\""
@@ -3183,8 +3356,9 @@
    "beat": "22.3",
    "time": "19:34",
    "title": "22.3 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "row 1, right edge of F1",
-   "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"a single click\" | why: opens the value list for src_ip",
+   "window": "",
+   "do": "Click filter icon, row 1, right edge of",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Filter icon on F1, at the right edge, a single click to open the values.\""
@@ -3201,8 +3375,9 @@
    "beat": "22.4",
    "time": "19:40",
    "title": "22.4 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "filter panel, under Filter by values",
-   "do": "PANEL-PICK | target: Clear | cue: pause 1 s after \"Clear\" | why: clears every tick first, so exactly one IP is left",
+   "window": "",
+   "do": "Pick Clear, filter panel, under Filter by values",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Clear in the panel first, so only one IP ends up ticked.\""
@@ -3219,8 +3394,9 @@
    "beat": "22.5",
    "time": "19:46",
    "title": "22.5 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "down the value list",
-   "do": "PANEL-PICK | target: 192.0.2.200 checkbox | cue: pause 1 s after \"Ticking\" | why: only this IP's rows stay, so the rows read next are its whole story",
+   "window": "",
+   "do": "Pick 192.0.2.200 checkbox, down the value list",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Ticking 192.0.2.200, down near the end of the list, so it's on its own.\""
@@ -3237,8 +3413,9 @@
    "beat": "22.6",
    "time": "19:53",
    "title": "22.6 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "bottom right of the filter panel",
-   "do": "CLICK | target: OK | cue: pause 1 s after \"left click\" | why: applies the one-IP filter",
+   "window": "",
+   "do": "Click OK, bottom right of the filter panel",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"OK, bottom right, left click to filter.\""
@@ -3255,8 +3432,9 @@
    "beat": "22.7",
    "time": "19:59",
    "title": "22.7 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "bottom right of the window",
-   "do": "READ | target: count in the bottom right",
+   "window": "",
+   "do": "Read count in the bottom right, bottom right of the window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Just its rows, and the count bottom right is 2.\""
@@ -3273,8 +3451,9 @@
    "beat": "22.8",
    "time": "20:07",
    "title": "22.8 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "columns D, E and A",
-   "do": "READ | target: user, invalid_user, timestamps",
+   "window": "",
+   "do": "Read user, invalid_user, timestamps, columns D, E and A",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Root twice, at 05:30:00 and 05:31:00, and nothing Accepted.\""
@@ -3291,8 +3470,9 @@
    "beat": "22.9",
    "time": "20:14",
    "title": "22.9 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "filtered rows",
-   "do": "DECIDE | target: verdict for 192.0.2.200 | why: [decided on camera from what the rows show]",
+   "window": "",
+   "do": "Decide live: outside IP, under 5 failures, no success; under 5 is noise -> Ignore (goal , low-count); 5+ with no success would be Block",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Two tries, no success. [say the evidence from the rows], and that's [say the decision].\""
@@ -3309,8 +3489,9 @@
    "beat": "22.10",
    "time": "20:25",
    "title": "22.10 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "MOVE | target: Pivot Table 1 tab",
+   "window": "",
+   "do": "Move the mouse to Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"One more trip down, moving to the Pivot Table 1 tab.\""
@@ -3328,8 +3509,9 @@
    "beat": "22.11",
    "time": "20:30",
    "title": "22.11 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "sheet tabs at the bottom, right of Sheet1",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Pressing on the Pivot Table 1 tab\" | why: the decision is recorded beside the count",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs at the bottom, right of Sheet1",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Pressing on the Pivot Table 1 tab to mark the last one.\""
@@ -3347,8 +3529,9 @@
    "beat": "22.12",
    "time": "20:36",
    "title": "22.12 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "E8, next to 192.0.2.200",
-   "do": "CLICK | target: E8 chip ICON | cue: pause 1 s after \"clicking its chip\" | why: the chip on the IP's own row, so the decision lands beside the right address",
+   "window": "",
+   "do": "Click E8 chip icon, E8, next to 192.0.2.200",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E8, next to 192.0.2.200, clicking its chip so the choice lands on that row.\""
@@ -3366,8 +3549,9 @@
    "beat": "22.13",
    "time": "20:42",
    "title": "22.13 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "the list under the chip",
-   "do": "PANEL-PICK | target: [the decision from the DECIDE above] | cue: pause 1 s after \"selecting\" | why: [the verdict just decided, said as the screen shows]",
+   "window": "",
+   "do": "Pick [the decision from the DECIDE above], the list under the chip",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"In the list below I'm selecting the one that fits, since two rows made it clear.\""
@@ -3385,8 +3569,9 @@
    "beat": "22.14",
    "time": "20:49",
    "title": "22.14 · Step 22 Filter, read and mark 192.0.2.200",
-   "window": "cell E8",
-   "do": "READ | target: E8",
+   "window": "",
+   "do": "Read E8, cell E8",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E8's done, so all six rows are marked.\""
@@ -3403,8 +3588,9 @@
    "beat": "23.1",
    "time": "20:56",
    "title": "23.1 · Step 23 Clear the filter",
-   "window": "sheet tabs, bottom left",
-   "do": "CLICK | target: Sheet1 tab | cue: pause 1 s after \"Clicking the Sheet1 tab\" | why: the filter lives on Sheet1",
+   "window": "",
+   "do": "Click Sheet1 tab, sheet tabs, bottom left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 23: every row back. Clicking the Sheet1 tab, bottom left, so I can clear the filter.\""
@@ -3422,8 +3608,9 @@
    "beat": "23.2",
    "time": "21:03",
    "title": "23.2 · Step 23 Clear the filter",
-   "window": "row 1, right edge of F1",
-   "do": "CLICK | target: F1 filter ICON | cue: pause 1 s after \"clicking it\" | why: opens the filter panel to undo the one-IP filter",
+   "window": "",
+   "do": "Click filter icon, row 1, right edge of",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Up to F1 and its filter icon, clicking it to open the list.\""
@@ -3441,8 +3628,9 @@
    "beat": "23.3",
    "time": "21:09",
    "title": "23.3 · Step 23 Clear the filter",
-   "window": "filter panel",
-   "do": "PANEL-PICK | target: Select all | cue: pause 1 s after \"Select all\" | why: all 59 rows back before the file is downloaded",
+   "window": "",
+   "do": "Pick Select all, filter panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"In the panel, Select all, to bring all 59 rows back before any download.\""
@@ -3460,8 +3648,9 @@
    "beat": "23.4",
    "time": "21:15",
    "title": "23.4 · Step 23 Clear the filter",
-   "window": "bottom right of the filter panel",
-   "do": "CLICK | target: OK | cue: pause 1 s after \"clicking it\" | why: applies Select all, so the filter is lifted",
+   "window": "",
+   "do": "Click OK, bottom right of the filter panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"OK at the bottom right, clicking it to lift the filter.\""
@@ -3479,8 +3668,9 @@
    "beat": "23.5",
    "time": "21:22",
    "title": "23.5 · Step 23 Clear the filter",
-   "window": "row numbers",
-   "do": "READ | target: rows 2 to 60 visible",
+   "window": "",
+   "do": "Read rows 2 to 60 visible, row numbers",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down the row numbers on the left, 60's there again. The full data's back.\""
@@ -3497,8 +3687,9 @@
    "beat": "24.1",
    "time": "21:29",
    "title": "24.1 · Step 24 Decision totals",
-   "window": "sheet tabs",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"Clicking the Pivot Table 1 tab\" | why: the totals go under the pivot",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Step 24: decision totals. Clicking the Pivot Table 1 tab at the bottom to go back.\""
@@ -3515,8 +3706,9 @@
    "beat": "24.2",
    "time": "21:36",
    "title": "24.2 · Step 24 Decision totals",
-   "window": "cell D10, under the pivot",
-   "do": "CLICK | target: D10 | cue: pause 1 s after \"a click there\" | why: totals sit under the decisions",
+   "window": "",
+   "do": "Click D10, cell D10, under the pivot",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"D10, just under the pivot, a click there, because the totals belong under the decisions.\""
@@ -3533,8 +3725,9 @@
    "beat": "24.3",
    "time": "21:42",
    "title": "24.3 · Step 24 Decision totals",
-   "window": "D10 to D12",
-   "do": "TYPE | target: labels | cue: speak while typing; no pause | why: each total gets a label beside it",
+   "window": "",
+   "do": "Type in D10 to D12",
+   "verified": false,
    "type": "Block Return Watch Return Ignore Return",
    "say": [
     "\"Typing Block, Watch and Ignore down D10 to D12 to give each total a label.\""
@@ -3551,8 +3744,9 @@
    "beat": "24.4",
    "time": "21:52",
    "title": "24.4 · Step 24 Decision totals",
-   "window": "cell E10",
-   "do": "CLICK | target: E10 | cue: pause 1 s after \"clicking it\" | why: first formula cell, beside Block",
+   "window": "",
+   "do": "Click E10, cell E10",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Then E10, right of Block, clicking it for the first formula.\""
@@ -3569,8 +3763,9 @@
    "beat": "24.5",
    "time": "21:58",
    "title": "24.5 · Step 24 Decision totals",
-   "window": "cell E10",
-   "do": "TYPE | target: formula | cue: speak while typing; no pause | why: counts the Block chips in E3 to E8",
+   "window": "",
+   "do": "Type in cell E10",
+   "verified": false,
    "type": "=COUNTIF(E3:E8,\"Block\")",
    "say": [
     "\"Typing equals COUNTIF over E3 to E8 for Block, which counts the Block chips.\""
@@ -3587,8 +3782,9 @@
    "beat": "24.6",
    "time": "22:05",
    "title": "24.6 · Step 24 Decision totals",
-   "window": "sheet grid",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (sheet grid)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hit Return to move down to E11.\""
@@ -3605,8 +3801,9 @@
    "beat": "24.7",
    "time": "22:09",
    "title": "24.7 · Step 24 Decision totals",
-   "window": "cell E11",
-   "do": "TYPE | target: formula | cue: speak while typing; no pause | why: counts the Watch chips",
+   "window": "",
+   "do": "Type in cell E11",
+   "verified": false,
    "type": "=COUNTIF(E3:E8,\"Watch\")",
    "say": [
     "\"Same formula in E11 for Watch, typing it so the Watch chips get counted.\""
@@ -3623,8 +3820,9 @@
    "beat": "24.8",
    "time": "22:16",
    "title": "24.8 · Step 24 Decision totals",
-   "window": "sheet grid",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (sheet grid)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Return again, hitting it to get down to E12.\""
@@ -3641,8 +3839,9 @@
    "beat": "24.9",
    "time": "22:21",
    "title": "24.9 · Step 24 Decision totals",
-   "window": "cell E12",
-   "do": "TYPE | target: formula | cue: speak while typing; no pause | why: counts the Ignore chips",
+   "window": "",
+   "do": "Type in cell E12",
+   "verified": false,
    "type": "=COUNTIF(E3:E8,\"Ignore\")",
    "say": [
     "\"In E12, typing COUNTIF for Ignore, so the last word's got a total too.\""
@@ -3659,8 +3858,9 @@
    "beat": "24.10",
    "time": "22:28",
    "title": "24.10 · Step 24 Decision totals",
-   "window": "sheet grid",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (sheet grid)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return to finish the third cell, E12.\""
@@ -3677,8 +3877,9 @@
    "beat": "24.11",
    "time": "22:32",
    "title": "24.11 · Step 24 Decision totals",
-   "window": "E10:E12",
-   "do": "DECIDE | target: COUNTIF totals | why: totals by decision word let the note quote counts the sheet can show",
+   "window": "",
+   "do": "Decide live: COUNTIF per decision word when chips hold exact words; manual count only if formulas misbehave",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Counting by the word means the note quotes the sheet, so nothing's tallied in my head.\""
@@ -3695,8 +3896,9 @@
    "beat": "24.12",
    "time": "22:43",
    "title": "24.12 · Step 24 Decision totals",
-   "window": "E10:E12",
-   "do": "READ | target: three totals",
+   "window": "",
+   "do": "Read three totals, E10:E12",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"E10 to E12 now have their three totals, and I'll read them out.\""
@@ -3713,8 +3915,9 @@
    "beat": "24.13",
    "time": "22:51",
    "title": "24.13 · Step 24 Decision totals",
-   "window": "E10 to E12 against E3 to E8",
-   "do": "VERIFY | target: totals add up to six IPs",
+   "window": "",
+   "do": "Check totals add up to six IPs, E10 to E12 against E3 to E8",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Those three should add up to six, one per IP in E3 to E8. Six and six, they match.\""
@@ -3731,8 +3934,9 @@
    "beat": "25.1",
    "time": "23:01",
    "title": "25.1 · Step 25 Copy the table",
-   "window": "cell A2",
-   "do": "CLICK | target: A2 | cue: pause 1 s after \"Clicking A2\" | why: start of the IP rows with the event headers",
+   "window": "",
+   "do": "Click A2, cell A2",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Step 25: copying for the note. Clicking A2 up top to start the copy at the IPs and headers.\""
@@ -3749,8 +3953,9 @@
    "beat": "25.2",
    "time": "23:07",
    "title": "25.2 · Step 25 Copy the table",
-   "window": "sheet grid",
-   "do": "KEY | target: Shift click E8 | cue: speak while typing; no pause | why: A2:E8: IPs, counts and decisions",
+   "window": "",
+   "do": "Press Shift-click E8 (sheet grid)",
+   "verified": false,
    "type": "Shift-click E8",
    "say": [
     "\"Shift-clicking E8 down to the right, so it's A2 to E8, IPs, counts and decisions.\""
@@ -3767,8 +3972,9 @@
    "beat": "25.3",
    "time": "23:12",
    "title": "25.3 · Step 25 Copy the table",
-   "window": "name box",
-   "do": "READ | target: range",
+   "window": "",
+   "do": "Read range, name box",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The name box at the top left confirms A2 to E8.\""
@@ -3785,8 +3991,9 @@
    "beat": "25.4",
    "time": "23:20",
    "title": "25.4 · Step 25 Copy the table",
-   "window": "sheet grid",
-   "do": "KEY | target: Command C | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Command C (sheet grid)",
+   "verified": false,
    "type": "Command C",
    "say": [
     "\"Command C, copying the selected cells, A2 to E8.\""
@@ -3803,8 +4010,9 @@
    "beat": "25.5",
    "time": "23:24",
    "title": "25.5 · Step 25 Copy the table",
-   "window": "A2:E8",
-   "do": "READ | target: marching ants border",
+   "window": "",
+   "do": "Read marching ants border, A2:E8",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"A dashed border runs round A2 to E8, so it's on the clipboard.\""
@@ -3821,8 +4029,9 @@
    "beat": "26.1",
    "time": "23:32",
    "title": "26.1 · Step 26 New document",
-   "window": "Firefox tab strip, right end",
-   "do": "CLICK | target: + new tab ICON | cue: pause 1 s after \"clicking it\" | why: a new tab keeps the sheet one click away",
+   "window": "",
+   "do": "Click + new tab icon, Firefox tab strip, right end",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Step 26: the note goes in Google Docs. Up to the plus at the right of the tab strip, clicking it so the sheet stays a tab away.\""
@@ -3839,8 +4048,9 @@
    "beat": "26.2",
    "time": "23:38",
    "title": "26.2 · Step 26 New document",
-   "window": "Firefox address bar",
-   "do": "TYPE | target: address | cue: speak while typing; no pause | why: typed in full; suggestions are off (Part A)",
+   "window": "",
+   "do": "Type in Firefox address bar",
+   "verified": false,
    "type": "docs.new",
    "say": [
     "\"In the address bar at the top, typing docs dot new, the quickest way to a blank Google Doc.\""
@@ -3857,8 +4067,9 @@
    "beat": "26.3",
    "time": "23:45",
    "title": "26.3 · Step 26 New document",
-   "window": "address bar",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (address bar)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return in the address bar at the top to load the page.\""
@@ -3875,8 +4086,9 @@
    "beat": "26.4",
    "time": "23:50",
    "title": "26.4 · Step 26 New document",
-   "window": "Firefox",
-   "do": "WAIT | target: blank Google Doc loads | cue: silence up to 4 s (plan cap 10 s)",
+   "window": "",
+   "do": "Wait for blank Google Doc loads, Firefox",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Waiting for the blank doc, then I'll name it at the top left.\""
@@ -3893,8 +4105,9 @@
    "beat": "26.5",
    "time": "23:58",
    "title": "26.5 · Step 26 New document",
-   "window": "top left, title box",
-   "do": "CLICK | target: Untitled document | cue: pause 1 s after \"Clicking into it\" | why: the doc needs the brief's file name",
+   "window": "",
+   "do": "Click Untitled document, top left, title box",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Top left, the Untitled document box. Clicking into it to rename the file.\""
@@ -3912,8 +4125,9 @@
    "beat": "26.6",
    "time": "24:04",
    "title": "26.6 · Step 26 New document",
-   "window": "title box",
-   "do": "TYPE | target: title | cue: speak while typing; no pause | why: the file name the brief asks for",
+   "window": "",
+   "do": "Type in title box",
+   "verified": false,
    "type": "final output 2",
    "say": [
     "\"Typing final output 2 in the title box, because that's the name the brief asks for.\""
@@ -3930,8 +4144,9 @@
    "beat": "26.7",
    "time": "24:11",
    "title": "26.7 · Step 26 New document",
-   "window": "title box",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (title box)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return, and the title box keeps the name.\""
@@ -3948,8 +4163,9 @@
    "beat": "27.1",
    "time": "24:16",
    "title": "27.1 · Step 27 Heading and table",
-   "window": "document body, first line",
-   "do": "CLICK | target: I-beam ICON in the body | cue: pause 1 s after \"clicking\" | why: cursor back in the page",
+   "window": "",
+   "do": "Click I-beam icon in the body, document body, first line",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 27: heading and table. Into the body, first line, clicking so the cursor's in.\""
@@ -3967,8 +4183,9 @@
    "beat": "27.2",
    "time": "24:22",
    "title": "27.2 · Step 27 Heading and table",
-   "window": "first line",
-   "do": "TYPE | target: heading | cue: speak while typing; no pause | why: names the host and the night every log line comes from",
+   "window": "",
+   "do": "Type in first line",
+   "verified": false,
    "type": "jump01 overnight SSH triage, 20 Oct",
    "say": [
     "\"On that first line, typing jump01 overnight SSH triage, 20 Oct, since every line's from that night.\""
@@ -3985,8 +4202,9 @@
    "beat": "27.3",
    "time": "24:31",
    "title": "27.3 · Step 27 Heading and table",
-   "window": "first letter of the heading",
-   "do": "BRANCH | target: if Docs capitalised the j go to 41.3a, else 41.4",
+   "window": "",
+   "do": "If needed: if Docs capitalised the j go to 41.3a, else 41.4, first letter of the heading",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"I'm glancing at the first letter, up top, to see if Docs capitalised the j.\""
@@ -4004,8 +4222,9 @@
    "beat": "27.3a",
    "time": "24:36",
    "title": "27.3a · Step 27 Heading and table",
-   "window": "document body",
-   "do": "KEY | target: Command Z | cue: speak while typing; no pause | why: undoes the auto-capital only",
+   "window": "",
+   "do": "Press Command Z (document body)",
+   "verified": false,
    "type": "Command Z",
    "say": [
     "\"It did, so pressing Command Z, which undoes the capital and keeps the hostname lowercase.\""
@@ -4022,8 +4241,9 @@
    "beat": "27.4",
    "time": "24:41",
    "title": "27.4 · Step 27 Heading and table",
-   "window": "document body",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (document body)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return for a new line under the heading.\""
@@ -4040,8 +4260,9 @@
    "beat": "27.5",
    "time": "24:46",
    "title": "27.5 · Step 27 Heading and table",
-   "window": "document body",
-   "do": "KEY | target: Command V | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Command V (document body)",
+   "verified": false,
    "type": "Command V",
    "say": [
     "\"Command V on the new line below, pasting the table in.\""
@@ -4058,8 +4279,9 @@
    "beat": "27.6",
    "time": "24:50",
    "title": "27.6 · Step 27 Heading and table",
-   "window": "beside the pasted table",
-   "do": "POPUP | target: Paste linked/unlinked dialog",
+   "window": "",
+   "do": "In the popup, click Paste linked/unlinked dialog, beside the pasted table",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"A Paste table box pops up in the middle, asking about linking to the sheet.\""
@@ -4077,8 +4299,9 @@
    "beat": "27.7",
    "time": "24:55",
    "title": "27.7 · Step 27 Heading and table",
-   "window": "Paste table dialog",
-   "do": "PASTE-OPTION | target: Paste unlinked | cue: pause 1 s after \"Paste unlinked\" | why: a static copy; the note will not change if the sheet does",
+   "window": "",
+   "do": "Choose Paste unlinked, Paste table dialog",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"In the box I'm picking Paste unlinked, so the note stays fixed if the sheet changes.\""
@@ -4096,8 +4319,9 @@
    "beat": "27.8",
    "time": "25:01",
    "title": "27.8 · Step 27 Heading and table",
-   "window": "bottom right of the dialog",
-   "do": "CLICK | target: Paste | cue: pause 1 s after \"Clicking it\" | why: drops the unlinked table into the note",
+   "window": "",
+   "do": "Click Paste, bottom right of the dialog",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Paste, bottom right of the box. Clicking it to drop the table in.\""
@@ -4115,8 +4339,9 @@
    "beat": "27.9",
    "time": "25:08",
    "title": "27.9 · Step 27 Heading and table",
-   "window": "document body",
-   "do": "READ | target: pasted table",
+   "window": "",
+   "do": "Read pasted table, document body",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The table's in below the heading, seven rows by five columns, decisions in the last one.\""
@@ -4133,8 +4358,9 @@
    "beat": "27.10",
    "time": "25:15",
    "title": "27.10 · Step 27 Heading and table",
-   "window": "pasted table against the pivot",
-   "do": "VERIFY | target: 203.0.113.45 18 in both",
+   "window": "",
+   "do": "Check 203.0.113.45 18 in both, pasted table against the pivot",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"First row in the doc shows 18 for 203.0.113.45, and D3 in the sheet says 18. They match.\""
@@ -4151,8 +4377,9 @@
    "beat": "28.1",
    "time": "25:26",
    "title": "28.1 · Step 28 Write the action lines",
-   "window": "document body, under the table",
-   "do": "CLICK | target: I-beam ICON below the table | cue: pause 1 s after \"Clicking\" | why: places the cursor under the table for the action lines",
+   "window": "",
+   "do": "Click I-beam icon below the table, document body, under the table",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 28: the action lines. Clicking just under the table, so the cursor sits below it.\""
@@ -4170,8 +4397,9 @@
    "beat": "28.2",
    "time": "25:32",
    "title": "28.2 · Step 28 Write the action lines",
-   "window": "new line",
-   "do": "TYPE | target: Block line | cue: speak while typing; no pause | why: states the Block action for the two no-login failure storms",
+   "window": "",
+   "do": "Type in new line",
+   "verified": false,
    "type": "Block (temporary, 24h here): {Block IPs},",
    "say": [
     "\"On the line below, typing Block, temporary, 24h here, then [say the IPs marked Block in column E], with a comma after.\""
@@ -4188,8 +4416,9 @@
    "beat": "28.2a",
    "time": "25:43",
    "title": "28.2a · Step 28 Write the action lines",
-   "window": "same line, after the Block IPs",
-   "do": "TYPE | target: Block reason | cue: speak while typing; no pause | why: the reason on the line tells the reader why those IPs are blocked",
+   "window": "",
+   "do": "Type in same line, after the Block IPs",
+   "verified": false,
    "type": " failure storms, no login.",
    "say": [
     "\"And finishing that line with the reason, failure storms and no login, so whoever reads it knows why.\""
@@ -4206,8 +4435,9 @@
    "beat": "28.3",
    "time": "25:49",
    "title": "28.3 · Step 28 Write the action lines",
-   "window": "document body",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (document body)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return for the next line down.\""
@@ -4224,8 +4454,9 @@
    "beat": "28.4",
    "time": "25:54",
    "title": "28.4 · Step 28 Write the action lines",
-   "window": "new line",
-   "do": "TYPE | target: Watch line, piece 1 | cue: speak while typing; no pause | why: account action for the address that got into svc_backup",
+   "window": "",
+   "do": "Type in new line",
+   "verified": false,
    "type": "Watch: {Watch IP 1} ({why})",
    "say": [
     "\"The Watch line below it, typing [say the first IP marked Watch in column E] and [say its reason], because it got in.\""
@@ -4242,8 +4473,9 @@
    "beat": "28.5",
    "time": "26:06",
    "title": "28.5 · Step 28 Write the action lines",
-   "window": "same line",
-   "do": "TYPE | target: Watch line, piece 2 | cue: speak while typing; no pause | why: account check for the address that got into jsmith",
+   "window": "",
+   "do": "Type in same line",
+   "verified": false,
    "type": " and {Watch IP 2} ({why}).",
    "say": [
     "\"Same line, typing [say the remaining Watch IPs from column E] with [say their reasons], to check each login.\""
@@ -4260,8 +4492,9 @@
    "beat": "28.6",
    "time": "26:17",
    "title": "28.6 · Step 28 Write the action lines",
-   "window": "Watch line",
-   "do": "DECIDE | target: account action over blocking | why: both IPs got in, so the accounts are fixed; a block on a possibly shared address could lock out real users",
+   "window": "",
+   "do": "Decide live: account action when the IP logged in with a real account; block when there was no success and the pattern is guessing",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Those got in, so it's an account problem. Blocking a shared address could lock real people out.\""
@@ -4278,8 +4511,9 @@
    "beat": "28.7",
    "time": "26:27",
    "title": "28.7 · Step 28 Write the action lines",
-   "window": "document body",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (document body)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return again to start a new line below for Ignore.\""
@@ -4296,8 +4530,9 @@
    "beat": "28.8",
    "time": "26:32",
    "title": "28.8 · Step 28 Write the action lines",
-   "window": "new line",
-   "do": "TYPE | target: Ignore line, piece 1 | cue: speak while typing; no pause | why: records the internal admin address as ignored, with its reason",
+   "window": "",
+   "do": "Type in new line",
+   "verified": false,
    "type": "Ignore: {Ignore IP 1} ({why})",
    "say": [
     "\"On the Ignore line underneath, typing [say the first IP marked Ignore in column E] and [say its reason], since column E says so.\""
@@ -4314,8 +4549,9 @@
    "beat": "28.9",
    "time": "26:42",
    "title": "28.9 · Step 28 Write the action lines",
-   "window": "same line",
-   "do": "TYPE | target: Ignore line, piece 2 | cue: speak while typing; no pause | why: records the two-try address as noise and names who acts",
+   "window": "",
+   "do": "Type in same line",
+   "verified": false,
    "type": " and {Ignore IP 2} ({why}). SOC on-call",
    "say": [
     "\"Then at the end of that line, typing [say the remaining Ignore IPs from column E] with [say their reasons], and SOC on-call so someone owns it.\""
@@ -4332,8 +4568,9 @@
    "beat": "28.10",
    "time": "26:54",
    "title": "28.10 · Step 28 Write the action lines",
-   "window": "document body",
-   "do": "READ | target: three action lines",
+   "window": "",
+   "do": "Read three action lines, document body",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Reading it back, the three action lines sit under the table.\""
@@ -4350,8 +4587,9 @@
    "beat": "29.1",
    "time": "27:02",
    "title": "29.1 · Step 29 Download the note",
-   "window": "Docs menu bar",
-   "do": "MOVE | target: File menu",
+   "window": "",
+   "do": "Move the mouse to File menu, Docs menu bar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 29: saving the note as Word. Up to the Docs menu bar, to File.\""
@@ -4368,8 +4606,9 @@
    "beat": "29.2",
    "time": "27:06",
    "title": "29.2 · Step 29 Download the note",
-   "window": "Docs menu bar",
-   "do": "MENU-OPEN | target: File | cue: pause 1 s after \"Left click on File\" | why: Download is under File",
+   "window": "",
+   "do": "Open the menu File, Docs menu bar",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Left click on File to open its list.\""
@@ -4386,8 +4625,9 @@
    "beat": "29.3",
    "time": "27:12",
    "title": "29.3 · Step 29 Download the note",
-   "window": "File menu",
-   "do": "MENU-ITEM | target: Download | cue: pause 1 s after \"Download\" | why: Download opens the format list",
+   "window": "",
+   "do": "Choose Download, File menu",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Down to Download, and a side menu opens to the right to pick a format.\""
@@ -4404,8 +4644,9 @@
    "beat": "29.4",
    "time": "27:19",
    "title": "29.4 · Step 29 Download the note",
-   "window": "Download submenu",
-   "do": "EXPORT | target: Microsoft Word (.docx) | cue: pause 1 s after \"Microsoft Word, dot docx\" | why: the brief asks for final output 2 as .docx",
+   "window": "",
+   "do": "Export: Microsoft Word (.docx), Download submenu",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Across to the right, Microsoft Word, dot docx, clicking it, because the brief asks for final output 2 as .docx.\""
@@ -4422,8 +4663,9 @@
    "beat": "29.5",
    "time": "27:26",
    "title": "29.5 · Step 29 Download the note",
-   "window": "Save dialog, sidebar",
-   "do": "DIALOG | target: Documents | cue: pause 1 s after \"clicking it\" | why: saves next to the inputs in Documents",
+   "window": "",
+   "do": "In the dialog, click Documents, Save dialog, sidebar",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"The save box opens. Documents in the left sidebar, clicking it to keep it with the inputs.\""
@@ -4440,8 +4682,9 @@
    "beat": "29.6",
    "time": "27:33",
    "title": "29.6 · Step 29 Download the note",
-   "window": "Save dialog list",
-   "do": "DOUBLE-CLICK | target: Project | cue: pause 1 s after \"double-clicking\" | why: Project is the deliverables folder",
+   "window": "",
+   "do": "Double-click Project, Save dialog list",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Then Project in the list, double-clicking to save in there.\""
@@ -4458,8 +4701,9 @@
    "beat": "29.7",
    "time": "27:39",
    "title": "29.7 · Step 29 Download the note",
-   "window": "Save As box",
-   "do": "READ | target: file name",
+   "window": "",
+   "do": "Read file name, Save As box",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The Save As field at the top reads final output 2, dot docx. That's right.\""
@@ -4476,8 +4720,9 @@
    "beat": "29.8",
    "time": "27:47",
    "title": "29.8 · Step 29 Download the note",
-   "window": "bottom right of the Save dialog",
-   "do": "CLICK | target: Save | cue: pause 1 s after \"pressing it\" | why: writes the .docx to disk",
+   "window": "",
+   "do": "Click Save, bottom right of the Save dialog",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Bottom right, Save, pressing it to write the file.\""
@@ -4494,8 +4739,9 @@
    "beat": "29.9",
    "time": "27:53",
    "title": "29.9 · Step 29 Download the note",
-   "window": "Firefox toolbar, downloads ICON",
-   "do": "ERROR-CHECK | target: final output 2.docx | why: re-open check: the exported file opened once (item 29)",
+   "window": "",
+   "do": "Check final output 2.docx, Firefox toolbar, downloads icon",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Up in the toolbar, the downloads icon. final output 2's finished, no error, so it saved.\""
@@ -4512,8 +4758,9 @@
    "beat": "29.10",
    "time": "28:00",
    "title": "29.10 · Step 29 Download the note",
-   "window": "downloads panel",
-   "do": "CLICK | target: final output 2.docx row ICON | cue: pause 1 s after \"Clicking that row\" | why: preview of the exported file [confirm on Mac frame: opens Quick Look or default app]",
+   "window": "",
+   "do": "Click final output 2.docx row icon, downloads panel",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Clicking that row, so I can open the export once and look at it.\""
@@ -4530,8 +4777,9 @@
    "beat": "29.11",
    "time": "28:06",
    "title": "29.11 · Step 29 Download the note",
-   "window": "preview",
-   "do": "READ | target: note contents",
+   "window": "",
+   "do": "Read note contents, preview",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The preview's got the heading, the table and three action lines.\""
@@ -4548,8 +4796,9 @@
    "beat": "29.12",
    "time": "28:14",
    "title": "29.12 · Step 29 Download the note",
-   "window": "preview window, top left",
-   "do": "WINDOW | target: red close ICON | cue: pause 1 s after \"clicking it\"",
+   "window": "",
+   "do": "Click red close icon, preview window, top left",
+   "verified": true,
    "type": "nothing",
    "say": [
     "\"Top left of the preview, the close button, clicking it. I'm done checking.\""
@@ -4566,8 +4815,9 @@
    "beat": "30.1",
    "time": "28:19",
    "title": "30.1 · Step 30 Download the sheet",
-   "window": "Firefox tab strip",
-   "do": "CLICK | target: jump01 overnight triage tab | cue: pause 1 s after \"clicking it\" | why: back to the sheet",
+   "window": "",
+   "do": "Click jump01 overnight triage tab, Firefox tab strip",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 30: now the sheet. In the tab strip, the jump01 overnight triage tab, clicking it to go back.\""
@@ -4585,8 +4835,9 @@
    "beat": "30.2",
    "time": "28:26",
    "title": "30.2 · Step 30 Download the sheet",
-   "window": "Sheets menu bar",
-   "do": "MOVE | target: File menu",
+   "window": "",
+   "do": "Move the mouse to File menu, Sheets menu bar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Up to the Sheets menu bar, File on the left.\""
@@ -4603,8 +4854,9 @@
    "beat": "30.3",
    "time": "28:30",
    "title": "30.3 · Step 30 Download the sheet",
-   "window": "Sheets menu bar",
-   "do": "MENU-OPEN | target: File | cue: pause 1 s after \"Clicking File\" | why: Download is under File",
+   "window": "",
+   "do": "Open the menu File, Sheets menu bar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clicking File up there to open the menu.\""
@@ -4622,8 +4874,9 @@
    "beat": "30.4",
    "time": "28:36",
    "title": "30.4 · Step 30 Download the sheet",
-   "window": "File menu",
-   "do": "MENU-ITEM | target: Download | cue: pause 1 s after \"Download\" | why: Download opens the format list",
+   "window": "",
+   "do": "Choose Download, File menu",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down to Download, and the formats slide out to its right to choose one.\""
@@ -4641,8 +4894,9 @@
    "beat": "30.5",
    "time": "28:43",
    "title": "30.5 · Step 30 Download the sheet",
-   "window": "Download submenu",
-   "do": "EXPORT | target: Microsoft Excel (.xlsx) | cue: pause 1 s after \"Microsoft Excel, dot xlsx\" | why: the brief asks for an Excel file",
+   "window": "",
+   "do": "Export: Microsoft Excel (.xlsx), Download submenu",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Across to the right, Microsoft Excel, dot xlsx, selecting it, since the brief asks for an .xlsx file.\""
@@ -4660,8 +4914,9 @@
    "beat": "30.6",
    "time": "28:50",
    "title": "30.6 · Step 30 Download the sheet",
-   "window": "Save As box",
-   "do": "CLICK | target: name box | cue: pause 1 s after \"clicking the Save As field\" | why: the sheet title is not the brief's file name",
+   "window": "",
+   "do": "Click name box, Save As box",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"In the save box, clicking the Save As field at the top, because the title isn't the brief's name.\""
@@ -4679,8 +4934,9 @@
    "beat": "30.7",
    "time": "28:57",
    "title": "30.7 · Step 30 Download the sheet",
-   "window": "Save As box",
-   "do": "KEY | target: Command A | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Command A (Save As box)",
+   "verified": false,
    "type": "Command A",
    "say": [
     "\"Command A in that field, so the old name's selected.\""
@@ -4697,8 +4953,9 @@
    "beat": "30.8",
    "time": "29:01",
    "title": "30.8 · Step 30 Download the sheet",
-   "window": "Save As box",
-   "do": "TYPE | target: file name | cue: speak while typing; no pause | why: the brief's file name",
+   "window": "",
+   "do": "Type in Save As box",
+   "verified": false,
    "type": "final output 1",
    "say": [
     "\"Typing final output 1 in that field, so the file's named the way the brief wants.\""
@@ -4715,8 +4972,9 @@
    "beat": "30.9",
    "time": "29:08",
    "title": "30.9 · Step 30 Download the sheet",
-   "window": "Save dialog, sidebar",
-   "do": "DIALOG | target: Documents | cue: pause 1 s after \"a click on it\" | why: saves next to the inputs in Documents",
+   "window": "",
+   "do": "In the dialog, click Documents, Save dialog, sidebar",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Documents in the left sidebar, a click on it, to save beside the other files.\""
@@ -4734,8 +4992,9 @@
    "beat": "30.10",
    "time": "29:14",
    "title": "30.10 · Step 30 Download the sheet",
-   "window": "Save dialog list",
-   "do": "DOUBLE-CLICK | target: Project | cue: pause 1 s after \"double-click\" | why: Project is the deliverables folder",
+   "window": "",
+   "do": "Double-click Project, Save dialog list",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Project in the list on the right, double-click to open it.\""
@@ -4753,8 +5012,9 @@
    "beat": "30.11",
    "time": "29:21",
    "title": "30.11 · Step 30 Download the sheet",
-   "window": "bottom right of the Save dialog",
-   "do": "CLICK | target: Save | cue: pause 1 s after \"clicking\" | why: writes the .xlsx to disk",
+   "window": "",
+   "do": "Click Save, bottom right of the Save dialog",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Save, bottom right, clicking it to write the Excel file.\""
@@ -4772,8 +5032,9 @@
    "beat": "30.12",
    "time": "29:27",
    "title": "30.12 · Step 30 Download the sheet",
-   "window": "Firefox downloads panel",
-   "do": "ERROR-CHECK | target: final output 1.xlsx | why: re-open check of the second exported file",
+   "window": "",
+   "do": "Check final output 1.xlsx, Firefox downloads panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The downloads panel up top lists final output 1, finished, so that one saved too.\""
@@ -4790,8 +5051,9 @@
    "beat": "30.13",
    "time": "29:34",
    "title": "30.13 · Step 30 Download the sheet",
-   "window": "downloads panel",
-   "do": "CLICK | target: final output 1.xlsx row | cue: pause 1 s after \"click that row\" | why: preview shows both tabs came through [confirm on Mac frame]",
+   "window": "",
+   "do": "Click final output 1.xlsx row, downloads panel",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"I'll click that row too, to see both tabs made it in.\""
@@ -4809,8 +5071,9 @@
    "beat": "30.14",
    "time": "29:40",
    "title": "30.14 · Step 30 Download the sheet",
-   "window": "preview",
-   "do": "READ | target: tabs",
+   "window": "",
+   "do": "Read tabs, preview",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Sheet1 and Pivot Table 1 are both there in the preview.\""
@@ -4827,8 +5090,9 @@
    "beat": "30.15",
    "time": "29:48",
    "title": "30.15 · Step 30 Download the sheet",
-   "window": "preview window, top left",
-   "do": "WINDOW | target: red close ICON | cue: pause 1 s after \"Closing the preview\"",
+   "window": "",
+   "do": "Click red close icon, preview window, top left",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Closing the preview with the button at its top left.\""
@@ -4846,8 +5110,9 @@
    "beat": "31.1",
    "time": "29:53",
    "title": "31.1 · Step 31 Back to Terminal",
-   "window": "top left of the Firefox window",
-   "do": "WINDOW | target: yellow minimise ICON | cue: pause 1 s after \"the minimise button\"",
+   "window": "",
+   "do": "Click yellow minimise icon, top left of the Firefox window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 31: back to Terminal. Top left of Firefox, the minimise button, to get it out of the way.\""
@@ -4865,8 +5130,9 @@
    "beat": "31.2",
    "time": "29:59",
    "title": "31.2 · Step 31 Back to Terminal",
-   "window": "Dock, left edge",
-   "do": "MOVE | target: Terminal ICON",
+   "window": "",
+   "do": "Move the mouse to Terminal icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Moving down to the dock on the left edge, finding Terminal.\""
@@ -4883,8 +5149,9 @@
    "beat": "31.3",
    "time": "30:04",
    "title": "31.3 · Step 31 Back to Terminal",
-   "window": "Dock, left edge",
-   "do": "SWITCH | target: Terminal ICON | cue: pause 1 s after \"Clicking it\" | why: second tool for the after-export checks",
+   "window": "",
+   "do": "Switch to Terminal icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"There's its label. Clicking it, because the raw log's my second source.\""
@@ -4902,8 +5169,9 @@
    "beat": "32.1",
    "time": "30:11",
    "title": "32.1 · Step 32 Per-IP failures from the raw log",
-   "window": "Terminal prompt",
-   "do": "TYPE | target: command, piece 1 | cue: speak while typing; no pause | why: on Failed password lines, normal and invalid-user alike, $(NF-3) is the IP; on Accepted publickey lines it would give the port, so this grep keeps to Failed password only (terminal-verify.txt)",
+   "window": "",
+   "do": "Type in Terminal prompt",
+   "verified": false,
    "type": "grep 'Failed password' auth-jump01.log | awk '{print $(NF-3)}'",
    "say": [
     "\"Step 32: failures per IP from the raw log. In the window, typing grep Failed password piped to awk, the fourth field from the end.\""
@@ -4920,8 +5188,9 @@
    "beat": "32.2",
    "time": "30:26",
    "title": "32.2 · Step 32 Per-IP failures from the raw log",
-   "window": "same line",
-   "do": "TYPE | target: command, piece 2 | cue: speak while typing; no pause | why: counts per IP, largest first, to compare with column D",
+   "window": "",
+   "do": "Type in same line",
+   "verified": false,
    "type": " | sort | uniq -c | sort -rn",
    "say": [
     "\"Then typing sort, uniq dash c and sort dash r n, so each IP gets a count, biggest first.\""
@@ -4938,8 +5207,9 @@
    "beat": "32.3",
    "time": "30:33",
    "title": "32.3 · Step 32 Per-IP failures from the raw log",
-   "window": "Terminal",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (Terminal)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return to print the counts below.\""
@@ -4956,8 +5226,9 @@
    "beat": "32.4",
    "time": "30:38",
    "title": "32.4 · Step 32 Per-IP failures from the raw log",
-   "window": "Terminal output",
-   "do": "READ | target: six counted IPs",
+   "window": "",
+   "do": "Read six counted IPs, Terminal output",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"18 203.0.113.45, 14 198.51.100.23, 9 192.0.2.77, 7 198.51.100.140, 3 for the ten-dot address, and 2 192.0.2.200.\""
@@ -4974,8 +5245,9 @@
    "beat": "32.5",
    "time": "30:46",
    "title": "32.5 · Step 32 Per-IP failures from the raw log",
-   "window": "Terminal output",
-   "do": "DECIDE | target: field choice | why: counting from the raw log, not the sheet, so a mistake in the import would show up",
+   "window": "",
+   "do": "Decide live: $(NF-3) when lines differ in word count (invalid user lines add words); a fixed field only when every line has the same shape",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The raw log, not the sheet, so an import slip would show. On failure lines, counting from the end hits the IP.\""
@@ -4992,8 +5264,9 @@
    "beat": "32.6",
    "time": "30:56",
    "title": "32.6 · Step 32 Per-IP failures from the raw log",
-   "window": "Terminal counts against the pivot column D",
-   "do": "VERIFY | target: six counts",
+   "window": "",
+   "do": "Check six counts, Terminal counts against the pivot column D",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Those six against D3 to D8 in the pivot, 18, 14, 9, 7, 3, 2. All match.\""
@@ -5010,8 +5283,9 @@
    "beat": "33.1",
    "time": "31:07",
    "title": "33.1 · Step 33 Successful logins per IP",
-   "window": "Terminal prompt",
-   "do": "TYPE | target: command | cue: speak while typing; no pause | why: IP after \"from\" works for password and publickey lines alike",
+   "window": "",
+   "do": "Type in Terminal prompt",
+   "verified": false,
    "type": "grep 'Accepted' auth-jump01.log | grep -o 'from [0-9.]*' | sort | uniq -c",
    "say": [
     "\"Step 33: logins per IP. In the window, typing grep Accepted, grep dash o on from and the IP, sort, uniq dash c, because publickey lines end in a key.\""
@@ -5028,8 +5302,9 @@
    "beat": "33.2",
    "time": "31:25",
    "title": "33.2 · Step 33 Successful logins per IP",
-   "window": "Terminal",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (Terminal)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Return at the bottom of the window, hitting it to run.\""
@@ -5046,8 +5321,9 @@
    "beat": "33.3",
    "time": "31:30",
    "title": "33.3 · Step 33 Successful logins per IP",
-   "window": "Terminal output",
-   "do": "READ | target: three lines",
+   "window": "",
+   "do": "Read three lines, Terminal output",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Three lines below. 4 from the ten-dot address, 1 from 192.0.2.77, and 1 from 198.51.100.140.\""
@@ -5064,8 +5340,9 @@
    "beat": "33.4",
    "time": "31:37",
    "title": "33.4 · Step 33 Successful logins per IP",
-   "window": "Terminal counts against pivot columns B and C",
-   "do": "VERIFY | target: Accepted per IP",
+   "window": "",
+   "do": "Check Accepted per IP, Terminal counts against pivot columns B and C",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The pivot had the ten-dot address at 1 plus 3, that's 4, and 1 each for the others. All three match.\""
@@ -5082,8 +5359,9 @@
    "beat": "33.5",
    "time": "31:47",
    "title": "33.5 · Step 33 Successful logins per IP",
-   "window": "Terminal prompt",
-   "do": "TYPE | target: command | cue: speak while typing; no pause | why: shows the last failure and the success in log order",
+   "window": "",
+   "do": "Type in Terminal prompt",
+   "verified": false,
    "type": "grep -n \"192.0.2.77\" auth-jump01.log | tail -2",
    "say": [
     "\"Last one below, typing grep dash n for 192.0.2.77, tail dash 2, so I see the failure and success in order.\""
@@ -5100,8 +5378,9 @@
    "beat": "33.6",
    "time": "31:59",
    "title": "33.6 · Step 33 Successful logins per IP",
-   "window": "Terminal",
-   "do": "KEY | target: Return | cue: speak while typing; no pause",
+   "window": "",
+   "do": "Press Return (Terminal)",
+   "verified": false,
    "type": "Return",
    "say": [
     "\"Hitting Return on that one, down at the prompt.\""
@@ -5118,8 +5397,9 @@
    "beat": "33.7",
    "time": "32:04",
    "title": "33.7 · Step 33 Successful logins per IP",
-   "window": "Terminal output",
-   "do": "READ | target: two lines",
+   "window": "",
+   "do": "Read two lines, Terminal output",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Line 42, 03:45:49, Failed for svc_backup, then line 43, 03:52:34, Accepted. Under seven minutes apart.\""
@@ -5136,8 +5416,9 @@
    "beat": "34.1",
    "time": "32:11",
    "title": "34.1 · Step 34 Final look at the pivot",
-   "window": "top left of the Terminal window",
-   "do": "WINDOW | target: yellow minimise ICON | cue: pause 1 s after \"Minimising Terminal\"",
+   "window": "",
+   "do": "Click yellow minimise icon, top left of the Terminal window",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 34: back to the sheet. Minimising Terminal with the button at its top left.\""
@@ -5155,8 +5436,9 @@
    "beat": "34.2",
    "time": "32:17",
    "title": "34.2 · Step 34 Final look at the pivot",
-   "window": "Dock, left edge",
-   "do": "MOVE | target: Firefox ICON",
+   "window": "",
+   "do": "Move the mouse to Firefox icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Cursor down to the Dock, left edge, to the Firefox icon.\""
@@ -5173,8 +5455,9 @@
    "beat": "34.3",
    "time": "32:22",
    "title": "34.3 · Step 34 Final look at the pivot",
-   "window": "Dock, left edge",
-   "do": "SWITCH | target: Firefox ICON | cue: pause 1 s after \"Clicking Firefox\" | why: Firefox is minimised, Dock brings it back",
+   "window": "",
+   "do": "Switch to Firefox icon, Dock, left edge",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Clicking Firefox in the dock on the left to bring it back.\""
@@ -5192,8 +5475,9 @@
    "beat": "34.4",
    "time": "32:29",
    "title": "34.4 · Step 34 Final look at the pivot",
-   "window": "sheet tabs",
-   "do": "CLICK | target: Pivot Table 1 tab | cue: pause 1 s after \"clicking it\" | why: ends on the deliverable tab",
+   "window": "",
+   "do": "Click Pivot Table 1 tab, sheet tabs",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Down at the bottom, the Pivot Table 1 tab, clicking it to end on the finished table.\""
@@ -5211,8 +5495,9 @@
    "beat": "34.5",
    "time": "32:35",
    "title": "34.5 · Step 34 Final look at the pivot",
-   "window": "pivot and E column",
-   "do": "READ | target: final view | why: ends on the deliverable sheet so the epilogue can point at it",
+   "window": "",
+   "do": "Read final view, pivot and E column",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"So that's the result. IPs ranked by failures, decisions in E3 to E8, totals below.\""
@@ -5229,8 +5514,9 @@
    "beat": "35.1",
    "time": "32:43",
    "title": "35.1 · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 1: what was done, start to finish | why: sums up the work for the reviewer",
+   "window": "",
+   "do": "Talk over topic 1: what was done, start to finish, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 35: to wrap up, I counted in Terminal first, so the sheet had numbers to hit before I trusted anything it showed me.\""
@@ -5247,8 +5533,9 @@
    "beat": "35.1a",
    "time": "32:54",
    "title": "35.1a · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 1: what was done, start to finish",
+   "window": "",
+   "do": "Talk over topic 1: what was done, start to finish, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Then the pivot, because it counts every IP and event at once, sorted so the riskiest address came up first.\""
@@ -5265,8 +5552,9 @@
    "beat": "35.1b",
    "time": "33:06",
    "title": "35.1b · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 1: what was done, start to finish",
+   "window": "",
+   "do": "Talk over topic 1: what was done, start to finish, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"I read each IP's raw rows before choosing, since a count doesn't say whether someone got in or which accounts they were after.\""
@@ -5283,8 +5571,9 @@
    "beat": "35.2",
    "time": "33:17",
    "title": "35.2 · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 2: the evidence behind the Block IPs",
+   "window": "",
+   "do": "Talk over topic 2: the evidence behind the Block IPs, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"For [say the Block IPs from column E], the raw rows showed failure storms with no success at all, nothing that needed an account check.\""
@@ -5301,8 +5590,9 @@
    "beat": "35.2a",
    "time": "33:29",
    "title": "35.2a · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 2: the evidence behind the Block IPs",
+   "window": "",
+   "do": "Talk over topic 2: the evidence behind the Block IPs, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"On block length, fail2ban's default is ten minutes, though plenty of admins raise it to a day.\""
@@ -5319,8 +5609,9 @@
    "beat": "35.2b",
    "time": "33:40",
    "title": "35.2b · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 2: the evidence behind the Block IPs",
+   "window": "",
+   "do": "Talk over topic 2: the evidence behind the Block IPs, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"So the block is temporary, 24h here, because a temporary block is easy to undo if an address turns out to be shared.\""
@@ -5337,8 +5628,9 @@
    "beat": "35.3",
    "time": "33:52",
    "title": "35.3 · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 3: why the Watch IPs got account actions",
+   "window": "",
+   "do": "Talk over topic 3: why the Watch IPs got account actions, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"What's easy to miss is a success after a run of failures. For [say the Watch IPs from column E], the rows in time order showed that.\""
@@ -5355,8 +5647,9 @@
    "beat": "35.3a",
    "time": "34:03",
    "title": "35.3a · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 3: why the Watch IPs got account actions",
+   "window": "",
+   "do": "Talk over topic 3: why the Watch IPs got account actions, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"An address that got in is an account problem first, so those got account checks rather than a block.\""
@@ -5373,8 +5666,9 @@
    "beat": "35.3b",
    "time": "34:15",
    "title": "35.3b · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 3: why the Watch IPs got account actions",
+   "window": "",
+   "do": "Talk over topic 3: why the Watch IPs got account actions, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Blocking them can lock out a shared office and still leave a stolen password working, which is why I'd ask the account owners.\""
@@ -5391,8 +5685,9 @@
    "beat": "35.4",
    "time": "34:26",
    "title": "35.4 · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 4: how the Terminal checks matched the sheet",
+   "window": "",
+   "do": "Talk over topic 4: how the Terminal checks matched the sheet, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"For checking, the pivot's grand total of 53 matched the grep count from Terminal, and 59 rows matched the 59 log lines.\""
@@ -5409,8 +5704,9 @@
    "beat": "35.4a",
    "time": "34:38",
    "title": "35.4a · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 4: how the Terminal checks matched the sheet",
+   "window": "",
+   "do": "Talk over topic 4: how the Terminal checks matched the sheet, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The tricky part was the log itself. Lines vary in length, so a fixed awk field grabs the wrong word, and counting from the end only works on failure lines.\""
@@ -5427,8 +5723,9 @@
    "beat": "35.4b",
    "time": "34:49",
    "title": "35.4b · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 4: how the Terminal checks matched the sheet",
+   "window": "",
+   "do": "Talk over topic 4: how the Terminal checks matched the sheet, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"After the export I recounted failures per IP from the raw log, and they matched column D, with logins matching too, four, one and one.\""
@@ -5445,8 +5742,9 @@
    "beat": "35.5",
    "time": "35:01",
    "title": "35.5 · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 5: what the files contain and where they are",
+   "window": "",
+   "do": "Talk over topic 5: what the files contain and where they are, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"The files are in Documents, Project. final output 1 is the Google Sheets export saved as .xlsx, raw rows on Sheet1 and the pivot on Pivot Table 1.\""
@@ -5463,8 +5761,9 @@
    "beat": "35.5a",
    "time": "35:12",
    "title": "35.5a · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 5: what the files contain and where they are",
+   "window": "",
+   "do": "Talk over topic 5: what the files contain and where they are, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"final output 2 is the Google Docs note saved as .docx, with the 20 Oct heading, the pasted table, and one action line for each decision word.\""
@@ -5481,8 +5780,9 @@
    "beat": "35.5b",
    "time": "35:24",
    "title": "35.5b · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 5: what the files contain and where they are",
+   "window": "",
+   "do": "Talk over topic 5: what the files contain and where they are, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"I opened both after downloading, and the note's table is unlinked, so it's a snapshot that won't drift if someone edits the sheet.\""
@@ -5499,8 +5799,9 @@
    "beat": "35.6",
    "time": "35:35",
    "title": "35.6 · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 6: what I would do next with more time",
+   "window": "",
+   "do": "Talk over topic 6: what I would do next with more time, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"With more time I'd pull a few more nights of logs, to see whether these addresses come back or new ones show up.\""
@@ -5517,8 +5818,9 @@
    "beat": "35.6a",
    "time": "35:47",
    "title": "35.6a · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 6: what I would do next with more time",
+   "window": "",
+   "do": "Talk over topic 6: what I would do next with more time, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"I'd check whether any belong to a known office or VPN range before a longer block.\""
@@ -5535,8 +5837,9 @@
    "beat": "35.6b",
    "time": "35:58",
    "title": "35.6b · Step 35 Epilogue",
-   "window": "pivot on screen",
-   "do": "EPILOGUE | target: topic 6: what I would do next with more time",
+   "window": "",
+   "do": "Talk over topic 6: what I would do next with more time, pivot on screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"And I'd save the Terminal counts as a small script, so the same cross-check runs every morning.\""
@@ -5553,8 +5856,9 @@
    "beat": "36.1",
    "time": "36:10",
    "title": "36.1 · Step 36 Close",
-   "window": "whole screen",
-   "do": "ERROR-CHECK | target: no error dialogs or unsaved marks | why: last check before stopping",
+   "window": "",
+   "do": "Check no error dialogs or unsaved marks, whole screen",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Step 36: a last look round the screen to make sure. No errors, nothing unsaved, just the pivot.\""
@@ -5571,8 +5875,9 @@
    "beat": "36.2",
    "time": "36:16",
    "title": "36.2 · Step 36 Close",
-   "window": "Firefox",
-   "do": "CLOSE | target: leave the pivot on screen",
+   "window": "",
+   "do": "Close leave the pivot on screen, Firefox",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"I'm leaving the pivot up on screen as the final view.\""
@@ -5589,8 +5894,9 @@
    "beat": "36.3",
    "time": "36:21",
    "title": "36.3 · Step 36 Close",
-   "window": "menu bar, TaskRecorder",
-   "do": "STOP | target: Stop | cue: pause 1 s after \"stopping the recording\" | why: recording ends",
+   "window": "",
+   "do": "Stop the recording: Stop, menu bar, TaskRecorder",
+   "verified": false,
    "type": "nothing",
    "say": [
     "\"Up to the menu bar at the top right, and stopping the recording now.\""
