@@ -37,7 +37,7 @@ function render(i){cur=i;const s=S[i],n=S[i+1];
  $('ttl').textContent=s.title;$('do').textContent=(s.do||'')+(s.type&&s.type!=='nothing'?'  ·  TYPE: '+s.type:'');
  $('say').innerHTML=hl((s.say||[]).join(' '));$('next').textContent=n?'next: '+(n.say||[]).join(' '):'next: (end)';
  $('pos').textContent=`${s.beat}  ·  ${i+1}/${S.length}`;const th=$('th');if(s.image){th.src=s.image;th.style.display=''}else th.style.display='none';
- $('mk').textContent=(s.missing||[]).join('\n');$('say').scrollTop=0}
+ $('mk').textContent='';$('say').scrollTop=0}
 function tick(){const i=idxAt(now());if(i!==cur)render(i);
  $('clk').textContent=fmt(real());$('plan').textContent='plan '+fmt(T[cur]);
  const d=Math.round(real()-T[cur]),dd=$('drift');dd.textContent=(d>=0?'+':'')+d+'s '+(d>0?'behind':d<0?'ahead':'');
