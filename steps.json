@@ -714,7 +714,7 @@
    "title": "Per-IP count",
    "window": "Terminal (left half, neutral $ prompt)",
    "do": "Type the command, press Return [1s].",
-   "type": "the one command below, then Return",
+   "type": "grep \"Failed password\" auth-jump01.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -rn   then Return",
    "say": [
     "\"I'm typing a grep for the Failed password lines, then awk for the third field from the end, that's the source IP even on invalid user lines.\"",
     "\"Then I pipe it through sort and uniq to count each IP, and sort again with the biggest first, and Return.\""
@@ -742,7 +742,7 @@
    "title": "One more Accepted check STRETCH",
    "window": "Terminal (left half, neutral $ prompt)",
    "do": "Type the command, press Return [1s]. Point at the single svc_backup line at 03:52:34. No clicks. Skip this step if you are running long.",
-   "type": "the one command below, then Return",
+   "type": "grep \"Accepted\" auth-jump01.log | grep 192.0.2.77   then Return",
    "say": [
     "\"Okay, one more quick check, if I have time. I'm typing grep, Accepted, then pipe grep 192.0.2.77, and Return…\"",
     "\"Just the one svc_backup line at 03:52:34, so nothing else got in from that IP.\""
