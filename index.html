@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0d10"><title>Step Deck</title>
+<meta name="theme-color" content="#0b0d10"><title>jump01 overnight SSH triage</title>
 <style>
 :root{color-scheme:dark;--bg:#0b0d10;--card:#151a21;--hi:#1d2c44;--acc:#4ea1ff;--click:#ffcc33;--mut:#8b97a7;--fg:#eef2f6}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:20px/1.5 -apple-system,system-ui,sans-serif;-webkit-text-size-adjust:100%}
@@ -24,7 +24,7 @@ header{position:sticky;top:0;z-index:5;background:rgba(11,13,16,.95);padding:10p
 #scr img{flex:1;min-height:0;width:100%;object-fit:contain}
 #scr .ctl button{font-size:26px;padding:6px 20px;margin-left:6px;border:0;border-radius:10px;background:#2a3340;color:#fff}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#c33;margin-right:6px}.dot.on{background:#3c3}
-</style></head><body><div id="app"></div>
+.mk{color:#ff7a7a;font-size:12px;margin-top:3px}</style></head><body><div id="app"></div>
 <script>
 const P=new URLSearchParams(location.search),code=(P.get('s')||'').replace(/\W/g,''),view=P.get('v')||(location.pathname.includes('screen')?'screen':location.pathname.includes('script')?'script':'');
 const app=document.getElementById('app');let D,cur=1,ver='';
@@ -60,13 +60,13 @@ function show(n,send){if(!n)return;cur=n;
     const el=document.querySelector(`.step[data-n="${n}"]`);if(el)el.scrollIntoView({behavior:send?'smooth':'auto',block:'center'});
     document.getElementById('pos').textContent=`Step ${n}/${D.steps.length}`;}
   else{const s=D.steps[n-1];document.getElementById('sn').textContent=n;document.getElementById('st').textContent=s.title+(s.do?' — '+s.do:'');
-    const im=document.getElementById('im');im.src=s.image?s.image+'?'+ver:'';
+    const im=document.getElementById('im');im.src=s.image?s.image+'?'+ver:'';im.style.display=s.image?'':'none';document.getElementById('st').textContent=s.title+(s.do?' — '+s.do:'')+(s.image?'':'  ⚠ '+(s.missing||[]).filter(x=>x.startsWith('NO SHOT')).join(' '));
     const nx=D.steps[n];if(nx&&nx.image)new Image().src=nx.image+'?'+ver;}
 }
 function renderScript(){
   app.innerHTML=`<header><span><span id="dot" class="dot"></span>Code ${esc(code)}</span><span id="pos"></span></header><div id="list">`+
   D.steps.map(s=>`<div class="step" data-n="${s.n}"><div class="top"><span class="num">${s.n}</span><span class="tm">${esc(s.time)}</span><span class="ttl">${esc(s.title)}</span></div>
-   ${s.do?`<div class="do">${esc(s.do)}</div>`:''}${s.type&&s.type!=='nothing'?`<div class="ty">${esc(s.type)}</div>`:''}
+   ${s.window?`<div class="do"><b>WHERE:</b> ${esc(s.window)}</div>`:''}${s.do?`<div class="do">${esc(s.do)}</div>`:''}${(s.missing||[]).map(x=>`<div class="mk">${esc(x)}</div>`).join('')}${s.type&&s.type!=='nothing'?`<div class="ty">${esc(s.type)}</div>`:''}
    ${s.say.map(l=>`<div class="say">${fmtSay(l)}</div>`).join('')}</div>`).join('')+
   `</div><div class="nav"><button class="up" id="u">▲ Up</button><button id="d">▼ Down</button></div>`;
   document.getElementById('u').onclick=()=>move(-1);document.getElementById('d').onclick=()=>move(1);
