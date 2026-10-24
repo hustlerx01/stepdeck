@@ -212,7 +212,7 @@ function dayKey(){return 'sst-auto-sent:'+new Date().toISOString().slice(0,10)}
 function sentToday(){try{return +localStorage.getItem(dayKey())||0}catch(e){return 0}}
 function publish(k){
   if(!window.__T)return;
-  const m=JSON.stringify({c:cid,k,t:+nowT().toFixed(2),run:C.run?1:0,s:C.started?1:0,pc:pace,gp:gap,sk:[...C.sk].sort((a,b)=>a-b),el:+wall().toFixed(1),vf:C.vf?1:0});
+  const m=JSON.stringify({c:cid,k,t:+(Math.ceil(nowT()*100)/100).toFixed(2),run:C.run?1:0,s:C.started?1:0,pc:pace,gp:gap,sk:[...C.sk].sort((a,b)=>a-b),el:+wall().toFixed(1),vf:C.vf?1:0});
   try{localStorage.setItem(dayKey(),String(sentToday()+1))}catch(e){}
   fetch(window.__T,{method:'POST',body:m}).then(r=>{if(r.status===429)syncNote('ntfy rate limit hit (free server: 250 messages/day); sync may lag')}).catch(()=>{});}
 let syncMsg='';function syncNote(t){syncMsg=t;const e=document.getElementById('syncnote');if(e)e.textContent=t}
