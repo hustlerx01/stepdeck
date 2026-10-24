@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0d10"><title>Step Deck: Short script v2.6.1 (flow tracker)</title>
+<meta name="theme-color" content="#0b0d10"><title>Step Deck: Short script v2.6.3 (flow tracker)</title>
 <style>
 :root{color-scheme:dark;--bg:#0b0d10;--card:#151a21;--hi:#1d2c44;--acc:#4ea1ff;--click:#ffcc33;--mut:#8b97a7;--fg:#eef2f6}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:20px/1.5 -apple-system,system-ui,sans-serif;-webkit-text-size-adjust:100%}
@@ -100,7 +100,7 @@ const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const fmtSay=s=>esc(s).replace(/\[click now\]/gi,'<span class="ck">[click now]</span>');
 if(!code||!view){
   const r=String(1000+Math.floor(Math.random()*9000));
-  app.innerHTML=`<div class="home"><h1>Step Deck</h1><p style="color:var(--mut);margin-top:-8px">Short script v2.6.1 (flow tracker)</p><p>Session code</p><input id="c" inputmode="numeric" value="${code||r}">
+  app.innerHTML=`<div class="home"><h1>Step Deck</h1><p style="color:var(--mut);margin-top:-8px">Short script v2.6.3 (flow tracker)</p><p>Session code</p><input id="c" inputmode="numeric" value="${code||r}">
   <a class="btn" id="a">Open Script view</a><a class="btn alt" id="b">Open Screen view</a><p style="color:var(--mut);font-size:16px">Use the same code on both devices.</p><p class="upd" id="hupd"></p></div>`;
   const go=v=>location.href=`?s=${encodeURIComponent(document.getElementById('c').value.replace(/\W/g,''))}&v=${v}`;
   fetch('steps.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{const h=document.getElementById('hupd');if(h&&j.updated)h.textContent='Last updated: '+j.updated}).catch(()=>{});

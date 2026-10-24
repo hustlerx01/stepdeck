@@ -1,6 +1,6 @@
 {
- "title": "Short script v2.6.1 (flow tracker)",
- "updated": "24 Oct 2026, 7:03 PM IST",
+ "title": "Short script v2.6.3 (flow tracker)",
+ "updated": "24 Oct 2026, 7:10 PM IST",
  "steps": [
   {
    "n": 1,
@@ -1134,7 +1134,7 @@
       }
      ],
      "b": null,
-     "q": "step 12 > column F header > drag down rows > status bar count"
+     "q": "step 11 > column F header > drag down rows > status bar count"
     },
     {
      "c": [],
@@ -1372,7 +1372,7 @@
       }
      ],
      "b": null,
-     "q": "step 14 > column F > drag down ten rows > status bar count"
+     "q": "step 13 > column F > drag down ten rows > status bar count"
     },
     {
      "c": [],
@@ -1943,7 +1943,7 @@
       }
      ],
      "b": null,
-     "q": "step 17 > A2 > top left of pivot > click > pause 1s"
+     "q": "step 19 > A2 > top left of pivot > click > pause 1s"
     },
     {
      "c": [
@@ -2035,7 +2035,7 @@
       }
      ],
      "b": null,
-     "q": "step 18 > doc body > first line > click > pause 1s"
+     "q": "step 20 > doc body > first line > click > pause 1s"
     },
     {
      "c": [
@@ -2154,7 +2154,7 @@
       }
      ],
      "b": null,
-     "q": "step 19 > under the table > click > pause 1s"
+     "q": "step 21 > under the table > click > pause 1s"
     },
     {
      "c": [
@@ -2302,7 +2302,7 @@
       }
      ],
      "b": null,
-     "q": "step 20 > Docs menu bar > File > open > pause 1s"
+     "q": "step 22 > Docs menu bar > File > open > pause 1s"
     },
     {
      "c": [
