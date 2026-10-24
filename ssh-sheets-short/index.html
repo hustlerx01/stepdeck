@@ -1,0 +1,85 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10"><title>Step Deck: Full beat-by-beat script</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d10;--card:#151a21;--hi:#1d2c44;--acc:#4ea1ff;--click:#ffcc33;--mut:#8b97a7;--fg:#eef2f6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:20px/1.5 -apple-system,system-ui,sans-serif;-webkit-text-size-adjust:100%}
+.home{max-width:520px;margin:12vh auto;padding:20px;text-align:center}
+.home input{font-size:40px;width:6em;text-align:center;background:var(--card);color:var(--fg);border:2px solid #333;border-radius:14px;padding:10px;letter-spacing:.2em}
+.btn{display:block;width:100%;margin:14px 0;padding:18px;font-size:22px;border:0;border-radius:14px;background:var(--acc);color:#000;font-weight:700;text-decoration:none}
+.btn.alt{background:#2a3340;color:var(--fg)}
+header{position:sticky;top:0;z-index:5;background:rgba(11,13,16,.95);padding:10px 16px;font-size:15px;color:var(--mut);display:flex;flex-wrap:wrap;gap:2px 12px;justify-content:space-between;border-bottom:1px solid #222}
+#list{padding:12px 12px 140px}
+.step{scroll-margin-top:60px;background:var(--card);border-radius:16px;padding:16px;margin:12px 0;border:3px solid transparent;transition:background .15s}
+.step.cur{background:var(--hi);border-color:var(--acc)}
+.top{display:flex;gap:12px;align-items:baseline}.num{font-size:30px;font-weight:800;color:var(--acc)}.tm{color:var(--mut);font-size:17px}.ttl{font-weight:700}
+.do{color:#b9c6d6;font-size:17px;margin:8px 0}.ty{white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:17px;background:#000;padding:6px 10px;border-radius:8px;margin:6px 0;color:#9ef0a5;word-break:break-word}
+.say{font-size:23px;line-height:1.55;margin:10px 0}.ck{background:var(--click);color:#000;font-weight:800;border-radius:6px;padding:0 5px;white-space:nowrap}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;gap:10px;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(11,13,16,.96);z-index:6}
+.nav button{flex:1;font-size:30px;padding:16px;border-radius:16px;border:0;background:var(--acc);color:#000;font-weight:800}
+.nav button.up{background:#2a3340;color:var(--fg)}
+#scr{position:fixed;inset:0;display:flex;flex-direction:column;background:#000}
+#scr .cap{padding:10px 16px;font-size:24px;display:flex;gap:14px;align-items:center;background:#0b0d10}
+#scr .cap .num{font-size:34px}#scr .cap .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#scr img{flex:1;min-height:0;width:100%;object-fit:contain}
+#scr .ctl button{font-size:26px;padding:6px 20px;margin-left:6px;border:0;border-radius:10px;background:#2a3340;color:#fff}
+.upd{color:var(--mut);font-size:13px}.home .upd{margin-top:18px;font-size:15px}#scr .updbar{padding:2px 16px 6px;background:#0b0d10;color:var(--mut);font-size:13px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#c33;margin-right:6px}.dot.on{background:#3c3}
+</style></head><body><div id="app"></div>
+<script>
+const P=new URLSearchParams(location.search),code=(P.get('s')||'').replace(/\W/g,''),view=P.get('v')||(location.pathname.includes('screen')?'screen':location.pathname.includes('script')?'script':'');
+const app=document.getElementById('app');let D,cur=1,ver='';
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const fmtSay=s=>esc(s).replace(/\[click now\]/gi,'<span class="ck">[click now]</span>');
+if(!code||!view){
+  const r=String(1000+Math.floor(Math.random()*9000));
+  app.innerHTML=`<div class="home"><h1>Step Deck</h1><p style="color:var(--mut);margin-top:-8px">Full beat-by-beat script</p><p>Session code</p><input id="c" inputmode="numeric" value="${code||r}">
+  <a class="btn" id="a">Open Script view</a><a class="btn alt" id="b">Open Screen view</a><p style="color:var(--mut);font-size:16px">Use the same code on both devices.</p><p class="upd" id="hupd"></p></div>`;
+  const go=v=>location.href=`?s=${encodeURIComponent(document.getElementById('c').value.replace(/\W/g,''))}&v=${v}`;
+  fetch('steps.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{const h=document.getElementById('hupd');if(h&&j.updated)h.textContent='Last updated: '+j.updated}).catch(()=>{});
+  document.getElementById('a').onclick=()=>go('script');document.getElementById('b').onclick=()=>go('screen');
+}else start();
+async function start(){
+  D=await (await fetch('steps.json',{cache:'no-store'})).json();
+  try{ver=(await (await fetch('images/.v',{cache:'no-store'})).text()).trim()}catch(e){}
+  view==='script'?renderScript():renderScreen();show(1,false);
+  // sync: public ntfy.sh topic per session code (no account, no secrets)
+  const T='https://ntfy.sh/stepdeck-ssh-sheets-short-k7q2-'+code;
+  try{const t=await (await fetch(T+'/json?poll=1&since=12h',{cache:'no-store'})).text();const ls=t.trim().split('\n').filter(Boolean).map(JSON.parse).filter(m=>m.event==='message');if(ls.length)show(+ls[ls.length-1].message,false)}catch(e){}
+  const es=new EventSource(T+'/sse');
+  es.onmessage=e=>{const m=JSON.parse(e.data);if(m.event==='message'&&m.message!==String(cur))show(+m.message,false)};es.onopen=()=>dot(1);es.onerror=()=>dot(0);
+  window.__T=T;
+  document.addEventListener('keydown',e=>{if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();move(1)}if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();move(-1)}});
+  let y0=null,x0=null;
+  if(view==='screen'){document.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY});
+    document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)move(dx<0?1:-1)});}
+}
+function dot(on){const d=document.getElementById('dot');if(d)d.className='dot'+(on?' on':'')}
+function move(d){const n=Math.min(D.steps.length,Math.max(1,cur+d));show(n,true)}
+function show(n,send){if(!n||!D.steps[n-1])return;cur=n;
+  if(send)fetch(window.__T,{method:'POST',body:String(n)}).catch(()=>{});
+  if(view==='script'){document.querySelectorAll('.step').forEach(e=>e.classList.toggle('cur',+e.dataset.n===n));
+    const el=document.querySelector(`.step[data-n="${n}"]`);if(el)el.scrollIntoView({behavior:send?'smooth':'auto',block:el.offsetHeight>innerHeight*0.6?'start':'center'});
+    document.getElementById('pos').textContent=`Step ${D.steps[n-1].n} (${n}/${D.steps.length})`;}
+  else{const s=D.steps[n-1];document.getElementById('sn').textContent=s.n;document.getElementById('st').textContent=s.title+(s.do?' — '+s.do:'');
+    const im=document.getElementById('im');im.src=s.image?s.image+'?'+ver:'';
+    const nx=D.steps[n];if(nx&&nx.image)new Image().src=nx.image+'?'+ver;}
+}
+function renderScript(){
+  app.innerHTML=`<header><span><span id="dot" class="dot"></span>Code ${esc(code)}</span><span class="upd">${D.updated?'Last updated: '+esc(D.updated):''}</span><span id="pos"></span></header><div id="list">`+
+  D.steps.map((s,i)=>`<div class="step" data-n="${i+1}"><div class="top"><span class="num">${s.n}</span><span class="tm">${esc(s.time)}</span><span class="ttl">${esc(s.title)}</span></div>
+   ${s.do?`<div class="do">${esc(s.do)}</div>`:''}${s.type&&s.type!=='nothing'?`<div class="ty">${esc(s.type)}</div>`:''}
+   ${s.say.map(l=>`<div class="say">${fmtSay(l)}</div>`).join('')}</div>`).join('')+
+  `</div><div class="nav"><button class="up" id="u">▲ Up</button><button id="d">▼ Down</button></div>`;
+  document.getElementById('u').onclick=()=>move(-1);document.getElementById('d').onclick=()=>move(1);
+  document.querySelectorAll('.step').forEach(e=>e.onclick=()=>show(+e.dataset.n,true));
+  // swipe on the nav bar area only, so normal scrolling still works
+  let y0;const nv=document.querySelector('.nav');nv.addEventListener('touchstart',e=>y0=e.touches[0].clientY);
+  nv.addEventListener('touchend',e=>{const dy=e.changedTouches[0].clientY-y0;if(Math.abs(dy)>40)move(dy<0?1:-1)});
+}
+function renderScreen(){
+  app.innerHTML=`<div id="scr"><div class="cap"><span id="dot" class="dot"></span><span class="num" id="sn"></span><span class="t" id="st"></span>
+  <span class="ctl"><button id="p">◀</button><button id="x">▶</button></span></div><div class="updbar">${D.updated?'Last updated: '+esc(D.updated):''}</div><img id="im" alt=""></div>`;
+  document.getElementById('p').onclick=()=>move(-1);document.getElementById('x').onclick=()=>move(1);
+}
+</script></body></html>
