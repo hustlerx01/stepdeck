@@ -21,7 +21,7 @@ header{position:sticky;top:0;z-index:5;background:#0b0d10;padding:10px 16px;font
 #scr{position:fixed;inset:0;display:flex;flex-direction:column;background:#000}
 #scr .cap{padding:10px 16px;font-size:24px;display:flex;gap:14px;align-items:center;background:#0b0d10}
 #scr .cap .num{font-size:34px}#scr .cap .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#scr img{flex:1;min-height:0;width:100%;object-fit:contain}
+#scr img{flex:1;min-height:0;width:100%;object-fit:contain}#scr{position:relative}#ib{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;font:600 13px system-ui,sans-serif;padding:3px 9px;border-radius:12px;display:none;pointer-events:none}
 #scr .ctl button{font-size:26px;padding:6px 20px;margin-left:6px;border:0;border-radius:10px;background:#2a3340;color:#fff}
 .upd{color:var(--mut);font-size:13px}.home .upd{margin-top:18px;font-size:15px}#scr .updbar{padding:2px 16px 6px;background:#0b0d10;color:var(--mut);font-size:13px}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#c33;margin-right:6px}.dot.on{background:#3c3}
@@ -129,6 +129,8 @@ body.hd .say.now{border-left-color:#ffb300}
 <script>
 const P=new URLSearchParams(location.search),code=(P.get('s')||'').replace(/\W/g,''),view=P.get('v')||(location.pathname.includes('screen')?'screen':location.pathname.includes('script')?'script':'');
 const RATE=Math.max(0.1,+P.get('speed')||1);          // test hook only: ?speed=10 runs the clock 10x
+const pic=(s,j)=>s.images?s.images[(s.si&&s.si[j]!=null)?s.si[j]:0]:s.image;
+function badge(s,j){const b=document.getElementById('ib');if(!b)return;if(s.images){s.images.forEach(x=>{new Image().src=x+'?'+ver});b.style.display='block';b.textContent=((s.si&&s.si[j]!=null)?s.si[j]:0)+1+'/'+s.images.length}else b.style.display='none'}
 const app=document.getElementById('app');let D;
 const LS='sst-auto:'+code;document.body.classList.toggle('af',view==='script');
 const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
@@ -399,13 +401,13 @@ function gosum(){const e=document.getElementById('gosum');if(e)e.innerHTML=`${D.
 function screenPaint(){
   const t=nowT(),g=lineAt(t),q=G[g],s=D.steps[q.n-1];
   document.getElementById('sn').textContent=s.n;document.getElementById('st').textContent=s.title+(s.do?' \u2014 '+s.do:'');
-  const im=document.getElementById('im'),src=s.image?s.image+'?'+ver:'';if(im.getAttribute('src')!==src)im.src=src;
+  const pc=pic(s,q.j),im=document.getElementById('im'),src=pc?pc+'?'+ver:'';if(im.getAttribute('src')!==src)im.src=src;badge(s,q.j);
   const nx=D.steps[q.n];if(nx&&nx.image)new Image().src=nx.image+'?'+ver;
   document.getElementById('sl').textContent=`line ${g+1}/${G.length} \u00b7 ${!C.started?'not started':C.fin?'the end':t<0?'get ready':C.run?'running':'on hold'}`;
   document.getElementById('stm').textContent=`${mmss(Math.max(0,t))} / ${mmss(total)}`}
 function renderScreen(){
   app.innerHTML=`<div id="scr"><div class="cap"><span id="dot" class="dot"></span><span class="num" id="sn"></span><span class="t" id="st"></span>
-  <span class="ctl"><button id="p">\u25c0</button><button id="x">\u25b6</button></span></div><div class="updbar"><span id="sl"></span><span id="stm"></span></div><img id="im" alt=""></div>`;
+  <span class="ctl"><button id="p">\u25c0</button><button id="x">\u25b6</button></span></div><div class="updbar"><span id="sl"></span><span id="stm"></span></div><img id="im" alt=""><span id="ib"></span></div>`;
   const mv=d=>{const q=G[curG()],n=clamp(q.n+d,1,D.steps.length);C.sk=new Set();setT(G[sf[n]].start);cmd()};
   document.getElementById('p').onclick=()=>mv(-1);document.getElementById('x').onclick=()=>mv(1)}
 let ver='';
