@@ -55,7 +55,7 @@ body.flow .nav{position:relative;flex:none}
 #strip .talk{color:#5d6876;font-size:20px;text-align:center;letter-spacing:.04em}
 #strip .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{display:inline-block;font-weight:800;border-radius:10px;white-space:normal;line-height:1.2;color:#000;vertical-align:baseline}
-.chip.click{background:#ffcc33}.chip.dbl{background:#ff9f43}.chip.type{background:#4be37a}.chip.key{background:#5ab0ff}.chip.move{background:#6fe0d6}.chip.wait{background:#ff6b6b}.chip.pause{background:#444b57;color:#ddd}
+.chip.click{background:#ffcc33}.chip.dbl{background:#ff9f43}.chip.type{background:#4be37a}.chip.key{background:#5ab0ff}.chip.move{background:#6fe0d6}.chip.wait{background:#ff6b6b}.chip.drag{background:#c9a0ff}.chip.pause{background:#444b57;color:#ddd}
 .chip.big{font-size:22px;padding:5px 12px}
 .chip.big.pause{font-size:17px;padding:5px 10px;align-self:center}
 .chip.in{font-size:15px;padding:1px 8px;margin:0 5px;letter-spacing:.01em}
@@ -179,7 +179,7 @@ async function start(){
     document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)move(dx<0?1:-1)});}
 }
 function dot(on){const d=document.getElementById('dot');if(d)d.className='dot'+(on?' on':'')}
-const KL={click:'\u25b6 CLICK',dbl:'\u25b6\u25b6 DOUBLE-CLICK',type:'\u2328 TYPE',key:'\u2328 KEY',move:'\u2197 MOVE',wait:'\u23f3 WAIT',pause:'\u23f8'};
+const KL={click:'\u25b6 CLICK',dbl:'\u25b6\u25b6 DOUBLE-CLICK',type:'\u2328 TYPE',key:'\u2328 KEY',move:'\u2197 MOVE',drag:'\u2193 DRAG',wait:'\u23f3 WAIT',pause:'\u23f8'};
 const chipTxt=c=>c.k==='pause'?`${KL.pause} ${c.l}`:`${KL[c.k]}${c.l?' '+c.l:''}`;
 const inTxt=c=>c.k==='pause'?`${KL.pause} ${c.l.replace('pause ','')}`:c.k==='key'?`${KL.key} ${c.l}`:KL[c.k].replace(' DOUBLE-CLICK',' DBL-CLICK');
 const chipH=(c,cls,no)=>`<span class="chip ${c.k} ${cls}">${no?`<span class="no">${no}</span>`:''}${esc(cls==='big'||cls==='in af'?chipTxt(c):inTxt(c))}</span>`;
