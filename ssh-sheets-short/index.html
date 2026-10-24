@@ -21,13 +21,16 @@ header{position:sticky;top:0;z-index:5;background:rgba(11,13,16,.95);padding:10p
 #scr{position:fixed;inset:0;display:flex;flex-direction:column;background:#000}
 #scr .cap{padding:10px 16px;font-size:24px;display:flex;gap:14px;align-items:center;background:#0b0d10}
 #scr .cap .num{font-size:34px}#scr .cap .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#scr img{flex:1;min-height:0;width:100%;object-fit:contain}
+#scr img{flex:1;min-height:0;width:100%;object-fit:contain}#scr{position:relative}#ib{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;font:600 13px system-ui,sans-serif;padding:3px 9px;border-radius:12px;display:none;pointer-events:none}
 #scr .ctl button{font-size:26px;padding:6px 20px;margin-left:6px;border:0;border-radius:10px;background:#2a3340;color:#fff}
 .upd{color:var(--mut);font-size:13px}.home .upd{margin-top:18px;font-size:15px}#scr .updbar{padding:2px 16px 6px;background:#0b0d10;color:var(--mut);font-size:13px}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#c33;margin-right:6px}.dot.on{background:#3c3}
 </style></head><body><div id="app"></div>
 <script>
 const P=new URLSearchParams(location.search),code=(P.get('s')||'').replace(/\W/g,''),view=P.get('v')||(location.pathname.includes('screen')?'screen':location.pathname.includes('script')?'script':'');
+let pi=0,lastShown=0;
+const pic=(s)=>s.images?s.images[pi%s.images.length]:s.image;
+function badge(s){const b=document.getElementById('ib');if(!b)return;if(s.images){s.images.forEach(x=>{new Image().src=x+'?'+ver});b.style.display='block';b.textContent=(pi%s.images.length)+1+' / '+s.images.length+' (tap the picture)'}else b.style.display='none'}
 const app=document.getElementById('app');let D,cur=1,ver='';
 const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const fmtSay=s=>esc(s).replace(/\[click now\]/gi,'<span class="ck">[click now]</span>');
@@ -62,7 +65,8 @@ function show(n,send){if(!n||!D.steps[n-1])return;cur=n;
     const el=document.querySelector(`.step[data-n="${n}"]`);if(el)el.scrollIntoView({behavior:send?'smooth':'auto',block:el.offsetHeight>innerHeight*0.6?'start':'center'});
     document.getElementById('pos').textContent=`Step ${D.steps[n-1].n} (${n}/${D.steps.length})`;}
   else{const s=D.steps[n-1];document.getElementById('sn').textContent=s.n;document.getElementById('st').textContent=s.title+(s.do?' — '+s.do:'');
-    const im=document.getElementById('im');im.src=s.image?s.image+'?'+ver:'';
+    if(cur!==lastShown){pi=0;lastShown=cur}
+    const im=document.getElementById('im'),pc=pic(s);im.src=pc?pc+'?'+ver:'';badge(s);im.onclick=()=>{if(s.images){pi++;show(cur,false)}};
     const nx=D.steps[n];if(nx&&nx.image)new Image().src=nx.image+'?'+ver;}
 }
 function renderScript(){
@@ -79,7 +83,7 @@ function renderScript(){
 }
 function renderScreen(){
   app.innerHTML=`<div id="scr"><div class="cap"><span id="dot" class="dot"></span><span class="num" id="sn"></span><span class="t" id="st"></span>
-  <span class="ctl"><button id="p">◀</button><button id="x">▶</button></span></div><div class="updbar">${D.updated?'Last updated: '+esc(D.updated):''}</div><img id="im" alt=""></div>`;
+  <span class="ctl"><button id="p">◀</button><button id="x">▶</button></span></div><div class="updbar">${D.updated?'Last updated: '+esc(D.updated):''}</div><img id="im" alt=""><span id="ib"></span></div>`;
   document.getElementById('p').onclick=()=>move(-1);document.getElementById('x').onclick=()=>move(1);
 }
 </script></body></html>
