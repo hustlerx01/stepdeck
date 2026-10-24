@@ -1,0 +1,169 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10"><title>Step Deck: Full beat-by-beat script</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d10;--card:#151a21;--hi:#1d2c44;--acc:#4ea1ff;--click:#ffcc33;--mut:#8b97a7;--fg:#eef2f6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:20px/1.5 -apple-system,system-ui,sans-serif;-webkit-text-size-adjust:100%}
+.home{max-width:520px;margin:12vh auto;padding:20px;text-align:center}
+.home input{font-size:40px;width:6em;text-align:center;background:var(--card);color:var(--fg);border:2px solid #333;border-radius:14px;padding:10px;letter-spacing:.2em}
+.btn{display:block;width:100%;margin:14px 0;padding:18px;font-size:22px;border:0;border-radius:14px;background:var(--acc);color:#000;font-weight:700;text-decoration:none}
+.btn.alt{background:#2a3340;color:var(--fg)}
+header{position:sticky;top:0;z-index:5;background:#0b0d10;padding:10px 16px;font-size:15px;color:var(--mut);display:flex;flex-wrap:wrap;gap:2px 12px;justify-content:space-between;border-bottom:1px solid #222}
+#list{padding:12px 12px 140px}
+.step{scroll-margin-top:60px;background:var(--card);border-radius:16px;padding:16px;margin:12px 0;border:3px solid transparent;transition:background .15s}
+.step.cur{background:var(--hi);border-color:var(--acc)}
+.top{display:flex;gap:12px;align-items:baseline}.num{font-size:30px;font-weight:800;color:var(--acc)}.tm{color:var(--mut);font-size:17px}.ttl{font-weight:700}
+.do{color:#b9c6d6;font-size:17px;margin:8px 0}.ty{white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:17px;background:#000;padding:6px 10px;border-radius:8px;margin:6px 0;color:#9ef0a5;word-break:break-word}
+.say{font-size:23px;line-height:1.55;margin:10px 0}.ck{background:var(--click);color:#000;font-weight:800;border-radius:6px;padding:0 5px;white-space:nowrap}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;gap:10px;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(11,13,16,.96);z-index:6}
+.nav button{flex:1;font-size:30px;padding:16px;border-radius:16px;border:0;background:var(--acc);color:#000;font-weight:800}
+.nav button.up{background:#2a3340;color:var(--fg)}
+#scr{position:fixed;inset:0;display:flex;flex-direction:column;background:#000}
+#scr .cap{padding:10px 16px;font-size:24px;display:flex;gap:14px;align-items:center;background:#0b0d10}
+#scr .cap .num{font-size:34px}#scr .cap .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#scr img{flex:1;min-height:0;width:100%;object-fit:contain}
+#scr .ctl button{font-size:26px;padding:6px 20px;margin-left:6px;border:0;border-radius:10px;background:#2a3340;color:#fff}
+.upd{color:var(--mut);font-size:13px}.home .upd{margin-top:18px;font-size:15px}#scr .updbar{padding:2px 16px 6px;background:#0b0d10;color:var(--mut);font-size:13px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#c33;margin-right:6px}.dot.on{background:#3c3}
+.nav{flex-wrap:wrap}
+.nav .row{display:flex;gap:8px;width:100%}
+.nav button{font-size:22px;padding:12px 6px;min-height:58px}
+.nav button.nx{flex:2.2;font-size:30px;background:var(--click)}
+.nav button.alt{background:#2a3340;color:var(--fg)}
+.nav button.sk{background:#4a4f58;color:#fff}.nav button.ad{background:#6b3fa0;color:#fff}.nav button.ad.on{background:#c77dff;color:#000;outline:3px solid #fff}
+#list{padding:12px 12px 62vh}
+.cnt{margin-left:auto;font-size:14px;color:var(--mut);white-space:nowrap}
+.step.cur .cnt{color:#cfe3ff}
+.say{position:relative;min-height:56px;padding:12px 14px 12px 16px;border-left:8px solid #2b3442;border-radius:10px;margin:10px 0;color:#c4cdd8;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity .15s,background .15s}
+.say .tg::before{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;padding:1px 8px;border-radius:99px;margin-right:8px;vertical-align:middle;line-height:1.5}
+.say.read{opacity:.35;border-left-color:#3a4a3a}.say.read .tg::before{content:"\2713 read";background:#2e5a36;color:#cfe}
+.say.skip{opacity:.62;color:#8a8f98;border-left:8px dashed #7a7f88;background:rgba(120,124,132,.10)}.say.skip .tg::before{content:"skipped";background:#555;color:#ddd}
+.say.now{opacity:1;color:#fff;font-size:27px;font-weight:600;border-left:12px solid var(--click);background:rgba(255,204,51,.10)}
+.say.now .tg::before{content:"NOW";background:var(--click);color:#000}
+.say.now.adlib{border-left-color:#c77dff;background:rgba(199,125,255,.14)}
+.say.now.adlib .tg::before{content:"NOW \00b7 AD-LIB";background:#c77dff;color:#000}
+.say .ab{display:none;margin:8px 0 2px;padding:8px 10px;border-radius:8px;background:#c77dff;color:#000;font-size:17px;font-weight:800}
+.say.now.adlib .ab{display:block}
+</style></head><body><div id="app"></div>
+<script>
+const P=new URLSearchParams(location.search),code=(P.get('s')||'').replace(/\W/g,''),view=P.get('v')||(location.pathname.includes('screen')?'screen':location.pathname.includes('script')?'script':'');
+const app=document.getElementById('app');let D,cur=1,ver='',S={},ad=false,stamp=0,lastMsg='';
+const LS='sst-trk:'+code;
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const fmtSay=s=>esc(s).replace(/\[click now\]/gi,'<span class="ck">[click now]</span>');
+if(!code||!view){
+  const r=String(1000+Math.floor(Math.random()*9000));
+  app.innerHTML=`<div class="home"><h1>Step Deck</h1><p style="color:var(--mut);margin-top:-8px">Full beat-by-beat script</p><p>Session code</p><input id="c" inputmode="numeric" value="${code||r}">
+  <a class="btn" id="a">Open Script view</a><a class="btn alt" id="b">Open Screen view</a><p style="color:var(--mut);font-size:16px">Use the same code on both devices.</p><p class="upd" id="hupd"></p></div>`;
+  const go=v=>location.href=`?s=${encodeURIComponent(document.getElementById('c').value.replace(/\W/g,''))}&v=${v}`;
+  fetch('steps.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{const h=document.getElementById('hupd');if(h&&j.updated)h.textContent='Last updated: '+j.updated}).catch(()=>{});
+  document.getElementById('a').onclick=()=>go('script');document.getElementById('b').onclick=()=>go('screen');
+}else start();
+
+/* ---- line tracker state ----
+   S[n] = {i: current line index (0-based), m: string, one char per line: '.' not done, 'r' read, 's' skipped}
+   ad = ad-lib flag for the current card. Only the user's taps/buttons ever change this.
+   Sync message: "n:i:marks:a"  (plain "n" from older pages = card n, first line). */
+const K=n=>D.steps[n-1].say.length;
+const fresh=n=>({i:0,m:'.'.repeat(K(n))});
+const st=()=>S[cur]||(S[cur]=fresh(cur));
+const enc=()=>{const s=st();return `${cur}:${s.i}:${s.m}:${ad?1:0}`};
+function parse(msg){const p=String(msg).trim().split(':');const n=+p[0];if(!n||!D.steps[n-1])return null;
+  const k=K(n);let i=0,m='.'.repeat(k),a=0;
+  if(p.length>=3){i=Math.min(k-1,Math.max(0,+p[1]||0));if(/^[.rs]+$/.test(p[2])&&p[2].length===k)m=p[2];a=p[3]==='1'?1:0}
+  return {n,s:{i,m},a}}
+function save(){try{localStorage.setItem(LS,JSON.stringify({cur,S,ad,t:Date.now()}))}catch(e){}}
+function commit(send){save();paint(send&&true);if(send){lastMsg=enc();fetch(window.__T,{method:'POST',body:lastMsg}).catch(()=>{})}}
+function setAt(m,i,c){return m.slice(0,i)+c+m.slice(i+1)}
+function enterCard(n,send){cur=n;S[n]=fresh(n);ad=false;commit(send)}      // fresh card, first line
+function move(d){const n=Math.min(D.steps.length,Math.max(1,cur+d));if(n!==cur)enterCard(n,true)}
+function nextLine(){const s=st(),k=K(cur);s.m=setAt(s.m,s.i,'r');ad=false;
+  if(s.i>=k-1){if(cur<D.steps.length)enterCard(cur+1,true);else commit(true);return}
+  s.i++;s.m=setAt(s.m,s.i,'.');commit(true)}
+function prevLine(){const s=st();ad=false;if(s.i<=0){commit(true);return}
+  s.m=setAt(s.m,s.i,'.');s.i--;s.m=setAt(s.m,s.i,'.');commit(true)}
+function skipLine(){const s=st(),k=K(cur);s.m=setAt(s.m,s.i,'s');ad=false;
+  if(s.i>=k-1){if(cur<D.steps.length)enterCard(cur+1,true);else commit(true);return}
+  s.i++;s.m=setAt(s.m,s.i,'.');commit(true)}
+function adlib(){ad=!ad;commit(true)}
+function tapLine(n,j){
+  if(n!==cur){cur=n;S[n]=fresh(n);S[n].i=j;ad=false;commit(true);return}   // other card: just start at that line
+  const s=st();
+  if(j>s.i){s.m=setAt(s.m,s.i,'r');for(let q=s.i+1;q<j;q++)if(s.m[q]==='.')s.m=setAt(s.m,q,'s')}   // went through the old line, jumped over the ones between
+  else if(j<s.i){s.m=setAt(s.m,s.i,'.')}
+  s.i=j;s.m=setAt(s.m,j,'.');ad=false;commit(true)}
+const counts=n=>{const m=(S[n]||fresh(n)).m;const r=(m.match(/r/g)||[]).length,k=(m.match(/s/g)||[]).length;return {r,k,l:m.length-r-k}};
+const cntTxt=n=>{const c=counts(n);return `read ${c.r} \u00b7 skipped ${c.k} \u00b7 left ${c.l}`};
+
+let lastScrolled='';
+function paint(send){
+  if(view==='script'){
+    document.querySelectorAll('.step').forEach(e=>{const n=+e.dataset.n,isc=n===cur,s=S[n];
+      e.classList.toggle('cur',isc);
+      e.querySelector('.cnt').textContent=s||isc?cntTxt(n):'';
+      e.querySelectorAll('.say').forEach((l,j)=>{const mk=s?s.m[j]:'.',now=isc&&j===st().i;
+        l.className='say'+(now?' now'+(ad?' adlib':''):mk==='r'?' read':mk==='s'?' skip':'');});});
+    const c=D.steps[cur-1],s=st(),cc=counts(cur);
+    document.getElementById('pos').textContent=`Step ${c.n} (${cur}/${D.steps.length}) \u00b7 line ${s.i+1}/${K(cur)}`;
+    document.getElementById('hc').textContent=cntTxt(cur);
+    const ab=document.getElementById('ad');if(ab)ab.classList.toggle('on',ad);
+    center(send);
+  }else{const s=D.steps[cur-1];document.getElementById('sn').textContent=s.n;document.getElementById('st').textContent=s.title+(s.do?' \u2014 '+s.do:'');
+    const im=document.getElementById('im');const src=s.image?s.image+'?'+ver:'';if(!im.getAttribute('src')||im.getAttribute('src')!==src)im.src=src;
+    const nx=D.steps[cur];if(nx&&nx.image)new Image().src=nx.image+'?'+ver;}
+}
+function center(smooth){
+  const el=document.querySelector(`.step[data-n="${cur}"] .say.now`);if(!el)return;
+  const hd=document.querySelector('header').offsetHeight,nv=document.querySelector('.nav').offsetHeight;
+  const top=hd,bot=innerHeight-nv,r=el.getBoundingClientRect();
+  let dy=r.height>bot-top-20?r.top-top-10:(r.top+r.height/2)-(top+bot)/2;
+  window.scrollBy({top:dy,behavior:smooth?'smooth':'auto'});
+}
+function applyRemote(msg){const p=parse(msg);if(!p)return;cur=p.n;S[p.n]=p.s;ad=!!p.a;lastMsg=enc();save();paint(false)}
+
+async function start(){
+  D=await (await fetch('steps.json',{cache:'no-store'})).json();
+  try{ver=(await (await fetch('images/.v',{cache:'no-store'})).text()).trim()}catch(e){}
+  try{const o=JSON.parse(localStorage.getItem(LS)||'null');if(o&&o.S&&D.steps[o.cur-1]){S=o.S;cur=o.cur;ad=!!o.ad;stamp=o.t||0;
+    Object.keys(S).forEach(n=>{if(!D.steps[n-1]||S[n].m.length!==K(+n))delete S[n]})}}catch(e){}
+  view==='script'?renderScript():renderScreen();paint(false);
+  if(view==='script')setTimeout(()=>center(false),50);
+  const T='https://ntfy.sh/stepdeck-sst-trk-k7q2-'+code;window.__T=T;
+  try{const t=await (await fetch(T+'/json?poll=1&since=12h',{cache:'no-store'})).text();const ls=t.trim().split('\n').filter(Boolean).map(JSON.parse).filter(m=>m.event==='message');
+    if(ls.length){const m=ls[ls.length-1];if(!stamp||m.time*1000>stamp)applyRemote(m.message)}}catch(e){}
+  const es=new EventSource(T+'/sse');
+  es.onmessage=e=>{const m=JSON.parse(e.data);if(m.event==='message'&&m.message!==lastMsg)applyRemote(m.message)};es.onopen=()=>dot(1);es.onerror=()=>dot(0);
+  document.addEventListener('keydown',e=>{
+    if(e.key===' '||e.key==='ArrowRight'){e.preventDefault();nextLine()}
+    else if(e.key==='ArrowLeft'){e.preventDefault();prevLine()}
+    else if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();move(1)}
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();move(-1)}
+    else if(e.key==='s'||e.key==='S')skipLine();else if(e.key==='a'||e.key==='A')adlib();});
+  let y0=null,x0=null;
+  if(view==='screen'){document.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY});
+    document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)move(dx<0?1:-1)});}
+}
+function dot(on){const d=document.getElementById('dot');if(d)d.className='dot'+(on?' on':'')}
+function renderScript(){
+  app.innerHTML=`<header><span><span id="dot" class="dot"></span>Code ${esc(code)}</span><span class="upd">${D.updated?'Last updated: '+esc(D.updated):''}</span><span id="pos"></span><span id="hc" class="upd" style="width:100%"></span></header><div id="list">`+
+  D.steps.map((s,i)=>`<div class="step" data-n="${i+1}"><div class="top"><span class="num">${s.n}</span><span class="tm">${esc(s.time)}</span><span class="ttl">${esc(s.title)}</span><span class="cnt"></span></div>
+   ${s.do?`<div class="do">${esc(s.do)}</div>`:''}${s.type&&s.type!=='nothing'?`<div class="ty">${esc(s.type)}</div>`:''}
+   ${s.say.map((l,j)=>`<div class="say" data-i="${j}"><span class="tg"></span>${fmtSay(l)}<div class="ab">AD-LIB, tap the line to continue</div></div>`).join('')}</div>`).join('')+
+  `</div><div class="nav"><div class="row"><button class="alt" id="pl">&#9664; Prev line</button><button class="nx" id="nl">Next line &#9654;</button></div>
+   <div class="row"><button class="up" id="u">&#9650; Up</button><button class="alt" id="d">&#9660; Down</button><button class="sk" id="sk">Skip line</button><button class="ad" id="ad">Ad-lib</button></div></div>`;
+  const $=i=>document.getElementById(i);
+  $('u').onclick=()=>move(-1);$('d').onclick=()=>move(1);$('nl').onclick=nextLine;$('pl').onclick=prevLine;$('sk').onclick=skipLine;$('ad').onclick=adlib;
+  document.querySelectorAll('.step').forEach(e=>{
+    e.onclick=()=>{if(+e.dataset.n!==cur)enterCard(+e.dataset.n,true)};
+    e.querySelectorAll('.say').forEach(l=>l.onclick=ev=>{ev.stopPropagation();tapLine(+e.dataset.n,+l.dataset.i)});});
+  // swipe on the nav bar only (so normal scrolling still works): up/down = card, left/right = next/prev line
+  let y0,x0;const nv=document.querySelector('.nav');nv.addEventListener('touchstart',e=>{y0=e.touches[0].clientY;x0=e.touches[0].clientX});
+  nv.addEventListener('touchend',e=>{const dy=e.changedTouches[0].clientY-y0,dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dy)>60&&Math.abs(dy)>Math.abs(dx))move(dy<0?1:-1);else if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy))(dx<0?nextLine:prevLine)()});
+}
+function renderScreen(){
+  app.innerHTML=`<div id="scr"><div class="cap"><span id="dot" class="dot"></span><span class="num" id="sn"></span><span class="t" id="st"></span>
+  <span class="ctl"><button id="p">\u25c0</button><button id="x">\u25b6</button></span></div><div class="updbar">${D.updated?'Last updated: '+esc(D.updated):''}</div><img id="im" alt=""></div>`;
+  document.getElementById('p').onclick=()=>move(-1);document.getElementById('x').onclick=()=>move(1);
+}
+</script></body></html>
