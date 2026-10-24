@@ -1,6 +1,6 @@
 {
  "title": "Full beat-by-beat script: overnight SSH triage on jump01 (Terminal.app + Google Sheets + Google Docs in Firefox)",
- "updated": "24 Oct 2026, 4:43 PM IST",
+ "updated": "24 Oct 2026, 4:45 PM IST",
  "steps": [
   {
    "n": 1,
@@ -4042,7 +4042,7 @@
        "l": ""
       }
      ],
-     "b": "grep 'Failed password' auth-jump01.log | awk '<print $(NF-3)>'",
+     "b": "grep 'Failed password' auth-jump01.log | awk '{print $(NF-3)}'",
      "w": 30,
      "fl": 15.5,
      "ps": 0,
