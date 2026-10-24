@@ -1,0 +1,428 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10"><title>Step Deck: LONG script (v2.4.8): overnight SSH triage on jump01</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d10;--card:#151a21;--hi:#1d2c44;--acc:#4ea1ff;--click:#ffcc33;--mut:#8b97a7;--fg:#eef2f6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:20px/1.5 -apple-system,system-ui,sans-serif;-webkit-text-size-adjust:100%}
+.home{max-width:520px;margin:12vh auto;padding:20px;text-align:center}
+.home input{font-size:40px;width:6em;text-align:center;background:var(--card);color:var(--fg);border:2px solid #333;border-radius:14px;padding:10px;letter-spacing:.2em}
+.btn{display:block;width:100%;margin:14px 0;padding:18px;font-size:22px;border:0;border-radius:14px;background:var(--acc);color:#000;font-weight:700;text-decoration:none}
+.btn.alt{background:#2a3340;color:var(--fg)}
+header{position:sticky;top:0;z-index:5;background:#0b0d10;padding:10px 16px;font-size:15px;color:var(--mut);display:flex;flex-wrap:wrap;gap:2px 12px;justify-content:space-between;border-bottom:1px solid #222}
+#list{padding:12px 12px 140px}
+.step{scroll-margin-top:60px;background:var(--card);border-radius:16px;padding:16px;margin:12px 0;border:3px solid transparent;transition:background .15s}
+.step.cur{background:var(--hi);border-color:var(--acc)}
+.top{display:flex;gap:12px;align-items:baseline}.num{font-size:30px;font-weight:800;color:var(--acc)}.tm{color:var(--mut);font-size:17px}.ttl{font-weight:700}
+.do{color:#b9c6d6;font-size:17px;margin:8px 0}.ty{white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:17px;background:#000;padding:6px 10px;border-radius:8px;margin:6px 0;color:#9ef0a5;word-break:break-word}
+.say{font-size:23px;line-height:1.55;margin:10px 0}.ck{background:var(--click);color:#000;font-weight:800;border-radius:6px;padding:0 5px;white-space:nowrap}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;gap:10px;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(11,13,16,.96);z-index:6}
+.nav button{flex:1;font-size:30px;padding:16px;border-radius:16px;border:0;background:var(--acc);color:#000;font-weight:800}
+.nav button.up{background:#2a3340;color:var(--fg)}
+#scr{position:fixed;inset:0;display:flex;flex-direction:column;background:#000}
+#scr .cap{padding:10px 16px;font-size:24px;display:flex;gap:14px;align-items:center;background:#0b0d10}
+#scr .cap .num{font-size:34px}#scr .cap .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#scr img{flex:1;min-height:0;width:100%;object-fit:contain}#scr{position:relative}#ib{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;font:600 13px system-ui,sans-serif;padding:3px 9px;border-radius:12px;display:none;pointer-events:none}
+#scr .ctl button{font-size:26px;padding:6px 20px;margin-left:6px;border:0;border-radius:10px;background:#2a3340;color:#fff}
+.upd{color:var(--mut);font-size:13px}.home .upd{margin-top:18px;font-size:15px}#scr .updbar{padding:2px 16px 6px;background:#0b0d10;color:var(--mut);font-size:13px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#c33;margin-right:6px}.dot.on{background:#3c3}
+.nav{flex-wrap:wrap}
+.nav .row{display:flex;gap:8px;width:100%}
+.nav button{font-size:22px;padding:12px 6px;min-height:58px}
+.nav button.nx{flex:2.2;font-size:30px;background:var(--click)}
+.nav button.alt{background:#2a3340;color:var(--fg)}
+.nav button.sk{background:#4a4f58;color:#fff}.nav button.ad{background:#6b3fa0;color:#fff}.nav button.ad.on{background:#c77dff;color:#000;outline:3px solid #fff}
+#list{padding:12px 12px 62vh}
+.cnt{margin-left:auto;font-size:14px;color:var(--mut);white-space:nowrap}
+.step.cur .cnt{color:#cfe3ff}
+.say{position:relative;min-height:56px;padding:12px 14px 12px 16px;border-left:8px solid #2b3442;border-radius:10px;margin:10px 0;color:#c4cdd8;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity .15s,background .15s}
+.say .tg::before{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;padding:1px 8px;border-radius:99px;margin-right:8px;vertical-align:middle;line-height:1.5}
+.say.read{opacity:.35;border-left-color:#3a4a3a}.say.read .tg::before{content:"\2713 read";background:#2e5a36;color:#cfe}
+.say.skip{opacity:.62;color:#8a8f98;border-left:8px dashed #7a7f88;background:rgba(120,124,132,.10)}.say.skip .tg::before{content:"skipped";background:#555;color:#ddd}
+.say.now{opacity:1;color:#fff;font-size:27px;font-weight:600;border-left:12px solid var(--click);background:rgba(255,204,51,.10)}
+.say.now .tg::before{content:"NOW";background:var(--click);color:#000}
+.say.now.adlib{border-left-color:#c77dff;background:rgba(199,125,255,.14)}
+.say.now.adlib .tg::before{content:"NOW \00b7 AD-LIB";background:#c77dff;color:#000}
+.say .ab{display:none;margin:8px 0 2px;padding:8px 10px;border-radius:8px;background:#c77dff;color:#000;font-size:17px;font-weight:800}
+.say.now.adlib .ab{display:block}
+
+
+/* ---- AUTOFLOW variant ---- */
+html,body{height:100%;overflow:hidden}
+body.af #app{height:100dvh;display:flex;flex-direction:column}
+body.af header{position:relative;flex:none;padding:6px 14px 4px;font-size:15px;display:block;border-bottom:0}
+body.af header .r1,body.af header .r2{display:flex;justify-content:space-between;align-items:center;gap:8px;white-space:nowrap}
+body.af header .r2{margin-top:2px;font-size:16px;color:#cfd8e3}
+#bar{height:6px;background:#1c222b;flex:none;position:relative}#bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#4ea1ff}
+#bar b{position:absolute;top:-2px;bottom:-2px;width:2px;background:#3a4656}
+#badge{font-weight:800;padding:1px 9px;border-radius:99px;font-size:14px;background:#2a3340;color:#cfd8e3}
+#badge.ah{background:#2e5a36;color:#cfe}#badge.bh{background:#7a4a1a;color:#ffe2bf}
+#state{flex:none;font-size:16px;font-weight:800;letter-spacing:.03em;padding:3px 14px;min-height:30px;display:flex;align-items:center;justify-content:space-between;gap:8px;white-space:nowrap;overflow:hidden}
+#state.run{background:#17361f;color:#9ef0a5}#state.hold{background:#5a4210;color:#ffd77a}#state.voice{background:#1b2d4d;color:#9cc7ff}#state.free{background:#3b2a52;color:#e2c2ff}#state.end{background:#222;color:#aaa}#state.rdy{background:#4a1f1f;color:#ffb3b3}
+#msg{display:none;flex:none;background:#7a2b2b;color:#fff;font-size:15px;font-weight:700;padding:6px 14px}
+#msg.on{display:block}
+#strip{flex:none;background:#10141a;border-bottom:2px solid #222;padding:6px 12px;min-height:70px;max-height:30vh;overflow:auto;display:flex;flex-direction:column;justify-content:center;gap:6px}
+#strip .talk{color:#5d6876;font-size:20px;text-align:center;letter-spacing:.04em}
+#strip .chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-block;font-weight:800;border-radius:10px;white-space:normal;line-height:1.2;color:#000;vertical-align:baseline}
+.chip.click{background:#ffcc33}.chip.dbl{background:#ff9f43}.chip.type{background:#4be37a}.chip.key{background:#5ab0ff}.chip.move{background:#6fe0d6}.chip.wait{background:#ff6b6b}.chip.drag{background:#c9a0ff}.chip.pause{background:#444b57;color:#ddd}
+.chip.big{font-size:22px;padding:5px 12px}.chip.big.pause{font-size:17px;padding:5px 10px;align-self:center}
+.chip.in{font-size:15px;padding:1px 8px;margin:0 5px;letter-spacing:.01em}.chip.in.pause{font-size:13px;padding:0 6px}
+.chip .no{display:inline-block;background:#000;color:#fff;border-radius:99px;width:1.25em;height:1.25em;line-height:1.25em;text-align:center;font-size:.8em;margin-right:.4em}
+#box{font-family:ui-monospace,Menlo,monospace;font-size:21px;line-height:1.35;background:#000;color:#9ef0a5;border:2px solid #2d6a3d;border-radius:10px;padding:8px 12px;white-space:pre-wrap;word-break:break-word;user-select:all}
+#list{flex:1;min-height:0;overflow-y:auto;padding:0 12px;position:relative;-webkit-overflow-scrolling:touch}
+#list::before,#list::after{content:"";display:block;height:34vh}
+.dv{margin:18px 0 6px;padding:4px 10px;border-top:1px solid #2c3644;color:#6f7c8c;font-size:14px;letter-spacing:.04em;display:flex;gap:8px;align-items:baseline}
+.dv b{color:#5d86b8;font-size:16px}.dv small{margin-left:auto}
+.say{position:relative;font-size:19px;line-height:1.45;margin:6px 0;padding:10px 12px 12px 14px;border-left:8px solid #2b3442;border-radius:10px;color:#6e7886;opacity:.18;cursor:pointer;-webkit-tap-highlight-color:transparent;min-height:56px}
+.say.read{opacity:.3;border-left-color:#3a4a3a}
+.say.skip{opacity:.65;color:#8a8f98;border-left:8px dashed #8a8f98;background:rgba(120,124,132,.12)}
+.say.read::before,.say.skip::before{display:inline-block;font-size:11px;font-weight:800;padding:0 8px;border-radius:99px;margin-right:8px;vertical-align:middle}
+.say.read::before{content:"\2713";background:#2e5a36;color:#cfe}.say.skip::before{content:"skipped";background:#555;color:#ddd}
+.say.nx{opacity:1;color:#c4cdd8;font-size:23px}
+.say.rh{opacity:.85;color:#aab6c5;font-size:21px}
+.say.now{opacity:1;color:#fff;font-size:30px;line-height:1.5;font-weight:600;border-left:12px solid var(--click);background:rgba(255,204,51,.10);padding-bottom:18px}
+.say .cue{display:flex;flex-wrap:wrap;align-items:center;gap:3px 4px;margin:0 0 8px;font-size:14px;font-weight:800;line-height:1.2}
+.say .cp{padding:3px 9px;border-radius:99px;background:#243a57;color:#bcd9ff;white-space:nowrap}
+.say .ca{color:#6f8fb8;font-weight:900;font-size:15px}
+.say.now .cue{font-size:16px}.say.now .cp{background:#2f6fd0;color:#fff}.say.now .ca{color:#9cc2ff}.say.nx .cp,.say.rh .cp{background:#2a4d7c;color:#e3f0ff}
+.say .pb{display:none;position:absolute;left:0;right:0;bottom:0;height:6px;border-radius:0 0 10px 10px;background:rgba(255,255,255,.08);overflow:hidden}
+.say .pb::after{content:"";display:block;height:100%;width:calc(var(--p,0)*100%);background:var(--click)}
+.say.now .pb{display:block}
+body.vf .say.now{border-left-color:#5ab0ff;background:rgba(90,176,255,.10)}body.vf .say .pb::after{background:#5ab0ff}
+body.hd .say.now{border-left-color:#ffb300}
+#after{flex:none;background:#10141a;border-top:1px solid #222;padding:6px 14px;font-size:17px;color:#9aa7b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:36px}
+#after b{color:#6f7c8c;letter-spacing:.08em;font-size:13px;margin-right:8px}
+#after .chip.in{font-size:14px;margin:0 3px 0 0;max-width:62%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
+.nav{position:relative;flex:none;display:flex;flex-direction:column;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(11,13,16,.96)}
+.nav .row{display:flex;gap:8px;width:100%}
+.nav button{flex:1;font-size:20px;min-height:58px;padding:6px;border:0;border-radius:16px;background:#2a3340;color:var(--fg);font-weight:800;line-height:1.1}
+.nav button small{display:block;font-size:13px;font-weight:600;opacity:.8}
+.nav button.hold{min-height:66px;font-size:30px;background:#ffb300;color:#000}
+.nav button.hold.res{background:#3ddc6b}.nav button.hold.vo{background:#5ab0ff;font-size:21px}
+.nav button.ah{background:#2d5a8c}.nav button.bh{background:#7a4a1a}
+.nav button.sq{flex:none;width:58px;font-size:26px}.nav button.mic.on{background:#5ab0ff;color:#000}.nav button.mic.bad{background:#7a2b2b}
+.nav .pc{flex:1;text-align:center;font-size:20px;font-weight:800;align-self:center}.nav .pc small{display:block;font-size:12px;font-weight:600;color:var(--mut)}
+#go{position:fixed;inset:0;z-index:15;background:#0b0d10;display:none;flex-direction:column;padding:18px 16px calc(18px + env(safe-area-inset-bottom));gap:14px;text-align:center}
+#go.on{display:flex}#go h1{margin:6px 0 0;font-size:26px}#go p{margin:0;color:var(--mut);font-size:17px}
+#go .start{flex:1;min-height:180px;border:0;border-radius:28px;background:#3ddc6b;color:#000;font-size:64px;font-weight:900;letter-spacing:.04em}
+#go .row{display:flex;gap:8px}#go .row button{flex:1;min-height:58px;border:0;border-radius:14px;background:#2a3340;color:#fff;font-size:22px;font-weight:800}
+#ov{position:fixed;inset:0;z-index:20;background:#0b0d10;display:none;flex-direction:column}
+#ov.on{display:flex}
+#ov .bar{display:flex;gap:10px;padding:10px;align-items:center;font-size:20px}#ov .bar span{flex:1}
+#ov .bar button,#ov .set button{min-height:56px;min-width:56px;border:0;border-radius:14px;background:#2a3340;color:#fff;font-size:20px;font-weight:700;padding:0 16px}
+#ov .body{flex:1;overflow:auto;padding:0 12px 24px}
+#ov .set{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:12px;padding:8px 12px;margin:8px 0;font-size:18px}#ov .set span{flex:1}
+#ov .set button.on{background:#3ddc6b;color:#000}
+#ov .note{font-size:14px;color:var(--mut);margin:2px 4px 10px}
+#ov .it{display:flex;gap:12px;align-items:center;min-height:56px;padding:6px 12px;border-radius:12px;background:var(--card);margin:6px 0;font-size:18px}
+#ov .it.cur{background:var(--hi);outline:2px solid var(--acc)}#ov .it .num{font-size:24px;min-width:2.2em;font-weight:800;color:var(--acc)}#ov .it .t{flex:1}#ov .it small{color:var(--mut)}
+#scr{position:fixed;inset:0;display:flex;flex-direction:column;background:#000}
+#scr .cap{padding:10px 16px;font-size:24px;display:flex;gap:14px;align-items:center;background:#0b0d10}
+#scr .cap .num{font-size:34px}#scr .cap .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#scr img{flex:1;min-height:0;width:100%;object-fit:contain}
+#scr .ctl button{font-size:26px;padding:6px 20px;margin-left:6px;border:0;border-radius:10px;background:#2a3340;color:#fff}
+#scr .updbar{padding:2px 16px 6px;background:#0b0d10;color:var(--mut);font-size:15px;display:flex;justify-content:space-between}
+.upd{color:var(--mut);font-size:13px}.home .upd{margin-top:18px;font-size:15px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#c33;margin-right:6px}.dot.on{background:#3c3}
+.dot.mic{background:#555}.dot.mic.on{background:#3c3}.dot.mic.wait{background:#fb3}.dot.mic.bad{background:#e33}
+</style></head><body><div id="app"></div>
+<script>
+const P=new URLSearchParams(location.search),code=(P.get('s')||'').replace(/\W/g,''),view=P.get('v')||(location.pathname.includes('screen')?'screen':location.pathname.includes('script')?'script':'');
+const RATE=Math.max(0.1,+P.get('speed')||1);          // test hook only: ?speed=10 runs the clock 10x
+const pic=(s,j)=>s.images?s.images[(s.si&&s.si[j]!=null)?s.si[j]:0]:s.image;
+function badge(s,j){const b=document.getElementById('ib');if(!b)return;if(s.images){s.images.forEach(x=>{new Image().src=x+'?'+ver});b.style.display='block';b.textContent=((s.si&&s.si[j]!=null)?s.si[j]:0)+1+'/'+s.images.length}else b.style.display='none'}
+const app=document.getElementById('app');let D;
+const LS='sst-auto:'+code;document.body.classList.toggle('af',view==='script');
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const fmtSay=s=>esc(s).replace(/\[click now\]/gi,'<span class="ck">[click now]</span>');
+if(!code||!view){
+  const r=String(1000+Math.floor(Math.random()*9000));
+  app.innerHTML=`<div class="home"><h1>Step Deck</h1><p style="color:var(--mut);margin-top:-8px">LONG script (v2.4.8): overnight SSH triage on jump01 \u00b7 auto-flow</p><p>Session code</p><input id="c" inputmode="numeric" value="${code||r}">
+  <a class="btn" id="a">Open Script view</a><a class="btn alt" id="b">Open Screen view</a><p style="color:var(--mut);font-size:16px">Use the same code on both devices.</p><p class="upd" id="hupd"></p></div>`;
+  const go=v=>location.href=`?s=${encodeURIComponent(document.getElementById('c').value.replace(/\W/g,''))}&v=${v}`;
+  fetch('steps.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{const h=document.getElementById('hupd');if(h&&j.updated)h.textContent='Last updated: '+j.updated}).catch(()=>{});
+  document.getElementById('a').onclick=()=>go('script');document.getElementById('b').onclick=()=>go('screen');
+}else start();
+
+/*MATCHER-START  (pure functions, unit-tested in Node by full-build/matcher_test.js)*/
+const M_STOP=new Set(('the and but for with that this these those then than from have has had are was were been being you your its not can will would could should '+
+ 'now just okay alright right well here there what when where which who how why also very really some any all out off over into onto about because while still even '+
+ 'let lets one two three got get gets going gonna um uh like yeah yes').split(' '));
+function mWords(s){return String(s).toLowerCase().replace(/[\u2018\u2019]/g,"'").replace(/'s\b/g,'').replace(/'/g,'').split(/[^a-z0-9]+/).filter(Boolean)}
+function mContent(s){const w=mWords(s).filter(x=>x.length>=3&&!M_STOP.has(x));const nd=w.filter(x=>!/\d/.test(x));return [...new Set(nd.length>=2?nd:w)]}
+function mStem(w){const r=w.replace(/(ing|ed|es|s|ly)$/,'');return r.length>=3?r:w}
+function mLev(a,b){if(Math.abs(a.length-b.length)>2)return 9;const d=[];for(let i=0;i<=a.length;i++){d[i]=[i]}for(let j=1;j<=b.length;j++)d[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[a.length][b.length]}
+function mWm(a,b){if(a===b)return true;if(mStem(a)===mStem(b))return true;const m=Math.min(a.length,b.length);return (m>=5&&mLev(a,b)<=1)||(m>=8&&mLev(a,b)<=2)}
+function mPrep(text){const ph=/\[say[^\]]*\]|\{[^}]*\}/.test(text);const t=text.replace(/\[[^\]]*\]|\{[^}]*\}/g,' ');return {cw:ph&&mContent(t).length<3?[]:mContent(t),ph}}
+function mCover(cw,tail){let hit=0;for(const w of cw)if(tail.some(t=>mWm(w,t)))hit++;return {hit,n:cw.length}}
+class Follower{
+  constructor(texts){this.L=texts.map(mPrep);this.pos=0;this.base=0;this.free=false}
+  setPos(p){if(p!==this.pos){this.pos=p;this.base=0;this.free=false}}
+  // all = every word recognised in this recognition session so far. Returns {type:'none'|'free'|'adv'|'jump', matched, newpos, skipped, read}
+  update(all){
+    if(all.length<this.base)this.base=0;
+    const st=Math.max(this.base,all.length-30);let tail=all.slice(st);
+    tail=tail.filter(w=>w.length>=3&&!M_STOP.has(w));
+    if(tail.length<2)return {type:'none'};
+    const p=this.pos,N=this.L.length;if(p>=N)return {type:'none'};
+    const cov=j=>{const l=this.L[j];if(!l.cw.length)return {r:0,hit:0,n:0};const c=mCover(l.cw,tail);return {r:c.hit/c.n,hit:c.hit,n:c.n}};
+    const c0=cov(p);let res=null;
+    if(c0.n&&c0.r>=0.6&&c0.hit>=Math.min(2,c0.n))res={type:'adv',matched:p,newpos:p+1,skipped:[],read:[]};
+    else{let best=-1,br=0;
+      for(let j=p+1;j<=Math.min(N-1,p+8);j++){const c=cov(j);if(c.n>=3&&c.r>=0.6&&c.hit>=3&&c.r>br+1e-9){best=j;br=c.r}}
+      if(best>=0){const sk=[],rd=[];for(let q=p;q<best;q++)(this.L[q].ph||!this.L[q].cw.length?rd:sk).push(q);
+        res={type:'jump',matched:best,newpos:best+1,skipped:sk,read:rd}}}
+    if(res){const cw=this.L[res.matched].cw;let li=-1;for(let i=tail.length-1;i>=0&&li<0;i--)if(cw.some(w=>mWm(w,tail[i])))li=i;
+      this.base=all.length-(tail.length-1-li);   // words said after the last matched one stay for the next line (approx: tail is filtered)
+      if(this.base>all.length)this.base=all.length;
+      this.pos=Math.min(N,res.newpos);this.free=false;return res}
+    // nothing matched: is he talking about something else?
+    const known=[];for(let j=Math.max(0,p-2);j<=Math.min(N-1,p+8);j++)known.push(...this.L[j].cw);
+    const foreign=tail.filter(w=>!known.some(k=>mWm(k,w)));
+    let mx=0;for(let j=p;j<=Math.min(N-1,p+8);j++)mx=Math.max(mx,cov(j).r);
+    this.free=foreign.length>=4&&mx<0.3;return {type:this.free?'free':'none'}}
+}
+/*MATCHER-END*/
+
+/* ---- clock model ----
+   Timeline: G[g]={n,j,start,dur} in timeline seconds; dur = max(words/pace, typing floor) + (recorded pauses + waits + 0.35 s) * gap.
+   Clock: t = C.tb (+ elapsed wall * RATE while C.run). Position is a pure function of t, so nothing needs to be sent while it runs:
+   other devices only get state on change (+ a heartbeat that corrects drift beyond 1.2 s). */
+const GAP0=0.35,cid=Math.random().toString(36).slice(2,8);
+let G=[],total=0,pace=2.5,gap=1,rehearse=false,lang='en-IN',lastIdx=-1,lastZ='';
+let C={started:false,tb:0,rt:Date.now(),run:false,sk:new Set(),ws:0,vf:false,fin:false};
+const LN=(n,j)=>((D.steps[n-1].lines||[])[j])||{c:[],b:null};
+const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+const nowT=()=>C.run?clamp(C.tb+(Date.now()-C.rt)/1000*RATE,-3,total):C.tb;
+const wall=()=>C.started?(Date.now()-C.ws)/1000*RATE:0;
+function build(){G=[];let t=0;
+  D.steps.forEach((s,n)=>s.say.forEach((x,j)=>{const L=LN(n+1,j),w=L.w!=null?L.w:x.split(/\s+/).length;
+    const d=Math.max(w/pace,L.fl||0)+((L.ps||0)+(L.wt||0)+GAP0)*gap;G.push({n:n+1,j,start:t,dur:d});t+=d}));
+  total=t;sf={};G.forEach((q,g)=>{if(sf[q.n]==null)sf[q.n]=g})}
+let sf={};
+function lineAt(t){if(t<=0)return 0;let lo=0,hi=G.length-1;while(lo<hi){const m=(lo+hi+1)>>1;if(G[m].start<=t)lo=m;else hi=m-1}return lo}
+const curG=()=>lineAt(nowT());
+function setT(t,run){C.tb=clamp(t,-3,total);C.rt=Date.now();if(run!==undefined)C.run=run}
+const mmss=s=>{s=Math.max(0,Math.round(s));return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`};
+
+/* ---- sync (ntfy) ---- */
+let T_URL='',hbN=0,lastRecv=0;
+function dayKey(){return 'sst-auto-sent:'+new Date().toISOString().slice(0,10)}
+function sentToday(){try{return +localStorage.getItem(dayKey())||0}catch(e){return 0}}
+function publish(k){
+  if(!window.__T)return;
+  const m=JSON.stringify({c:cid,k,t:+(Math.ceil(nowT()*100)/100).toFixed(2),run:C.run?1:0,s:C.started?1:0,pc:pace,gp:gap,sk:[...C.sk].sort((a,b)=>a-b),el:+wall().toFixed(1),vf:C.vf?1:0});
+  try{localStorage.setItem(dayKey(),String(sentToday()+1))}catch(e){}
+  fetch(window.__T,{method:'POST',body:m}).then(r=>{if(r.status===429)syncNote('ntfy rate limit hit (free server: 250 messages/day); sync may lag')}).catch(()=>{});}
+let syncMsg='';function syncNote(t){syncMsg=t;const e=document.getElementById('syncnote');if(e)e.textContent=t}
+function heartbeatMs(){const n=sentToday();return n>230?0:n>150?30000:10000}   // free ntfy.sh allows 250 messages/day per IP
+function hbLoop(){const ms=heartbeatMs();if(ms&&C.started&&C.run)publish('hb');setTimeout(hbLoop,ms||30000)}
+function applyRemote(m,hist){
+  if(!m||m.c===cid||typeof m.t!=='number')return;
+  if(view==='script'&&!C.started)return;
+  const dsk=(m.sk||[]).join(',')===[...C.sk].sort((a,b)=>a-b).join(',');
+  if(m.pc&&(m.pc!==pace||m.gp!==gap)){pace=m.pc;gap=m.gp||1;const g=curG(),fr=G[g]?(nowT()-G[g].start)/G[g].dur:0;build();setT(G[g].start+fr*G[g].dur)}
+  if(m.k==='hb'&&!hist&&C.started&&!!m.s&&C.run===!!m.run&&dsk&&Math.abs(nowT()-m.t)<1.2)return;   // already in step: leave the local clock alone
+  C.started=!!m.s;C.sk=new Set(m.sk||[]);
+  C.run=hist?false:!!m.run;setT(m.t);C.ws=Date.now()-(m.el||0)/RATE*1000;C.fin=false;
+  lastRecv=Date.now();save();refresh(true)}
+function save(){try{localStorage.setItem(LS,JSON.stringify({tb:nowT(),run:C.run,started:C.started,at:Date.now(),sk:[...C.sk],el:wall(),pace,gap,rehearse,lang}))}catch(e){}}
+function restore(){try{const o=JSON.parse(localStorage.getItem(LS)||'null');if(!o)return;pace=o.pace||pace;gap=o.gap||gap;rehearse=!!o.rehearse;lang=o.lang||lang;build();
+  if(o.started){const age=(Date.now()-o.at)/1000;C.started=true;C.sk=new Set(o.sk||[]);
+    if(o.run&&age<120){setT(o.tb+age*RATE,true)}else{setT(o.tb,false)}C.ws=Date.now()-((o.el||0)+(o.run&&age<120?age*RATE:0))/RATE*1000}}catch(e){}}
+
+/* ---- commands (the only things that move the position besides the clock itself) ---- */
+function seek(g,keepRun){g=clamp(g,0,G.length-1);const old=curG();
+  if(g>old){for(let q=old+1;q<g;q++)C.sk.add(q)}else{[...C.sk].forEach(q=>{if(q>=g)C.sk.delete(q)})}
+  C.fin=false;setT(G[g].start);cmd()}
+function cmd(){save();refresh(true);publish('cmd')}
+function holdToggle(){if(!C.started)return;
+  if(C.vf){voiceOff('Timer mode: running from this line.',true);return}
+  if(C.run){setT(nowT(),false)}else{if(C.fin){setT(0,false);C.sk=new Set();C.fin=false}C.rt=Date.now();C.run=true}cmd()}
+function doStart(){C.started=true;C.sk=new Set();C.fin=false;C.ws=Date.now()+(C.vf?0:3000/RATE);
+  if(C.vf){setT(0,false)}else{setT(-3,true)}wakeLock();cmd()}
+function resetAll(){C.started=false;C.run=false;C.sk=new Set();C.fin=false;setT(0,false);if(C.vf)voiceOff('',false);cmd()}
+function setPace(p){p=Math.round(clamp(p,1.2,4)*10)/10;if(p===pace)return;const g=curG(),fr=clamp((nowT()-G[g].start)/G[g].dur,0,1),run=C.run;pace=p;build();setT(G[g].start+fr*G[g].dur,run);cmd()}
+function setGap(x){x=Math.round(clamp(x,0.25,3)*100)/100;if(x===gap)return;const g=curG(),fr=clamp((nowT()-G[g].start)/G[g].dur,0,1),run=C.run;gap=x;build();setT(G[g].start+fr*G[g].dur,run);cmd()}
+
+/* ---- wake lock ---- */
+let wl=null,wlState='not requested';
+async function wakeLock(){try{if(!('wakeLock' in navigator)){wlState='not supported in this browser (keep the screen awake in phone settings)';return}
+  wl=await navigator.wakeLock.request('screen');wlState='active';wl.addEventListener('release',()=>{wlState='released'})}catch(e){wlState='refused: '+(e&&e.name||'error')}}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&C.started&&(!wl||wl.released))wakeLock()});
+
+/* ---- Follow my voice ---- */
+let rec=null,vfStatus='off',vfWords=[],vfFail=0,vfFailAt=0,fol=null,vfRestart=null;
+const SRC=window.SpeechRecognition||window.webkitSpeechRecognition;
+function micDot(cls){const d=document.getElementById('mdot');if(d)d.className='dot mic '+cls;const b=document.getElementById('mic');if(b)b.className='sq mic '+(cls==='on'||cls==='wait'?'on':cls==='bad'?'bad':'')}
+function showMsg(t,ms){const m=document.getElementById('msg');if(!m)return;m.textContent=t;m.classList.toggle('on',!!t);if(t&&ms)setTimeout(()=>{if(m.textContent===t)m.classList.remove('on')},ms)}
+function follower(){if(!fol)fol=new Follower(D.steps.flatMap(s=>s.say));return fol}
+function voiceOn(){
+  if(!SRC){showMsg('Follow my voice is not supported in this browser \u2014 staying in timer mode.',9000);vfStatus='unsupported';micDot('bad');return}
+  C.vf=true;vfFail=0;vfWords=[];follower().setPos(curG());follower().base=0;vfStatus='listening';document.body.classList.add('vf');
+  if(C.started&&C.run)setT(nowT(),false);
+  startRec();micDot('wait');cmd()}
+function startRec(){
+  try{rec=new SRC();rec.continuous=true;rec.interimResults=true;rec.lang=lang;rec.maxAlternatives=1;
+    rec.onstart=()=>{vfWords=[];follower().base=0;micDot('on');if(vfStatus!=='free')vfStatus='listening';refresh(true)};
+    rec.onresult=e=>{vfFail=0;let w=[];for(let i=0;i<e.results.length;i++)w=w.concat(mWords(e.results[i][0].transcript));vfWords=w;voiceHear(w)};
+    rec.onerror=e=>{const er=e.error;
+      if(er==='not-allowed'||er==='service-not-allowed'){voiceOff('Microphone permission denied \u2014 timer mode.',true);return}
+      if(er==='audio-capture'){voiceOff('No microphone available \u2014 timer mode.',true);return}
+      if(er==='language-not-supported'&&lang!=='en-US'){lang='en-US';return}
+      if(er!=='no-speech'&&er!=='aborted'){vfFail++;vfFailAt=Date.now();micDot('wait');if(vfFail>=6)voiceOff('Voice recognition keeps failing ('+er+') \u2014 timer mode.',true)}};
+    rec.onend=()=>{if(!C.vf)return;micDot('wait');clearTimeout(vfRestart);vfRestart=setTimeout(()=>{if(C.vf)startRec()},vfFail?Math.min(4000,400*vfFail):250)};
+    rec.start()}catch(e){vfFail++;if(vfFail>=4)voiceOff('Could not start the microphone \u2014 timer mode.',true);else{clearTimeout(vfRestart);vfRestart=setTimeout(()=>{if(C.vf)startRec()},600)}}}
+function voiceOff(msg,resume){C.vf=false;vfStatus='off';document.body.classList.remove('vf');clearTimeout(vfRestart);
+  if(rec){rec.onend=null;rec.onerror=null;rec.onresult=null;try{rec.abort()}catch(e){}rec=null}
+  micDot(msg&&/denied|No microphone|failing|Could not/.test(msg)?'bad':'');showMsg(msg,10000);
+  if(resume&&C.started){const g=curG();setT(G[g].start,true)}cmd()}
+function voiceHear(w){
+  if(!C.started)return;const g=curG(),f=follower();f.setPos(g);
+  const r=f.update(w);
+  if(r.type==='adv'||r.type==='jump'){
+    r.skipped.forEach(q=>C.sk.add(q));
+    const np=Math.min(G.length-1,r.newpos);
+    if(r.newpos>=G.length){C.fin=true;setT(total,false);vfStatus='listening';cmd();return}
+    vfStatus='listening';setT(G[np].start,false);cmd()}
+  else{const ns=r.type==='free'?'free':'listening';if(ns!==vfStatus){vfStatus=ns;refresh(true)}}}
+function voiceToggle(){if(C.vf)voiceOff('Timer mode: running from this line.',true);else voiceOn()}
+
+/* ---- rendering ---- */
+function lineHtml(n,j,chips){
+  const say=D.steps[n-1].say[j],ch=chips?LN(n,j).c:[];let out='',p=0;const act=ch.filter(c=>c.k!=='pause');
+  ch.forEach(c=>{out+=fmtSay(say.slice(p,c.o))+chipH(c,'in',c.k!=='pause'&&act.length>1?act.indexOf(c)+1:0);p=c.o});
+  const q=LN(n,j).q;return (q?`<div class="cue">${q.split(' > ').map(x=>`<span class="cp">${esc(x)}</span>`).join('<span class="ca">\u203a</span>')}</div>`:'')+out+fmtSay(say.slice(p))}
+const KL={click:'\u25b6 CLICK',dbl:'\u25b6\u25b6 DOUBLE-CLICK',type:'\u2328 TYPE',key:'\u2328 KEY',move:'\u2197 MOVE',drag:'\u2193 DRAG',wait:'\u23f3 WAIT',pause:'\u23f8'};
+const chipTxt=c=>c.k==='pause'?`${KL.pause} ${c.l}`:`${KL[c.k]}${c.l?' '+c.l:''}`;
+const inTxt=c=>c.k==='pause'?`${KL.pause} ${c.l.replace('pause ','')}`:c.k==='key'?`${KL.key} ${c.l}`:KL[c.k].replace(' DOUBLE-CLICK',' DBL-CLICK');
+const chipH=(c,cls,no)=>`<span class="chip ${c.k} ${cls}">${no?`<span class="no">${no}</span>`:''}${esc(cls==='big'||cls==='in af'?chipTxt(c):inTxt(c))}</span>`;
+const PB='<i class="pb"></i>';
+function renderStream(){let h='',g=0;
+  D.steps.forEach((s,n)=>{h+=`<div class="dv" data-n="${n+1}"><b>Step ${s.n}</b> ${esc(s.title)}<small></small></div>`;
+    s.say.forEach((x,j)=>{h+=`<div class="say" data-g="${g}">${lineHtml(n+1,j,false)}${PB}</div>`;g++})});
+  const L=document.getElementById('list');L.innerHTML=h;lastZ='';lastIdx=-1;
+  L.querySelectorAll('.say').forEach(el=>{el.onclick=()=>{if(C.started)seek(+el.dataset.g)}});updDividers()}
+function updDividers(){document.querySelectorAll('#list .dv').forEach(d=>{d.querySelector('small').textContent=mmss(G[sf[+d.dataset.n]].start)})}
+function renderStrip(g){
+  const el=document.getElementById('strip'),q=G[g],ln=LN(q.n,q.j),act=ln.c.filter(c=>c.k!=='pause');
+  if(nowT()<0){el.innerHTML=`<div class="talk" style="color:#ffb3b3;font-size:30px;font-weight:800">Starting in ${Math.ceil(-nowT())}\u2026</div>`;return}
+  if(!ln.c.length){el.innerHTML='<div class="talk">no action \u00b7 just talk</div>';return}
+  el.innerHTML=`<div class="chips">${ln.c.map(c=>chipH(c,'big',c.k!=='pause'&&act.length>1?act.indexOf(c)+1:0)).join('')}</div>`+(ln.b?`<div id="box">${esc(ln.b)}</div>`:'')}
+function renderAfter(g){
+  const el=document.getElementById('after');if(g+1>=G.length){el.innerHTML='<b>AFTER THIS</b>end of the narration';return}
+  const q=G[g+1],pre=q.n!==G[g].n?`Step ${D.steps[q.n-1].n}: `:'',act=LN(q.n,q.j).c.filter(c=>c.k!=='pause');
+  el.innerHTML='<b>AFTER THIS</b>'+esc(pre)+(act.length?chipH(act[0],'in af')+(act.length>1?` <span style="color:#8b97a7">+${act.length-1} more</span>`:''):'talk only')}
+function fitNow(el,L){let fs=30;el.style.fontSize='';while(el.offsetHeight>L.clientHeight*0.8&&fs>18){fs-=2;el.style.fontSize=fs+'px'}}
+let firstPaint=true,lastSk='';
+function updateStream(g,smooth){
+  const L=document.getElementById('list'),els=L.querySelectorAll('.say');const sk=[...C.sk].join(',');
+  els.forEach((el,i)=>{const z=i===g?'now':i===g+1?'nx':(rehearse&&i>g&&i<=g+3)?'rh':i<g?(C.sk.has(i)?'skip':'read'):'fut';
+    if(el._z!==z){el.className='say '+z;el.style.fontSize='';const ch=z==='now'||z==='nx'||z==='rh';
+      if(ch!==!!el._c){el.innerHTML=lineHtml(G[i].n,G[i].j,ch)+PB;el._c=ch}el._z=z}});
+  const now=els[g];if(now){fitNow(now,L);L.scrollTo({top:now.offsetTop-(L.clientHeight-now.offsetHeight)/2,behavior:smooth&&!firstPaint?'smooth':'auto'})}
+  firstPaint=false}
+function stateBar(){
+  const t=nowT(),el=document.getElementById('state');let cls,txt,r='';
+  if(!C.started){cls='hold';txt='not started'}
+  else if(C.fin){cls='end';txt='\u25a0 THE END'}
+  else if(C.vf){const o=vfStatus==='free';cls=o?'free':'voice';txt=o?'\ud83c\udf99 listening, free talk (holding)':'\ud83c\udf99 VOICE FOLLOW \u00b7 listening';r=o?'say the line to continue':''}
+  else if(t<0){cls='rdy';txt='GET READY'}
+  else if(C.run){cls='run';txt='\u25b6 RUNNING';r=RATE!==1?RATE+'\u00d7 test clock':''}
+  else{cls='hold';txt='\u23f8 HOLD \u00b7 clock frozen';r='ad-lib freely'}
+  el.className=cls;el.innerHTML=`<span>${txt}</span><span style="font-weight:600;font-size:13px">${r}</span>`;
+  document.body.classList.toggle('hd',cls==='hold');
+  const hb=document.getElementById('hold');
+  if(hb){if(C.vf){hb.className='hold vo';hb.innerHTML='\ud83c\udf99 Voice on<small>tap = back to timer</small>'}
+    else if(C.run){hb.className='hold';hb.innerHTML='\u23f8 HOLD<small>freeze the clock</small>'}else{hb.className='hold res';hb.innerHTML='\u25b6 RESUME<small>clock continues</small>'}}}
+function header(g,t){
+  const q=G[g],s=D.steps[q.n-1];
+  document.getElementById('pos').textContent=`Step ${s.n} (${q.n}/${D.steps.length})`;
+  const w=wall(),diff=w-Math.max(0,t);let b='on plan',bc='';
+  if(C.started&&w>3){if(diff>=3){b='behind '+mmss(diff);bc='bh'}else if(diff<=-3){b='ahead '+mmss(-diff);bc='ah'}}
+  document.getElementById('tm').textContent=`${mmss(w)} / ${mmss(total)}`;
+  const bd=document.getElementById('badge');bd.textContent=C.started?b:'';bd.className=bc;
+  document.getElementById('ln').textContent=`line ${g+1}/${G.length}`;
+  document.getElementById('bf').style.width=(clamp(t,0,total)/total*100)+'%';
+  document.getElementById('pl').innerHTML=`${pace.toFixed(1)} w/s<small>gap \u00d7${gap}</small>`}
+function refresh(force){
+  if(!G.length)return;
+  if(view==='screen')return screenPaint();
+  const t=nowT(),g=lineAt(t);
+  if(C.vf&&fol)fol.setPos(g);
+  const z=[g,C.started,C.run,C.vf,vfStatus,[...C.sk].join(','),rehearse,pace,gap,t<0?Math.ceil(-t):0,C.fin].join('|');
+  if(force||z!==lastZ){lastZ=z;updateStream(g,true);renderStrip(g);renderAfter(g);stateBar();updDividers();
+    document.getElementById('go').classList.toggle('on',!C.started)}
+  header(g,t);
+  const el=document.querySelector('#list .say.now');if(el)el.style.setProperty('--p',clamp((t-G[g].start)/G[g].dur,0,1));
+  if(C.run&&t>=total){C.fin=true;setT(total,false);save();refresh(true)}}
+function tick(){try{refresh(false)}catch(e){console.error(e)}}
+
+function renderOv(){
+  const c=D.steps[curG()?G[curG()].n-1:0];
+  document.getElementById('ovb').innerHTML=
+   `<div class="set"><span>Follow my voice<br><small style="color:var(--mut);font-size:13px">${SRC?'mic listens, line advances when you say it':'not supported in this browser'}</small></span><button id="ovv" class="${C.vf?'on':''}">${C.vf?'ON':'OFF'}</button></div>
+    <div class="set"><span>Voice language</span><button id="ovl">${lang}</button></div>
+    <div class="set"><span>Rehearsal (next 3 lines)</span><button id="ovr" class="${rehearse?'on':''}">${rehearse?'ON':'OFF'}</button></div>
+    <div class="set"><span>Speaking pace</span><button id="ovpm">\u2212</button><b>${pace.toFixed(1)} w/s</b><button id="ovpp">+</button></div>
+    <div class="set"><span>Gap multiplier<br><small style="color:var(--mut);font-size:13px">pauses, waits, line gaps</small></span><button id="ovgm">\u2212</button><b>\u00d7${gap}</b><button id="ovgp">+</button></div>
+    <div class="set"><span>Restart from the beginning</span><button id="ovrs">Reset</button></div>
+    <p class="note">Screen wake lock: ${esc(wlState)}.<br>Sync: ${esc(syncMsg||'ok')} \u00b7 sent today ${sentToday()}/250 (free ntfy.sh limit).<br><span id="syncnote"></span></p>`+
+   D.steps.map((s,i)=>`<div class="it${i+1===G[curG()].n?' cur':''}" data-n="${i+1}"><span class="num">${s.n}</span><span class="t">${esc(s.title)}<br><small>${mmss(G[sf[i+1]].start)} \u00b7 ${s.say.length} lines</small></span></div>`).join('');
+  const $=i=>document.getElementById(i);
+  $('ovv').onclick=()=>{$('ov').classList.remove('on');voiceToggle()};
+  $('ovl').onclick=()=>{lang=lang==='en-IN'?'en-US':'en-IN';save();if(C.vf){voiceOff('',false);voiceOn()}renderOv()};
+  $('ovr').onclick=()=>{rehearse=!rehearse;save();refresh(true);renderOv()};
+  $('ovpm').onclick=()=>{setPace(pace-0.1);renderOv()};$('ovpp').onclick=()=>{setPace(pace+0.1);renderOv()};
+  $('ovgm').onclick=()=>{setGap(gap-0.25);renderOv()};$('ovgp').onclick=()=>{setGap(gap+0.25);renderOv()};
+  $('ovrs').onclick=()=>{$('ov').classList.remove('on');resetAll()};
+  document.querySelectorAll('#ovb .it').forEach(e=>e.onclick=()=>{$('ov').classList.remove('on');if(C.started)seek(sf[+e.dataset.n]);else{setT(G[sf[+e.dataset.n]].start,false);refresh(true)}})}
+function renderScript(){
+  app.innerHTML=`<header><div class="r1"><span><span id="dot" class="dot"></span><span id="mdot" class="dot mic"></span>Code ${esc(code)}</span><span id="pos"></span><span id="ln" class="upd"></span></div>
+    <div class="r2"><span id="tm"></span><span id="badge"></span></div></header><div id="bar"><i id="bf"></i></div><div id="state"></div><div id="msg"></div><div id="strip"></div><div id="list"></div><div id="after"></div>
+   <div class="nav"><div class="row"><button id="hold" class="hold"></button></div>
+    <div class="row"><button class="bh" id="bh">\u25c0 I'm behind<small>\u22121 line</small></button><button class="ah" id="ah">I'm ahead \u25b6<small>+1 line</small></button></div>
+    <div class="row"><button class="sq" id="pm">\u2212</button><div class="pc" id="pl"></div><button class="sq" id="pp">+</button><button class="sq mic" id="mic">\ud83c\udf99</button><button class="sq" id="mn">\u2630</button></div></div>
+   <div id="go"><h1>Step Deck \u00b7 auto-flow</h1><p>LONG script (v2.4.8): overnight SSH triage on jump01</p><p id="gosum"></p><button class="start" id="gob">START</button>
+    <div class="row"><button id="gpm">\u2212 slower</button><button id="gpp">faster +</button><button id="gmn">\u2630 settings</button></div><p>Starts with a 3 s count-in, then runs by itself.</p></div>
+   <div id="ov"><div class="bar"><span>Settings &amp; steps</span><button id="ovx">\u2715</button></div><div class="body" id="ovb"></div></div>`;
+  const $=i=>document.getElementById(i);
+  renderStream();
+  $('gob').onclick=doStart;$('gpm').onclick=()=>{setPace(pace-0.1);gosum()};$('gpp').onclick=()=>{setPace(pace+0.1);gosum()};
+  $('hold').onclick=holdToggle;$('ah').onclick=()=>{if(C.started)seek(curG()+1)};$('bh').onclick=()=>{if(C.started)seek(curG()-1)};
+  $('pm').onclick=()=>setPace(pace-0.1);$('pp').onclick=()=>setPace(pace+0.1);$('mic').onclick=voiceToggle;
+  const om=()=>{renderOv();$('ov').classList.add('on');};
+  $('mn').onclick=om;$('gmn').onclick=om;$('ovx').onclick=()=>{$('ov').classList.remove('on');refresh(true)};
+  gosum();micDot(SRC?'':'bad');
+  document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;
+    if(e.key===' '){e.preventDefault();C.started?holdToggle():doStart()}else if(e.key==='ArrowRight'){if(C.started)seek(curG()+1)}else if(e.key==='ArrowLeft'){if(C.started)seek(curG()-1)}})}
+function gosum(){const e=document.getElementById('gosum');if(e)e.innerHTML=`${D.steps.length} steps \u00b7 ${G.length} lines \u00b7 planned ${mmss(total)} at ${pace.toFixed(1)} w/s`}
+function screenPaint(){
+  const t=nowT(),g=lineAt(t),q=G[g],s=D.steps[q.n-1];
+  document.getElementById('sn').textContent=s.n;document.getElementById('st').textContent=s.title+(s.do?' \u2014 '+s.do:'');
+  const pc=pic(s,q.j),im=document.getElementById('im'),src=pc?pc+'?'+ver:'';if(im.getAttribute('src')!==src)im.src=src;badge(s,q.j);
+  const nx=D.steps[q.n];if(nx&&nx.image)new Image().src=nx.image+'?'+ver;
+  document.getElementById('sl').textContent=`line ${g+1}/${G.length} \u00b7 ${!C.started?'not started':C.fin?'the end':t<0?'get ready':C.run?'running':'on hold'}`;
+  document.getElementById('stm').textContent=`${mmss(Math.max(0,t))} / ${mmss(total)}`}
+function renderScreen(){
+  app.innerHTML=`<div id="scr"><div class="cap"><span id="dot" class="dot"></span><span class="num" id="sn"></span><span class="t" id="st"></span>
+  <span class="ctl"><button id="p">\u25c0</button><button id="x">\u25b6</button></span></div><div class="updbar"><span id="sl"></span><span id="stm"></span></div><img id="im" alt=""><span id="ib"></span></div>`;
+  const mv=d=>{const q=G[curG()],n=clamp(q.n+d,1,D.steps.length);C.sk=new Set();setT(G[sf[n]].start);cmd()};
+  document.getElementById('p').onclick=()=>mv(-1);document.getElementById('x').onclick=()=>mv(1)}
+let ver='';
+async function start(){
+  D=await (await fetch('steps.json',{cache:'no-store'})).json();
+  try{ver=(await (await fetch('images/.v',{cache:'no-store'})).text()).trim()}catch(e){}
+  build();restore();
+  view==='script'?renderScript():renderScreen();refresh(true);
+  const T='https://ntfy.sh/stepdeck-sst-long-k7q2-'+code;window.__T=T;
+  try{const t=await (await fetch(T+'/json?poll=1&since=12h',{cache:'no-store'})).text();const ls=t.trim().split('\n').filter(Boolean).map(JSON.parse).filter(m=>m.event==='message');
+    for(let i=ls.length-1;i>=0;i--){let m;try{m=JSON.parse(ls[i].message)}catch(e){continue}if(m&&m.c!==cid&&typeof m.t==='number'){if(view==='screen'){const age=Date.now()/1000-ls[i].time;applyRemote(m,age>30)}break}}}catch(e){}
+  const es=new EventSource(T+'/sse');
+  es.onmessage=e=>{const m=JSON.parse(e.data);if(m.event==='message'){try{applyRemote(JSON.parse(m.message),false)}catch(x){}}};es.onopen=()=>dot(1);es.onerror=()=>dot(0);
+  setInterval(tick,100);setInterval(save,5000);hbLoop();
+  window.__sst={C,get G(){return G},nowT,curG,seek,holdToggle,doStart,setPace,get pace(){return pace},get gap(){return gap},get total(){return total},Follower,voiceHear,get fol(){return fol}};
+}
+function dot(on){const d=document.getElementById('dot');if(d)d.className='dot'+(on?' on':'')}
+</script></body></html>
