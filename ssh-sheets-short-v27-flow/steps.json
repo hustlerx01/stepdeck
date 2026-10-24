@@ -1,6 +1,6 @@
 {
  "title": "Short script v2.7.1 (flow tracker)",
- "updated": "24 Oct 2026, 8:07 PM IST",
+ "updated": "24 Oct 2026, 8:11 PM IST",
  "steps": [
   {
    "n": 1,
@@ -186,7 +186,7 @@
     {
      "c": [],
      "b": null,
-     "q": "read > second line > 03:52:34 > svcbackup > Accepted password > cursor on that line"
+     "q": "read > second line > 03:52:34 > svc_backup > Accepted password > cursor on that line"
     },
     {
      "c": [],
@@ -574,7 +574,7 @@
       }
      ],
      "b": null,
-     "q": "list drops > srcip > click > pause 1s"
+     "q": "list drops > src_ip > click > pause 1s"
     },
     {
      "c": [
@@ -850,7 +850,7 @@
       }
      ],
      "b": null,
-     "q": "up to F1 > filter icon > srcip column > click > pause 1s"
+     "q": "up to F1 > filter icon > src_ip column > click > pause 1s"
     },
     {
      "c": [
@@ -1565,7 +1565,7 @@
       }
      ],
      "b": "Watch: 192.0.2.77 (reset svc_backup's password)",
-     "q": "type > Watch > first Watch address > reset svcbackup's password"
+     "q": "type > Watch > first Watch address > reset svc_backup's password"
     },
     {
      "c": [
@@ -1791,7 +1791,7 @@
     {
      "c": [],
      "b": null,
-     "q": "epilogue > Grand Total at start > first address row at so I had numbers > bottom tabs at Then I went to the sheet > Data menu at I froze the header > pivot header row at built a pivot > Grand Total at its failure total > address column at After that I went down > Decision column at typed a verdict > first two Decision cells at The Block pair > Failed password counts 18, 14 at both from outside > second row, 14 at one of them only ever > first row, 18 at That fits my rule > third and fourth Decision cells at The Watch pair > 9 at 9 times > 7 at 7 times > third Decision cell at svcbackup > fourth Decision cell at I didn't block them > third and fourth cells at because a block > third row at a password reset, a check with > fifth and sixth Decision cells at The Ignore pair > fifth row at the internal admin, failed three times, publickey logins > sixth row at one outside address, with just 2 tries > drift fifth to sixth at Neither of those > whole table at I copied the table > File menu at downloaded the note > Dock dip at Both landed > Watch rows at The hard part > header row at Next time > first Decision cell at So, for the goal > pairs at Block 2, Watch 2, Ignore 2 > slide left at tells the firewall owner > Dock at what to watch"
+     "q": "epilogue > Grand Total at start > first address row at so I had numbers > bottom tabs at Then I went to the sheet > Data menu at I froze the header > pivot header row at built a pivot > Grand Total at its failure total > address column at After that I went down > Decision column at typed a verdict > first two Decision cells at The Block pair > Failed password counts 18, 14 at both from outside > second row, 14 at one of them only ever > first row, 18 at That fits my rule > third and fourth Decision cells at The Watch pair > 9 at 9 times > 7 at 7 times > third Decision cell at svc_backup > fourth Decision cell at I didn't block them > third and fourth cells at because a block > third row at a password reset, a check with > fifth and sixth Decision cells at The Ignore pair > fifth row at the internal admin, failed three times, publickey logins > sixth row at one outside address, with just 2 tries > drift fifth to sixth at Neither of those > whole table at I copied the table > File menu at downloaded the note > Dock dip at Both landed > Watch rows at The hard part > header row at Next time > first Decision cell at So, for the goal > pairs at Block 2, Watch 2, Ignore 2 > slide left at tells the firewall owner > Dock at what to watch"
     }
    ]
   },
