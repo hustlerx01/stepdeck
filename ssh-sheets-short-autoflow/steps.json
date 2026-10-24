@@ -1,0 +1,4861 @@
+{
+ "title": "Full beat-by-beat script: overnight SSH triage on jump01 (Terminal.app + Google Sheets + Google Docs in Firefox)",
+ "updated": "24 Oct 2026, 4:27 PM IST",
+ "steps": [
+  {
+   "n": 1,
+   "time": "0:00",
+   "title": "Opener",
+   "window": "The recorder card, then Goal doc (Firefox)",
+   "do": "Recorder is already running. Read the opener off the recorder card with the cursor still, no pause after \"in mind\". The recorder then minimises and the Goal doc is on screen. During the last words of the opener, start the cursor sliding up and left toward the yellow minimise button at the top left of the Goal doc window. Keep it moving through the goal sentence, no pause after \"blocked\". Click the yellow button on the word \"Minimising\" and narrate the rest live.",
+   "type": "nothing",
+   "say": [
+    "\"Step 1: I will be beginning my task soon. Here is the workflow I have in mind.\"",
+    "\"I'm going through last night's failed SSH logins on jump01, to decide what gets blocked.\"",
+    "\"Minimising the Goal doc now, my cursor's right up on the yellow button at the top left of its window, and I'm left clicking it, so Terminal gets a clear screen.\""
+   ],
+   "image": "images/01.png",
+   "imageSource": "shots/02.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 64,
+       "k": "move",
+       "l": "Goal doc, yellow button"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "move",
+       "l": "yellow button, top left"
+      }
+     ],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "yellow minimise (Goal doc)"
+      }
+     ],
+     "b": null,
+     "w": 31,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 14.9
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "time": "0:30",
+   "title": "Terminal first look",
+   "window": "Dock, then Terminal window",
+   "do": "Move the cursor down and over to the Dock on the left edge, to the Terminal icon. Rest on it until the Terminal label pops up beside it, then click it (Terminal is already open in Documents/Project, so this just brings it forward); pause 1 s after \"clicking it\". Read the \"$ \" prompt (16 pt) in Documents/Project. Type wc -l auth-jump01.log while speaking, no pause, then press Return. Read the output line: 59 auth-jump01.log. The log has 59 lines; hold on to that for the import check.",
+   "type": "wc -l auth-jump01.log",
+   "say": [
+    "\"Step 2: Okay, so Terminal first. I'm moving my cursor down and over to the Dock on the left edge, looking for the Terminal icon.\"",
+    "\"My cursor's on the Terminal icon now, and the Terminal label pops up beside it. It's already open in the project folder, so I'm clicking it.\"",
+    "\"Alright, Terminal comes forward, and I can see the dollar prompt sitting in Documents, Project, so I'm ready to start straight away.\"",
+    "\"So now I'm typing in the window, w c, space, dash l, space, and then the log name, auth-jump01.log, because I want a raw line count first to check the sheet import against later.\"",
+    "\"Okay, pressing Return to run it, and the count prints just below the prompt.\"",
+    "\"So it prints 59 beside auth-jump01.log. That means the log has 59 lines, and I'll hold on to that number for the import check.\""
+   ],
+   "image": "images/02.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 38,
+       "k": "move",
+       "l": "Dock, Terminal icon"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.0
+    },
+    {
+     "c": [
+      {
+       "o": 129,
+       "k": "click",
+       "l": "Terminal (Dock)"
+      },
+      {
+       "o": 140,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 13.0
+    },
+    {
+     "c": [
+      {
+       "o": 12,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "wc -l auth-jump01.log",
+     "w": 34,
+     "fl": 5.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 14.4
+    },
+    {
+     "c": [
+      {
+       "o": 7,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.3
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.5
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "time": "1:37",
+   "title": "Count failed and unknown-account logins",
+   "window": "Terminal window",
+   "do": "At the Terminal prompt type grep -c \"Failed password\" auth-jump01.log and press Return. Read the count on the next line: 53 Failed password lines, the total the pivot has to hit. Right under it type grep -c \"invalid user\" auth-jump01.log and press Return. Read the second count: 14 invalid user lines (someone guessing usernames). Method to say: use the totals as the bar the pivot must hit if they are clean whole counts; if a count looks off, recheck the grep pattern. Here, 53 and 14 are clean, so they are the bar.",
+   "type": "grep -c \"Failed password\" auth-jump01.log\ngrep -c \"invalid user\" auth-jump01.log",
+   "say": [
+    "\"Step 3: now the failures. Typing grep, space, dash c, then Failed password in quotes, and the log name, because I want one total of failed logins that the pivot has to match later.\"",
+    "\"Pressing Return, and the number comes back just below.\"",
+    "\"Okay, it says 53. So that's 53 Failed password lines, and that's the total the pivot has to hit.\"",
+    "\"Right below that, I'm typing grep dash c again, this time for invalid user in quotes, and the log name, to count the tries on accounts that don't exist on jump01.\"",
+    "\"Pressing Return again, and the second count lands underneath.\"",
+    "\"That one's 14. So 14 invalid user lines, and that tells me someone was guessing usernames, not just fumbling a password.\"",
+    "\"So let me think about this. Both are clean whole counts, so they're my bar. If the pivot doesn't come to 53, then the import's wrong, and I'd recheck before ranking anything.\""
+   ],
+   "image": "images/03.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 27,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "grep -c \"Failed password\" auth-jump01.log",
+     "w": 34,
+     "fl": 10.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 16.4
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 9,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [
+      {
+       "o": 23,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "grep -c \"invalid user\" auth-jump01.log",
+     "w": 31,
+     "fl": 9.5,
+     "ps": 0,
+     "wt": 0,
+     "sec": 16.2
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 9,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.3
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.0
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 32,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 19.2
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "time": "3:02",
+   "title": "List successful logins",
+   "window": "Terminal window",
+   "do": "Type grep 'Accepted' auth-jump01.log (Accepted in single quotes) and press Return. Read the six Accepted lines: three publickey (00:30:00, 07:05:00, 07:40:00) and three password (03:52:34 svc_backup from 192.0.2.77, 04:20:34 jsmith from 198.51.100.140, 06:04:12 ops.admin from 10.20.4.11). Rest the cursor on line 2: 03:52:34 Accepted password for svc_backup from 192.0.2.77 (port 62963), and say you will come back to it. Method to say: an IP with failures then Accepted password gets a closer look; IPs with only publickey or no success stay on the failure count. Nothing is blocked from Terminal; those IPs get compared in the sheet.",
+   "type": "grep 'Accepted' auth-jump01.log",
+   "say": [
+    "\"Step 4: now who got in. I'm typing grep, space, Accepted in single quotes, and the log name on the next line down, so every successful login prints and stands out against the failures.\"",
+    "\"Pressing Return, and the Accepted lines print just below the prompt.\"",
+    "\"Okay, I count six Accepted lines. Three are publickey and three are password, and it's the password ones I'm after.\"",
+    "\"I'm resting my cursor on the second line, 03:52:34, Accepted password for svc_backup from 192.0.2.77. Hmm, that's interesting, I'll come back to it.\"",
+    "\"Here's my thinking. An IP that failed, then got in needs its account checked, so I'm not blocking anything from Terminal. I'll compare those IPs in the sheet first.\""
+   ],
+   "image": "images/04.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 29,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "grep 'Accepted' auth-jump01.log",
+     "w": 34,
+     "fl": 7.8,
+     "ps": 0,
+     "wt": 0,
+     "sec": 16.0
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.0
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 29,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 16.8
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "time": "4:04",
+   "title": "Leave Terminal for the sheet",
+   "window": "Terminal window, Dock, then Google Sheets (Firefox)",
+   "do": "Move the cursor up to the top left of the Terminal window and click the yellow minimise button (pause 1 s after \"clicking\"). Move down the Dock on the left to the minimised sheets window and click it to bring the sheet back. Read Google Sheets in Firefox: the title \"jump01 overnight triage\" at the top, and a completely empty grid under it.",
+   "type": "nothing",
+   "say": [
+    "\"Step 5: Terminal's done for now. I'm moving my cursor up to the top left of the Terminal window, to the yellow minimise button, and clicking to tuck it away.\"",
+    "\"Alright, moving my cursor down the Dock on the left, to the minimised sheets window, and clicking it to bring the sheet back up.\"",
+    "\"Google Sheets is up. At the top I can see the title, jump01 overnight triage, and the grid below is completely empty.\""
+   ],
+   "image": "images/05.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 133,
+       "k": "click",
+       "l": "yellow minimise (Terminal)"
+      },
+      {
+       "o": 141,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 30,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 13.0
+    },
+    {
+     "c": [
+      {
+       "o": 90,
+       "k": "click",
+       "l": "sheets window (Dock)"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.0
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 13.5
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "time": "4:40",
+   "title": "Import the log export",
+   "window": "Google Sheets (Firefox) > Import files dialog > macOS file picker",
+   "do": "Move up to the Sheets menu bar, File on the far left. Click File (pause 1 s after \"left click\") and move down the list to Import, select it (pause 1 s). In the Import files box click the Upload tab along the top (the file is local, not in Drive). In the middle of the Upload tab click Browse. In the Mac file picker click Documents in the left sidebar, then double-click Project in the list on the right. Click auth-jump01-excerpt.csv (say \"excerpt\", not the extension) once to select it, then click Open at the bottom right of the picker. In the Import file box, under Import location, click Replace current sheet, then click Import data at the bottom of the box. Wait about a second while the rows fill in. Method to say: Replace if the open sheet is blank and already named; New sheet if it holds anything. Here the sheet was blank and named, so Replace; data, pivot and decisions share one file.",
+   "type": "nothing",
+   "say": [
+    "\"Step 6: getting the export in. So I'm moving my cursor up to the Sheets menu bar, to File on the far left.\"",
+    "\"My cursor's on File now, and I'm pressing left click to drop the menu down, because File is where the Import option lives.\"",
+    "\"The File menu is open. Now I'm moving my cursor down the list to Import, and selecting it, because I want the data brought into this sheet rather than opening a second file.\"",
+    "\"Okay, an Import files box opens with tabs along the top. The file's sitting locally on my Mac, not in Drive, so I'm moving my cursor across and clicking the Upload tab.\"",
+    "\"In the middle of the Upload tab there's the Browse button. I'm moving my cursor down onto Browse. Pressing it so I can pick the file myself.\"",
+    "\"Now the Mac file picker opens. I'm moving my cursor over to the left sidebar, to Documents, and giving it a click there, because the inputs sit under Documents.\"",
+    "\"Okay, Project shows up in the list on the right. I'm moving my cursor across onto Project, and since both inputs live there, I'm double-clicking it.\"",
+    "\"Inside Project, the excerpt file sits below. That's the spreadsheet copy of the same 59 log lines. I'm moving my cursor down onto it, and one click selects it.\"",
+    "\"Okay, so now I'm moving my cursor down to the bottom right of the picker, and there's the Open button. Clicking it because I want to start the upload of the excerpt.\"",
+    "\"Now an Import file box comes up. Under Import location, I'm moving my cursor down the options and picking Replace current sheet. This blank one's already named for the job, so the data can go straight into it.\"",
+    "\"Then I'm moving my cursor down to the bottom of the box, to the Import data button. I'll press that to bring the rows into the sheet.\"",
+    "\"Okay, just waiting a second while the rows fill in below.\"",
+    "\"So why Replace current sheet and not a new sheet? This sheet was blank and already named, so data, pivot and decisions all share one file, right next to their source.\""
+   ],
+   "image": "images/06.png",
+   "imageSource": "shots/09-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 39,
+       "k": "move",
+       "l": "File (menu bar)"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 34,
+       "k": "click",
+       "l": "File"
+      },
+      {
+       "o": 53,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.5
+    },
+    {
+     "c": [
+      {
+       "o": 78,
+       "k": "click",
+       "l": "Import"
+      },
+      {
+       "o": 90,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 33,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 15.9
+    },
+    {
+     "c": [
+      {
+       "o": 145,
+       "k": "click",
+       "l": "Upload tab"
+      },
+      {
+       "o": 168,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 32,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 13.5
+    },
+    {
+     "c": [
+      {
+       "o": 99,
+       "k": "click",
+       "l": "Browse"
+      },
+      {
+       "o": 110,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 27,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 13.0
+    },
+    {
+     "c": [
+      {
+       "o": 97,
+       "k": "click",
+       "l": "Documents (sidebar)"
+      },
+      {
+       "o": 120,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 29,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.5
+    },
+    {
+     "c": [
+      {
+       "o": 130,
+       "k": "dbl",
+       "l": "Project"
+      },
+      {
+       "o": 148,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.1
+    },
+    {
+     "c": [
+      {
+       "o": 139,
+       "k": "click",
+       "l": "auth-jump01-excerpt"
+      },
+      {
+       "o": 159,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 29,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [
+      {
+       "o": 104,
+       "k": "click",
+       "l": "Open"
+      },
+      {
+       "o": 115,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 32,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 15.9
+    },
+    {
+     "c": [
+      {
+       "o": 99,
+       "k": "click",
+       "l": "Replace current sheet"
+      },
+      {
+       "o": 128,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 38,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 15.4
+    },
+    {
+     "c": [
+      {
+       "o": 90,
+       "k": "click",
+       "l": "Import data"
+      },
+      {
+       "o": 100,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 27,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.6
+    },
+    {
+     "c": [
+      {
+       "o": 7,
+       "k": "wait",
+       "l": "rows fill in"
+      }
+     ],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 3.5,
+     "sec": 8.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 31,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 15.4
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "time": "7:26",
+   "title": "Read the columns and count the rows",
+   "window": "Google Sheets: Sheet1",
+   "do": "Look across row 1: A timestamp, B host, C event, D user, E invalid_user, F src_ip, G decision. src_ip is column F, the later filter column. Move the cursor over to column G, to look only, without clicking: decision is empty all the way down, the column you fill in yourself. The active cell is still A1, so press Command Down to jump to the bottom of the data. The last row number on the left is 60, timestamp 07:40:00. Check: 60 minus the header row is 59, and Terminal said 59 lines, so they match and nothing was dropped. Press Command Up to return to the top row.",
+   "type": "nothing",
+   "say": [
+    "\"Step 7: checking the import. Looking across row 1 at the top, I can see timestamp, host, event, user, invalid user, src ip and decision. So src ip is in column F, and F's my filter column later.\"",
+    "\"Now I'm moving my cursor over to column G on the right, decision, and it's empty all the way down. That's the column I'll be filling in myself.\"",
+    "\"The active cell's still A1, so I'm holding Command and pressing the Down arrow, to jump to the bottom of the data.\"",
+    "\"Okay, down on the left edge, the last row number is 60, and the timestamp in that row says 07:40:00.\"",
+    "\"Sixty minus the header row is 59, and Terminal said 59 lines. They match, so nothing's been dropped in the import.\"",
+    "\"Holding Command and pressing the Up arrow, to get back to the top row.\""
+   ],
+   "image": "images/07.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [],
+     "b": null,
+     "w": 38,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 14.4
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 28,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 13.5
+    },
+    {
+     "c": [
+      {
+       "o": 36,
+       "k": "key",
+       "l": "⌘ + ↓"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 17.8
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⌘ + ↑"
+      }
+     ],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "time": "8:36",
+   "title": "Freeze the header and add a filter",
+   "window": "Google Sheets: Sheet1",
+   "do": "Move up to the menu bar and across to View. Click View (pause 1 s after \"left click\"). Move down to Freeze, and a submenu slides out to the right. Move across into the submenu and click 1 row. Then go up to the toolbar, right side, to the Create a filter icon; the Create a filter tooltip shows; click it. Read row 1: a filter icon in every header, A1 across to G1, so the filter is on.",
+   "type": "nothing",
+   "say": [
+    "\"Step 8: I want the header frozen before I scroll. So I'm moving my cursor up to the menu bar and across to View.\"",
+    "\"My cursor's on View, and I'm pressing left click to open the list, because the freeze options live under View.\"",
+    "\"The View menu is open. Now I'm moving my cursor down to Freeze, and a menu slides out to the right to choose rows.\"",
+    "\"I'm moving my cursor across to the right into that submenu, onto 1 row, and clicking it, so the column names stay up top while I scroll.\"",
+    "\"Now I'm moving my cursor up to the toolbar, over to the right side, to the Create a filter icon, and the Create a filter tooltip shows. A click on that, so I can filter by IP later.\"",
+    "\"Okay, row 1 now shows a filter icon in every header, from A1 across to G1. So the filter is on.\""
+   ],
+   "image": "images/08.png",
+   "imageSource": "shots/13-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 58,
+       "k": "move",
+       "l": "View (menu bar)"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.6
+    },
+    {
+     "c": [
+      {
+       "o": 30,
+       "k": "click",
+       "l": "View"
+      },
+      {
+       "o": 49,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [
+      {
+       "o": 32,
+       "k": "move",
+       "l": "Freeze (submenu opens)"
+      },
+      {
+       "o": 63,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.6
+    },
+    {
+     "c": [
+      {
+       "o": 77,
+       "k": "click",
+       "l": "1 row"
+      },
+      {
+       "o": 88,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 27,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.6
+    },
+    {
+     "c": [
+      {
+       "o": 137,
+       "k": "click",
+       "l": "Create a filter icon"
+      },
+      {
+       "o": 152,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 38,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 17.4
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.1
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "time": "9:46",
+   "title": "Insert the pivot table",
+   "window": "Google Sheets: Sheet1 > Create pivot table dialog",
+   "do": "Move the cursor down off the row 1 filter icons onto cell A1 at the top left of the grid and click it (pause 1 s). Press Command A so the whole import is selected. Glance at the name box at the top left: it reads A1:G60. Move back up to the menu bar and across, past View, to Insert; click Insert (pause 1 s). Move down the list to Pivot table and choose it with a left click. In the Create pivot table box in the middle of the screen, click New sheet (pause 1 s), which leaves Sheet1's rows untouched. Move down and right to Create at the bottom right of the box and click it (pause 1 s). Read the bottom tabs: a new tab Pivot Table 1, with the editor open on the right. Method to say: pivot when counts are needed for many IP and event pairs; formulas when only one or two numbers are needed. Here a pivot counts everything at once, where COUNTIF would need a formula per IP and event.",
+   "type": "nothing",
+   "say": [
+    "\"Step 9: okay, the pivot. My cursor's sitting over the filter icons in row 1, so I'm moving it down a touch onto cell A1 itself, top left of the grid, and clicking it, to start the selection there.\"",
+    "\"Now pressing Command A on the keyboard, so the whole import's selected in one go.\"",
+    "\"Alright, glancing up at the name box, top left, it says A1 to G60, so everything's in.\"",
+    "\"So I'm moving my cursor back up to the menu bar and across to the right, past View, to Insert.\"",
+    "\"My cursor's up on the menu bar now, and I'm clicking Insert to open the menu, since the pivot table option lives in it.\"",
+    "\"The Insert menu is open. Let me move my cursor down the list to Pivot table, and I'm choosing it with a left click, to get one row per IP.\"",
+    "\"Okay, a Create pivot table box opens in the middle of the screen. I'm moving my cursor down inside it to New sheet, and left clicking on New sheet, to leave Sheet1's rows untouched.\"",
+    "\"Now I'm moving my cursor down and to the right, to the Create button at the bottom right of the box. Pressing it with a left click, so the pivot gets its own tab.\"",
+    "\"So down at the bottom, a new tab appears, Pivot Table 1, with the editor open over on the right.\"",
+    "\"Let me think. COUNTIF means a formula per IP and event. A pivot counts them all at once, so I'll stick with it.\""
+   ],
+   "image": "images/09.png",
+   "imageSource": "shots/14-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 155,
+       "k": "click",
+       "l": "cell A1"
+      },
+      {
+       "o": 166,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 39,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 16.4
+    },
+    {
+     "c": [
+      {
+       "o": 5,
+       "k": "key",
+       "l": "⌘ + A"
+      }
+     ],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 8,
+       "k": "move",
+       "l": "Insert (menu bar)"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 45,
+       "k": "click",
+       "l": "Insert"
+      },
+      {
+       "o": 60,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.1
+    },
+    {
+     "c": [
+      {
+       "o": 86,
+       "k": "click",
+       "l": "Pivot table"
+      },
+      {
+       "o": 97,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 30,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 14.5
+    },
+    {
+     "c": [
+      {
+       "o": 115,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 121,
+       "k": "click",
+       "l": "New sheet"
+      }
+     ],
+     "b": null,
+     "w": 34,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 15.4
+    },
+    {
+     "c": [
+      {
+       "o": 102,
+       "k": "click",
+       "l": "Create"
+      },
+      {
+       "o": 113,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 34,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 15.4
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.0
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "time": "11:46",
+   "title": "Rows and columns",
+   "window": "Google Sheets: Pivot Table 1, pivot editor",
+   "do": "Move over to the pivot editor on the right, down to Rows, and click the Add button beside it (pause 1 s). In the list that drops down, move down to src_ip and click it, so every address gets its own row. Move further down to Columns and click its Add button. In the list, click event. On the Columns card, directly under event, click the Show totals checkbox to untick it (it is ticked; pause 1 s after unticking), because only counts per event type are needed. Read across the header row of the pivot, row 2: B Accepted password, C Accepted publickey, D Failed password.",
+   "type": "nothing",
+   "say": [
+    "\"Step 10: the rows. I'm moving my cursor over to the editor on the right, down to Rows, onto the Add button beside it. Clicking it, because IPs run down the side.\"",
+    "\"A list drops down below Add. I'm moving my cursor down that list to src underscore ip and left clicking it, so every address gets its own row.\"",
+    "\"Okay, I'm moving my cursor further down the editor to Columns, onto the Add button beside it. Left click there to put event types across the top.\"",
+    "\"Another list opens. I'm moving my cursor down to event and selecting it, since it's the type of each try.\"",
+    "\"Alright, just below event on the Columns card, my cursor goes to the Show totals checkbox, which is ticked. Unticking it with a left click, because I only need counts per event type, not a total across them.\"",
+    "\"So, looking across the header row, row 2, B's Accepted password, C's Accepted publickey, D's Failed password.\""
+   ],
+   "image": "images/10.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 119,
+       "k": "click",
+       "l": "Add (Rows)"
+      },
+      {
+       "o": 130,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 32,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [
+      {
+       "o": 86,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 91,
+       "k": "click",
+       "l": "src_ip"
+      }
+     ],
+     "b": null,
+     "w": 28,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.1
+    },
+    {
+     "c": [
+      {
+       "o": 95,
+       "k": "click",
+       "l": "Add (Columns)"
+      },
+      {
+       "o": 111,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 27,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.1
+    },
+    {
+     "c": [
+      {
+       "o": 60,
+       "k": "click",
+       "l": "event"
+      },
+      {
+       "o": 72,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [
+      {
+       "o": 109,
+       "k": "click",
+       "l": "untick Show totals"
+      },
+      {
+       "o": 121,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 38,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 17.4
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.7
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "time": "12:59",
+   "title": "Values: count the rows",
+   "window": "Google Sheets: Pivot Table 1, pivot editor",
+   "do": "Move down the editor to Values and click its Add button (pause 1 s). In the list that opens, move down and pick event. Look lower on the value card at the Summarize by box. If it already says COUNTA, leave it as it is. If it shows SUM, left click the Summarize by dropdown to open it, move down to COUNTA and click it (pause 1 s), since these are words. Method to say: COUNTA when the value field is text; SUM only for numeric fields. Each log line is one attempt, so COUNTA fits. Read the grid on the left: the counts fill in, with a Grand Total on row 9.",
+   "type": "nothing",
+   "say": [
+    "\"Step 11: the counts. I'm moving my cursor down the editor to Values and onto its Add button. Clicking, so I can say what's counted.\"",
+    "\"A list opens below. Let me move my cursor down it and pick event, because every row has one.\"",
+    "\"Okay, now I'm looking lower on the value card, at the Summarize by box, to see what it's set to.\"",
+    "\"Summarize by shows COUNTA already, so I'm leaving it, or if it shows SUM I'm clicking that dropdown and moving down to COUNTA.\"",
+    "\"Then moving down to COUNTA and clicking it, since these are words.\"",
+    "\"Okay, each line's one attempt, so COUNTA fits. It counts the text entries, which is what I need.\"",
+    "\"Alright, looking left at the grid, the counts fill in, with a Grand Total on row 9.\""
+   ],
+   "image": "images/11.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 94,
+       "k": "click",
+       "l": "Add (Values)"
+      },
+      {
+       "o": 102,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [
+      {
+       "o": 55,
+       "k": "click",
+       "l": "event"
+      },
+      {
+       "o": 65,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 27,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 32,
+       "k": "click",
+       "l": "COUNTA (this line is only used if it showed SUM)"
+      }
+     ],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.1
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "time": "14:09",
+   "title": "Sort by failures",
+   "window": "Google Sheets: Pivot Table 1, pivot editor",
+   "do": "Move back up to the Rows card, down to Order, and open that dropdown with a left click; choose Descending (pause 1 s). Directly under it, on the same card, click the Sort by dropdown, move down the list and pick Failed password (pause 1 s), so the most failures are on top. Read down rows 3 to 8: 203.0.113.45 18, 198.51.100.23 14, 192.0.2.77 9, 198.51.100.140 7, 10.20.4.11 3 (say it as the ten-dot address), 192.0.2.200 2. Method to say: descending by Failed password when risk is driven by attempt volume; by time if the question were order of events. Here you work down from the biggest risk. Move up to the top right of the editor and click the close icon (pause 1 s) to get the full sheet back.",
+   "type": "nothing",
+   "say": [
+    "\"Step 12: noisiest first. I'm moving my cursor back up to the Rows card, down to Order, opening that dropdown with a left click and choosing Descending, to lead with big numbers.\"",
+    "\"Just below it is Sort by. I'm left clicking that dropdown, moving down the list, and picking Failed password, to put the most failures on top.\"",
+    "\"Okay, reading down rows 3 to 8: 203.0.113.45 18, 198.51.100.23 14, 192.0.2.77 9, 198.51.100.140 7, the ten-dot address 3, 192.0.2.200 2.\"",
+    "\"So, sorted like this, I'll work down from the biggest risk.\"",
+    "\"Now I'm moving my cursor up to the top right of the editor, to the close icon. Clicking it to get the full sheet back.\""
+   ],
+   "image": "images/12.png",
+   "imageSource": "shots/18.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 88,
+       "k": "click",
+       "l": "Order dropdown"
+      },
+      {
+       "o": 132,
+       "k": "click",
+       "l": "Descending"
+      },
+      {
+       "o": 151,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 32,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 13.5
+    },
+    {
+     "c": [
+      {
+       "o": 31,
+       "k": "click",
+       "l": "Sort by dropdown"
+      },
+      {
+       "o": 86,
+       "k": "click",
+       "l": "Failed password"
+      },
+      {
+       "o": 109,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [
+      {
+       "o": 80,
+       "k": "click",
+       "l": "editor close icon"
+      },
+      {
+       "o": 91,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "time": "15:05",
+   "title": "Check the pivot total against Terminal",
+   "window": "Google Sheets: Pivot Table 1",
+   "do": "Move the cursor left onto the grid and down to the bottom of column D. Click D9 (pause 1 s). Read it: 53 failures. Check it against Terminal: the pivot says 53 and grep said 53, so they match and nothing is missing. Look just left of it: B9 and C9 are 3 each, password and publickey, the same as Terminal.",
+   "type": "nothing",
+   "say": [
+    "\"Step 13: a check against Terminal. I'm moving my cursor left onto the grid, down to the bottom of column D. Clicking D9, to read the failure total.\"",
+    "\"Okay, with my cursor on D9, it reads 53 failures.\"",
+    "\"So the pivot says 53, and grep said 53 back in Terminal. They match, so nothing's missing.\"",
+    "\"Looking just left of it, B9 and C9 are 3 each, password and publickey, same as Terminal.\""
+   ],
+   "image": "images/13.png",
+   "imageSource": "shots/18.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 109,
+       "k": "click",
+       "l": "cell D9"
+      },
+      {
+       "o": 120,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 28,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 10,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 13.0
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.7
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "time": "15:49",
+   "title": "Read the ranking",
+   "window": "Google Sheets: Pivot Table 1",
+   "do": "Move the cursor up onto rows 3 and 4 in column D: 203.0.113.45 has 18 and 198.51.100.23 has 14, the biggest risk. Move down to rows 5 and 6: in column D, 192.0.2.77 has 9 failures and over in column B it has 1 accepted password; 198.51.100.140 has 7 and 1 the same way, so both got in after failing. Then rows 7 and 8, which are small: for the ten-dot address (10.20.4.11), columns B, C and D read 1, 3 and 3, and 192.0.2.200 has just 2 in D.",
+   "type": "nothing",
+   "say": [
+    "\"Step 14: the ranking. My cursor's up on rows 3 and 4 in column D, 203.0.113.45 has 18 and 198.51.100.23 has 14. They're the biggest risk.\"",
+    "\"Now I'm moving my cursor down to rows 5 and 6. In column D, 192.0.2.77 has 9 failures, and over in column B it has 1 accepted password. 198.51.100.140 has 7 and 1 the same way, so both got in after failing.\"",
+    "\"Then down to rows 7 and 8, which are small. For the ten-dot address, columns B, C and D read 1, 3 and 3, and 192.0.2.200 has just 2 in D.\""
+   ],
+   "image": "images/14.png",
+   "imageSource": "shots/18.png",
+   "lines": [
+    {
+     "c": [],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 42,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 31,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.6
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "time": "16:17",
+   "title": "Decision column header",
+   "window": "Google Sheets: Pivot Table 1",
+   "do": "Move right, past the Failed password column, to cell E2 and click it (pause 1 s) so decisions sit beside the counts. Type Decision in E2 while speaking, no pause. Press Return to drop the cursor down to E3.",
+   "type": "Decision",
+   "say": [
+    "\"Step 15: a decision column. I'm moving my cursor right, past the Failed password column, to E2, and clicking there, so decisions sit beside counts.\"",
+    "\"Okay, typing Decision in E2, so it's clear what the column's for.\"",
+    "\"Now hitting Return on the keyboard, to drop the cursor down to E3.\""
+   ],
+   "image": "images/15.png",
+   "imageSource": "shots/20-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 101,
+       "k": "click",
+       "l": "cell E2"
+      },
+      {
+       "o": 115,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [
+      {
+       "o": 7,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Decision",
+     "w": 12,
+     "fl": 2.0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [
+      {
+       "o": 5,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.7
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "time": "16:40",
+   "title": "Dropdown chips",
+   "window": "Google Sheets: Pivot Table 1 > Data validation panel",
+   "do": "Move down from E2 to E3, beside 203.0.113.45, and click it (pause 1 s); the range has to start on the first IP. Hold Shift and press Down five times so E3:E8 is selected, and read the name box: E3:E8. Move back up to the menu bar, over to Insert, click it (pause 1 s), go down the list to Dropdown and select it (pause 1 s). The Data validation panel opens on the right: click into the Option 1 box and type Block. Click Add another item under the Option 1 box (pause 1 s), and in Option 2 type Watch. Click Add another item again (pause 1 s), and in Option 3 type Ignore. Click Done at the bottom of the panel (pause 1 s) to save the choices to E3:E8. Method to say: dropdown when the cell must be counted later; free text only for notes. Here fixed words, because COUNTIF needs exact matches. Read E3:E8: each has a chip now.",
+   "type": "Block\nWatch\nIgnore",
+   "say": [
+    "\"Step 16: the choices. I'm moving my cursor down from E2 to E3, beside 203.0.113.45, and a click there, because the range starts on the first IP.\"",
+    "\"Now holding Shift and pressing Down five times, so E3 to E8 is selected.\"",
+    "\"The name box up top says E3 to E8.\"",
+    "\"Moving my cursor back up to the menu bar, over to Insert.\"",
+    "\"My cursor's on Insert, and I'm clicking, since Dropdown's in that menu.\"",
+    "\"Then down the list to Dropdown, and selecting it, for fixed words.\"",
+    "\"A Data validation panel opens on the right. I'm clicking into the Option 1 box and typing Block.\"",
+    "\"I'm moving my cursor below, to Add another item. Hitting it for a second box.\"",
+    "\"In Option 2 underneath, typing Watch, the middle ground.\"",
+    "\"Then lower down, Add another item once more, pressing it for a third box.\"",
+    "\"In Option 3, typing Ignore.\"",
+    "\"Now down to Done at the bottom of the panel. Clicking it to save the choices.\"",
+    "\"Fixed words, because COUNTIF needs exact matches.\"",
+    "\"Looking down E3 to E8, each cell has a chip now.\""
+   ],
+   "image": "images/16.png",
+   "imageSource": "shots/21-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 89,
+       "k": "click",
+       "l": "cell E3"
+      },
+      {
+       "o": 102,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 27,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 5,
+       "k": "key",
+       "l": "⇧ + ↓ ×5"
+      }
+     ],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 9,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.8
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "move",
+       "l": "Insert (menu bar)"
+      }
+     ],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.7
+    },
+    {
+     "c": [
+      {
+       "o": 32,
+       "k": "click",
+       "l": "Insert"
+      },
+      {
+       "o": 40,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 5.3
+    },
+    {
+     "c": [
+      {
+       "o": 37,
+       "k": "click",
+       "l": "Dropdown"
+      },
+      {
+       "o": 49,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 6.3
+    },
+    {
+     "c": [
+      {
+       "o": 49,
+       "k": "click",
+       "l": "Option 1 box"
+      },
+      {
+       "o": 84,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Block",
+     "w": 18,
+     "fl": 1.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.3
+    },
+    {
+     "c": [
+      {
+       "o": 50,
+       "k": "click",
+       "l": "Add another item"
+      },
+      {
+       "o": 60,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 25,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Watch",
+     "w": 9,
+     "fl": 1.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.3
+    },
+    {
+     "c": [
+      {
+       "o": 46,
+       "k": "click",
+       "l": "Add another item"
+      },
+      {
+       "o": 57,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 6.3
+    },
+    {
+     "c": [
+      {
+       "o": 14,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Ignore",
+     "w": 5,
+     "fl": 1.5,
+     "ps": 0,
+     "wt": 0,
+     "sec": 1.4
+    },
+    {
+     "c": [
+      {
+       "o": 46,
+       "k": "click",
+       "l": "Done"
+      },
+      {
+       "o": 57,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 5.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 7,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.3
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "time": "18:04",
+   "title": "Filter, read and mark 203.0.113.45",
+   "window": "Google Sheets: Sheet1 filter, then Pivot Table 1",
+   "do": "1. Move down to the sheet tabs at the very bottom and click Sheet1 at the bottom left (pause 1 s); the decision needs raw rows, not just counts. 2. Go up to row 1, across to F1, and click its filter icon at the right edge of the cell (pause 1 s). 3. In the filter panel, under Filter by values, press Clear (pause 1 s). 4. Scroll down the value list, tick 203.0.113.45 (pause 1 s), then click OK at the bottom right of the panel (pause 1 s). 5. Read the filtered rows: only 203.0.113.45, and every one a Failed password. 6. Read across: column D is root and admin over and over, column E says no on every row, timestamps 01:12:00 to 01:16:05, and nothing Accepted. 7. Say your own evidence from the rows and your own verdict for this IP. Your goal's first rule: an outside IP with 5+ failures, real admin names tried and no success is a Block. 8. Move back down to the tabs and click Pivot Table 1, just right of Sheet1 (pause 1 s). 9. Move over to column E, to E3 next to 203.0.113.45, and click its chip (pause 1 s). 10. Pick the chip word that matches the verdict you said. The line you speak here reads Block. 11. Say what E3 now shows.",
+   "type": "nothing",
+   "say": [
+    "\"Step 17: before deciding on the top IP, I want its raw lines. So I'm moving my cursor down to the sheet tabs at the very bottom of the window.\"",
+    "\"My cursor's on Sheet1, at the bottom left, and I'm clicking that tab, because the decision needs raw rows, not just counts.\"",
+    "\"Okay, now up to row 1 and across to F1, and I'm clicking its filter icon at the right edge of the cell, since that's my filter column.\"",
+    "\"The filter panel opens below it. I'm moving my cursor down to Filter by values, and I press Clear, so nothing's ticked.\"",
+    "\"Then scrolling down the value list to 203.0.113.45, and ticking it, so only its rows come back.\"",
+    "\"Now down to the OK button at the bottom right of the panel, and I'm going to left click on it to apply.\"",
+    "\"Alright, just this IP now. The filtered rows are all 203.0.113.45, and every one is a Failed password.\"",
+    "\"Reading across, column D is root and admin over and over, and column E says no on every row, from 01:12:00 to 01:16:05, with nothing Accepted.\"",
+    "\"Putting it together: [say the evidence from the rows]. Real admin names from outside, and never in. That makes this one [say the decision].\"",
+    "\"So I'm moving my cursor back down to the tabs, to Pivot Table 1, just right of Sheet1.\"",
+    "\"Clicking the Pivot Table 1 tab now with a left click, so the decision goes beside the count.\"",
+    "\"Okay, I'm moving my cursor over to column E, to E3, next to 203.0.113.45, and clicking its chip, so the decision lands on the right row.\"",
+    "\"The list opens under the chip, and I'm moving my cursor down to Block and picking it, to match what I said.\"",
+    "\"So E3 now shows Block.\""
+   ],
+   "image": "images/17.png",
+   "imageSource": "shots/24.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 70,
+       "k": "move",
+       "l": "sheet tabs, bottom"
+      }
+     ],
+     "b": null,
+     "w": 30,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.0
+    },
+    {
+     "c": [
+      {
+       "o": 52,
+       "k": "click",
+       "l": "Sheet1 tab"
+      },
+      {
+       "o": 69,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [
+      {
+       "o": 49,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 73,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 28,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.1
+    },
+    {
+     "c": [
+      {
+       "o": 85,
+       "k": "click",
+       "l": "Clear"
+      },
+      {
+       "o": 98,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 57,
+       "k": "click",
+       "l": "tick 203.0.113.45"
+      },
+      {
+       "o": 67,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.3
+    },
+    {
+     "c": [
+      {
+       "o": 78,
+       "k": "click",
+       "l": "OK"
+      },
+      {
+       "o": 88,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 14.4
+    },
+    {
+     "c": [
+      {
+       "o": 8,
+       "k": "move",
+       "l": "Pivot Table 1 tab"
+      }
+     ],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.7
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "Pivot Table 1 tab"
+      },
+      {
+       "o": 31,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [
+      {
+       "o": 79,
+       "k": "click",
+       "l": "chip E3"
+      },
+      {
+       "o": 96,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 75,
+       "k": "click",
+       "l": "Block"
+      },
+      {
+       "o": 82,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 5,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.7
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "time": "20:24",
+   "title": "Filter, read and mark 198.51.100.23",
+   "window": "Google Sheets: Sheet1 filter, then Pivot Table 1",
+   "do": "1. Move down to the sheet tabs at the bottom and click Sheet1 at the bottom left (pause 1 s). 2. Go up to F1 and click the filter icon at the cell's right edge so the value list opens (pause 1 s). 3. Under Filter by values press Clear first (pause 1 s). 4. Scan the value list for each of 198.51.100.23, 198.51.100.140 and 192.0.2.200 and tick each one; the list is not in that order (pause 1 s after ticking). Only these three are left. 5. Click OK at the bottom right of the panel (pause 1 s). 6. Read their rows: 198.51.100.23 has 14 failures, 198.51.100.140 has 7, 192.0.2.200 just 2. 7. Read across: 198.51.100.23 is all invalid users, test, ubuntu, oracle, nothing Accepted. Further down, 198.51.100.140 has jsmith failing and then getting in at 04:20:34. 192.0.2.200 has root twice, at 05:30:00 and 05:31:00. 8. Say your own verdict for each IP, in that order: 198.51.100.23, then 198.51.100.140, then 192.0.2.200. Rule 1 of your goal gives Block for an outside IP with 5+ failures on accounts that do not exist and no success. 9. Move back down to the tabs and click Pivot Table 1 (pause 1 s). 10. Move over to column E, to E4 beside 198.51.100.23, and click its chip (pause 1 s). Pick the chip word that matches the verdict you said. The lines you speak here name Block for this one. 11. Move down two rows to E6 beside 198.51.100.140, click its chip and pick the word for your verdict; the line you speak reads Watch. 12. Down again to E8 beside 192.0.2.200, click its chip and pick the word for your verdict; the line you speak reads Ignore. 13. Read E4, E6 and E8: each has its word, and E3 above keeps its own.",
+   "type": "nothing",
+   "say": [
+    "\"Step 18: okay, the other three together, 198.51.100.23, 198.51.100.140 and 192.0.2.200. I'm moving my cursor down to the sheet tabs at the bottom.\"",
+    "\"Sheet1 is at the bottom left, and I'm going in with a left click on it, since the rows are what I judge from.\"",
+    "\"Then up to F1, to the filter icon at the cell's right edge, clicking so the value list opens.\"",
+    "\"In the panel below, under Filter by values, I press Clear first, so the last IP's unticked too.\"",
+    "\"Then I'm moving down the list, ticking 198.51.100.23 and 198.51.100.140, and for 192.0.2.200 I'm ticking it too, so only these three are left.\"",
+    "\"OK at the bottom right of the panel, and I'm clicking to filter.\"",
+    "\"Their rows only. 198.51.100.23 has 14 failures, 198.51.100.140 has 7, and 192.0.2.200 just 2.\"",
+    "\"Looking across, 198.51.100.23 is all invalid users, test, ubuntu, oracle, nothing Accepted. Further down, 198.51.100.140 has jsmith failing and then getting in at 04:20:34. And 192.0.2.200 has root twice, at 05:30:00 and 05:31:00.\"",
+    "\"Weighing it up: 198.51.100.23, 14 failures on accounts that don't exist, [say the decision]. 198.51.100.140, 7 failures and then a login, [say the decision]. And 192.0.2.200, just 2 tries, [say the decision].\"",
+    "\"Now I'm moving my cursor back down to the tabs, towards Pivot Table 1 on the right of Sheet1.\"",
+    "\"Left click on the Pivot Table 1 tab, to record those decisions beside their counts.\"",
+    "\"Okay, I'm moving my cursor over to column E, to E4, beside 198.51.100.23.\"",
+    "\"My cursor's on the E4 chip beside 198.51.100.23, so I'm clicking it, and from the list below I'll choose Block.\"",
+    "\"Now I'm moving my cursor down two rows to E6, beside 198.51.100.140, left clicking its chip, and picking Watch from the list.\"",
+    "\"Then down again to E8, beside 192.0.2.200, a click on its chip, and I'm picking Ignore from the list that opens.\"",
+    "\"E4, E6 and E8 have their words now, and E3 above still keeps its own.\""
+   ],
+   "image": "images/18.png",
+   "imageSource": "shots/18-13-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 93,
+       "k": "move",
+       "l": "sheet tabs, bottom"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.6
+    },
+    {
+     "c": [
+      {
+       "o": 53,
+       "k": "click",
+       "l": "Sheet1 tab"
+      },
+      {
+       "o": 71,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 61,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 69,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [
+      {
+       "o": 45,
+       "k": "click",
+       "l": "Clear"
+      },
+      {
+       "o": 64,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [
+      {
+       "o": 32,
+       "k": "click",
+       "l": "tick 198.51.100.23"
+      },
+      {
+       "o": 58,
+       "k": "click",
+       "l": "tick 198.51.100.140"
+      },
+      {
+       "o": 94,
+       "k": "click",
+       "l": "tick 192.0.2.200"
+      },
+      {
+       "o": 108,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [
+      {
+       "o": 46,
+       "k": "click",
+       "l": "OK"
+      },
+      {
+       "o": 54,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 33,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 32,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 16.9
+    },
+    {
+     "c": [
+      {
+       "o": 9,
+       "k": "move",
+       "l": "Pivot Table 1 tab"
+      }
+     ],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.7
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "Pivot Table 1 tab"
+      },
+      {
+       "o": 36,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [
+      {
+       "o": 11,
+       "k": "move",
+       "l": "column E, E4"
+      },
+      {
+       "o": 73,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.6
+    },
+    {
+     "c": [
+      {
+       "o": 57,
+       "k": "click",
+       "l": "chip E4"
+      },
+      {
+       "o": 99,
+       "k": "click",
+       "l": "Block"
+      },
+      {
+       "o": 111,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.6
+    },
+    {
+     "c": [
+      {
+       "o": 70,
+       "k": "click",
+       "l": "chip E6"
+      },
+      {
+       "o": 98,
+       "k": "click",
+       "l": "Watch"
+      },
+      {
+       "o": 111,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 44,
+       "k": "click",
+       "l": "chip E8"
+      },
+      {
+       "o": 73,
+       "k": "click",
+       "l": "Ignore"
+      },
+      {
+       "o": 87,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.1
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "time": "23:05",
+   "title": "Filter, read and mark 192.0.2.77",
+   "window": "Google Sheets: Sheet1 filter, then Pivot Table 1",
+   "do": "192.0.2.77 is the third IP by rank in the pivot, in row 5. 1. Move down to the sheet tabs and click Sheet1 at the bottom left (pause 1 s). 2. Up to F1, click the filter icon on its right edge to open the list (pause 1 s). 3. Press Clear under Filter by values (pause 1 s). 4. Scroll down the value list and tick 192.0.2.77 (pause 1 s), then click OK at the bottom right of the panel (pause 1 s). 5. Read its rows: 192.0.2.77's failures, with one Accepted line near the end. 6. Reading down: svc_backup and deploy fail from 03:40:00 to 03:45:49, then svc_backup gets in with Accepted password at 03:52:34. 7. Say your own evidence from the rows and your own verdict. Rule 2 of your goal: an outside IP with failures followed by a success on the same account is a Watch. Say whether it looks like a guessed password or the real backup job. 8. Move down to the tabs and click Pivot Table 1 on the right (pause 1 s). 9. Over to column E, down to E5 next to 192.0.2.77, and click its chip. Pick the chip word that matches the verdict you said. The line you speak reads Watch. 10. Say what E5 now shows.",
+   "type": "nothing",
+   "say": [
+    "\"Step 19: the third IP by rank, 192.0.2.77. I'm moving my cursor down to the sheet tabs at the bottom.\"",
+    "\"Clicking Sheet1 at the bottom left, a left click, so I can read its raw lines.\"",
+    "\"Now up to F1, to the filter icon on its right edge, and a click on it to open the list.\"",
+    "\"My cursor goes down into the panel. Pressing Clear under Filter by values, so I start from nothing ticked.\"",
+    "\"Then I'm scrolling down the value list. Ticking 192.0.2.77, so only its rows stay.\"",
+    "\"Down to OK at the bottom right of the panel, and I'm left clicking it to apply.\"",
+    "\"Okay, just this IP now, and the rows are 192.0.2.77's failures, with one Accepted line near the end.\"",
+    "\"Reading down the rows, svc_backup and deploy fail from 03:40:00 to 03:45:49, then svc_backup gets in with Accepted password at 03:52:34.\"",
+    "\"Failures, then a success on the same account. [say the evidence from the rows]. It could be a guessed password or the real backup job, which makes it [say the decision].\"",
+    "\"So I'm moving my cursor down to the tabs once more, to Pivot Table 1 on the right.\"",
+    "\"Click on the Pivot Table 1 tab, a single left click, so this one gets marked too.\"",
+    "\"Now over to column E, down to E5, next to 192.0.2.77, and I'm clicking the chip so the choice goes on that row.\"",
+    "\"The list opens below, and I'm moving my cursor to Watch and picking it, because that's what the rows point to.\"",
+    "\"E5's chip shows Watch now.\""
+   ],
+   "image": "images/19.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 48,
+       "k": "move",
+       "l": "sheet tabs, bottom"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.6
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "Sheet1 tab"
+      },
+      {
+       "o": 16,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 57,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 70,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 37,
+       "k": "click",
+       "l": "Clear"
+      },
+      {
+       "o": 51,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [
+      {
+       "o": 41,
+       "k": "click",
+       "l": "tick 192.0.2.77"
+      },
+      {
+       "o": 48,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [
+      {
+       "o": 54,
+       "k": "click",
+       "l": "OK"
+      },
+      {
+       "o": 70,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 31,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 15.9
+    },
+    {
+     "c": [
+      {
+       "o": 8,
+       "k": "move",
+       "l": "Pivot Table 1 tab"
+      }
+     ],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "Pivot Table 1 tab"
+      },
+      {
+       "o": 31,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 63,
+       "k": "click",
+       "l": "chip E5"
+      },
+      {
+       "o": 80,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 61,
+       "k": "click",
+       "l": "Watch"
+      },
+      {
+       "o": 68,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 5,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "time": "25:18",
+   "title": "Filter, read and mark 10.20.4.11",
+   "window": "Google Sheets: Sheet1 filter, then Pivot Table 1",
+   "do": "1. Move down to the tabs along the bottom edge and click Sheet1, far left (pause 1 s). 2. Up to F1's filter icon on the right side of the header; click it to open the list (pause 1 s). 3. Click Clear under Filter by values, so the old tick goes (pause 1 s). 4. The ten-dot address 10.20.4.11 sits near the top of the list: move up to it and tick it (pause 1 s), then click OK in the bottom right corner (pause 1 s). 5. Read its rows: the first is an Accepted publickey at 00:30:00, then three failures, then Accepted logins. 6. Read across: a private ten-dot address; ops.admin fails three times, 06:02:00 to 06:02:51, then gets in at 06:04:12, plus publickey logins. 7. Say your own evidence from the rows and your own verdict. Rule 3 of your goal: an internal address with a known admin and a login right after is an Ignore. Say whether it looks like a mistyped password or an attack. 8. Move down to the tabs and click Pivot Table 1 (pause 1 s). 9. Over to column E, down to E7 beside 10.20.4.11, and click its chip. Pick the chip word that matches the verdict you said. The line you speak reads Ignore. 10. Say what E7 now shows.",
+   "type": "nothing",
+   "say": [
+    "\"Step 21: the internal address. I'm moving my cursor down to the tabs along the bottom edge.\"",
+    "\"Sheet1 is far left, and I'm giving it a left click, so the raw rows are back.\"",
+    "\"Then up to F1's filter icon, on the right side of the header, and I'm clicking it to open the list.\"",
+    "\"In the panel below, under Filter by values, my cursor goes to Clear, so the old tick goes.\"",
+    "\"The ten-dot address sits near the top of the list, so I'm moving up to it and ticking it, so it's on its own.\"",
+    "\"Now down to OK in the bottom right corner, and I click it to apply the filter.\"",
+    "\"Okay, only its rows: the ten-dot address, a publickey login at 00:30:00, then failures, then Accepted logins.\"",
+    "\"Reading across, it's a private ten-dot address. ops.admin fails three times, 06:02:00 to 06:02:51, then gets in at 06:04:12, plus publickey logins.\"",
+    "\"Internal range, a known admin, a login right after. [say the evidence from the rows]. That looks like a mistyped password, not an attack. I'd call it [say the decision].\"",
+    "\"So I'm moving my cursor down to the tabs, over to Pivot Table 1.\"",
+    "\"Clicking on the Pivot Table 1 tab with a left click, so I can mark it.\"",
+    "\"Then over to column E, down to E7, beside the ten-dot address, and clicking its chip so the decision's on its row.\"",
+    "\"A list drops down, and I'll move my cursor to Ignore and pick it, because that's what fits these rows.\"",
+    "\"E7 shows Ignore now.\""
+   ],
+   "image": "images/20.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 36,
+       "k": "move",
+       "l": "sheet tabs, bottom"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.2
+    },
+    {
+     "c": [
+      {
+       "o": 29,
+       "k": "click",
+       "l": "Sheet1 tab"
+      },
+      {
+       "o": 51,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [
+      {
+       "o": 67,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 82,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [
+      {
+       "o": 63,
+       "k": "click",
+       "l": "Clear"
+      },
+      {
+       "o": 68,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 79,
+       "k": "click",
+       "l": "tick 10.20.4.11"
+      },
+      {
+       "o": 89,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 48,
+       "k": "click",
+       "l": "OK"
+      },
+      {
+       "o": 55,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 30,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 14.9
+    },
+    {
+     "c": [
+      {
+       "o": 8,
+       "k": "move",
+       "l": "Pivot Table 1 tab"
+      }
+     ],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.7
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "Pivot Table 1 tab"
+      },
+      {
+       "o": 34,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 68,
+       "k": "click",
+       "l": "chip E7"
+      },
+      {
+       "o": 85,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 58,
+       "k": "click",
+       "l": "Ignore"
+      },
+      {
+       "o": 62,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 4,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.7
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "time": "27:28",
+   "title": "Clear the filter",
+   "window": "Google Sheets: Sheet1 filter",
+   "do": "Move down to the bottom left and click the Sheet1 tab (pause 1 s), because the filter lives there. Move up to F1 and click the filter icon at its right edge to open the list (pause 1 s). In the panel click Select all (pause 1 s) to bring all 59 rows back before any download. Click OK at the bottom right of the panel (pause 1 s) to lift the filter. Read down the row numbers on the left: row 60 is there again, so the full data is back.",
+   "type": "nothing",
+   "say": [
+    "\"Step 23: every row back. Down at the bottom left now. Clicking the Sheet1 tab with a left click, so I can clear the filter.\"",
+    "\"Then I'm moving my cursor up to F1, to the filter icon at its right edge, and clicking it to open the list.\"",
+    "\"In the panel below, my cursor goes to Select all, and I click it, to bring all 59 rows back before any download.\"",
+    "\"Now down to OK at the bottom right of the panel, clicking it to lift the filter.\"",
+    "\"Okay, down the row numbers on the left, 60's there again, so the full data's back.\""
+   ],
+   "image": "images/21.png",
+   "imageSource": "shots/35.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 55,
+       "k": "click",
+       "l": "Sheet1 tab"
+      },
+      {
+       "o": 78,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 79,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 90,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [
+      {
+       "o": 49,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 55,
+       "k": "click",
+       "l": "Select all"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 50,
+       "k": "click",
+       "l": "OK"
+      },
+      {
+       "o": 61,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.7
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "time": "28:18",
+   "title": "Decision totals",
+   "window": "Google Sheets: Pivot Table 1",
+   "do": "Move down to the tabs and click Pivot Table 1 (pause 1 s). Move up into the grid to D10, just under the pivot, and click it (pause 1 s). Type Block, press Return, type Watch, press Return, type Ignore, press Return, so the labels run down D10 to D12 (speak while typing, no pause). Move one cell right to E10, beside Block, and click it (pause 1 s). Type =COUNTIF(E3:E8,\"Block\") and press Return to move down to E11. Type =COUNTIF(E3:E8,\"Watch\") and press Return to get down to E12. Type =COUNTIF(E3:E8,\"Ignore\") and press Return to finish the third formula; the cursor lands on E13. Method to say: COUNTIF per decision word when chips hold exact words; manual count only if formulas misbehave. Counting by the word means the note quotes the sheet, not your head. With the cursor resting on E10:E12, say the three totals as the screen shows them (expected 2, 2, 2). Check they add up to six, one per IP in E3:E8.",
+   "type": "Block\nWatch\nIgnore\n=COUNTIF(E3:E8,\"Block\")\n=COUNTIF(E3:E8,\"Watch\")\n=COUNTIF(E3:E8,\"Ignore\")",
+   "say": [
+    "\"Step 24: decision totals. I'm moving my cursor down to the tabs at the bottom. Clicking the Pivot Table 1 tab to go back.\"",
+    "\"Up into the grid to D10, just under the pivot, clicking there, so the totals sit under the decisions.\"",
+    "\"Typing Block, Watch and Ignore down D10 to D12, pressing Return after each, as labels.\"",
+    "\"I'm moving my cursor one cell right to E10, beside Block, and clicking it for the first formula.\"",
+    "\"Typing equals COUNTIF over E3 to E8 for Block, to count the Block chips.\"",
+    "\"Pressing Return to move down to E11.\"",
+    "\"In E11, typing the same formula for Watch, to count the Watch chips.\"",
+    "\"Pressing Return again to get to E12.\"",
+    "\"In E12, typing COUNTIF for Ignore, so the last word gets a total.\"",
+    "\"And hitting Return to finish the third formula.\"",
+    "\"Counting by the word means the note quotes the sheet, not my head.\"",
+    "\"So E10 to E12 now hold the totals, and my cursor's resting on them: [say the three totals in E10 to E12].\"",
+    "\"Those three should add up to six, one per IP in E3 to E8, and they match.\""
+   ],
+   "image": "images/22.png",
+   "imageSource": "shots/37-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 80,
+       "k": "click",
+       "l": "Pivot Table 1 tab"
+      },
+      {
+       "o": 110,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 48,
+       "k": "click",
+       "l": "cell D10"
+      }
+     ],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Block ⏎ Watch ⏎ Ignore ⏎",
+     "w": 15,
+     "fl": 6.0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.8
+    },
+    {
+     "c": [
+      {
+       "o": 63,
+       "k": "click",
+       "l": "cell E10"
+      },
+      {
+       "o": 74,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "=COUNTIF(E3:E8,\"Block\")",
+     "w": 14,
+     "fl": 5.8,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 7,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [
+      {
+       "o": 9,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "=COUNTIF(E3:E8,\"Watch\")",
+     "w": 13,
+     "fl": 5.8,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.2
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 7,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.3
+    },
+    {
+     "c": [
+      {
+       "o": 9,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "=COUNTIF(E3:E8,\"Ignore\")",
+     "w": 13,
+     "fl": 6.0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.2
+    },
+    {
+     "c": [
+      {
+       "o": 5,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 8,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 3.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.1
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "time": "29:56",
+   "title": "Copy the table",
+   "window": "Google Sheets: Pivot Table 1",
+   "do": "Move up to A2, top left of the pivot, and click it (pause 1 s) to start the copy at the IPs and headers. Hold Shift and click E8, down and to the right. Read the name box at the top left: A2:E8. Press Command C. A dashed border runs round A2:E8, meaning it is on the clipboard.",
+   "type": "nothing",
+   "say": [
+    "\"Step 25: copying for the note. I'm moving my cursor up to A2, top left of the pivot. Clicking A2 to start the copy at the IPs and headers.\"",
+    "\"Now Shift-clicking E8, down and to the right, so it's A2 to E8, IPs, counts and decisions.\"",
+    "\"Okay, the name box at the top left confirms A2 to E8.\"",
+    "\"Pressing Command C to copy A2 to E8.\"",
+    "\"So a dashed border runs round A2 to E8, meaning it's on the clipboard.\""
+   ],
+   "image": "images/23.png",
+   "imageSource": "shots/38-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 86,
+       "k": "click",
+       "l": "cell A2"
+      },
+      {
+       "o": 97,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 29,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.1
+    },
+    {
+     "c": [
+      {
+       "o": 5,
+       "k": "key",
+       "l": "Shift + click E8"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⌘ + C"
+      }
+     ],
+     "b": null,
+     "w": 8,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.3
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "time": "30:34",
+   "title": "New document",
+   "window": "Dock, then output doc (Firefox)",
+   "do": "Move down to the Dock on the left and click the minimised output doc so it comes back up. This is where the write-up goes.",
+   "type": "nothing",
+   "say": [
+    "\"Step 26: alright, now I'm moving my cursor down to the Dock again, on the left, and clicking the minimised output doc so it comes back up. This is where the write-up goes.\""
+   ],
+   "image": "images/24.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 85,
+       "k": "click",
+       "l": "output doc (Dock)"
+      }
+     ],
+     "b": null,
+     "w": 33,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.0
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "time": "30:43",
+   "title": "Heading and table",
+   "window": "Google Docs: output doc",
+   "do": "Move down into the body of the doc, to the first line, and click so the text cursor is in (pause 1 s). Type jump01 overnight SSH triage, 20 Oct (speak while typing, no pause). Glance at the first letter: if Docs capitalised the j, press Command Z to keep the hostname lowercase; if not, carry on. Press Return for a new line under the heading. Press Command V on that new line. A Paste table box pops up in the middle, asking about linking to the sheet: move to Paste unlinked and pick it (pause 1 s), so the note stays fixed if the sheet changes. Then click Paste at the bottom right of the box (pause 1 s). Read under the heading: the table is in, seven rows by five columns, decisions in the last one. Check: the doc's first row shows 18 for 203.0.113.45, and D3 in the sheet says 18, so they match.",
+   "type": "jump01 overnight SSH triage, 20 Oct",
+   "say": [
+    "\"Step 27: heading and table. I'm moving my cursor down into the doc body, to the first line, and clicking so the text cursor's in.\"",
+    "\"Okay, typing jump01 overnight SSH triage, 20 Oct, since every line's from that night.\"",
+    "\"Glancing up at the first letter, to see if Docs capitalised the j.\"",
+    "\"If it did, I'm pressing Command Z to keep the hostname lowercase. If it stayed lowercase, I'm just carrying on.\"",
+    "\"Pressing Return for a new line under the heading.\"",
+    "\"Command V on that new line, pasting the table in.\"",
+    "\"A Paste table box pops up in the middle, asking about linking.\"",
+    "\"In the box I'm moving my cursor to Paste unlinked and picking it, so the note stays fixed if the sheet changes.\"",
+    "\"Then down to Paste at the bottom right. Clicking it to drop the table in.\"",
+    "\"Below the heading the table's in, seven rows by five columns, decisions in the last one.\"",
+    "\"The doc's first row shows 18 for 203.0.113.45, and D3 in the sheet says 18. They match.\""
+   ],
+   "image": "images/25.png",
+   "imageSource": "shots/41.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 97,
+       "k": "click",
+       "l": "first line of body"
+      },
+      {
+       "o": 105,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 12.1
+    },
+    {
+     "c": [
+      {
+       "o": 7,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "jump01 overnight SSH triage, 20 Oct",
+     "w": 14,
+     "fl": 8.8,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.4
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.3
+    },
+    {
+     "c": [
+      {
+       "o": 16,
+       "k": "key",
+       "l": "⌘ + Z (only if j is capital)"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 2.9
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 9,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⌘ + V"
+      }
+     ],
+     "b": null,
+     "w": 10,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [
+      {
+       "o": 50,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 55,
+       "k": "click",
+       "l": "Paste unlinked"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [
+      {
+       "o": 41,
+       "k": "click",
+       "l": "Paste"
+      },
+      {
+       "o": 52,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.1
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "time": "32:00",
+   "title": "Write the action lines",
+   "window": "Google Docs: output doc",
+   "do": "You decide every IP and reason in the <...> parts live, from the decisions in column E; nothing in them is pre-written. Speak them as you type. 1. Move down to just under the table and click so the text cursor sits under it (pause 1 s). 2. On the new line type the Block line: Block (temporary, 24h here): <IPs marked Block in column E>, failure storms, no login. Say the Block IPs first, with a comma after, then failure storms and no login as the reason. 3. Press Return. 4. Type the Watch line: Watch: <first Watch IP> (<its reason>) and <remaining Watch IPs> (<their reasons>). Say the first Watch IP and its reason, because it got in, then the remaining Watch IPs and reasons, to check each login. 5. Method to say: account action when the IP logged in with a real account; block when there was no success and the pattern is guessing. Those got in, so it is an account problem, not a block. 6. Press Return. 7. Type the Ignore line: Ignore: <first Ignore IP> (<its reason>) and <remaining Ignore IPs> (<their reasons>). SOC on-call owns it. Say the first Ignore IP and its reason, then the remaining Ignore IPs and reasons, and that SOC on-call owns it. 8. Read it back: the three action lines sit under the table.",
+   "type": "Block (temporary, 24h here): <IPs marked Block in column E>, failure storms, no login.\nWatch: <first Watch IP> (<its reason>) and <remaining Watch IPs> (<their reasons>).\nIgnore: <first Ignore IP> (<its reason>) and <remaining Ignore IPs> (<their reasons>). SOC on-call owns it.",
+   "say": [
+    "\"Step 28: the action lines. I'm moving my cursor down to just under the table. Clicking, so the cursor sits below it.\"",
+    "\"On the line below, typing Block, temporary, 24h here, then [say the IPs marked Block in column E], comma after.\"",
+    "\"Then failure storms and no login, so the reason's there.\"",
+    "\"Pressing Return for the next line.\"",
+    "\"On the Watch line below, typing the word Watch and a colon, then [say the first IP marked Watch in column E] and [say its reason], because it got in.\"",
+    "\"Same line, typing [say the remaining Watch IPs from column E] with [say their reasons], to check each login.\"",
+    "\"Those got in, so it's an account problem, not a block.\"",
+    "\"Pressing Return for the Ignore line below.\"",
+    "\"On the Ignore line below, typing the word Ignore and a colon, then [say the first IP marked Ignore in column E] and [say its reason], since column E says so.\"",
+    "\"At the end, typing [say the remaining Ignore IPs from column E] with [say their reasons], and SOC on-call owns it.\"",
+    "\"Reading it back, the three action lines sit under the table.\""
+   ],
+   "image": "images/26.png",
+   "imageSource": "shots/44.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 79,
+       "k": "click",
+       "l": "line under table"
+      },
+      {
+       "o": 87,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [
+      {
+       "o": 20,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Block (temporary, 24h here): <Block IPs>,",
+     "w": 20,
+     "fl": 10.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.0
+    },
+    {
+     "c": [
+      {
+       "o": 6,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "… failure storms, no login.",
+     "w": 10,
+     "fl": 6.8,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.6
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 6,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [
+      {
+       "o": 26,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Watch: <Watch IP 1> (<why>)",
+     "w": 30,
+     "fl": 6.8,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.5
+    },
+    {
+     "c": [
+      {
+       "o": 12,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "… and <Watch IP 2> (<why>).",
+     "w": 19,
+     "fl": 6.8,
+     "ps": 0,
+     "wt": 0,
+     "sec": 12.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 7,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 3.4
+    },
+    {
+     "c": [
+      {
+       "o": 27,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Ignore: <Ignore IP 1> (<why>)",
+     "w": 31,
+     "fl": 7.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.7
+    },
+    {
+     "c": [
+      {
+       "o": 13,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "… and <Ignore IP 2> (<why>). SOC on-call owns it.",
+     "w": 21,
+     "fl": 12.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.0
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "time": "33:34",
+   "title": "Download the note",
+   "window": "Google Docs: output doc > Save dialog > preview",
+   "do": "Move up to the Docs menu bar, over to File on the left. Left click File (pause 1 s). Go down the list to Download; a side menu opens to the right with the formats. Move across to Microsoft Word (.docx) and click it (pause 1 s), since the brief wants .docx. In the save box click Documents in the left sidebar (pause 1 s), then double-click Project in the list (pause 1 s). Read the Save As field at the top: final output 2.docx. Click Save at the bottom right (pause 1 s). In the Firefox toolbar the downloads icon shows final output 2 finished, no error. Move onto its row in the downloads panel and click that row (pause 1 s) to open the export once. In the preview read the heading, the table and the three action lines. Click the red close button at the top left of the preview (pause 1 s).",
+   "type": "nothing",
+   "say": [
+    "\"Step 29: saving the note as Word. I'm moving my cursor up to the Docs menu bar, over to File on the left.\"",
+    "\"Left click on File to open its list.\"",
+    "\"Then down the list to Download, and a side menu opens to the right with the formats.\"",
+    "\"I'm moving across to the right, to Microsoft Word, dot docx, and clicking it, since the brief wants .docx.\"",
+    "\"The save box opens. My cursor goes to Documents in the left sidebar, clicking it, to keep it with the inputs.\"",
+    "\"Then over to Project in the list, double-clicking to save in there.\"",
+    "\"The Save As field at the top reads final output 2, dot docx, so that's right.\"",
+    "\"Down to Save at the bottom right, pressing it to write the file.\"",
+    "\"Up in the toolbar, the downloads icon shows final output 2 finished, no error.\"",
+    "\"I'm moving my cursor down onto its row in the downloads panel, and clicking that row, so I can open the export once and check it.\"",
+    "\"The preview's got the heading, the table and three action lines.\"",
+    "\"Then up to the red close button at the top left of the preview, and clicking it, since I'm done checking.\""
+   ],
+   "image": "images/27.png",
+   "imageSource": "shots/47-annotated.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 39,
+       "k": "move",
+       "l": "File (Docs menu bar)"
+      }
+     ],
+     "b": null,
+     "w": 23,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.6
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "File"
+      },
+      {
+       "o": 19,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 8,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [
+      {
+       "o": 6,
+       "k": "move",
+       "l": "Download (submenu opens)"
+      },
+      {
+       "o": 31,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.8
+    },
+    {
+     "c": [
+      {
+       "o": 60,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 66,
+       "k": "click",
+       "l": "Microsoft Word .docx"
+      }
+     ],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 6.7
+    },
+    {
+     "c": [
+      {
+       "o": 70,
+       "k": "click",
+       "l": "Documents (sidebar)"
+      },
+      {
+       "o": 81,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [
+      {
+       "o": 35,
+       "k": "dbl",
+       "l": "Project"
+      },
+      {
+       "o": 50,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.3
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [
+      {
+       "o": 35,
+       "k": "click",
+       "l": "Save"
+      },
+      {
+       "o": 46,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.7
+    },
+    {
+     "c": [
+      {
+       "o": 68,
+       "k": "click",
+       "l": "final output 2 row"
+      },
+      {
+       "o": 85,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 69,
+       "k": "click",
+       "l": "red close button"
+      },
+      {
+       "o": 80,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    }
+   ]
+  },
+  {
+   "n": 30,
+   "time": "35:10",
+   "title": "Download the sheet",
+   "window": "Dock, Google Sheets > Save dialog > preview",
+   "do": "Move down the Dock on the left to the minimised sheets window and click it to bring the sheet back up. Go up to the Sheets menu bar, File on the left, and click it (pause 1 s). Down the list to Download; the formats slide out to its right. Across to Microsoft Excel (.xlsx), select it (pause 1 s), since the brief asks for .xlsx. In the save box click the Save As field at the top (pause 1 s) because the title is not the brief's name. Press Command A so the old name is selected, then type final output 1. Click Documents in the left sidebar (pause 1 s), then double-click Project in the list on the right (pause 1 s). Click Save at the bottom right. The downloads panel up top lists final output 1.xlsx, finished, no error. Move onto its row and click it (pause 1 s) to check both tabs made it in. In the preview, Sheet1 and Pivot Table 1 are both there. Click the red close button at the top left of the preview (pause 1 s).",
+   "type": "final output 1",
+   "say": [
+    "\"Step 30: okay, moving my cursor down the Dock on the left, to the minimised sheets window, and clicking it to bring the sheet back up.\"",
+    "\"Up to the Sheets menu bar, to File on the left.\"",
+    "\"Clicking File with a left click to open the menu.\"",
+    "\"Down the list to Download, and the formats slide out to its right.\"",
+    "\"Across to the right, to Microsoft Excel, dot xlsx, selecting it, since the brief asks for .xlsx.\"",
+    "\"I'm clicking the Save As field at the top, because the title isn't the brief's name.\"",
+    "\"Pressing Command A, so the old name's selected.\"",
+    "\"Typing final output 1, the brief's name.\"",
+    "\"My cursor goes to Documents in the left sidebar, a click on it, to save beside the other files.\"",
+    "\"Over to Project on the right, a double-click to open it.\"",
+    "\"Down to Save at the bottom right, clicking it to write the Excel file.\"",
+    "\"The downloads panel up top lists final output 1, finished.\"",
+    "\"I'm moving my cursor down onto the final output 1 row in the downloads panel, and clicking it, to check both tabs made it in.\"",
+    "\"Sheet1 and Pivot Table 1 are both there in the preview.\"",
+    "\"Then up to the red close button at the top left of the preview, and a click on it closes it.\""
+   ],
+   "image": "images/28.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 96,
+       "k": "click",
+       "l": "sheets window (Dock)"
+      }
+     ],
+     "b": null,
+     "w": 26,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.0
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "move",
+       "l": "File (Sheets menu bar)"
+      }
+     ],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.8
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "File"
+      },
+      {
+       "o": 14,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 10,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "move",
+       "l": "Download (submenu opens)"
+      },
+      {
+       "o": 26,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 6.3
+    },
+    {
+     "c": [
+      {
+       "o": 50,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 52,
+       "k": "click",
+       "l": "Microsoft Excel .xlsx"
+      }
+     ],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 6.7
+    },
+    {
+     "c": [
+      {
+       "o": 5,
+       "k": "click",
+       "l": "Save As field"
+      },
+      {
+       "o": 31,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 6.8
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⌘ + A"
+      }
+     ],
+     "b": null,
+     "w": 8,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.3
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "final output 1",
+     "w": 7,
+     "fl": 3.5,
+     "ps": 0,
+     "wt": 0,
+     "sec": 2.4
+    },
+    {
+     "c": [
+      {
+       "o": 50,
+       "k": "click",
+       "l": "Documents (sidebar)"
+      },
+      {
+       "o": 63,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [
+      {
+       "o": 31,
+       "k": "dbl",
+       "l": "Project"
+      },
+      {
+       "o": 45,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 35,
+       "k": "click",
+       "l": "Save"
+      },
+      {
+       "o": 43,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 10,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [
+      {
+       "o": 83,
+       "k": "click",
+       "l": "final output 1 row"
+      },
+      {
+       "o": 94,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 11,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [
+      {
+       "o": 69,
+       "k": "click",
+       "l": "red close button"
+      },
+      {
+       "o": 92,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 8.2
+    }
+   ]
+  },
+  {
+   "n": 31,
+   "time": "36:56",
+   "title": "Back to Terminal",
+   "window": "Firefox, Dock, Terminal",
+   "do": "Move to the top left of the Firefox window and click the yellow minimise button (pause 1 s after \"the minimise button\") to get it out of the way. Go down to the Dock on the left edge, looking for Terminal. Rest on its icon until the label shows, then click it (pause 1 s); the raw log is the second source.",
+   "type": "nothing",
+   "say": [
+    "\"Step 31: back to Terminal. I'm moving my cursor to the top left of Firefox, to the minimise button, and clicking it to get it out of the way.\"",
+    "\"Then down to the Dock on the left edge, looking for Terminal.\"",
+    "\"My cursor's on its icon and the label shows. Clicking it, because the raw log's my second source.\""
+   ],
+   "image": "images/29.png",
+   "imageSource": "shots/49.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 99,
+       "k": "pause",
+       "l": "pause 1 s"
+      },
+      {
+       "o": 105,
+       "k": "click",
+       "l": "yellow minimise (Firefox)"
+      }
+     ],
+     "b": null,
+     "w": 29,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "move",
+       "l": "Dock, Terminal icon"
+      }
+     ],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 5.3
+    },
+    {
+     "c": [
+      {
+       "o": 46,
+       "k": "click",
+       "l": "Terminal (Dock)"
+      },
+      {
+       "o": 57,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 9.7
+    }
+   ]
+  },
+  {
+   "n": 32,
+   "time": "37:22",
+   "title": "Per-IP failures from the raw log",
+   "window": "Terminal window",
+   "do": "Full command: grep 'Failed password' auth-jump01.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -rn  Typed in two parts. In the Terminal window type grep 'Failed password' auth-jump01.log | awk '{print $(NF-3)}' (grep Failed password, then the log name, piped to awk, the fourth field from the end, because invalid user lines are longer so a fixed field would grab the wrong word). Continue on the same line with  | sort | uniq -c | sort -rn (leading space), so each IP gets a count, biggest first. Press Return. Read the counts under the prompt: 18 203.0.113.45, 14 198.51.100.23, 9 192.0.2.77, 7 198.51.100.140, 3 for the ten-dot address (10.20.4.11), 2 192.0.2.200. Method to say: $(NF-3) when lines differ in word count (invalid user lines add words); a fixed field only when every line has the same shape. Counting from the raw log, not the sheet, means an import slip would show. Check those six against D3:D8 in the pivot, 18, 14, 9, 7, 3, 2: all match.",
+   "type": "grep 'Failed password' auth-jump01.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -rn",
+   "say": [
+    "\"Step 32: failures per IP from the raw log. In the window, typing grep Failed password, then the log name, piped to awk, the fourth field from the end, because invalid user lines are longer so a fixed field would grab the wrong word.\"",
+    "\"Then sort, uniq dash c and sort dash r n, so each IP gets a count, biggest first.\"",
+    "\"Pressing Return, and the counts print below.\"",
+    "\"Below the prompt: 18 203.0.113.45, 14 198.51.100.23, 9 192.0.2.77, 7 198.51.100.140, 3 for the ten-dot address, and 2 192.0.2.200.\"",
+    "\"Counting from the raw log, not the sheet, so an import slip shows.\"",
+    "\"Those six against D3 to D8 in the pivot, 18, 14, 9, 7, 3, 2. All match.\""
+   ],
+   "image": "images/30.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 59,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "grep 'Failed password' auth-jump01.log | awk '<print $(NF-3)>'",
+     "w": 44,
+     "fl": 15.5,
+     "ps": 0,
+     "wt": 0,
+     "sec": 15.5
+    },
+    {
+     "c": [
+      {
+       "o": 6,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "… | sort | uniq -c | sort -rn",
+     "w": 18,
+     "fl": 7.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.0
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 7,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 4.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 13,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.8
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.6
+    }
+   ]
+  },
+  {
+   "n": 33,
+   "time": "38:16",
+   "title": "Successful logins per IP",
+   "window": "Terminal window",
+   "do": "At the prompt type grep 'Accepted' auth-jump01.log | grep -o 'from [0-9.]*' | sort | uniq -c and press Return. Read the three lines: 4 from 10.20.4.11, 1 from 192.0.2.77, 1 from 198.51.100.140. Check against the pivot: the ten-dot address was 1 plus 3, that is 4, and 1 each for the others, so all three match. Type grep -n \"192.0.2.77\" auth-jump01.log | tail -2 and press Return. Read the two lines: line 42, 03:45:49, Failed for svc_backup, then line 43, 03:52:34, Accepted, under seven minutes apart.",
+   "type": "grep 'Accepted' auth-jump01.log | grep -o 'from [0-9.]*' | sort | uniq -c\ngrep -n \"192.0.2.77\" auth-jump01.log | tail -2",
+   "say": [
+    "\"Step 33: logins per IP. In the window, typing grep Accepted, grep dash o on from and the IP, sort, uniq dash c, because publickey lines end in a key.\"",
+    "\"Pressing Return at the prompt to run it.\"",
+    "\"Okay, three lines below. 4 from the ten-dot address, 1 from 192.0.2.77, and 1 from 198.51.100.140.\"",
+    "\"The pivot had the ten-dot address at 1 plus 3, that's 4, and 1 each for the others, so all three match.\"",
+    "\"Then typing grep dash n for 192.0.2.77, tail dash 2, to see the failure and success in order.\"",
+    "\"Pressing Return at the prompt.\"",
+    "\"So line 42, 03:45:49, Failed for svc_backup, then line 43, 03:52:34, Accepted, under seven minutes apart.\""
+   ],
+   "image": "images/31.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 40,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "grep 'Accepted' auth-jump01.log | grep -o 'from [0-9.]*' | sort | uniq -c",
+     "w": 30,
+     "fl": 18.2,
+     "ps": 0,
+     "wt": 0,
+     "sec": 18.2
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 8,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 3.4
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 22,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 6,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "grep -n \"192.0.2.77\" auth-jump01.log | tail -2",
+     "w": 18,
+     "fl": 11.5,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "w": 5,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 2.9
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.2
+    }
+   ]
+  },
+  {
+   "n": 34,
+   "time": "39:17",
+   "title": "Final look at the pivot",
+   "window": "Terminal, Dock, Google Sheets: Pivot Table 1",
+   "do": "Move to the top left of the Terminal window and click the yellow minimise button (pause 1 s after \"Minimising Terminal\"). Move down the Dock on the left to the minimised sheets window and click it to bring the sheet back up. Go down to the bottom tabs and click Pivot Table 1 (pause 1 s) to end on the finished table. Read the final view: IPs ranked by failures, decisions in E3:E8, totals in E10:E12.",
+   "type": "nothing",
+   "say": [
+    "\"Step 34: back to the sheet. I'm moving my cursor to the top left of Terminal, to the yellow button. Minimising Terminal with a click.\"",
+    "\"Alright, moving my cursor down the Dock on the left, to the minimised sheets window, and clicking it to bring the sheet back up.\"",
+    "\"Now down to the bottom, to the Pivot Table 1 tab, and clicking it to end on the finished table.\"",
+    "\"So that's the result, IPs ranked by failures, decisions in E3 to E8, totals below.\""
+   ],
+   "image": "images/32.png",
+   "imageSource": "shots/54.png",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 101,
+       "k": "click",
+       "l": "yellow minimise (Terminal)"
+      },
+      {
+       "o": 120,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 10.6
+    },
+    {
+     "c": [
+      {
+       "o": 90,
+       "k": "click",
+       "l": "sheets window (Dock)"
+      }
+     ],
+     "b": null,
+     "w": 24,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.0
+    },
+    {
+     "c": [
+      {
+       "o": 55,
+       "k": "click",
+       "l": "Pivot Table 1 tab"
+      },
+      {
+       "o": 66,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 20,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.7
+    }
+   ]
+  },
+  {
+   "n": 35,
+   "time": "39:52",
+   "title": "Epilogue",
+   "window": "Pivot Table 1 on screen (Firefox)",
+   "do": "Epilogue: no clicks. Keep the pivot on screen and talk through six topics in order. 1. What you did start to finish: Terminal counts first, then the pivot. 2. The evidence behind your Block IPs: say them from column E. 3. Why your Watch IPs got account actions, a success after failures: say them from column E. 4. How the Terminal checks matched the sheet: 53 against the grep count, 59 rows against the 59 log lines. 5. What the two files contain and where they are: final output 1.xlsx and final output 2.docx in Documents, Project. 6. What you would do next with more time: a few more nights of logs.",
+   "type": "nothing",
+   "say": [
+    "\"Step 35: to wrap up, I counted in Terminal first, so the sheet had numbers to hit.\"",
+    "\"Then the pivot, which counts every IP and event, sorted riskiest first.\"",
+    "\"I read each IP's raw rows before choosing, since a count doesn't show who got in.\"",
+    "\"For [say the Block IPs from column E], the rows showed failure storms with no success.\"",
+    "\"On block length, fail2ban's default is ten minutes, though plenty of admins raise it to a day.\"",
+    "\"So the block is temporary, 24h here, easy to undo if an address is shared.\"",
+    "\"What's easy to miss is a success after failures. For [say the Watch IPs from column E], the rows showed that.\"",
+    "\"An address that got in is an account problem first, so those got account checks.\"",
+    "\"Blocking them could lock out a shared office and leave a stolen password working.\"",
+    "\"The pivot's grand total of 53 matched the grep count, and 59 rows matched the 59 log lines.\"",
+    "\"The tricky part was the log. Lines vary in length, so a fixed awk field grabs the wrong word.\"",
+    "\"After the export I recounted failures per IP from the raw log, and they matched column D, logins too.\"",
+    "\"The files are in Documents, Project. The first file, final output 1, is the sheet as .xlsx, raw rows on Sheet1 and the pivot on Pivot Table 1.\"",
+    "\"The second file, final output 2, is the note as .docx, with the 20 Oct heading, the table, and one action line per decision word.\"",
+    "\"I opened both after downloading, and the table is unlinked, so it won't drift.\"",
+    "\"With more time I'd pull a few more nights of logs, to see if these addresses come back.\"",
+    "\"I'd check whether any belong to a known office or VPN range before a longer block.\"",
+    "\"And I'd save the Terminal counts as a small script, so the cross-check runs every morning.\""
+   ],
+   "image": "images/33.png",
+   "imageSource": "shots/54.png",
+   "lines": [
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 12,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 17,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.7
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 21,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 15,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 6.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.6
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 28,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 10.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 25,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 14,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 7.2
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 18,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 9.1
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 16,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.0
+    }
+   ]
+  },
+  {
+   "n": 36,
+   "time": "42:33",
+   "title": "Close",
+   "window": "Pivot Table 1 on screen, then the recorder's Stop in the menu bar",
+   "do": "Rest the cursor on the pivot and look round the screen from top left to bottom right: no error dialogs, nothing unsaved, just the pivot. Keep the cursor off the grid and leave the pivot up on screen as the final view; close nothing else. Move up to the menu bar at the top right, to the recorder's Stop, and left click it (pause 1 s after \"stopping the recording\") to end the recording.",
+   "type": "nothing",
+   "say": [
+    "\"Step 36: okay, my cursor's resting on the pivot, and I'm looking round the screen from top left to bottom right. No errors, nothing unsaved, just the pivot.\"",
+    "\"So I'm keeping my cursor off the grid and leaving the pivot up on screen as the final view.\"",
+    "\"Now I'm moving my cursor up to the menu bar at the top right, to the recorder's Stop, and I'm left clicking it, stopping the recording now.\""
+   ],
+   "image": "images/34.png",
+   "imageSource": "shots/54.png",
+   "lines": [
+    {
+     "c": [],
+     "b": null,
+     "w": 28,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 11.5
+    },
+    {
+     "c": [],
+     "b": null,
+     "w": 19,
+     "fl": 0,
+     "ps": 0,
+     "wt": 0,
+     "sec": 8.7
+    },
+    {
+     "c": [
+      {
+       "o": 95,
+       "k": "click",
+       "l": "recorder Stop (menu bar)"
+      },
+      {
+       "o": 135,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "w": 27,
+     "fl": 0,
+     "ps": 1.0,
+     "wt": 0,
+     "sec": 11.0
+    }
+   ]
+  }
+ ]
+}
