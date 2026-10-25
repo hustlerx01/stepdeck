@@ -1,0 +1,1870 @@
+{
+ "title": "Short script v2.8.1 (flow tracker)",
+ "updated": "25 Oct 2026, 9:50 PM IST",
+ "steps": [
+  {
+   "n": 1,
+   "time": "0:00",
+   "title": "Opener",
+   "window": "The screen with the Dock on the left (Terminal icon and the other minimised windows; Goal doc off screen)",
+   "do": "Look at the screen: the Dock on the left shows the Terminal icon and the other minimised windows. The recorder card is already minimised and the Goal doc is not on screen, so nothing here minimises anything. Read the card sentence as printed, starting with \"Step 1:\", with the cursor still and no pause after \"in mind\". When the next step starts the cursor moves to the Terminal icon in the Dock.",
+   "type": "nothing",
+   "say": [
+    "\"Step 1: I will be beginning my task soon. Here is the workflow I have in mind.\""
+   ],
+   "image": "images/01.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 43,
+       "k": "move",
+       "l": "Dock on the left, cursor still"
+      }
+     ],
+     "b": null,
+     "q": "step 1 > recorder card > workflow in mind > Dock on the left"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "time": "0:08",
+   "title": "Terminal first look",
+   "window": "Dock, then the Terminal window (already open in Documents/Project)",
+   "do": "Move down the left Dock to the Terminal icon and click it to bring Terminal forward; it is already open in the project folder, so it is brought up, not launched. Pause 1 s after \"one click\". Look at the Terminal window: the \"$ \" prompt in Documents/Project. Rest the cursor beside the 59 at the start of the output once it appears. Drift the cursor from the Dock toward the prompt line, then at the prompt type wc -l auth-jump01.log while speaking, with no pause, then press Return. Drop the cursor onto the 59 at the start of the output line: 59 auth-jump01.log.",
+   "type": "wc -l auth-jump01.log",
+   "say": [
+    "\"Step 2: Terminal first. I'm moving my cursor across to the Dock on the left, down to the Terminal icon, and one click brings it forward.\"",
+    "\"Okay, Terminal's up in front, sitting in the project folder with just a dollar sign for a prompt, so there's nothing else cluttering the screen.\"",
+    "\"My cursor drifts over from the Dock toward the prompt line, and I'll type w c, space, dash l, space, then the log name, auth-jump01.log, right at that prompt. A plain line count comes first, so I've got something to check the sheet against, and then Return.\"",
+    "\"And there it is, my cursor dropping onto the 59 at the start of that output line, with the file name after it. So the log has 59 lines, and that's the row count I'll hold the sheet to later.\""
+   ],
+   "image": "images/02.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 109,
+       "k": "click",
+       "l": "Terminal (Dock)"
+      },
+      {
+       "o": 118,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 2 > cursor > Dock left edge > Terminal icon > click > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "Terminal window > $ prompt > project folder"
+    },
+    {
+     "c": [
+      {
+       "o": 65,
+       "k": "type",
+       "l": ""
+      },
+      {
+       "o": 251,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": "wc -l auth-jump01.log, then ⏎",
+     "q": "cursor from Dock > prompt > wc -l auth-jump01.log > return"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > output line > 59 > auth-jump01.log"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "time": "1:16",
+   "title": "Count failed, unknown-account and successful logins",
+   "window": "Terminal window",
+   "do": "Drop the cursor to the fresh prompt line at the bottom of the window, then type grep -c \"Failed password\" auth-jump01.log while speaking, with no pause, then press Return. Rest the cursor on the 53 in the output. Drift the cursor down beside the next prompt line, then type grep -c \"invalid user\" auth-jump01.log while speaking, with no pause, then press Return. Slide the cursor down onto the 14 in the output. Move the cursor between the 53 and the 14: these are the bar the pivot has to hit, and if the pivot is not 53, a row went astray. Slide the cursor down the left side of the text to the new prompt, then type grep 'Accepted' auth-jump01.log (Accepted in single quotes) while speaking, with no pause, then press Return. Sweep the cursor down the six Accepted lines: three publickey, three password, from svc_backup, jsmith and ops.admin. Rest the cursor on the second line, the 03:52:34 line, Accepted password for svc_backup, and say you will come back to it. Rest the cursor on the password lines and say an IP that failed and then got in needs its account checked, so those IPs are compared in the sheet first.",
+   "type": "grep -c \"Failed password\" auth-jump01.log\ngrep -c \"invalid user\" auth-jump01.log\ngrep 'Accepted' auth-jump01.log",
+   "say": [
+    "\"Step 3: the failures, as a number to hit. My cursor drops down to the fresh prompt line at the bottom of the Terminal window, and I'm typing grep, dash c, then Failed password in double quotes, the log name, and Return, which counts every line with that phrase.\"",
+    "\"Okay, 53, and my cursor rests right on it in the output. So 53 lines are failed passwords, and that's the total the pivot has to land on later.\"",
+    "\"Now a second one just underneath. My cursor drifts down beside that next prompt line, and I'm typing the same grep dash c, but with invalid user in quotes this time, and Return, because I want the tries on accounts that don't exist on this server.\"",
+    "\"Fourteen, and my cursor slides down onto it in the output. So 14 of those tries were on usernames that aren't real accounts, which says somebody was guessing names, not just fumbling a password.\"",
+    "\"So I've got two numbers to carry forward, my cursor going between the 53 and the 14. The 53 is the bar for the pivot, and if it comes out different, something's missing and I'd check my grep. The 14 just shows how much of this is name guessing.\"",
+    "\"Next, who actually got in. My cursor slides down the left side of the text to the new prompt, and I'm typing grep once more, with Accepted inside single quotes, then the log name, and Return, so every successful login prints in one list.\"",
+    "\"Right, six Accepted lines, three publickey and three password. My cursor runs down them, and the names are svc_backup, jsmith and ops.admin, with ops.admin on all three publickey lines. It's the password ones I'll focus on.\"",
+    "\"Let me bring my cursor to rest on the second line down, 03:52:34, Accepted password for svc_backup. Hmm, that's a password login, so I'll come back to that one.\"",
+    "\"So here's how I'll handle those, with my cursor resting on the password lines. If an address failed first and then got in, that needs a look at the account, and Terminal can't show that cleanly. I'll compare them in the sheet, next to the failures, before I decide.\""
+   ],
+   "image": "images/03.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 131,
+       "k": "type",
+       "l": ""
+      },
+      {
+       "o": 213,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": "grep -c \"Failed password\" auth-jump01.log, then ⏎",
+     "q": "step 3 > cursor down > prompt line > grep -c \"Failed password\" > return"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor rests > output > 53"
+    },
+    {
+     "c": [
+      {
+       "o": 91,
+       "k": "type",
+       "l": ""
+      },
+      {
+       "o": 171,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": "grep -c \"invalid user\" auth-jump01.log, then ⏎",
+     "q": "cursor drifts down > second prompt > grep -c \"invalid user\" > return"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor slides down > output > 14"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > 53 > 14 > both counts"
+    },
+    {
+     "c": [
+      {
+       "o": 99,
+       "k": "type",
+       "l": ""
+      },
+      {
+       "o": 185,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": "grep 'Accepted' auth-jump01.log, then ⏎",
+     "q": "cursor slides down > new prompt > grep 'Accepted' > return > list prints"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor down > six Accepted lines > publickey > password"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > second line > 03:52:34 > svc_backup"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > password lines > Accepted password"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "time": "4:13",
+   "title": "Leave Terminal for the sheet",
+   "window": "Terminal window, then the Dock, then Google Sheets in Firefox",
+   "do": "Move to the yellow minimise button at the top left of the Terminal window and left click it. Pause 1 s after \"a left click\". Move to the left Dock and click the minimised sheets window to bring the sheet back. Pause 1 s after \"pressing it\". Bring the cursor up off the Dock into the grid and look at Google Sheets in Firefox: the log data is already in the grid, on the auth-jump01-excerpt tab at the bottom left.",
+   "type": "nothing",
+   "say": [
+    "\"Step 4: that's Terminal done for now. I'm moving my cursor up to the top left of its window, to the yellow button, and a left click on it minimises the window.\"",
+    "\"Now I need the sheet back. Over on the left Dock is the minimised sheets window, so I'm moving down to it and pressing it, and the sheet comes up with the log data already in it.\"",
+    "\"There's Google Sheets, my cursor coming up off the Dock into the grid, and the log data is already in the sheet, so there's nothing to set up first. Down at the bottom left the tab is called auth-jump01-excerpt, and that's the data tab I'll be working from.\""
+   ],
+   "image": "images/04.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 120,
+       "k": "click",
+       "l": "yellow minimise (Terminal)"
+      },
+      {
+       "o": 132,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 4 > cursor > yellow button > Terminal window > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 111,
+       "k": "click",
+       "l": "sheets window (Dock)"
+      },
+      {
+       "o": 122,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor > left Dock > minimised sheets > press > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "sheets window > grid > bottom left tab > auth-jump01-excerpt"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "time": "5:12",
+   "title": "Check the data in the sheet",
+   "window": "Google Sheets: auth-jump01-excerpt tab, header row and column G",
+   "do": "Slide the cursor along row 1 from A1 to G1: timestamp, host, event, user, invalid user, src ip, decision. src ip is column F. Drop the cursor down column G, decision, and hold it there: it is empty all the way down. Hold Command and press Down while speaking, with no pause, and rest the cursor on the row 60 number at the left edge. Check it against Terminal: 60 minus the header is 59 and Terminal said 59, so nothing dropped. Hold Command and press Up while speaking, with no pause, to go back to the top row, and rest the cursor on the row 1 number at the left edge.",
+   "type": "nothing",
+   "say": [
+    "\"Step 5: before I build anything, I want to see what's here. Row 1 first, and I'm sliding my cursor from A1 along to G1 as I read it: timestamp, host, event, user, invalid user, src ip and decision. So src ip is column F, the one I'll filter on.\"",
+    "\"Then column G, the decision column. My cursor drops down it, and it's empty the whole way, so nothing's been decided yet.\"",
+    "\"To see where the data ends, I'm holding Command and pressing Down. That jumps to the last row, and my cursor rests on the number at the left edge, which says 60.\"",
+    "\"Sixty rows, minus the header, is 59 rows of data, and my line count from earlier was 59 too. Same number, so nothing got dropped on the way in.\"",
+    "\"Alright, that's the size confirmed, so I'm holding Command and pressing Up, and the view jumps back to the top row, with my cursor resting on the row 1 number at the left edge, ready for the next job.\""
+   ],
+   "image": "images/05.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [],
+     "b": null,
+     "q": "step 5 > cursor > A1 > along row 1 > G1"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > column G > empty cells"
+    },
+    {
+     "c": [
+      {
+       "o": 33,
+       "k": "key",
+       "l": "⌘ Down"
+      }
+     ],
+     "b": null,
+     "q": "command down > last row > cursor > 60 at left edge"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "row 60 > minus header > 59 > line count from earlier"
+    },
+    {
+     "c": [
+      {
+       "o": 44,
+       "k": "key",
+       "l": "⌘ Up"
+      }
+     ],
+     "b": null,
+     "q": "command up > top row > cursor > row 1 number"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "time": "6:35",
+   "title": "Freeze the header and add a filter from the Data menu",
+   "window": "Google Sheets: View menu, then Data menu",
+   "do": "Move up to the Sheets menu bar and slide along the menus, hesitating as you look for View, then left click it. Pause 1 s after \"a left click\". Move down the View list to Freeze; a menu slides out on the right. Pause 1 s after \"slides out\". Move across into the side menu, down to 1 row, and select it. Pause 1 s after \"selecting it\". Move over to Data in the menu bar and left click it. Pause 1 s after \"a left click\". Move down the Data list to Create a filter and select it. Pause 1 s after \"choosing it\". Look along row 1: there is a filter icon in every header, A1 to G1.",
+   "type": "nothing",
+   "say": [
+    "\"Step 6: freezing the header row. My cursor goes up to the menu bar in Sheets and over along the menus, hmm, let me see, there, View, that's where the freeze options are, and a left click opens it.\"",
+    "\"Moving down the View list I pass a few items before I get to Freeze, and as my pointer settles on it a menu slides out to the right.\"",
+    "\"I'm sliding across into that side menu, down to the choice I want, 1 row, because selecting it keeps the column names stuck at the top while I scroll through the data.\"",
+    "\"Now the filter. Back up in the menu bar, a few menus along, there's Data, and a left click opens it, because the filter option lives in there.\"",
+    "\"Down the Data list to Create a filter, and I'm choosing it, so every header cell gets its own little filter button.\"",
+    "\"And there they are, a little filter icon in every header cell, from A1 across to G1, so I can narrow the rows by any column when I need to.\""
+   ],
+   "image": "images/06.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 175,
+       "k": "click",
+       "l": "View (menu bar)"
+      },
+      {
+       "o": 187,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 6 > cursor up > menu bar > View > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 62,
+       "k": "click",
+       "l": "Freeze"
+      },
+      {
+       "o": 119,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "View list > down > Freeze > side menu > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 83,
+       "k": "click",
+       "l": "1 row"
+      },
+      {
+       "o": 95,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "side menu > 1 row > select > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 79,
+       "k": "click",
+       "l": "Data (menu bar)"
+      },
+      {
+       "o": 91,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "menu bar > Data > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 44,
+       "k": "click",
+       "l": "Create a filter"
+      },
+      {
+       "o": 59,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Data list > down > Create a filter > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "header row > filter icons > A1 to G1"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "time": "8:06",
+   "title": "Build the pivot table",
+   "window": "Google Sheets: Insert menu, Create pivot table box, then the pivot editor on the right",
+   "do": "Move down to cell A1 and click it. Pause 1 s after \"clicking it\". Press Command A while speaking, with no pause, then move up to the name box at the top left and read it: A1:G60. Move up to Insert in the menu bar and open it. Pause 1 s after \"opens its list\". Move down the Insert list to Pivot table and choose it. Pause 1 s after \"I select it\". In the Create pivot table box pick New sheet. Pause 1 s after \"choosing New sheet\". Click Create at the bottom right of the box with a left click. Pause 1 s after \"a left click\". Slide the cursor along the bottom tabs onto Pivot Table 1, then up to the editor open on the right. Think aloud: one formula per pair is a lot of typing and a pivot counts them all at once, so the pivot. In the editor click Add beside Rows. Pause 1 s after \"clicking there\". In the list that drops down move to src_ip and click it. Pause 1 s after \"choosing it\". Move further down to Columns and click its Add button with a left click. Pause 1 s after \"clicking that\". From the list select event. Pause 1 s after \"I pick event\". Lower on the Columns card untick Show totals. Pause 1 s after \"unticking it\". Slide the cursor along the pivot's header row from left to right: Accepted password, Accepted publickey, Failed password. Move down to Values and click its Add button. Pause 1 s after \"clicking that\". In the list pick event. Pause 1 s after \"pick event\". Look lower on the value card at the Summarize by box to see what it is set to. If it already reads COUNTA, leave it and say so. Only if it reads SUM: open that dropdown, move down to COUNTA and pick it. Pause 1 s after \"pick it\". Say that each log line is one attempt, so COUNTA fits. Slide the cursor down the pivot to the Grand Total row at the bottom as the counts fill in.",
+   "type": "nothing",
+   "say": [
+    "\"Step 7: the pivot table. First the selection needs to start in the corner, so I'm moving my cursor to A1, the top left cell of the grid, and clicking it.\"",
+    "\"Command A selects the whole range, and then my cursor goes up to the name box at the top left, which now says A1 to G60, so every row and every column is in.\"",
+    "\"Over to the menu bar again, to Insert this time, and a left click on it opens its list.\"",
+    "\"I'm sliding down the Insert list, past the items above, to Pivot table. I want one row per address with a count for each event type, and that's what a pivot gives me, so I select it.\"",
+    "\"A Create pivot table box opens in the middle, offering a new sheet or an existing one, and I'm choosing New sheet, so the data tab stays exactly as it is.\"",
+    "\"Then my cursor goes to the Create button, at the bottom right of the box, and a left click builds it, so the pivot gets its own tab.\"",
+    "\"And a new tab has appeared along the bottom, called Pivot Table 1, so my cursor slides across the tabs to it and up to the editor open on the right.\"",
+    "\"Let me think for a second, with my cursor drifting across the grid toward the tabs at the bottom. I could type a COUNTIF for every address and event pair, but that's a lot of typing, and a pivot counts them all in one go, so pivot it is.\"",
+    "\"In the editor on the right there's a Rows section with an Add button, so I'm moving over to that and clicking there, because the addresses need to run down the side.\"",
+    "\"A list drops down with the column names, and I'm moving down it to src underscore ip and choosing it. That groups the rows by source address.\"",
+    "\"Further down the editor is Columns, with an Add button of its own. I'm moving down to it and clicking that, so the event types can go across the top.\"",
+    "\"In this list I pick event, since that's the type of each attempt, and every type then gets a column of its own.\"",
+    "\"Lower down on that Columns card there's a Show totals checkbox. I'm unticking it, because I don't need a row total, since the Failed password column already holds the failures.\"",
+    "\"Along the pivot's header row, then, my cursor slides left to right, and it reads Accepted password, Accepted publickey, then Failed password, one column for each event type.\"",
+    "\"Next, Values. A bit further down the editor there's a Values section with its own Add button, and I'm clicking that to tell the pivot what to count.\"",
+    "\"I pick event again in this list, because every log row has one, so counting event is the same as counting rows.\"",
+    "\"Lower on this value card is a Summarize by box, so my cursor goes down to it, to see what it's set to.\"",
+    "\"And it already reads COUNTA, which is exactly what I want, so I'll leave it alone.\"",
+    "\"If it had said SUM, I'd open that dropdown, go down to COUNTA and pick it.\"",
+    "\"COUNTA is right for this because every log line is one attempt, and it counts how many entries sit under each address and event, which is exactly the tally I'm after.\"",
+    "\"And there are the counts, filling in on the left, and my cursor runs down the pivot to a Grand Total row at the very bottom.\""
+   ],
+   "image": "images/07.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 142,
+       "k": "click",
+       "l": "cell A1"
+      },
+      {
+       "o": 153,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 7 > cursor > A1 > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⌘ A"
+      }
+     ],
+     "b": null,
+     "q": "command A > range selected > cursor up > name box A1:G60"
+    },
+    {
+     "c": [
+      {
+       "o": 54,
+       "k": "click",
+       "l": "Insert (menu bar)"
+      },
+      {
+       "o": 87,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "menu bar > Insert > click > list opens > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 168,
+       "k": "click",
+       "l": "Pivot table"
+      },
+      {
+       "o": 182,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Insert list > down > Pivot table > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 92,
+       "k": "click",
+       "l": "New sheet"
+      },
+      {
+       "o": 114,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Create pivot table box > New sheet > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 79,
+       "k": "click",
+       "l": "Create (bottom right)"
+      },
+      {
+       "o": 91,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "box bottom right > Create > click > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "bottom tabs > Pivot Table 1 > editor on right"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor drifts > grid > tabs at bottom > COUNTIF > pivot"
+    },
+    {
+     "c": [
+      {
+       "o": 102,
+       "k": "click",
+       "l": "Rows, Add"
+      },
+      {
+       "o": 116,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "editor right > Rows > Add > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 90,
+       "k": "click",
+       "l": "src_ip"
+      },
+      {
+       "o": 101,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "column list > down > src_ip > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 94,
+       "k": "click",
+       "l": "Columns, Add"
+      },
+      {
+       "o": 107,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "editor down > Columns > Add > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 14,
+       "k": "click",
+       "l": "event"
+      },
+      {
+       "o": 26,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Columns list > event > pick > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 65,
+       "k": "click",
+       "l": "untick Show totals"
+      },
+      {
+       "o": 81,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Columns card > Show totals box > untick > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "header row > left to right > Accepted password > Failed password"
+    },
+    {
+     "c": [
+      {
+       "o": 99,
+       "k": "click",
+       "l": "Values, Add"
+      },
+      {
+       "o": 116,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "editor down > Values > Add > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "event"
+      },
+      {
+       "o": 13,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Values list > event > pick > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "value card > down > Summarize by box"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "Summarize by > COUNTA > leave it"
+    },
+    {
+     "c": [
+      {
+       "o": 21,
+       "k": "click",
+       "l": "COUNTA"
+      },
+      {
+       "o": 74,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Summarize by dropdown > COUNTA > pick > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > COUNTA > SUM > numbers only"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "pivot > counts fill > down > Grand Total row"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "time": "13:03",
+   "title": "Sort, check the total and read the ranking",
+   "window": "Google Sheets: Pivot Table 1 and its editor",
+   "do": "On the Rows card open Order and choose Descending. Pause 1 s after \"choosing Descending\". Under it, on the same card, open Sort by and pick Failed password. Pause 1 s after \"picking Failed password\". Run the cursor down the Failed password column, top address row to bottom address row: 18, 14, 9, 7, 3, 2. Hold the cursor on the first address row and say you start at the top with the 18, so the worst is judged first. Aim at the top right of the editor, not the window, and click its close icon. Pause 1 s after \"pressing that\". Click the Grand Total cell in the Failed password column. Pause 1 s after \"left click\". Move the cursor from the Grand Total up to the Failed password header and back down to the 53, and read it: 53, the same as the grep count in Terminal, so no row went astray.",
+   "type": "nothing",
+   "say": [
+    "\"Step 8: biggest first. In the Rows card there's an Order setting, so I'm moving over to it and choosing Descending, which puts the larger counts at the top.\"",
+    "\"Just underneath is Sort by. I open that list and go for Failed password, picking Failed password so the address with the most failures lands on the first row.\"",
+    "\"Okay, now I'm running my cursor down the Failed password column, from the top address row to the bottom one, and the counts go 18, 14, 9, 7, 3 and 2.\"",
+    "\"So that's the order I'll walk them in, with my cursor resting on the first address row, most failures to fewest, and the 18 gets judged first, because the biggest pile is the biggest risk.\"",
+    "\"The editor's taking up room, so my cursor goes to its top right corner, let me see, the editor's own corner, not the window's, where the close icon is. Pressing that clears the panel, and I can see the whole pivot.\"",
+    "\"Now down to the Grand Total row in the Failed password column. My cursor lands on that cell and a left click selects it, so I can read the failure total.\"",
+    "\"My cursor goes from the Grand Total up to the Failed password header and back down to the 53. It reads 53, and the grep from earlier said 53 too. So the two totals match, and the pivot hasn't lost or doubled anything.\""
+   ],
+   "image": "images/08.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 96,
+       "k": "click",
+       "l": "Order, Descending"
+      },
+      {
+       "o": 115,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 8 > Rows card > Order > Descending > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 74,
+       "k": "click",
+       "l": "Sort by, Failed password"
+      },
+      {
+       "o": 97,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Sort by > list > Failed password > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor down > Failed password column > 18 14 9 7 3 2"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "first address row > 18 > biggest first"
+    },
+    {
+     "c": [
+      {
+       "o": 153,
+       "k": "click",
+       "l": "editor close icon"
+      },
+      {
+       "o": 166,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "editor top right > close icon > press > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 97,
+       "k": "click",
+       "l": "Grand Total cell"
+      },
+      {
+       "o": 109,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor > Grand Total row > Failed password cell > click > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "Grand Total > header and back > 53 > grep from earlier > match"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "time": "15:02",
+   "title": "Filter, read and mark the top pivot row",
+   "window": "Google Sheets: auth-jump01-excerpt tab, src_ip filter in F1",
+   "do": "Click the auth-jump01-excerpt tab at the bottom left. Pause 1 s after \"clicking the auth-jump01-excerpt tab\". Click the filter icon at the right edge of F1. Pause 1 s after \"clicking that\". Under Filter by values press Clear. Pause 1 s after \"pressing Clear\". Count down the value list, fifth then sixth and last entry, 203.0.113.45, and tick that one. Pause 1 s after \"I tick that one\". Click OK at the bottom right of the panel with a left click. Pause 1 s after \"a left click\". Drag down column F over the filtered cells, first cell to last, so they all highlight. Slide the cursor from the selected cells to the count at the bottom right: 18, every row a Failed password. Run the cursor along columns D and E: root and admin in D, no in E on every row, 01:12:00 to 01:16:05, and no Accepted line. Hold the cursor on column D and say the verdict: Block.",
+   "type": "nothing",
+   "say": [
+    "\"Step 9: the top address, 18 failures. The pivot only has counts and I want usernames and times, so my cursor goes to the bottom left, and I'm clicking the auth-jump01-excerpt tab to get the raw rows back.\"",
+    "\"Up in row 1, F1 is the src_ip header, with a small filter icon at its right edge, so I'm moving up to that icon and clicking that, and a list of values opens.\"",
+    "\"At the top of that panel, under Filter by values, there's a Clear link, so I'm pressing Clear. That unticks every address, and I can pick exactly one.\"",
+    "\"Now down the list of addresses, counting along, fifth, no, sorry, sixth and last, and I tick that one. It's the address with the most failures, so only its rows should come back.\"",
+    "\"Then to the OK button, at the bottom right of the panel, and a left click applies the filter.\"",
+    "\"Now I'm dragging down column F, from the first filtered cell to the last, so they all highlight, and there's a count in the bottom right corner of the window.\"",
+    "\"My cursor drops to that bottom right corner, and the count says 18, one for every row. So all 18 are this address.\"",
+    "\"Across the rows now. Column D is root and admin, root 11 times and admin 7. Column E says no on every row, so these are real account names, and column A runs from 01:12:00 to 01:16:05, about four minutes, with nothing Accepted.\"",
+    "\"So, the verdict on 203.0.113.45, my cursor holding on column D. It had 18 failures, root 11 times and admin 7, all inside about four minutes, from outside with no login, and those are the names guessing scripts try most. That fits my rule, so the call is Block.\""
+   ],
+   "image": "images/09.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 143,
+       "k": "click",
+       "l": "auth-jump01-excerpt tab"
+      },
+      {
+       "o": 179,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 9 > bottom left > auth-jump01-excerpt tab > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 117,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 130,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "row 1 > F1 > filter icon > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 80,
+       "k": "click",
+       "l": "Clear"
+      },
+      {
+       "o": 94,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "panel > Filter by values > Clear > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 87,
+       "k": "click",
+       "l": "tick the sixth entry"
+      },
+      {
+       "o": 102,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "value list > down > sixth entry > tick > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 62,
+       "k": "click",
+       "l": "OK (bottom right)"
+      },
+      {
+       "o": 74,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "panel bottom right > OK > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 9,
+       "k": "drag",
+       "l": "column F, filtered cells"
+      }
+     ],
+     "b": null,
+     "q": "column F > drag down > filtered cells > count bottom right"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > bottom right corner > count 18"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "columns D E A > root admin > no > 01:12:00 to 01:16:05"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > column D > root 11 > admin 7 > no login > Block"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "time": "17:33",
+   "title": "Filter, read and mark the second pivot row",
+   "window": "Google Sheets: auth-jump01-excerpt tab, src_ip filter in F1",
+   "do": "Click the filter icon at the right edge of F1 again with a left click. Pause 1 s after \"a left click\". Press Clear under Filter by values, above the list. Pause 1 s after \"press it\". Count down the value list to the fifth entry, 198.51.100.23, and tick it. Pause 1 s after \"I tick it\". Click OK at the bottom right of the panel with a left click. Pause 1 s after \"clicking it\". Drag down column F over the filtered cells so the count shows. Slide the cursor from the selected cells to the count at the bottom right: 14, one row per failed try. Run the cursor along columns D and E, then up column A: test, ubuntu and oracle in D, yes on every row in E, 02:03:00 to 02:05:23 in A. Rest the cursor on the filtered rows in column D and say the verdict: Block.",
+   "type": "nothing",
+   "say": [
+    "\"Step 10: the second one down. I'm taking my cursor back up to F1 and its filter icon, and a left click opens the address list again.\"",
+    "\"The Clear link first, above the list, and I press it, so the old tick goes and I'm starting from empty.\"",
+    "\"Counting down the addresses, the fifth entry is the one I want, and I tick it, so only that address stays in the list.\"",
+    "\"OK at the bottom right of the panel again, and I'm clicking it to apply the filter.\"",
+    "\"Same as before, I'm dragging down column F over the filtered cells, top to bottom, so the count shows up.\"",
+    "\"Down in the bottom right corner it says 14, and that's where my cursor slides to, so 14 rows for this address, one for every failed try.\"",
+    "\"Column D has three names, test, ubuntu and oracle, test 6 times, ubuntu 5 and oracle 3. Column E says yes on every row, so none of those accounts exist here, and column A runs from 02:03:00 to 02:05:23.\"",
+    "\"Next verdict, for 198.51.100.23, with my cursor resting on the filtered rows in column D: 14 failures, all on test, ubuntu and oracle, accounts that aren't on the server, and nothing was ever Accepted. From outside, well past five failures, no login, so that's a Block as well.\""
+   ],
+   "image": "images/10.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 91,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 103,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 10 > cursor up > F1 > filter icon > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 43,
+       "k": "click",
+       "l": "Clear"
+      },
+      {
+       "o": 53,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "list top > Clear link > press > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 69,
+       "k": "click",
+       "l": "tick the fifth entry"
+      },
+      {
+       "o": 78,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "value list > fifth entry > tick > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 52,
+       "k": "click",
+       "l": "OK (bottom right)"
+      },
+      {
+       "o": 63,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "panel > OK button > filter applied > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 21,
+       "k": "drag",
+       "l": "column F, filtered cells"
+      }
+     ],
+     "b": null,
+     "q": "column F > drag down > filtered cells"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor slides > bottom right > count > 14"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "columns D E > test ubuntu oracle > yes > 02:03:00 to 02:05:23"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > column D > filtered rows > no login > Block"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "time": "19:26",
+   "title": "Clear the filter",
+   "window": "Google Sheets: auth-jump01-excerpt tab, filter panel",
+   "do": "Click the filter icon at the right edge of F1 one more time. Pause 1 s after \"left click\". Click Select all in the panel. Pause 1 s after \"clicking it\". Click OK at the bottom right of the panel to lift the filter. Pause 1 s after \"a click\". Check that row 60 is back and all 59 rows are showing.",
+   "type": "nothing",
+   "say": [
+    "\"Step 11: bringing every row back. My cursor goes up to F1's filter icon once more, and a left click opens the panel, so I can undo that filter.\"",
+    "\"Up near the top of the panel is Select all, so my cursor goes there, and I'm clicking it, so all six addresses are ticked again and all 59 rows can return.\"",
+    "\"Last, my cursor goes to OK in the panel's bottom right corner, and a click lifts the filter, so every row is back. And there's row 60 again, down at the bottom.\""
+   ],
+   "image": "images/11.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 88,
+       "k": "click",
+       "l": "F1 filter icon"
+      },
+      {
+       "o": 100,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 11 > cursor > F1 > filter icon > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 78,
+       "k": "click",
+       "l": "Select all"
+      },
+      {
+       "o": 89,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "panel > Select all > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 68,
+       "k": "click",
+       "l": "OK (bottom right)"
+      },
+      {
+       "o": 75,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor > panel bottom right > OK > row 60 back > pause 1s"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "time": "20:14",
+   "title": "Read and mark the other four rows",
+   "window": "Google Sheets: Pivot Table 1, the six address rows",
+   "do": "Click the Pivot Table 1 tab at the bottom. Pause 1 s after \"a click\". Rest the cursor on the third address row and run it right along its counts: Failed password 9, Accepted password 1, Accepted publickey empty. Hold the cursor on the row's Accepted password count and say the verdict: Watch. Drop to the fourth address row and run along its counts: Failed password 7, Accepted password 1, Accepted publickey empty. Hold on the Accepted password count and say the verdict: Watch. Drop to the fifth address row and run along its counts: Failed password 3, Accepted password 1, Accepted publickey 3. Hold on the Accepted publickey count and say the verdict: Ignore, the internal admin. Drop to the last address row and run along its counts: Failed password 2, nothing in either Accepted column. Rest on the Failed password count and say the verdict: Ignore.",
+   "type": "nothing",
+   "say": [
+    "\"Step 12: the other four I can read right off the pivot. Along the bottom tabs I'm moving to Pivot Table 1, and a click switches to it.\"",
+    "\"Starting with the third row down, my cursor moves along it to the right. Failed password says 9, Accepted password says 1, and Accepted publickey is empty.\"",
+    "\"That row is 192.0.2.77, and my cursor holds on its Accepted password count: nine failures and then one Accepted password, and svc_backup is the account I saw get in earlier. A guess may have landed, or the real owner typed it right, and I can't tell from here, so Watch.\"",
+    "\"Then one row down to the fourth, and my cursor goes along it: 7 failures, 1 in Accepted password, and nothing in publickey.\"",
+    "\"That's 198.51.100.140, and my cursor stays on the Accepted password count in that row: seven failures and then a password login, and jsmith is the account that got in, from earlier. Same situation again, a lucky guess or the real person, so Watch.\"",
+    "\"Down once more to the fifth row, and along it I get 3 failures, 1 in Accepted password and 3 in Accepted publickey.\"",
+    "\"This is the internal address, and my cursor rests on its Accepted publickey count. Three failures, then a password login, with publickey logins either side, all ops.admin from the Accepted lines I read earlier. An internal admin account doing its normal work, so Ignore.\"",
+    "\"Last row, the sixth, so my cursor drops down to it and goes along: 2 failures, and nothing in either Accepted column, since nobody got in from this one.\"",
+    "\"192.0.2.200, with my cursor resting on the 2 in its Failed password count, only failed twice, and no Accepted line for it turned up among the ones I read earlier. It's from outside, but under five tries with no login, so Ignore.\""
+   ],
+   "image": "images/12.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 112,
+       "k": "click",
+       "l": "Pivot Table 1 tab"
+      },
+      {
+       "o": 119,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 12 > bottom tabs > Pivot Table 1 > click > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "third address row > right along > 9 > 1 > empty"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor holds > Accepted password > 1 > svc_backup > Watch"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "fourth row > 7 > 1 > nothing in publickey"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor stays > Accepted password > 1 > jsmith > Watch"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "fifth row > failures 3 > Accepted password 1 > publickey 3"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor rests > Accepted publickey > 3 > ops.admin > Ignore"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor drops > last row > 2 > no Accepted"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor resting > Failed password > 2 > under five > Ignore"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "time": "22:43",
+   "title": "Type the verdicts into the Decision column",
+   "window": "Google Sheets: Pivot Table 1, the column right of the pivot",
+   "do": "Click the first empty cell right of the pivot, level with the event names. Pause 1 s after \"clicking it\". Type Decision there while speaking, with no pause, then press Return to drop to the first address row. Glide the cursor onto the first Decision cell, then the second, and type Block, Return, Block, Return, saying the six are already decided so no formula is needed. Glide down onto the third Decision cell, then the fourth, and type Watch, Return, Watch, Return. Glide down onto the fifth Decision cell, then the sixth, and type Ignore, Return, Ignore, Return. Slide the cursor down the Decision column from the first cell to the sixth and read it: Block, Block, Watch, Watch, Ignore, Ignore, one beside each pivot row.",
+   "type": "Decision\nBlock\nBlock\nWatch\nWatch\nIgnore\nIgnore",
+   "say": [
+    "\"Step 13: writing the decisions in. To the right of the pivot, level with the event names, the first empty cell is where the new column starts, so my cursor goes there and I'm clicking it.\"",
+    "\"Typing Decision into it, so the column says what it's for, and then Return to drop down to the first address row.\"",
+    "\"There are six cells to fill and I've already decided all of them, so there's nothing for a formula to count. My cursor glides onto the first Decision cell and then the second as I type straight in: Block, Return, Block, Return.\"",
+    "\"Then the next two rows. My cursor glides down onto the third Decision cell and then the fourth, and I type Watch, Return, Watch, Return, because both of those addresses failed and then got in.\"",
+    "\"And the last two. My cursor slides on down to the fifth Decision cell and then the sixth, and I type Ignore, Return, Ignore, Return, because those are the internal admin and the address with two tries, the ones I'm leaving alone.\"",
+    "\"Sliding down the Decision column to check it, it reads Block, Block, Watch, Watch, Ignore, Ignore, one beside each address row.\""
+   ],
+   "image": "images/13.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 176,
+       "k": "click",
+       "l": "Decision header cell"
+      },
+      {
+       "o": 187,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 13 > cell right of pivot > Decision header > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "type",
+       "l": ""
+      },
+      {
+       "o": 69,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": "Decision, then ⏎",
+     "q": "header cell > Decision > return > first address row"
+    },
+    {
+     "c": [
+      {
+       "o": 176,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Block ⏎ Block ⏎",
+     "q": "first Decision cell > Block typed > second Decision cell > Block typed again"
+    },
+    {
+     "c": [
+      {
+       "o": 108,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Watch ⏎ Watch ⏎",
+     "q": "third Decision cell > Watch typed > fourth Decision cell > Watch typed again"
+    },
+    {
+     "c": [
+      {
+       "o": 102,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Ignore ⏎ Ignore ⏎",
+     "q": "fifth Decision cell > Ignore typed > sixth Decision cell > Ignore typed again"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "Decision column > down > six verdicts"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "time": "24:19",
+   "title": "Copy the table and open the note",
+   "window": "Google Sheets: Pivot Table 1, then the Dock",
+   "do": "Click the pivot's top-left cell, level with the event names. Pause 1 s after \"clicking it\". With Shift held, click the last Decision cell, the bottom Ignore, so the highlight runs from the IPs to the decisions. Press Command C while speaking, with no pause, and rest the cursor on the top left corner of the range, with the dashed border round it. Click the yellow minimise button at the top left of the sheets window. Pause 1 s after \"minimises it\". Move toward the sheets window in the left Dock, stop, and click the minimised output doc to bring it forward. Pause 1 s after \"selecting it\".",
+   "type": "nothing",
+   "say": [
+    "\"Step 14: copying it for the note. I'm moving up to the pivot's top left cell, level with the event names, and clicking it, which starts the range.\"",
+    "\"Holding Shift, my cursor moves down and right to the last Decision cell, the bottom Ignore, and I click it, which highlights the whole range, addresses across to decisions.\"",
+    "\"Command C to copy, and my cursor rests on the top left corner of the range, where a dashed border runs round the whole block, so I can see it's on the clipboard.\"",
+    "\"That's copied, so the sheets window can go. Up to the top left, to the yellow button, and a left click minimises it.\"",
+    "\"Now the note, because that's where this table has to go. Over on the left Dock my cursor goes for the sheets window, no, sorry, I've just put that away, it's the output doc I want, and I'm selecting it.\""
+   ],
+   "image": "images/14.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 111,
+       "k": "click",
+       "l": "pivot top-left cell"
+      },
+      {
+       "o": 122,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 14 > pivot top-left cell > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⇧-click last Decision cell"
+      }
+     ],
+     "b": null,
+     "q": "shift held > last Decision cell > range highlights"
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "key",
+       "l": "⌘ C"
+      }
+     ],
+     "b": null,
+     "q": "command C > cursor > dashed border > range copied"
+    },
+    {
+     "c": [
+      {
+       "o": 91,
+       "k": "click",
+       "l": "yellow minimise (sheets)"
+      },
+      {
+       "o": 116,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "top left > yellow button > Sheets window > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 186,
+       "k": "click",
+       "l": "output doc (Dock)"
+      },
+      {
+       "o": 202,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "left Dock > output doc icon > select > pause 1s"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "time": "25:36",
+   "title": "Heading and table",
+   "window": "Google Docs: the output doc",
+   "do": "Click in the document body, first line, to place the cursor. Pause 1 s after \"I click\". With the cursor at the end of the first line, type jump01 overnight SSH failed logins, 20 Oct while speaking, with no pause. Move the cursor back from the end of the heading line to the first letter of the heading and rest beside it, to see whether Docs capitalised the j. Only if it did, press Command Z in the document while speaking, with no pause, to undo only the capital; if not, carry on. Press Return for a new line, move the cursor down to the empty line under the heading, then Command V to paste the table, while speaking, with no pause. A Paste table box appears in the middle of the screen: move to Paste unlinked and pick it. Pause 1 s after \"I pick it\". Click Paste at the bottom right of the box. Pause 1 s after \"hitting it\". Run the cursor over the pasted table from the header to the last row, then rest on the first address row's 18, the same as the pivot's first address row in the sheet.",
+   "type": "jump01 overnight SSH failed logins, 20 Oct",
+   "say": [
+    "\"Step 15: heading and table. My cursor goes down into the doc body, to the first line, and I click, so the text cursor sits there ready.\"",
+    "\"At the end of that first line in the doc is where my cursor sits, and I'm typing jump01 overnight SSH failed logins, 20 Oct, because every line in the log is from that night.\"",
+    "\"Now I'm moving back to the first letter of the heading, just to see whether Docs capitalised the j.\"",
+    "\"My cursor stays right beside that first letter of the heading, and if Docs did capitalise it, I press Command Z, which undoes only the capital, so the host name stays lowercase. If it didn't, I just carry on.\"",
+    "\"I press Return for a new line, and my cursor moves down to that empty line under the heading, then Command V pastes the table in right there.\"",
+    "\"A Paste table box pops up in the middle of the screen. I'm moving across it to Paste unlinked, and I pick it, so the note stays fixed even if the sheet changes later.\"",
+    "\"Then down to the Paste button, bottom right of the box, and I'm hitting it.\"",
+    "\"There's the table. My cursor runs over it, header to last row, and the first address row says 18, the same as the first row of the pivot. They match.\""
+   ],
+   "image": "images/15.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 91,
+       "k": "click",
+       "l": "doc body, first line"
+      },
+      {
+       "o": 98,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 15 > doc body > first line > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 75,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "jump01 overnight SSH failed logins, 20 Oct",
+     "q": "cursor > first line end > heading text > 20 Oct"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "end of line > back > first letter > j"
+    },
+    {
+     "c": [
+      {
+       "o": 103,
+       "k": "key",
+       "l": "⌘ Z"
+      }
+     ],
+     "b": null,
+     "q": "cursor beside j > command Z > capital undone > lowercase j"
+    },
+    {
+     "c": [
+      {
+       "o": 9,
+       "k": "key",
+       "l": "⏎ Return"
+      },
+      {
+       "o": 100,
+       "k": "key",
+       "l": "⌘ V"
+      }
+     ],
+     "b": null,
+     "q": "return > cursor down > empty line > command V"
+    },
+    {
+     "c": [
+      {
+       "o": 80,
+       "k": "click",
+       "l": "Paste unlinked"
+      },
+      {
+       "o": 109,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Paste table box > Paste unlinked > pick > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 65,
+       "k": "click",
+       "l": "Paste (bottom right)"
+      },
+      {
+       "o": 75,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "box bottom right > Paste > hit > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "pasted table > header > last row > 18"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "time": "27:28",
+   "title": "Write the action lines",
+   "window": "Google Docs: the output doc, under the pasted table",
+   "do": "Click just under the table. Pause 1 s after \"click in there\". On the new line type Block (temporary, 24h here): 203.0.113.45 and 198.51.100.23, while speaking, with no pause, and straight after the IPs type the reason on the same line, failure storms, no login. Slide the cursor up to the Block rows of the pasted table, then back to the line. Press Return at the end of the Block line, then Pause 2 s after \"read the Block line back\". On the second line type Watch: 192.0.2.77 (reset svc_backup's password) and then, on the same line, and 198.51.100.140 (confirm jsmith with the user). Rest the cursor on the Watch rows of the pasted table. Press Return again, drifting the cursor down the page from the end of the Watch line. On the third line type Ignore: 10.20.4.11 (internal admin) and then, at the end of the same line, and 192.0.2.200 (2 tries, no login). SOC on-call owns it. Slide the cursor up the pasted table to the Ignore rows. The full lines read: Block (temporary, 24h here): 203.0.113.45 and 198.51.100.23, failure storms, no login. Watch: 192.0.2.77 (reset svc_backup's password) and 198.51.100.140 (confirm jsmith with the user). Ignore: 10.20.4.11 (internal admin) and 192.0.2.200 (2 tries, no login). SOC on-call owns it.",
+   "type": "Block (temporary, 24h here): 203.0.113.45 and 198.51.100.23, failure storms, no login.\nWatch: 192.0.2.77 (reset svc_backup's password) and 198.51.100.140 (confirm jsmith with the user).\nIgnore: 10.20.4.11 (internal admin) and 192.0.2.200 (2 tries, no login). SOC on-call owns it.",
+   "say": [
+    "\"Step 16: the action lines. My cursor goes to the empty line just under the table, and I click in there to put the text cursor on it.\"",
+    "\"My cursor slides up to the Block rows of the pasted table and back down to the new line, where I'm typing Block, then in brackets temporary, 24h here, and the two addresses marked Block in the Decision column, so the note lines up with the sheet.\"",
+    "\"The cursor slides up to the Block rows again and back to the end of that line, and right after the addresses I type the reason, failure storms, no login, so whoever reads it knows why they're being blocked.\"",
+    "\"I press Return to finish the Block line, and my cursor rests at the end of it while I take a short stop to read the Block line back before I start the Watch line.\"",
+    "\"Up in the pasted table are the Watch rows, so I glance there and then slide back down to the new line, where I type Watch, then the first Watch address, and in brackets, reset svc_backup's password, since that's the account that got in.\"",
+    "\"My cursor rests up on the Watch rows while I keep typing on that line: the second Watch address, then confirm jsmith with whoever owns that account. Both got in, so this is an account question, and a block on an address real people might share could lock them out.\"",
+    "\"Down the page at the end of the Watch line is where I'm drifting now, and one more Return opens the third line, the Ignore line.\"",
+    "\"Up the pasted table are the Ignore rows, so I slide there and back down to the third line, where I'm typing Ignore, then the first Ignore address, with internal admin in brackets, because the Decision column says Ignore for it.\"",
+    "\"Then my cursor goes back up the pasted table to the Ignore rows, and I'm typing the second Ignore address on the end of that line, 2 tries, no login, a full stop, and SOC on-call owns it, since it's only noise.\""
+   ],
+   "image": "images/16.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 87,
+       "k": "click",
+       "l": "under the table"
+      },
+      {
+       "o": 103,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 16 > empty line > under table > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 100,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Block (temporary, 24h here): 203.0.113.45 and 198.51.100.23,",
+     "q": "cursor up > Block rows > new line > Block line > two addresses"
+    },
+    {
+     "c": [
+      {
+       "o": 117,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "… failure storms, no login.",
+     "q": "cursor up > Block rows > end of line > failure storms > no login"
+    },
+    {
+     "c": [
+      {
+       "o": 9,
+       "k": "key",
+       "l": "⏎ Return"
+      },
+      {
+       "o": 132,
+       "k": "pause",
+       "l": "pause 2 s"
+      }
+     ],
+     "b": null,
+     "q": "return > cursor rests > Block line > read back > pause 2s"
+    },
+    {
+     "c": [
+      {
+       "o": 104,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Watch: 192.0.2.77 (reset svc_backup's password)",
+     "q": "cursor up > Watch rows > new line > Watch line > svc_backup reset"
+    },
+    {
+     "c": [
+      {
+       "o": 38,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "… and 198.51.100.140 (confirm jsmith with the user).",
+     "q": "cursor rests > Watch rows > second address > confirm jsmith"
+    },
+    {
+     "c": [
+      {
+       "o": 84,
+       "k": "key",
+       "l": "⏎ Return"
+      }
+     ],
+     "b": null,
+     "q": "cursor down > end of Watch line > return > Ignore line"
+    },
+    {
+     "c": [
+      {
+       "o": 92,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "Ignore: 10.20.4.11 (internal admin)",
+     "q": "cursor up > Ignore rows > third line > Ignore line > internal admin"
+    },
+    {
+     "c": [
+      {
+       "o": 70,
+       "k": "type",
+       "l": ""
+      }
+     ],
+     "b": "… and 192.0.2.200 (2 tries, no login). SOC on-call owns it.",
+     "q": "cursor up > Ignore rows > line end > 2 tries no login > SOC on-call"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "time": "30:21",
+   "title": "Download the note and the sheet",
+   "window": "Google Docs File menu, then Google Sheets File menu (Download)",
+   "do": "Move up to File in the Docs menu bar and open it. Pause 1 s after \"opens it\". Move down to Download; a side menu opens. Pause 1 s after \"I rest on it\". Move across to Microsoft Word (.docx) and click it; the note downloads, with no Save As box. Pause 1 s after \"I click it\". Click the yellow minimise button at the top left of the Docs window. Pause 1 s after \"a click\". Move to the left Dock and press the minimised sheets window to bring the sheet back. Pause 1 s after \"pressing it\". Move up to File in the Sheets menu bar and left click it. Pause 1 s after \"a left click\". Move down to Download and hover it so the formats slide out on the right. Pause 1 s after \"slide out to the right\". Move across to Microsoft Excel (.xlsx) and click it; the sheet downloads, with no Save As box. Pause 1 s after \"click that\".",
+   "type": "nothing",
+   "say": [
+    "\"Step 17: two downloads, starting with the note. Up in the Docs menu bar I move over to File, and a left click opens it, because Download lives in there.\"",
+    "\"Down the File list to Download, and I rest on it. A side menu slides out beside it with the formats listed.\"",
+    "\"Across into that side menu, to Microsoft Word, and I click it. The note downloads, and that's the first file done.\"",
+    "\"Note's downloaded, so the Docs window can go. I slide up to the yellow button at the top left, and a click minimises the window.\"",
+    "\"Now the sheet. Over in the left Dock, its minimised window, and I'm pressing it to bring the sheet back up.\"",
+    "\"Same path as before. Up to File in the Sheets menu bar, and a left click opens the list.\"",
+    "\"Down the File menu to Download again goes my cursor, the same item as in Docs, and as the pointer stays on it the formats slide out to the right.\"",
+    "\"My cursor slides across into that side menu, to Microsoft Excel, and I click that, and the sheet downloads, so both files are done.\""
+   ],
+   "image": "images/17.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [
+      {
+       "o": 98,
+       "k": "click",
+       "l": "File (Docs menu bar)"
+      },
+      {
+       "o": 119,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "step 17 > Docs menu bar > File > open > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 23,
+       "k": "click",
+       "l": "Download"
+      },
+      {
+       "o": 49,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "File list > Download > side menu > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 52,
+       "k": "click",
+       "l": "Microsoft Word (.docx)"
+      },
+      {
+       "o": 62,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "side menu > Microsoft Word > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 100,
+       "k": "click",
+       "l": "yellow minimise (Docs)"
+      },
+      {
+       "o": 107,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "slide up left > yellow button > Docs window > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 69,
+       "k": "click",
+       "l": "sheets window (Dock)"
+      },
+      {
+       "o": 80,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "left Dock > minimised sheet icon > press > sheet back > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 61,
+       "k": "click",
+       "l": "File (Sheets menu bar)"
+      },
+      {
+       "o": 73,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "Sheets menu bar > File > click > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 1,
+       "k": "click",
+       "l": "Download"
+      },
+      {
+       "o": 145,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor down > File list > Download > formats slide out > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 72,
+       "k": "click",
+       "l": "Microsoft Excel (.xlsx)"
+      },
+      {
+       "o": 82,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor across > side menu > Microsoft Excel > click > pause 1s"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "time": "32:01",
+   "title": "Last look, check and epilogue",
+   "window": "Google Sheets: Pivot Table 1 still on screen, Dock on the left",
+   "do": "The pivot is still on screen. Slide the cursor down the address column, then across to the Decision column: six addresses ranked, a decision beside each. Run the cursor down the Failed password column, then across each row to its Decision cell: Block beside 18 and 14, Watch beside 9 and 7, Ignore beside 3 and 2; the six add up to 53, the same as Terminal. Then say the closing paragraph as one single block, moving the cursor on the pivot as the spoken words reach each figure: the Decision column and the Grand Total, the 53; the bottom tabs; the Data menu; the header row; the first address row and its 18 and the 14; the Block pair; the Watch pair with their 9 and 7; the Ignore pair with their 3 and 2; the whole table from its top-left cell to the last Decision cell; the File menu; the two Watch rows; the header row again; then the Decision cells for Block 2, Watch 2 and Ignore 2. At the end slide left off the grid and rest on the Dock at the left edge until the paragraph ends.",
+   "type": "nothing",
+   "say": [
+    "\"Step 18: the pivot's still up, so this is the last look. My cursor runs down the address column and across to the Decision column: six addresses ranked down the left, a decision beside each.\"",
+    "\"Now the verdicts against the counts, down the Failed password column and across each row to its decision. Block sits beside 18 and 14, Watch beside 9 and 7, Ignore beside 3 and 2, and those add up to 53, matching the grep from earlier.\"",
+    "\"So, start to finish, here's what I did. I began with the raw log and counted it: 59 lines, 53 of them Failed password, and 14 of those on usernames that don't exist. I did that first so I'd have numbers to check the sheet against. Then I went to the sheet, made sure all 59 rows had come in, froze the header, added a filter from the Data menu, and built a pivot with the source address down the side and the event types across the top. Its failure total came to 53, the same as my first count, so I trusted it, and only then did I start judging addresses. I went down the ranking from the biggest count, filtering the top two to read their usernames and times and reading the other four straight off the pivot, then typed a verdict beside each. The Block pair are the two biggest piles, 18 failures and 14, both from outside with no login. That fits my rule: an outside address with five or more failures and no login gets blocked for 24 hours. The Watch pair failed 9 times and 7 times and then got in, one as svc_backup and one as jsmith. I didn't block those, because a block could lock out a real person and a guessed password could still be live, so they get a password reset for svc_backup and a check with jsmith. The Ignore pair is the internal admin, who failed three times and then logged in, plus one outside address with just 2 tries, which is noise. Then I copied the table into the note, wrote an action line for each group, and checked the paste and the verdicts against the counts. After that I downloaded the note as a Word file and the sheet as an Excel file, and both landed in the browser's downloads. The hard part was telling Watch from Block when an address failed and then got in, because the counts alone couldn't separate a lucky guess from the real user. Next time I'd add the first and last attempt times to the pivot, to see how long after the last failure the login came. So for the goal: before the morning standup, last night's failed logins on jump01 are sorted. Block 2, Watch 2, Ignore 2, and the note tells the firewall owner what to act on, what to watch, and what to leave alone.\""
+   ],
+   "image": "images/18.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [],
+     "b": null,
+     "q": "step 18 > address column > down > Decision column > six verdicts"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "Failed password column > each row > Decision cell > adds to 53"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "Decision column > Grand Total > 53 > tab strip > Pivot Table 1 > View menu > Data menu > pivot header row > Failed password total > address column > top two address rows > Decision column header > Block cells > counts 18 and 14 > Watch cells > counts 9 and 7 > Accepted password 1 > Ignore cells > counts 3 and 2 > whole table > File menu > left Dock > pivot > last Decision cell > Dock icons"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "time": "35:55",
+   "title": "Close",
+   "window": "Pivot Table 1 on screen, then the Dock and the recorder card",
+   "do": "Rest the cursor on the pivot grid and look round the screen: no error dialogs, nothing unsaved, the pivot is up. Click the yellow minimise button at the top left of the sheets window. Pause 1 s after \"a click minimises it\". Slide the cursor from the top left down the Dock toward the recorder card, with only the Dock left in view. Click the minimised recorder card in the left Dock to bring it forward. Pause 1 s after \"brings it forward\". Click the Stop button on the recorder card with a left click to end the recording. Pause 1 s after \"a left click\".",
+   "type": "nothing",
+   "say": [
+    "\"Step 19: one more glance round the screen before I stop. My cursor rests on the pivot grid while I look: the pivot's up, no error boxes, nothing says unsaved, so I'll leave it there.\"",
+    "\"Over at the top left of the sheets window is the yellow button, so my cursor goes there, and a click minimises it, so only the Dock is left on the screen.\"",
+    "\"That's the task done, with the sheet and the note both downloaded. Next I need the recorder card, so my cursor slides down the left Dock to look for it.\"",
+    "\"There's the minimised recorder card at the bottom of the left Dock, so my cursor moves onto its icon, and one click brings it forward, because the Stop button is on that card.\"",
+    "\"Now my cursor moves across to the Stop button on the recorder card, and a left click ends the recording, so the take stops right here.\""
+   ],
+   "image": "images/19.png",
+   "imageSource": "placeholder",
+   "lines": [
+    {
+     "c": [],
+     "b": null,
+     "q": "step 19 > cursor > pivot grid > no errors"
+    },
+    {
+     "c": [
+      {
+       "o": 94,
+       "k": "click",
+       "l": "yellow minimise (sheets)"
+      },
+      {
+       "o": 114,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor > yellow button > sheets window gone > Dock only > pause 1s"
+    },
+    {
+     "c": [],
+     "b": null,
+     "q": "cursor > left Dock > recorder card > task done"
+    },
+    {
+     "c": [
+      {
+       "o": 107,
+       "k": "click",
+       "l": "recorder card (Dock)"
+      },
+      {
+       "o": 134,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor > left Dock bottom > recorder card > click > forward > pause 1s"
+    },
+    {
+     "c": [
+      {
+       "o": 73,
+       "k": "click",
+       "l": "Stop"
+      },
+      {
+       "o": 85,
+       "k": "pause",
+       "l": "pause 1 s"
+      }
+     ],
+     "b": null,
+     "q": "cursor across > recorder card > Stop button > click > pause 1s"
+    }
+   ]
+  }
+ ]
+}
